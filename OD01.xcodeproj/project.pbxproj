@@ -9,10 +9,7 @@
 /* Begin PBXBuildFile section */
 		22B3C9A61CB3D46000EA00FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9A51CB3D46000EA00FA /* main.m */; };
 		22B3C9A91CB3D46000EA00FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9A81CB3D46000EA00FA /* AppDelegate.m */; };
-		22B3C9AC1CB3D46000EA00FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9AB1CB3D46000EA00FA /* ViewController.m */; };
-		22B3C9AF1CB3D46000EA00FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B3C9AD1CB3D46000EA00FA /* Main.storyboard */; };
-		22B3C9B11CB3D46000EA00FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B3C9B01CB3D46000EA00FA /* Assets.xcassets */; };
-		22B3C9B41CB3D46000EA00FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B3C9B21CB3D46000EA00FA /* LaunchScreen.storyboard */; };
+		22B3C9BC1CB3DFDF00EA00FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B3C9BB1CB3DFDF00EA00FA /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +17,8 @@
 		22B3C9A51CB3D46000EA00FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22B3C9A71CB3D46000EA00FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		22B3C9A81CB3D46000EA00FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		22B3C9AA1CB3D46000EA00FA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		22B3C9AB1CB3D46000EA00FA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		22B3C9AE1CB3D46000EA00FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		22B3C9B01CB3D46000EA00FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		22B3C9B31CB3D46000EA00FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22B3C9B51CB3D46000EA00FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22B3C9BB1CB3DFDF00EA00FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +53,7 @@
 			children = (
 				22B3C9A71CB3D46000EA00FA /* AppDelegate.h */,
 				22B3C9A81CB3D46000EA00FA /* AppDelegate.m */,
-				22B3C9AA1CB3D46000EA00FA /* ViewController.h */,
-				22B3C9AB1CB3D46000EA00FA /* ViewController.m */,
-				22B3C9AD1CB3D46000EA00FA /* Main.storyboard */,
-				22B3C9B01CB3D46000EA00FA /* Assets.xcassets */,
-				22B3C9B21CB3D46000EA00FA /* LaunchScreen.storyboard */,
+				22B3C9BB1CB3DFDF00EA00FA /* Assets.xcassets */,
 				22B3C9B51CB3D46000EA00FA /* Info.plist */,
 				22B3C9A41CB3D46000EA00FA /* Supporting Files */,
 			);
@@ -137,9 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22B3C9B41CB3D46000EA00FA /* LaunchScreen.storyboard in Resources */,
-				22B3C9B11CB3D46000EA00FA /* Assets.xcassets in Resources */,
-				22B3C9AF1CB3D46000EA00FA /* Main.storyboard in Resources */,
+				22B3C9BC1CB3DFDF00EA00FA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,32 +137,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22B3C9AC1CB3D46000EA00FA /* ViewController.m in Sources */,
 				22B3C9A91CB3D46000EA00FA /* AppDelegate.m in Sources */,
 				22B3C9A61CB3D46000EA00FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		22B3C9AD1CB3D46000EA00FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22B3C9AE1CB3D46000EA00FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		22B3C9B21CB3D46000EA00FA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				22B3C9B31CB3D46000EA00FA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		22B3C9B61CB3D46000EA00FA /* Debug */ = {
@@ -264,7 +231,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = OD01/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aikan.OD01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,7 +244,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = OD01/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aikan.OD01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -301,6 +272,7 @@
 				22B3C9BA1CB3D46000EA00FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
