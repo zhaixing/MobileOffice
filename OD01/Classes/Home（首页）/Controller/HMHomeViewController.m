@@ -7,7 +7,9 @@
 //
 
 #import "HMHomeViewController.h"
-
+#import "UIView+Extension.h"
+#import "HMGlobal.h"
+#import "UIBarButtonItem+Extension.h"
 @interface HMHomeViewController ()
 
 @end
@@ -16,12 +18,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //设置导航栏按钮
+//    UIButton *leftButton=[[UIButton alloc] init];
+//    [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRange"] forState:UIControlStateNormal];
+//    [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRangeSelected"] forState:UIControlStateHighlighted];
+//    //设置按钮的尺寸为图片的尺寸 
+//    leftButton.size=leftButton.currentBackgroundImage.size;
+//    
+//    [leftButton addTarget:self action:@selector(friendSearch) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    //设置导航栏按钮
+    self.navigationItem.leftBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" highImageName:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendSearch)];
+    self.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_pop" highImageName:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
+}
+-(void)friendSearch
+{
+    HMLog(@"friendSearch---");
+}
+-(void)pop
+{
+    HMLog(@"pop---");
 }
 
 - (void)didReceiveMemoryWarning {

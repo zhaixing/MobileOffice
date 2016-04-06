@@ -50,7 +50,7 @@
    selectedImageName:(NSString *)selectedImageName
 {
     //设置随机色
-    childVc.view.backgroundColor=[UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
+//    childVc.view.backgroundColor=[UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
     //设置标题
     childVc.title=title;
 //    childVc.tabBarItem.title=title;

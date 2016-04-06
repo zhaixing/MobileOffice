@@ -7,7 +7,7 @@
 //
 
 #import "HMMessageViewController.h"
-
+#import "HMGlobal.h"
 @interface HMMessageViewController ()
 
 @end
@@ -17,13 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"写消息" style:UIBarButtonItemStyleDone target:nil action:nil];
+    //让这个按钮不可用
+//    self.navigationItem.rightBarButtonItem.enabled=NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+//    self.navigationItem.rightBarButtonItem.enabled=NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

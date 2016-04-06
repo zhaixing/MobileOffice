@@ -17,6 +17,10 @@
 		22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9ED1CB4A41000EA00FA /* HMMessageViewController.m */; };
 		22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */; };
 		22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */; };
+		22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7C1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m */; };
+		22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7E1CB4B8D000EFAC7A /* UIImage+Extension.m */; };
+		22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A801CB4B8D000EFAC7A /* UIView+Extension.m */; };
+		22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,14 @@
 		22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProfileTableViewController.m; sourceTree = "<group>"; };
 		22CF1A781CB4AB1900EFAC7A /* HMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigationController.h; sourceTree = "<group>"; };
 		22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigationController.m; sourceTree = "<group>"; };
+		22CF1A7B1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
+		22CF1A7C1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+Extension.m"; sourceTree = "<group>"; };
+		22CF1A7D1CB4B8D000EFAC7A /* UIImage+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Extension.h"; sourceTree = "<group>"; };
+		22CF1A7E1CB4B8D000EFAC7A /* UIImage+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Extension.m"; sourceTree = "<group>"; };
+		22CF1A7F1CB4B8D000EFAC7A /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		22CF1A801CB4B8D000EFAC7A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		22CF1A841CB4BD4800EFAC7A /* HMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGlobal.h; sourceTree = "<group>"; };
+		22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGlobal.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +84,7 @@
 		22B3C9A31CB3D46000EA00FA /* OD01 */ = {
 			isa = PBXGroup;
 			children = (
-				22B3C9CF1CB4A15F00EA00FA /* Home(首页) */,
+				22B3C9D01CB4A41000EA00FA /* Classes */,
 				22B3C9BB1CB3DFDF00EA00FA /* Assets.xcassets */,
 				22B3C9B51CB3D46000EA00FA /* Info.plist */,
 				22B3C9A41CB3D46000EA00FA /* Supporting Files */,
@@ -85,14 +97,6 @@
 			children = (
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		22B3C9CF1CB4A15F00EA00FA /* Home(首页) */ = {
-			isa = PBXGroup;
-			children = (
-				22B3C9D01CB4A41000EA00FA /* Classes */,
-			);
-			name = "Home(首页)";
 			sourceTree = "<group>";
 		};
 		22B3C9D01CB4A41000EA00FA /* Classes */ = {
@@ -188,8 +192,16 @@
 		22B3C9DE1CB4A41000EA00FA /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				22CF1A7B1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.h */,
+				22CF1A7C1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m */,
+				22CF1A7D1CB4B8D000EFAC7A /* UIImage+Extension.h */,
+				22CF1A7E1CB4B8D000EFAC7A /* UIImage+Extension.m */,
+				22CF1A7F1CB4B8D000EFAC7A /* UIView+Extension.h */,
+				22CF1A801CB4B8D000EFAC7A /* UIView+Extension.m */,
 				22B3C9DF1CB4A41000EA00FA /* HMImageTool.h */,
 				22B3C9E01CB4A41000EA00FA /* HMImageTool.m */,
+				22CF1A841CB4BD4800EFAC7A /* HMGlobal.h */,
+				22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -369,10 +381,14 @@
 				22B3C9F71CB4A41000EA00FA /* HMHomeViewController.m in Sources */,
 				22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
+				22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */,
 				22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */,
+				22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */,
 				22B3C9FB1CB4A41000EA00FA /* main.m in Sources */,
 				22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */,
 				22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */,
+				22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */,
+				22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */,
 				22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
