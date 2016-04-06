@@ -10,6 +10,8 @@
 #import "UIView+Extension.h"
 #import "HMGlobal.h"
 #import "UIBarButtonItem+Extension.h"
+#import "UIImage+Extension.h"
+
 @interface HMHomeViewController ()
 
 @end
@@ -31,6 +33,43 @@
     //设置导航栏按钮
     self.navigationItem.leftBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" highImageName:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendSearch)];
     self.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_pop" highImageName:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
+    
+    //设置导航栏中间的标题按钮
+    UIButton *titleButton=[[UIButton  alloc] init];
+    //设置文字
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    titleButton.titleLabel.font=HMNavigationTitleFont;
+    //设置图标
+    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    //高亮的时候不需要调整内部的图片为灰色
+//    titleButton.adjustsImageWhenHighlighted=NO;
+    //设置背景
+    [titleButton setBackgroundImage:[UIImage resizedImage:@"navigationbar_filter_background_highlighted"]forState:UIControlStateHighlighted];
+    titleButton.width=65;
+    titleButton.height=35;
+    [titleButton addTarget:self action:@selector(titleClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView=titleButton;
+}
+-(void)titleClicked:(UIButton *)titleButton
+{
+    if(titleButton.tag==0){
+        titleButton.tag=10;
+        //换成箭头向上
+        [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+    }else{
+        titleButton.tag=0;
+        //换成箭头向下
+        [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    }
+//    UIImage *downImage=[UIImage imageNamed:@"navigationbar_arrow_down"];
+//    if(titleButton.currentImage==downImage){
+//        //换成箭头向上
+//        [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_up"] forState:UIControlStateNormal];
+//    }else{
+//        //换成箭头向下
+//        [titleButton setImage:downImage forState:UIControlStateNormal];
+//    }
 }
 -(void)friendSearch
 {

@@ -11,6 +11,8 @@
 
 #define themeColor [UIColor colorWithRed:17/255.0 green:169/255.0 blue:132/255.0 alpha:1.0]
 
+#define HMNavigationTitleFont [UIFont boldSystemFontOfSize:17]
+
 //打印，如果调试就有打印信息，如果发布就没有打印信息
 #ifdef DEBUG//调试状态
 #define HMLog(...) NSLog(__VA_ARGS__)
