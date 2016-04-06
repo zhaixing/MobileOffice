@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "HMTabBarViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -23,9 +23,13 @@
     self.window=[[UIWindow alloc] init];
     self.window.frame=[UIScreen mainScreen].bounds;
     
+    
     //2.设置窗口的根控制器
-    UITabBarController *tabbarVc=[[UITabBarController alloc] init];
-    self.window.rootViewController=tabbarVc;
+    self.window.rootViewController=[[HMTabBarViewController alloc] init];
+    self.window.rootViewController.view.tintColor =[UIColor blackColor];
+    
+    //添加自控制器
+    
     
     //3.显示窗口（成为主窗口）
     [self.window makeKeyAndVisible];

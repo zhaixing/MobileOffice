@@ -10,6 +10,7 @@
 		22B3C9A61CB3D46000EA00FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9A51CB3D46000EA00FA /* main.m */; };
 		22B3C9A91CB3D46000EA00FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9A81CB3D46000EA00FA /* AppDelegate.m */; };
 		22B3C9BC1CB3DFDF00EA00FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B3C9BB1CB3DFDF00EA00FA /* Assets.xcassets */; };
+		22B3C9BF1CB3E66400EA00FA /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9BE1CB3E66400EA00FA /* HMTabBarViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,8 @@
 		22B3C9A81CB3D46000EA00FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		22B3C9B51CB3D46000EA00FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B3C9BB1CB3DFDF00EA00FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22B3C9BD1CB3E66400EA00FA /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMTabBarViewController.h; path = ../HMTabBarViewController.h; sourceTree = "<group>"; };
+		22B3C9BE1CB3E66400EA00FA /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMTabBarViewController.m; path = ../HMTabBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +54,8 @@
 		22B3C9A31CB3D46000EA00FA /* OD01 */ = {
 			isa = PBXGroup;
 			children = (
+				22B3C9BD1CB3E66400EA00FA /* HMTabBarViewController.h */,
+				22B3C9BE1CB3E66400EA00FA /* HMTabBarViewController.m */,
 				22B3C9A71CB3D46000EA00FA /* AppDelegate.h */,
 				22B3C9A81CB3D46000EA00FA /* AppDelegate.m */,
 				22B3C9BB1CB3DFDF00EA00FA /* Assets.xcassets */,
@@ -94,6 +99,7 @@
 		22B3C9991CB3D46000EA00FA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = HM;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = sam;
 				TargetAttributes = {
@@ -138,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B3C9A91CB3D46000EA00FA /* AppDelegate.m in Sources */,
+				22B3C9BF1CB3E66400EA00FA /* HMTabBarViewController.m in Sources */,
 				22B3C9A61CB3D46000EA00FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
