@@ -7,6 +7,10 @@
 //
 
 #import "HMTabBarViewController.h"
+#import "HMHomeViewController.h"
+#import "HMMessageViewController.h"
+#import "HMDiscoverViewController.h"
+#import "HMProfileTableViewController.h"
 
 @interface HMTabBarViewController ()
 
@@ -18,16 +22,16 @@
     [super viewDidLoad];
 
     //添加子控制器
-    UIViewController *home=[[UIViewController alloc] init];
+    HMHomeViewController *home=[[HMHomeViewController alloc] init];
     [self addOneChildVc:home title:@"首页" imageName:@"icon_home_nor" selectedImageName:@"icon_home_pre"];
     
-    UIViewController *message=[[UITableViewController alloc] init];
+    HMMessageViewController *message=[[HMMessageViewController alloc] init];
     [self addOneChildVc:message title:@"消息" imageName:@"icon_message_nor" selectedImageName:@"icon_message_pre"];
     
-    UIViewController *discover =[[UIViewController alloc] init];
+    HMDiscoverViewController *discover =[[HMDiscoverViewController alloc] init];
     [self addOneChildVc:discover title:@"发现" imageName:@"icon_find_nor" selectedImageName:@"icon_find_pre"];
     
-    UIViewController *me=[[UITableViewController alloc] init];
+    HMProfileTableViewController *me=[[HMProfileTableViewController alloc] init];
     [self addOneChildVc:me title:@"我" imageName:@"icon_setting_nor" selectedImageName:@"icon_setting_pre"];
 }
 /**
