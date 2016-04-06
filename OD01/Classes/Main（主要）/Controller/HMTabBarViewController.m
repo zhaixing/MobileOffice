@@ -11,6 +11,7 @@
 #import "HMMessageViewController.h"
 #import "HMDiscoverViewController.h"
 #import "HMProfileTableViewController.h"
+#import "HMNavigationController.h"
 
 @interface HMTabBarViewController ()
 
@@ -51,7 +52,9 @@
     //设置随机色
     childVc.view.backgroundColor=[UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
     //设置标题
-    childVc.tabBarItem.title=title;
+    childVc.title=title;
+//    childVc.tabBarItem.title=title;
+//    childVc.navigationItem.title=title;
     //设置图片
     childVc.tabBarItem.image=[UIImage imageNamed:imageName];
     //设置选中图片
@@ -59,8 +62,8 @@
     selectedImage=[selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     childVc.tabBarItem.selectedImage=selectedImage;
     
-    
-    [self addChildViewController:childVc];
+    HMNavigationController *nav=[[HMNavigationController alloc] initWithRootViewController:childVc];
+    [self addChildViewController:nav];
 
 }
 @end

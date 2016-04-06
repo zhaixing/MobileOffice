@@ -16,6 +16,7 @@
 		22B3C9FB1CB4A41000EA00FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9E81CB4A41000EA00FA /* main.m */; };
 		22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9ED1CB4A41000EA00FA /* HMMessageViewController.m */; };
 		22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */; };
+		22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		22B3C9ED1CB4A41000EA00FA /* HMMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMessageViewController.m; sourceTree = "<group>"; };
 		22B3C9F21CB4A41000EA00FA /* HMProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProfileTableViewController.h; sourceTree = "<group>"; };
 		22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProfileTableViewController.m; sourceTree = "<group>"; };
+		22CF1A781CB4AB1900EFAC7A /* HMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigationController.h; sourceTree = "<group>"; };
+		22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigationController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +98,10 @@
 		22B3C9D01CB4A41000EA00FA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				22B3C9D11CB4A41000EA00FA /* Discover（发现） */,
-				22B3C9D71CB4A41000EA00FA /* Home（首页） */,
 				22B3C9DD1CB4A41000EA00FA /* Main（主要） */,
+				22B3C9D71CB4A41000EA00FA /* Home（首页） */,
 				22B3C9EA1CB4A41000EA00FA /* Message（消息） */,
+				22B3C9D11CB4A41000EA00FA /* Discover（发现） */,
 				22B3C9F01CB4A41000EA00FA /* Profile（我） */,
 			);
 			path = Classes;
@@ -196,6 +199,8 @@
 			children = (
 				22B3C9E21CB4A41000EA00FA /* HMTabBarViewController.h */,
 				22B3C9E31CB4A41000EA00FA /* HMTabBarViewController.m */,
+				22CF1A781CB4AB1900EFAC7A /* HMNavigationController.h */,
+				22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 				22B3C9FB1CB4A41000EA00FA /* main.m in Sources */,
 				22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */,
 				22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */,
+				22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
