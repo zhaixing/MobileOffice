@@ -21,6 +21,7 @@
 		22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7E1CB4B8D000EFAC7A /* UIImage+Extension.m */; };
 		22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A801CB4B8D000EFAC7A /* UIView+Extension.m */; };
 		22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */; };
+		22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A881CB51D6E00EFAC7A /* HMSearchBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,8 @@
 		22CF1A801CB4B8D000EFAC7A /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		22CF1A841CB4BD4800EFAC7A /* HMGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGlobal.h; sourceTree = "<group>"; };
 		22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGlobal.m; sourceTree = "<group>"; };
+		22CF1A871CB51D6E00EFAC7A /* HMSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSearchBar.h; sourceTree = "<group>"; };
+		22CF1A881CB51D6E00EFAC7A /* HMSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSearchBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +143,8 @@
 		22B3C9D61CB4A41000EA00FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22CF1A871CB51D6E00EFAC7A /* HMSearchBar.h */,
+				22CF1A881CB51D6E00EFAC7A /* HMSearchBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 				22B3C9F71CB4A41000EA00FA /* HMHomeViewController.m in Sources */,
 				22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
+				22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */,
 				22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */,
 				22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */,
 				22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */,
