@@ -10,4 +10,5 @@
 
 @interface UIImage (Extension)
 + (UIImage *)imageWithName:(NSString *)name;
++(UIImage *)resizedImage:(NSString *)name;
 @end

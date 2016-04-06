@@ -7,7 +7,7 @@
 //
 
 #import "HMDiscoverViewController.h"
-
+#import "UIImage+Extension.h"
 @interface HMDiscoverViewController ()
 
 @end
@@ -17,11 +17,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UISearchBar *bar=[[UISearchBar alloc] init];
+    bar.frame=CGRectMake(0, 0, 300, 35);
+    bar.backgroundImage=[UIImage resizedImage:@"navigationbar_button_background"];
+    self.navigationItem.titleView=bar;
 }
 
 - (void)didReceiveMemoryWarning {
