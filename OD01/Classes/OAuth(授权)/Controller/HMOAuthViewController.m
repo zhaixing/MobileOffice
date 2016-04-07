@@ -11,6 +11,7 @@
 #import "HMNewfeatureViewController.h"
 #import "AFNetworking.h"
 #import "MBProgressHUD+MJ.h"
+#import "HMGlobal.h"
 @interface HMOAuthViewController () <UIWebViewDelegate>
 
 @end
@@ -25,7 +26,9 @@
     [self.view addSubview:webView];
     
     //2.加载登录界面
-    NSURL *url=[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=558495401&redirect_uri=http://www.baidu.com"];
+    NSString *urlStr = [NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=%@&redirect_uri=%@", HMAppKey, HMRedirectURI];
+    NSURL *url = [NSURL URLWithString:urlStr];
+//    NSURL *url=[NSURL URLWithString:@"https://api.weibo.com/oauth2/authorize?client_id=558495401&redirect_uri=http://www.baidu.com"];
     NSURLRequest *request=[NSURLRequest requestWithURL:url];
     [webView loadRequest:request];
     
@@ -81,7 +84,9 @@
      range.location == NSNotFound
      range.length == 0
      */
-    NSRange range = [url rangeOfString:@"http://www.baidu.com/?code="];
+    NSString *str = [NSString stringWithFormat:@"%@/?code=", HMRedirectURI];
+    NSRange range = [url rangeOfString:str];
+//    NSRange range = [url rangeOfString:@"http://www.baidu.com/?code="];
     if (range.location != NSNotFound) { // 是回调地址
         //    if (range.length != 0)
         
@@ -112,9 +117,9 @@
     
     // 2.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"client_id"] = @"558495401";
-    params[@"client_secret"] = @"862e3e02417afdf4bdbbb07751551b08";
-    params[@"redirect_uri"] = @"http://www.baidu.com";
+    params[@"client_id"] = HMAppKey;
+    params[@"client_secret"] = HMAppSecret;
+    params[@"redirect_uri"] = HMRedirectURI;
     params[@"grant_type"] = @"authorization_code";
     params[@"code"] = code;
     

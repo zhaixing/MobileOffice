@@ -20,6 +20,10 @@
 #define HMLog(...)
 #endif
 
+#define HMAppKey @"558495401"
+#define HMAppSecret @"862e3e02417afdf4bdbbb07751551b08"
+#define HMRedirectURI @"http://www.baidu.com"
+
 @interface HMGlobal : NSObject
 
 @end

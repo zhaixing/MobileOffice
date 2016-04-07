@@ -39,6 +39,7 @@
 		22D7B27F1CB67FEC00C5A79D /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22D7B2721CB67FEC00C5A79D /* MBProgressHUD.bundle */; };
 		22D7B2801CB67FEC00C5A79D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2741CB67FEC00C5A79D /* MBProgressHUD.m */; };
 		22D7B2871CB6803D00C5A79D /* HMOAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2841CB6803D00C5A79D /* HMOAuthViewController.m */; };
+		22D7B28A1CB6A46000C5A79D /* HMAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2891CB6A46000C5A79D /* HMAccount.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,8 @@
 		22D7B2741CB67FEC00C5A79D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		22D7B2831CB6803D00C5A79D /* HMOAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMOAuthViewController.h; sourceTree = "<group>"; };
 		22D7B2841CB6803D00C5A79D /* HMOAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMOAuthViewController.m; sourceTree = "<group>"; };
+		22D7B2881CB6A46000C5A79D /* HMAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAccount.h; sourceTree = "<group>"; };
+		22D7B2891CB6A46000C5A79D /* HMAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAccount.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +285,8 @@
 		22B3C9E41CB4A41000EA00FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22D7B2881CB6A46000C5A79D /* HMAccount.h */,
+				22D7B2891CB6A46000C5A79D /* HMAccount.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -589,6 +594,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B3C9F81CB4A41000EA00FA /* HMImageTool.m in Sources */,
+				22D7B28A1CB6A46000C5A79D /* HMAccount.m in Sources */,
 				22CF1A8C1CB52D6F00EFAC7A /* HMHomeTitleButton.m in Sources */,
 				22D7B2791CB67FEC00C5A79D /* AFSecurityPolicy.m in Sources */,
 				22D7B2761CB67FEC00C5A79D /* AFHTTPRequestOperationManager.m in Sources */,
