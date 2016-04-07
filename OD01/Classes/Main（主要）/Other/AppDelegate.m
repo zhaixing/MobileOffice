@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "HMTabBarViewController.h"
 #import "HMNewfeatureViewController.h"
-
+#import "HMOAuthViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -25,6 +25,10 @@
     self.window=[[UIWindow alloc] init];
     self.window.frame=[UIScreen mainScreen].bounds;
     
+    //存用户登录信息
+    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    NSString *filepath = [doc stringByAppendingPathComponent:@"account.plist"];
+    NSDictionary *account = [NSDictionary dictionaryWithContentsOfFile:filepath];
     
     //2.设置窗口的根控制器
     /**
@@ -41,8 +45,18 @@
     NSString *currentVersion=[NSBundle mainBundle].infoDictionary[versionKey];
     
     if ([currentVersion isEqualToString:lastVersion]) {//当前版本号==上次版本号：显示HMTabBarViewController
-        self.window.rootViewController=[[HMTabBarViewController alloc] init];
+        if (account) {
+            self.window.rootViewController=[[HMTabBarViewController alloc] init];
+        }else { // 没有登录过
+            self.window.rootViewController = [[HMOAuthViewController alloc] init];
+        }
+        
     }else{//当前版本号！=上次使用的版本：显示新特性
+        
+//        if (account) {
+//        }else { // 没有登录过
+//            self.window.rootViewController = [[HMOAuthViewController alloc] init];
+//        }
         self.window.rootViewController=[[HMNewfeatureViewController alloc] init];
         
         //存储这次使用的软件版本
@@ -59,8 +73,8 @@
 //    self.window.rootViewController=[[HMNewfeatureViewController alloc] init];
     
     
-    //添加自控制器
-    
+    //添加登录口
+//    self.window.rootViewController=[[HMOAuthViewController alloc] init];
     
     //3.显示窗口（成为主窗口）
     [self.window makeKeyAndVisible];

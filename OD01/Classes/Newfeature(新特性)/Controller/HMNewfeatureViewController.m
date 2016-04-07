@@ -11,7 +11,7 @@
 #import "UIImage+Extension.h"
 #import "UIView+Extension.h"
 #import "HMTabBarViewController.h"
-
+#import "HMOAuthViewController.h"
 #define HMNewfeatureImageCount 5
 
 @interface HMNewfeatureViewController ()
@@ -138,7 +138,11 @@
 //    [self presentViewController:vc animated:NO completion:nil];
     
     //3.window.rootViewController
-    HMTabBarViewController *vc=[[HMTabBarViewController alloc] init];
+    //立即体验后可以跳到主页面的代码，我想跳到登录页面
+//    HMTabBarViewController *vc=[[HMTabBarViewController alloc] init];
+//    UIWindow *window=[UIApplication sharedApplication].keyWindow;
+//    window.rootViewController=vc;
+    HMOAuthViewController *vc=[[HMOAuthViewController alloc] init];
     UIWindow *window=[UIApplication sharedApplication].keyWindow;
     window.rootViewController=vc;
 
