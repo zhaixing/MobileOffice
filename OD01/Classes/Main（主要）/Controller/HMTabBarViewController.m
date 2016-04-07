@@ -12,7 +12,9 @@
 #import "HMDiscoverViewController.h"
 #import "HMProfileTableViewController.h"
 #import "HMNavigationController.h"
-
+#import "HMTabBar.h"
+#import "UIImage+Extension.h"
+#import "HMGloBal.h"
 @interface HMTabBarViewController ()
 
 @end
@@ -34,6 +36,16 @@
     
     HMProfileTableViewController *me=[[HMProfileTableViewController alloc] init];
     [self addOneChildVc:me title:@"我" imageName:@"icon_setting_nor" selectedImageName:@"icon_setting_pre"];
+    
+    // 调整tabbar
+    HMTabBar *customTabBar = [[HMTabBar alloc] init];
+//    customTabBar.backgroundImage = [UIImage imageWithName:@"tabbar_background"];
+//    customTabBar.selectionIndicatorImage = [UIImage imageWithName:@"navigationbar_button_background"];
+    // 更换系统自带的tabbar
+    [self setValue:customTabBar forKeyPath:@"tabBar"];
+    
+    // 设置代理（监听控制器的切换， 控制器一旦切换了子控制器，就会调用代理的tabBarController:didSelectViewController:）
+    self.delegate = self;
 }
 /**
  *  添加一个子控制器
@@ -53,6 +65,7 @@
 //    childVc.view.backgroundColor=[UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
     //设置标题
     childVc.title=title;
+//    self.tabBar.tintColor=themeColor;
 //    childVc.tabBarItem.title=title;
 //    childVc.navigationItem.title=title;
     //设置图片

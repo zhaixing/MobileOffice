@@ -23,6 +23,7 @@
 		22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */; };
 		22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A881CB51D6E00EFAC7A /* HMSearchBar.m */; };
 		22CF1A8C1CB52D6F00EFAC7A /* HMHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A8B1CB52D6F00EFAC7A /* HMHomeTitleButton.m */; };
+		22CF1A8F1CB5374600EFAC7A /* HMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		22CF1A881CB51D6E00EFAC7A /* HMSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSearchBar.m; sourceTree = "<group>"; };
 		22CF1A8A1CB52D6F00EFAC7A /* HMHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomeTitleButton.h; sourceTree = "<group>"; };
 		22CF1A8B1CB52D6F00EFAC7A /* HMHomeTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomeTitleButton.m; sourceTree = "<group>"; };
+		22CF1A8D1CB5374600EFAC7A /* HMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBar.h; sourceTree = "<group>"; };
+		22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,8 @@
 		22B3C9E91CB4A41000EA00FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22CF1A8D1CB5374600EFAC7A /* HMTabBar.h */,
+				22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -393,6 +398,7 @@
 				22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
 				22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */,
+				22CF1A8F1CB5374600EFAC7A /* HMTabBar.m in Sources */,
 				22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */,
 				22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */,
 				22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */,
