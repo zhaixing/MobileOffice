@@ -131,13 +131,17 @@
     //显示主窗口
     //三种方法
     
-    //1.push
+    //1.push 浪费内存
     
-    //2.model
-    HMTabBarViewController *vc=[[HMTabBarViewController alloc] init];
-    [self presentViewController:vc animated:NO completion:nil];
+    //2.model 浪费内存
+//    HMTabBarViewController *vc=[[HMTabBarViewController alloc] init];
+//    [self presentViewController:vc animated:NO completion:nil];
     
     //3.window.rootViewController
+    HMTabBarViewController *vc=[[HMTabBarViewController alloc] init];
+    UIWindow *window=[UIApplication sharedApplication].keyWindow;
+    window.rootViewController=vc;
+
 }
 @end
 
