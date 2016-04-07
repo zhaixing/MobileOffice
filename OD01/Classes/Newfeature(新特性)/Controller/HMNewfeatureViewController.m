@@ -8,6 +8,11 @@
 
 #import "HMNewfeatureViewController.h"
 #import "HMGlobal.h"
+#import "UIImage+Extension.h"
+#import "UIView+Extension.h"
+
+#define HMNewfeatureImageCount 5
+
 @interface HMNewfeatureViewController ()
 
 @end
@@ -16,23 +21,70 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    self.view.backgroundColor=themeColor;
+    
+    //1.添加UIScrollView
+    [self setupScrollView];
+    //2.添加pageControl,地下的小圆点.图片自带圆点，所以这次不学了。
+//    [self setupPageControl];
+}
+/**
+ *  添加UIScrollView
+ */
+-(void)setupScrollView
+{
+    //1.添加UIScrollView
+    UIScrollView *scrollView=[[UIScrollView alloc] init];
+    scrollView.frame=self.view.bounds;//充满屏幕
+    [self.view addSubview:scrollView];//添加进去
+    
+    //2.添加图片
+    CGFloat imageW=scrollView.frame.size.width;
+    CGFloat imageH=scrollView.frame.size.height;
+    for (int i=0; i<HMNewfeatureImageCount; i++) {
+        //创建UIImageView
+        UIImageView *imageView=[[UIImageView alloc] init];
+        NSString *name=[NSString stringWithFormat:@"Guide0%d",i+1];
+//        if ([UIScreen mainScreen].bounds.size.height==568.0) {
+//            name=[name stringByAppendingString:@"-568h"];
+//        }
+        imageView.image=[UIImage imageNamed:name];
+        [scrollView addSubview:imageView];
+        
+//        NSLog(@"---%@",name);
+//        NSLog(@"---%@",imageView.image);
+        //设置frame
+        imageView.y=0;
+        imageView.width=imageW;
+        imageView.height=imageH;
+        imageView.x=i*imageW;
+        
+        //设置其他属性
+        scrollView.contentSize=CGSizeMake(HMNewfeatureImageCount*imageW, 0);//可以向右滑动了
+        scrollView.pagingEnabled=YES;//
+        scrollView.showsHorizontalScrollIndicator=NO;//去掉水平控制条
+        scrollView.backgroundColor=[UIColor colorWithRed:106/255.0 green:198/255.0 blue:78/255.0 alpha:1.0];//左边的弹性设置
+    }
+    
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
+/**
+ *  <#Description#>
+ */
+//-(void)setupPageControl
+//{
+//    //1.添加
+//    UIPageControl *pageControl=[[UIPageControl alloc] init];
+//    pageControl.numberOfPages=HMNewfeatureImageCount;
+//
+//    
+////    pageControl.centerXAnchor=self.view.width*0.5;
+////    pageControl.centerYAnchor=self.view.height-30;
+//    [self.view addSubview:pageControl];
+//    
+//    //2.设置原点的样式
+//    pageControl.currentPageIndicatorTintColor=themeColor;//当前页的圆点颜色
+//    pageControl.pageIndicatorTintColor=themeColor;//非当前页
+//    
+//}
 @end
