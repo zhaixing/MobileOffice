@@ -45,7 +45,7 @@
     [self setValue:customTabBar forKeyPath:@"tabBar"];
     
     // 设置代理（监听控制器的切换， 控制器一旦切换了子控制器，就会调用代理的tabBarController:didSelectViewController:）
-    self.delegate = self;
+//    self.delegate = self;
 }
 /**
  *  添加一个子控制器
@@ -66,6 +66,11 @@
     //设置标题
     childVc.title=title;
 //    self.tabBar.tintColor=themeColor;
+    
+    //设置选中的时候字体是主题色
+    NSMutableDictionary *selectedAttrs=[NSMutableDictionary dictionary];
+    selectedAttrs[UITextAttributeTextColor]=themeColor;
+    [childVc.tabBarItem setTitleTextAttributes:selectedAttrs forState:UIControlStateSelected];
 //    childVc.tabBarItem.title=title;
 //    childVc.navigationItem.title=title;
     //设置图片

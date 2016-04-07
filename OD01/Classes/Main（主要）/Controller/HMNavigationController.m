@@ -23,17 +23,7 @@
  */
 +(void)initialize
 {
-    //通过appearance对象能修改整个项目中所有UIBarButtonItem的样式
-    UIBarButtonItem *appearance=[UIBarButtonItem appearance];
-    //设置普通状态的文字属性
-    NSMutableDictionary *textAttrs=[NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName]=themeColor;
-    [appearance setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
-    
-    //设置不可用状态（disable）的文字属性
-    NSMutableDictionary *disableTextAttrs=[NSMutableDictionary dictionary];
-    disableTextAttrs[NSForegroundColorAttributeName]=[UIColor lightGrayColor];
-    [appearance setTitleTextAttributes:disableTextAttrs forState:UIControlStateNormal];
+
 }
 /**
  *  能拦截所有push进来的子控制器

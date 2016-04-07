@@ -16,11 +16,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    //通过appearance对象能修改整个项目中所有UIBarButtonItem的样式
+//    UIBarButtonItem *appearance=[UIBarButtonItem appearance];
+//    //设置普通状态的文字属性
+//    NSMutableDictionary *textAttrs=[NSMutableDictionary dictionary];
+//    textAttrs[NSForegroundColorAttributeName]=themeColor;
+//    [appearance setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
+//    
+//    //设置不可用状态（disable）的文字属性
+//    NSMutableDictionary *disableTextAttrs=[NSMutableDictionary dictionary];
+//    disableTextAttrs[NSForegroundColorAttributeName]=[UIColor lightGrayColor];
+//    [appearance setTitleTextAttributes:disableTextAttrs forState:UIControlStateNormal];
+
     
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"写消息" style:UIBarButtonItemStyleDone target:nil action:nil];
+    //右上角的写私信
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"写私信" forState:UIControlStateNormal];
+    [button setTitleColor:themeColor forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    button.sizeToFit;
+    
+     // 监听按钮点击
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    [button addTarget:self action:@selector(xieSiXin) forControlEvents:UIControlEventTouchUpInside];
+//     self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    
+//    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"写消息" style:UIBarButtonItemStyleDone target:nil action:nil];
     //让这个按钮不可用
-//    self.navigationItem.rightBarButtonItem.enabled=NO;
+//    self.navigationItem.rightBarButtonItem.enabled=YES;
     
+}
+-(void)xieSiXin
+{
+    HMLog(@"xieSiXin---");
 }
 -(void)viewWillAppear:(BOOL)animated
 {
