@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+@class HMTabBar;
+@protocol HMTabBarDelegate <NSObject>
+@optional
+-(void)tabBarDidClickedPlusButton:(HMTabBar *)tabBar;
+@end
 
 @interface HMTabBar : UITabBar
-
+@property (nonatomic,weak) id<HMTabBarDelegate> delegate;
 @end

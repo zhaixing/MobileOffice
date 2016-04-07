@@ -15,7 +15,8 @@
 #import "HMTabBar.h"
 #import "UIImage+Extension.h"
 #import "HMGloBal.h"
-@interface HMTabBarViewController ()
+#import "HMComposeViewController.h"
+@interface HMTabBarViewController () <HMTabBarDelegate>
 
 @end
 
@@ -24,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    /**
+     * 添加自控制器
+     */
     //添加子控制器
     HMHomeViewController *home=[[HMHomeViewController alloc] init];
     [self addOneChildVc:home title:@"首页" imageName:@"icon_home_nor" selectedImageName:@"icon_home_pre"];
@@ -37,15 +41,30 @@
     HMProfileTableViewController *me=[[HMProfileTableViewController alloc] init];
     [self addOneChildVc:me title:@"我" imageName:@"icon_setting_nor" selectedImageName:@"icon_setting_pre"];
     
+    
+    /**
+     * 自定义tabbar，中间的加号
+     */
     // 调整tabbar
     HMTabBar *customTabBar = [[HMTabBar alloc] init];
 //    customTabBar.backgroundImage = [UIImage imageWithName:@"tabbar_background"];
 //    customTabBar.selectionIndicatorImage = [UIImage imageWithName:@"navigationbar_button_background"];
     // 更换系统自带的tabbar
+    
+    /**
+     * 中间加号的点击事件
+     */
+    
+    customTabBar.delegate=self;
+    
+    
     [self setValue:customTabBar forKeyPath:@"tabBar"];
     
     // 设置代理（监听控制器的切换， 控制器一旦切换了子控制器，就会调用代理的tabBarController:didSelectViewController:）
 //    self.delegate = self;
+    
+    
+  
 }
 /**
  *  添加一个子控制器
@@ -83,5 +102,18 @@
     HMNavigationController *nav=[[HMNavigationController alloc] initWithRootViewController:childVc];
     [self addChildViewController:nav];
 
+}
+/**
+ *  代理方式，中间加号点击事件的实现
+ *
+ *  @return <#return value description#>
+ */
+#pragma mark -HMTabBarDelegate
+-(void)tabBarDidClickedPlusButton:(HMTabBar *)tabBar
+{
+    //弹出发消息控制器
+    HMComposeViewController *compose=[[HMComposeViewController alloc] init];
+    HMNavigationController *nav=[[HMNavigationController alloc] initWithRootViewController:compose];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 @end
