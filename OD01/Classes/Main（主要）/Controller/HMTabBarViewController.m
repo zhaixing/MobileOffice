@@ -55,7 +55,7 @@
      * 中间加号的点击事件
      */
     
-    customTabBar.delegate=self;
+    customTabBar.tabBarDelegate=self;
     
     
     [self setValue:customTabBar forKeyPath:@"tabBar"];

@@ -25,6 +25,7 @@
 		22CF1A8C1CB52D6F00EFAC7A /* HMHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A8B1CB52D6F00EFAC7A /* HMHomeTitleButton.m */; };
 		22CF1A8F1CB5374600EFAC7A /* HMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */; };
 		22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A951CB5F27300EFAC7A /* HMComposeViewController.m */; };
+		22CF1A9D1CB6005600EFAC7A /* HMNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A9C1CB6005600EFAC7A /* HMNewfeatureViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBar.m; sourceTree = "<group>"; };
 		22CF1A941CB5F27300EFAC7A /* HMComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMComposeViewController.h; sourceTree = "<group>"; };
 		22CF1A951CB5F27300EFAC7A /* HMComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMComposeViewController.m; sourceTree = "<group>"; };
+		22CF1A9B1CB6005600EFAC7A /* HMNewfeatureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewfeatureViewController.h; sourceTree = "<group>"; };
+		22CF1A9C1CB6005600EFAC7A /* HMNewfeatureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewfeatureViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,7 @@
 				22B3C9EA1CB4A41000EA00FA /* Message（消息） */,
 				22B3C9D11CB4A41000EA00FA /* Discover（发现） */,
 				22B3C9F01CB4A41000EA00FA /* Profile（我） */,
+				22CF1A971CB6002500EFAC7A /* Newfeature(新特性) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -359,6 +363,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		22CF1A971CB6002500EFAC7A /* Newfeature(新特性) */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1A981CB6002500EFAC7A /* Controller */,
+				22CF1A991CB6002500EFAC7A /* Model */,
+				22CF1A9A1CB6002500EFAC7A /* View */,
+			);
+			path = "Newfeature(新特性)";
+			sourceTree = "<group>";
+		};
+		22CF1A981CB6002500EFAC7A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				22CF1A9B1CB6005600EFAC7A /* HMNewfeatureViewController.h */,
+				22CF1A9C1CB6005600EFAC7A /* HMNewfeatureViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		22CF1A991CB6002500EFAC7A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		22CF1A9A1CB6002500EFAC7A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -444,6 +481,7 @@
 				22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */,
 				22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */,
 				22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */,
+				22CF1A9D1CB6005600EFAC7A /* HMNewfeatureViewController.m in Sources */,
 				22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */,
 				22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */,
 			);

@@ -31,8 +31,8 @@
 {
     NSLog(@"plusClick---");
     //通知代理
-    if([self.delegate respondsToSelector:@selector(tabBarDidClickedPlusButton:)]){
-        [self.delegate tabBarDidClickedPlusButton:self];
+    if([self.tabBarDelegate respondsToSelector:@selector(tabBarDidClickedPlusButton:)]){
+        [self.tabBarDelegate tabBarDidClickedPlusButton:self];
     }
 }
 -(void)layoutSubviews
