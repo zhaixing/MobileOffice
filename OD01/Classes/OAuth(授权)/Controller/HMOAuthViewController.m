@@ -12,6 +12,8 @@
 #import "AFNetworking.h"
 #import "MBProgressHUD+MJ.h"
 #import "HMGlobal.h"
+#import "HMAccount.h"
+#import "HMAccountTool.h"
 @interface HMOAuthViewController () <UIWebViewDelegate>
 
 @end
@@ -123,19 +125,25 @@
     params[@"grant_type"] = @"authorization_code";
     params[@"code"] = code;
     
+    HMLog(@"数据---%@",params[@"code"] );
+    
     // 3.发送POST请求
-    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *responseObject) {
+    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *accountDict) {
         // 隐藏HUD
         [MBProgressHUD hideHUD];
         
-        NSLog(@"请求成功--%@", responseObject);
+        NSLog(@"请求成功--%@", accountDict);
         
-        // 存储授权成功的帐号信息
-        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *filepath = [doc stringByAppendingPathComponent:@"account.plist"];
-        [responseObject writeToFile:filepath atomically:YES];
-        
-        
+        //字典转换成模型
+        HMAccount *account=[HMAccount accountWithDict:accountDict];
+        // 存储授权成功的帐号信息-->存储账号模型
+//        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//        NSString *filepath = [doc stringByAppendingPathComponent:@"account.plist"];
+//        [responseObject writeToFile:filepath atomically:YES];
+        NSLog(@"请求成功账号模型---%@", account);
+        //存储账号模型
+        [HMAccountTool save:account];
+        NSLog(@"保存账号模型---%@", account);
         
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         window.rootViewController = [[HMTabBarViewController alloc] init];

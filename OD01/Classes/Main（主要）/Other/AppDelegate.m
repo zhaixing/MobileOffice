@@ -10,6 +10,9 @@
 #import "HMTabBarViewController.h"
 #import "HMNewfeatureViewController.h"
 #import "HMOAuthViewController.h"
+#import "HMAccount.h"
+#import "HMAccountTool.h"
+
 @interface AppDelegate ()
 
 @end
@@ -25,11 +28,15 @@
     self.window=[[UIWindow alloc] init];
     self.window.frame=[UIScreen mainScreen].bounds;
     
-    //存用户登录信息
-    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    NSString *filepath = [doc stringByAppendingPathComponent:@"account.plist"];
-    NSDictionary *account = [NSDictionary dictionaryWithContentsOfFile:filepath];
+
+    //3.显示窗口（成为主窗口）
+    [self.window makeKeyAndVisible];
     
+    //存用户登录信息
+//    NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+//    NSString *filepath = [doc stringByAppendingPathComponent:@"account.plist"];
+//    NSDictionary *account = [NSDictionary dictionaryWithContentsOfFile:filepath];
+    HMAccount *account = [HMAccountTool account];
     //2.设置窗口的根控制器
     /**
      *  aaaaaaaaaaaaaaaaa
@@ -61,7 +68,7 @@
         
         //存储这次使用的软件版本
         [defaults setObject:currentVersion forKey:versionKey];
-        [defaults synchronize  ];
+        [defaults synchronize];
     }
     
 //    self.window.rootViewController=[[HMTabBarViewController alloc] init];
@@ -76,8 +83,7 @@
     //添加登录口
 //    self.window.rootViewController=[[HMOAuthViewController alloc] init];
     
-    //3.显示窗口（成为主窗口）
-    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
