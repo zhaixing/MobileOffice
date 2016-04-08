@@ -12,6 +12,8 @@
 #import "HMOAuthViewController.h"
 #import "HMAccount.h"
 #import "HMAccountTool.h"
+#import "SDWebImageManager.h"
+#import "SDImageCache.h"
 
 @interface AppDelegate ()
 
@@ -109,4 +111,12 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+    // 赶紧清除所有的内存缓存
+    [[SDImageCache sharedImageCache] clearMemory];
+    
+    // 赶紧停止正在进行的图片下载操作
+    [[SDWebImageManager sharedManager] cancelAll];
+}
 @end

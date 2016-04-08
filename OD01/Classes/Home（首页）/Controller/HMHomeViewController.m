@@ -15,13 +15,13 @@
 #import "HMAccountTool.h"
 #import "HMAccount.h"
 #import "UIImageView+WebCache.h"
-
-
+#import "HMStatus.h"
+#import "HMUser.h"
 @interface HMHomeViewController ()
 /**
  *  微博数组，存放着所有微博数据
  */
-@property (nonatomic,strong) NSArray *statuses;
+@property (nonatomic,strong) NSMutableArray *statuses;
 @end
 
 @implementation HMHomeViewController
@@ -46,13 +46,22 @@
     // 2.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [HMAccountTool account].access_token;
-    NSLog(@"参数token---%@",params[@"access_token"]);
+//    NSLog(@"参数token---%@",params[@"access_token"]);
     // 3.发送GET请求
     [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
         HMLog(@"请求成功--%@", resultDict);
         
+        
 //        // 赋值数组数据
-        self.statuses = resultDict[@"statuses"];
+//        self.statuses = resultDict[@"statuses"];
+        
+        self.statuses=[NSMutableArray array];
+        //微博字典--数组
+        NSArray *statusDictArray=resultDict[@"statuses"];
+        for (NSDictionary *statusDict in statusDictArray) {
+            HMStatus *status=[HMStatus statusWithDict:statusDict];
+            [self.statuses addObject:status];
+        }
         
         // 重新刷新表格,因为异步刷新数据，需要重新刷新表格
         [self.tableView reloadData];
@@ -149,15 +158,15 @@
     //行里面显示什么数据
 //    cell.textLabel.text=[NSString stringWithFormat:@"首页测试数据----%ld",(long)indexPath.row];
     // 取出这行对应的微博字典数据
-    NSDictionary *statusDict = self.statuses[indexPath.row];
-    cell.textLabel.text = statusDict[@"text"];
+    HMStatus *status = self.statuses[indexPath.row];
+    cell.textLabel.text = status.text;
     
-    // 取出用户字典数据
-    NSDictionary *userDict = statusDict[@"user"];
-    cell.detailTextLabel.text = userDict[@"name"];
+    // 取出用户
+    HMUser *user = status.user;
+    cell.detailTextLabel.text = user.name;
     
     // 下载头像
-    NSString *imageUrlStr = userDict[@"profile_image_url"];
+    NSString *imageUrlStr = user.profile_image_url;
     [cell.imageView setImageWithURL:[NSURL URLWithString:imageUrlStr] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
     return cell;
 }
