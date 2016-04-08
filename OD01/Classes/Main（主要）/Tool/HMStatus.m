@@ -7,23 +7,12 @@
 //
 
 #import "HMStatus.h"
-#import "HMUser.h"
+#import "MJExtension.h"
+#import "HMPhoto.h"
 
 @implementation HMStatus
-
-+ (instancetype)statusWithDict:(NSDictionary *)dict
+-(NSDictionary *)objectClassInArray
 {
-    HMStatus *status = [[self alloc] init];
-    
-    status.text = dict[@"text"];
-    
-    status.user = [HMUser userWithDict:dict[@"user"]];
-    
-    NSDictionary *retweetedDict = dict[@"retweeted_status"];
-    if (retweetedDict) {
-        status.retweeted_status = [HMStatus statusWithDict:retweetedDict];
-    }
-    
-    return status;
+    return @{@"pic_ruls":[HMPhoto class]};
 }
 @end

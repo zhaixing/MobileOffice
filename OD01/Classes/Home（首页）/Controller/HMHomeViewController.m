@@ -17,11 +17,13 @@
 #import "UIImageView+WebCache.h"
 #import "HMStatus.h"
 #import "HMUser.h"
+#import "MJExtension.h"
+
 @interface HMHomeViewController ()
 /**
  *  微博数组，存放着所有微博数据
  */
-@property (nonatomic,strong) NSMutableArray *statuses;
+@property (nonatomic,strong) NSArray *statuses;
 @end
 
 @implementation HMHomeViewController
@@ -55,13 +57,18 @@
 //        // 赋值数组数据
 //        self.statuses = resultDict[@"statuses"];
         
-        self.statuses=[NSMutableArray array];
-        //微博字典--数组
+//        self.statuses=[NSMutableArray array];
+        
+        //微博字典数组
         NSArray *statusDictArray=resultDict[@"statuses"];
-        for (NSDictionary *statusDict in statusDictArray) {
-            HMStatus *status=[HMStatus statusWithDict:statusDict];
-            [self.statuses addObject:status];
-        }
+        
+        //微博字典数组--->微博模型数组
+        self.statuses=[HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+        
+//        for (NSDictionary *statusDict in statusDictArray) {
+//            HMStatus *status=[HMStatus statusWithDict:statusDict];
+//            [self.statuses addObject:status];
+//        }
         
         // 重新刷新表格,因为异步刷新数据，需要重新刷新表格
         [self.tableView reloadData];

@@ -10,11 +10,4 @@
 
 @implementation HMUser
 
-+ (instancetype)userWithDict:(NSDictionary *)dict
-{
-    HMUser *user = [[self alloc] init];
-    user.name = dict[@"name"];
-    user.profile_image_url = dict[@"profile_image_url"];
-    return user;
-}
 @end
