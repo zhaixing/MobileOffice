@@ -9,8 +9,9 @@
 #import "HMComposeViewController.h"
 #import "HMGlobal.h"
 #import "HMTextView.h"
+#import "HMComposeToolBar.h"
 
-@interface HMComposeViewController ()
+@interface HMComposeViewController () <HMComposeToolbarDelegate,UITextViewDelegate>
 @property (nonatomic, weak) HMTextView *textView;
 @end
 
@@ -25,6 +26,23 @@
     //添加输入控件UITextView
     [self setupTextView];
     
+    //添加工具条
+    [self setupToolBar];
+    
+}
+
+/**
+ *  添加工具条 实现
+ */
+-(void)setupToolBar
+{
+    //1.创建
+    HMComposeToolbar *toolbar=[[HMComposeToolbar alloc] init];
+    toolbar.bounds=CGRectMake(0, 0, self.view.frame.size.width, 34);
+    toolbar.delegate=self;
+    //2.显示
+    self.textView.inputAccessoryView=toolbar;
+    
 }
 
 /**
@@ -34,7 +52,9 @@
 {
     //1.创建控件
     HMTextView *textView=[[HMTextView alloc] init];
+    textView.alwaysBounceVertical=YES;//垂直方向上的弹簧效果
     textView.frame=self.view.bounds;
+    textView.delegate=self;//遵守代理
     [self.view addSubview:textView];
     self.textView=textView;
     
@@ -43,6 +63,14 @@
     //3.设置字体
     textView.font=[UIFont systemFontOfSize:15];
 }
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    //成为第一响应者（叫出键盘）
+    [self.textView becomeFirstResponder];
+}
+
 /**
  *  添加导航栏按钮的实现
  */
@@ -70,4 +98,61 @@
 {
     HMLog(@"send---");
 }
+
+
+#pragma mark - UITextViewDelegate
+/**
+ *  当用户开始拖拽scrollView时调用
+ */
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.view endEditing:YES];
+}
+
+#pragma mark - HMComposeToolbarDelegate
+/**
+ *  监听toolbar内部按钮的点击
+ */
+- (void)composeTool:(HMComposeToolbar *)toolbar didClickedButton:(HMComposeToolbarButtonType)buttonType
+{
+    switch (buttonType) {
+        case HMComposeToolBarButtonTypePicture://相册
+            HMLog(@"打开相册");
+            break;
+            
+        case HMComposeToolBarButtonTypeCamera://照相机
+            HMLog(@"打开照相机");
+            break;
+            
+        case HMComposeToolBarButtonTypeMention://提到@
+            HMLog(@"打开提到@");
+            break;
+        case HMComposeToolBarButtonTypeAudio://语音
+            NSLog(@"语音");
+            break;
+        case HMComposeToolBarButtonTypeCamaro://视频
+            NSLog(@"视频");
+            break;
+        case HMComposeToolBarButtonTypeEmotion://表情:
+            NSLog(@"表情");
+            break;
+        default:
+            break;
+    }
+}
+//    UIImage *image = [button imageForState:UIControlStateNormal];
+//    if (image == [UIImage imageWithName:@"compose_camerabutton_background"]) {
+//        HMLog(@"打开照相机");
+//    } else if (image == [UIImage imageWithName:@"compose_toolbar_picture"]) {
+//        HMLog(@"打开相册");
+//    }
+
+//    switch (button.tag) {
+//        case 3:
+//            <#statements#>
+//            break;
+//
+//        default:
+//            break;
+//    }
 @end
