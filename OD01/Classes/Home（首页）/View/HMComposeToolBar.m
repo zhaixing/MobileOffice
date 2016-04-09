@@ -19,7 +19,7 @@
         
         // 添加所有的子控件
         [self addButtonWithIcon:@"anon_chat_bottom_photo_nor" highIcon:@"anon_chat_bottom_photo_press" tag:HMComposeToolBarButtonTypePicture];
-        [self addButtonWithIcon:@"anon_chat_bottom_Camera_nor" highIcon:@"anon_chat_bottom_Camera_press" tag:HMComposeToolBarButtonTypeCamaro];
+        [self addButtonWithIcon:@"anon_chat_bottom_Camera_nor" highIcon:@"anon_chat_bottom_Camera_press" tag:HMComposeToolBarButtonTypeCamera];
         [self addButtonWithIcon:@"compose_mentionbutton_background_os7" highIcon:@"compose_mentionbutton_background_highlighted_os7" tag:HMComposeToolBarButtonTypeMention];
         [self addButtonWithIcon:@"anon_chat_bottom_PTT_nor" highIcon:@"anon_chat_bottom_PTT_press" tag:HMComposeToolBarButtonTypeAudio];
         [self addButtonWithIcon:@"chat_bottom_PTV_nor" highIcon:@"chat_bottom_PTV_press" tag:HMComposeToolBarButtonTypeCamaro];
