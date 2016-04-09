@@ -10,13 +10,17 @@
 #import "HMGlobal.h"
 #import "HMTextView.h"
 #import "HMComposeToolBar.h"
+#import "HMComposePhotosView.h"
+#import "UIView+Extension.h"
 
-@interface HMComposeViewController () <HMComposeToolbarDelegate,UITextViewDelegate>
+@interface HMComposeViewController () <HMComposeToolbarDelegate,UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, weak) HMTextView *textView;
+@property (nonatomic,weak) HMComposeToolbar *toolbar;
+@property (nonatomic,weak) HMComposePhotosView *photosView;
 @end
 
 @implementation HMComposeViewController
-
+#pragma mark - 初始化方法
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -29,19 +33,37 @@
     //添加工具条
     [self setupToolBar];
     
+    //添加显示图片的相册控件
+    [self setupPhotosView];
 }
 
 /**
- *  添加工具条 实现
+ *  添加显示图片的相册控件
+ */
+-(void)setupPhotosView
+{
+    HMComposePhotosView *photosView=[[HMComposePhotosView alloc] init];
+    photosView.width = self.textView.width;
+    photosView.height = self.textView.height;
+    photosView.y = 70;
+    [self.textView addSubview:photosView];
+    self.photosView = photosView;
+}
+
+/**
+ *  添加工具条
  */
 -(void)setupToolBar
 {
-    //1.创建
-    HMComposeToolbar *toolbar=[[HMComposeToolbar alloc] init];
-    toolbar.bounds=CGRectMake(0, 0, self.view.frame.size.width, 34);
-    toolbar.delegate=self;
+    HMComposeToolbar *toolbar = [[HMComposeToolbar alloc] init];
+    toolbar.width = self.view.width;
+    toolbar.delegate = self;
+    toolbar.height = 34;
+    self.toolbar = toolbar;
     //2.显示
-    self.textView.inputAccessoryView=toolbar;
+    toolbar.y = self.view.height - toolbar.height;
+    [self.view addSubview:toolbar];
+    
     
 }
 
@@ -62,8 +84,17 @@
     textView.placehoder=@"分享到同事圈...";
     //3.设置字体
     textView.font=[UIFont systemFontOfSize:15];
+    
+    // 4.监听键盘
+    // 键盘的frame(位置)即将改变, 就会发出UIKeyboardWillChangeFrameNotification
+    // 键盘即将弹出, 就会发出UIKeyboardWillShowNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    // 键盘即将隐藏, 就会发出UIKeyboardWillHideNotification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
 }
-
+/**
+ *  view显示完毕的时候再弹出键盘，避免显示控制器view 的时候回卡住
+ */
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -83,6 +114,8 @@
     self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(send)];
     self.navigationItem.rightBarButtonItem.enabled=NO;
 }
+
+#pragma mark - 私有方法
 /**
  *  取消事件实现
  */
@@ -99,6 +132,35 @@
     HMLog(@"send---");
 }
 
+#pragma mark - 键盘处理
+/**
+ *  键盘即将隐藏
+ */
+-(void)keyboardWillHide:(NSNotification *)note
+{
+    //1.键盘弹出需要的时间
+    CGFloat duration=[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    //2.动画
+    [UIView animateWithDuration:duration animations:^{
+        self.toolbar.transform=CGAffineTransformIdentity;
+    }];
+}
+/**
+ *  键盘即将弹出
+ */
+- (void)keyboardWillShow:(NSNotification *)note
+{
+    // 1.键盘弹出需要的时间
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    // 2.动画
+    [UIView animateWithDuration:duration animations:^{
+        // 取出键盘高度
+        CGRect keyboardF = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        CGFloat keyboardH = keyboardF.size.height;
+        self.toolbar.transform = CGAffineTransformMakeTranslation(0, - keyboardH);
+    }];
+}
 
 #pragma mark - UITextViewDelegate
 /**
@@ -117,42 +179,77 @@
 {
     switch (buttonType) {
         case HMComposeToolBarButtonTypePicture://相册
-            HMLog(@"打开相册");
+//            HMLog(@"打开相册");
+            [self openAlbum];
             break;
             
         case HMComposeToolBarButtonTypeCamera://照相机
             HMLog(@"打开照相机");
+            [self openCamera];
             break;
             
         case HMComposeToolBarButtonTypeMention://提到@
             HMLog(@"打开提到@");
             break;
         case HMComposeToolBarButtonTypeAudio://语音
-            NSLog(@"语音");
+            HMLog(@"打开语音");
             break;
         case HMComposeToolBarButtonTypeCamaro://视频
-            NSLog(@"视频");
+            HMLog(@"打开视频");
+//            [self openVideo];
             break;
         case HMComposeToolBarButtonTypeEmotion://表情:
-            NSLog(@"表情");
+            HMLog(@"打开表情");
+            [self openEmotion];
             break;
         default:
             break;
     }
 }
-//    UIImage *image = [button imageForState:UIControlStateNormal];
-//    if (image == [UIImage imageWithName:@"compose_camerabutton_background"]) {
-//        HMLog(@"打开照相机");
-//    } else if (image == [UIImage imageWithName:@"compose_toolbar_picture"]) {
-//        HMLog(@"打开相册");
-//    }
 
-//    switch (button.tag) {
-//        case 3:
-//            <#statements#>
-//            break;
-//
-//        default:
-//            break;
-//    }
+/**
+ *  打开照相机
+ */
+-(void)openCamera
+{
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) return;
+    
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType = UIImagePickerControllerSourceTypeCamera;
+    ipc.delegate = self;
+    [self presentViewController:ipc animated:YES completion:nil];
+}
+
+/**
+ *  打开相册
+ */
+- (void)openAlbum
+{
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) return;
+    
+    UIImagePickerController *ipc = [[UIImagePickerController alloc] init];
+    ipc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    ipc.delegate = self;
+    [self presentViewController:ipc animated:YES completion:nil];
+}
+
+/**
+ *  打开表情
+ */
+- (void)openEmotion
+{
+    HMLog(@"添加表情");
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    // 1.取出选中的图片
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    // 2.添加图片到相册中
+    [self.photosView addImage:image];
+}
 @end

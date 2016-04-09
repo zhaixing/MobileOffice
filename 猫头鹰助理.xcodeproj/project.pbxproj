@@ -74,6 +74,7 @@
 		22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3481CB8A44100C5A79D /* HMLoadMoreFooter.m */; };
 		22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B34B1CB8D7E000C5A79D /* HMTextView.m */; };
 		22D7B34F1CB8FB8200C5A79D /* HMComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B34E1CB8FB8200C5A79D /* HMComposeToolBar.m */; };
+		22D7B3521CB93BF000C5A79D /* HMComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3511CB93BF000C5A79D /* HMComposePhotosView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -211,6 +212,8 @@
 		22D7B34B1CB8D7E000C5A79D /* HMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMTextView.m; path = "OD01/Classes/Home（首页）/View/HMTextView.m"; sourceTree = SOURCE_ROOT; };
 		22D7B34D1CB8FB8200C5A79D /* HMComposeToolBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMComposeToolBar.h; path = "OD01/Classes/Home（首页）/View/HMComposeToolBar.h"; sourceTree = SOURCE_ROOT; };
 		22D7B34E1CB8FB8200C5A79D /* HMComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMComposeToolBar.m; path = "OD01/Classes/Home（首页）/View/HMComposeToolBar.m"; sourceTree = SOURCE_ROOT; };
+		22D7B3501CB93BF000C5A79D /* HMComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMComposePhotosView.h; path = "OD01/Classes/Home（首页）/View/HMComposePhotosView.h"; sourceTree = SOURCE_ROOT; };
+		22D7B3511CB93BF000C5A79D /* HMComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMComposePhotosView.m; path = "OD01/Classes/Home（首页）/View/HMComposePhotosView.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -522,6 +525,8 @@
 				22D7B34B1CB8D7E000C5A79D /* HMTextView.m */,
 				22D7B34D1CB8FB8200C5A79D /* HMComposeToolBar.h */,
 				22D7B34E1CB8FB8200C5A79D /* HMComposeToolBar.m */,
+				22D7B3501CB93BF000C5A79D /* HMComposePhotosView.h */,
+				22D7B3511CB93BF000C5A79D /* HMComposePhotosView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -852,6 +857,7 @@
 				22D7B2B11CB7601D00C5A79D /* MKAnnotationView+WebCache.m in Sources */,
 				22D7B2781CB67FEC00C5A79D /* AFNetworkReachabilityManager.m in Sources */,
 				22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */,
+				22D7B3521CB93BF000C5A79D /* HMComposePhotosView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
