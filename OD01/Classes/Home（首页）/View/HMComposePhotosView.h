@@ -16,4 +16,6 @@
  *  @param image 新添加的图片
  */
 - (void)addImage:(UIImage *)image;
+
+- (NSArray *)images;
 @end
