@@ -6,6 +6,15 @@
 //  Copyright © 2016年 sam. All rights reserved.
 //
 
+/**
+ 44 : cell的默认高度、导航栏的可见高度
+ 49 : UITabBar的默认高度
+ 64 : 从窗口顶部到导航栏底部
+ 20 : 状态栏高度
+ 320 : 竖屏情况下的屏幕宽度
+ 480 : 竖屏情况下的3.5 inch 的屏幕高度
+ 568 : 竖屏情况下的4.0 inch 的屏幕高度
+ */
 #import "HMHomeViewController.h"
 #import "UIView+Extension.h"
 #import "HMGlobal.h"
@@ -61,11 +70,19 @@
     
     // 2.监听状态
     [refreshControl addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:UIControlEventValueChanged];
+    
+    //出来就有数据这样写
+    //让刷新控件自动进入刷新状态
+    [refreshControl beginRefreshing];
+    //加载数据
+    [self refreshControlStateChange:refreshControl];
+//    模拟网速慢，跟上面一行冲突
+    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //        [self refreshControlStateChange:refreshControl];
+    //    });
 }
 /**
  *  当下拉刷新控件进入刷新状态（转圈）的时候会自动调用
- *
- *  @return <#return value description#>
  */
 - (void)refreshControlStateChange:(UIRefreshControl *) refeshContrl
 {
@@ -99,12 +116,80 @@
          // 让刷新控件停止刷新（恢复默认的状态）
          [refeshContrl endRefreshing];
          
-         HMLog(@"新数据的长度-----%d", newStatuses.count);
+         //提示用户最新微博数量
+         [self showNewStatusesCount:newStatuses.count];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         HMLog(@"请求失败--%@",error);
         [refeshContrl endRefreshing];
     }];
 }
+/**
+ *  提示用户最新的微博数量
+ *
+ *  @param count 最新的微博数量
+ */
+-(void)showNewStatusesCount:(int)count
+{
+    //1.创建一个label
+    UILabel *label=[[UILabel alloc] init];
+    //2.显示文字
+    if(count){
+        label.text=[NSString stringWithFormat:@"%d条动态",count];
+    }else{
+        label.text=@"没动态，哦啦啦！";
+    }
+    
+    //3.设置背景
+    label.backgroundColor=[UIColor colorWithPatternImage:[UIImage imageNamed:@"timeline_new_status_background"]];
+    label.textAlignment=NSTextAlignmentCenter;
+    label.textColor=[UIColor whiteColor];
+    
+    //4.设置frame
+    label.width=self.view.width;
+    label.height=35;
+    label.x=0;
+//    label.y=self.navigationController.navigationBar.height -label.height;
+    label.y=64 -label.height;
+    
+    //5.添加到导航控制器的view
+    [self.navigationController.view insertSubview:label
+                                          belowSubview:self.navigationController.navigationBar];
+    
+    //6.动画
+    
+    CGFloat duration=1.0;
+    label.alpha=0.0;
+    [UIView animateWithDuration:duration animations:^{
+        //往下移动一个label的高度
+        label.transform=CGAffineTransformMakeTranslation(0, label.height);
+        label.alpha=0.95;
+    }completion:^(BOOL finished) {
+        //向下移动完毕
+        //延迟delay秒后，在执行动画
+        CGFloat delay=1.0;
+        
+        [UIView animateWithDuration:duration
+                              delay:delay
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+                             //恢复到原来的位置
+                             label.transform=CGAffineTransformIdentity;
+                             label.alpha=0.0;
+                         } completion:^(BOOL finished) {
+                             //删除控件
+                             [label removeFromSuperview];
+                         }];
+    }];
+    
+}
+/**
+ UIViewAnimationOptionCurveEaseInOut            = 0 << 16, // 开始：由慢到快，结束：由快到慢
+ UIViewAnimationOptionCurveEaseIn               = 1 << 16, // 由慢到块
+ UIViewAnimationOptionCurveEaseOut              = 2 << 16, // 由快到慢
+ UIViewAnimationOptionCurveLinear               = 3 << 16, // 线性，匀速
+ */
+
+
 //
 ///**
 // *  加载最新的微博数据
