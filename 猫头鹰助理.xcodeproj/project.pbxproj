@@ -72,6 +72,7 @@
 		22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3321CB7A50F00C5A79D /* NSString+MJExtension.m */; };
 		22D7B3461CB89F3900C5A79D /* HMLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D7B3451CB89F3900C5A79D /* HMLoadMoreFooter.xib */; };
 		22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3481CB8A44100C5A79D /* HMLoadMoreFooter.m */; };
+		22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B34B1CB8D7E000C5A79D /* HMTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -205,6 +206,8 @@
 		22D7B3451CB89F3900C5A79D /* HMLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMLoadMoreFooter.xib; sourceTree = "<group>"; };
 		22D7B3471CB8A44100C5A79D /* HMLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoadMoreFooter.h; sourceTree = "<group>"; };
 		22D7B3481CB8A44100C5A79D /* HMLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoadMoreFooter.m; sourceTree = "<group>"; };
+		22D7B34A1CB8D7E000C5A79D /* HMTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMTextView.h; path = "OD01/Classes/Home（首页）/View/HMTextView.h"; sourceTree = SOURCE_ROOT; };
+		22D7B34B1CB8D7E000C5A79D /* HMTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMTextView.m; path = "OD01/Classes/Home（首页）/View/HMTextView.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,6 +515,8 @@
 		22CF1A931CB5F1E200EFAC7A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22D7B34A1CB8D7E000C5A79D /* HMTextView.h */,
+				22D7B34B1CB8D7E000C5A79D /* HMTextView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -801,6 +806,7 @@
 				22D7B2BE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m in Sources */,
 				22D7B2B51CB7601D00C5A79D /* SDWebImageDecoder.m in Sources */,
 				22D7B2B91CB7601D00C5A79D /* SDWebImagePrefetcher.m in Sources */,
+				22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */,
 				22D7B3391CB7A50F00C5A79D /* NSObject+MJCoding.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
 				22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */,
