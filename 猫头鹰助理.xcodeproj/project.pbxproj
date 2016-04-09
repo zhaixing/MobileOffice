@@ -70,6 +70,8 @@
 		22D7B33A1CB7A50F00C5A79D /* NSObject+MJKeyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B32E1CB7A50F00C5A79D /* NSObject+MJKeyValue.m */; };
 		22D7B33B1CB7A50F00C5A79D /* NSObject+MJProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3301CB7A50F00C5A79D /* NSObject+MJProperty.m */; };
 		22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3321CB7A50F00C5A79D /* NSString+MJExtension.m */; };
+		22D7B3461CB89F3900C5A79D /* HMLoadMoreFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D7B3451CB89F3900C5A79D /* HMLoadMoreFooter.xib */; };
+		22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3481CB8A44100C5A79D /* HMLoadMoreFooter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -200,6 +202,9 @@
 		22D7B3301CB7A50F00C5A79D /* NSObject+MJProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MJProperty.m"; sourceTree = "<group>"; };
 		22D7B3311CB7A50F00C5A79D /* NSString+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MJExtension.h"; sourceTree = "<group>"; };
 		22D7B3321CB7A50F00C5A79D /* NSString+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MJExtension.m"; sourceTree = "<group>"; };
+		22D7B3451CB89F3900C5A79D /* HMLoadMoreFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMLoadMoreFooter.xib; sourceTree = "<group>"; };
+		22D7B3471CB8A44100C5A79D /* HMLoadMoreFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLoadMoreFooter.h; sourceTree = "<group>"; };
+		22D7B3481CB8A44100C5A79D /* HMLoadMoreFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLoadMoreFooter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -334,6 +339,9 @@
 			children = (
 				22CF1A8A1CB52D6F00EFAC7A /* HMHomeTitleButton.h */,
 				22CF1A8B1CB52D6F00EFAC7A /* HMHomeTitleButton.m */,
+				22D7B3451CB89F3900C5A79D /* HMLoadMoreFooter.xib */,
+				22D7B3471CB8A44100C5A79D /* HMLoadMoreFooter.h */,
+				22D7B3481CB8A44100C5A79D /* HMLoadMoreFooter.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -757,6 +765,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D7B3461CB89F3900C5A79D /* HMLoadMoreFooter.xib in Resources */,
 				22D7B2C11CB7614200C5A79D /* Assets.xcassets in Resources */,
 				22D7B27F1CB67FEC00C5A79D /* MBProgressHUD.bundle in Resources */,
 			);
@@ -819,6 +828,7 @@
 				22D7B33A1CB7A50F00C5A79D /* NSObject+MJKeyValue.m in Sources */,
 				22D7B2B21CB7601D00C5A79D /* NSData+ImageContentType.m in Sources */,
 				22D7B27C1CB67FEC00C5A79D /* AFURLResponseSerialization.m in Sources */,
+				22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */,
 				22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */,
 				22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */,
 				22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */,

@@ -27,12 +27,13 @@
 #import "HMStatus.h"
 #import "HMUser.h"
 #import "MJExtension.h"
-
+#import "HMLoadMoreFooter.h"
 @interface HMHomeViewController ()
 /**
  *  微博数组，存放着所有微博数据
  */
 @property (nonatomic,strong) NSMutableArray *statuses;
+@property (nonatomic,weak) HMLoadMoreFooter *footer;
 @end
 
 @implementation HMHomeViewController
@@ -58,9 +59,46 @@
 }
 
 /**
+ *  设置导航栏的内容
+ */
+- (void)setupNavBar
+{
+    //设置导航栏按钮
+    //    UIButton *leftButton=[[UIButton alloc] init];
+    //    [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRange"] forState:UIControlStateNormal];
+    //    [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRangeSelected"] forState:UIControlStateHighlighted];
+    //    //设置按钮的尺寸为图片的尺寸
+    //    leftButton.size=leftButton.currentBackgroundImage.size;
+    //
+    //    [leftButton addTarget:self action:@selector(friendSearch) forControlEvents:UIControlEventTouchUpInside];
+    //
+    //    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
+    //设置导航栏按钮
+    self.navigationItem.leftBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" highImageName:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendSearch)];
+    self.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_pop" highImageName:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
+    
+    //设置导航栏中间的标题按钮
+    UIButton *titleButton=[[UIButton  alloc] init];
+    //设置文字
+    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    titleButton.titleLabel.font=HMNavigationTitleFont;
+    //设置图标
+    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
+    //高亮的时候不需要调整内部的图片为灰色
+    //    titleButton.adjustsImageWhenHighlighted=NO;
+    //设置背景
+    [titleButton setBackgroundImage:[UIImage resizedImage:@"navigationbar_filter_background_highlighted"]forState:UIControlStateHighlighted];
+    titleButton.width=65;
+    titleButton.height=35;
+    [titleButton addTarget:self action:@selector(titleClicked:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.titleView=titleButton;
+}
+
+
+
+/**
  *  集成刷新数据 实现
- *
- *  @return <#return value description#>
  */
 -(void)setupRefresh
 {
@@ -80,21 +118,36 @@
     //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
     //        [self refreshControlStateChange:refreshControl];
     //    });
+    
+    
+    //5.添加上拉加载更多控件
+    HMLoadMoreFooter *footer=[HMLoadMoreFooter footer];
+    self.tableView.tableFooterView=footer;
+    self.footer=footer;
 }
 /**
  *  当下拉刷新控件进入刷新状态（转圈）的时候会自动调用
  */
-- (void)refreshControlStateChange:(UIRefreshControl *) refeshContrl
+- (void)refreshControlStateChange:(UIRefreshControl *) refreshContrl
 {
-    //1.获得请求管理者
-    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
+    [self loadNewStatuses:refreshContrl];
+}
+#pragma mark - 加载微博数据
+/**
+ *  加载最新的微博数据
+ */
+-(void)loadNewStatuses:(UIRefreshControl *)refreshControl
+{
+    // 1.获得请求管理者
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
     
-    //2.封装请求参数
-    NSMutableDictionary *params=[NSMutableDictionary dictionary];
-    params[@"access_token"]=[HMAccountTool account].access_token;
-    HMStatus *firstSatus=[self.statuses firstObject];
-    if (firstSatus) {
-        params[@"since_id"]=firstSatus.idstr;
+    // 2.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [HMAccountTool account].access_token;
+    HMStatus *firstStatus =  [self.statuses firstObject];
+    if (firstStatus) {
+        // since_id 	false 	int64 	若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+        params[@"since_id"] = firstStatus.idstr;
     }
     
     // 3.发送GET请求
@@ -114,15 +167,56 @@
          [self.tableView reloadData];
          
          // 让刷新控件停止刷新（恢复默认的状态）
-         [refeshContrl endRefreshing];
+         [refreshControl endRefreshing];
          
-         //提示用户最新微博数量
+         // 提示用户最新的微博数量
          [self showNewStatusesCount:newStatuses.count];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        HMLog(@"请求失败--%@",error);
-        [refeshContrl endRefreshing];
-    }];
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         HMLog(@"请求失败--%@", error);
+         // 让刷新控件停止刷新（恢复默认的状态）
+         [refreshControl endRefreshing];
+     }];
 }
+/**
+ *  加载更多的数据
+ */
+-(void)loadMoreStatuses
+{
+    // 1.获得请求管理者
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [HMAccountTool account].access_token;
+    HMStatus *lastStatus =  [self.statuses lastObject];
+    if (lastStatus) {
+        // max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
+        params[@"max_id"] = @([lastStatus.idstr longLongValue] - 1);
+    }
+    
+    // 3.发送GET请求
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params
+     success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
+         // 微博字典数组
+         NSArray *statusDictArray = resultDict[@"statuses"];
+         // 微博字典数组 ---> 微博模型数组
+         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+         
+         // 将新数据插入到旧数据的最后面
+         [self.statuses addObjectsFromArray:newStatuses];
+         
+         // 重新刷新表格
+         [self.tableView reloadData];
+         
+         // 让刷新控件停止刷新（恢复默认的状态）
+         [self.footer endRefreshing];
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         HMLog(@"请求失败--%@", error);
+         // 让刷新控件停止刷新（恢复默认的状态）
+         [self.footer endRefreshing];
+     }];
+}
+
 /**
  *  提示用户最新的微博数量
  *
@@ -251,43 +345,6 @@
 //        [titleButton setImage:downImage forState:UIControlStateNormal];
 //    }
 }
-
-/**
- *  设置导航栏的内容
- */
-- (void)setupNavBar
-{
-    //设置导航栏按钮
-    //    UIButton *leftButton=[[UIButton alloc] init];
-    //    [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRange"] forState:UIControlStateNormal];
-    //    [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRangeSelected"] forState:UIControlStateHighlighted];
-    //    //设置按钮的尺寸为图片的尺寸
-    //    leftButton.size=leftButton.currentBackgroundImage.size;
-    //
-    //    [leftButton addTarget:self action:@selector(friendSearch) forControlEvents:UIControlEventTouchUpInside];
-    //
-    //    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
-    //设置导航栏按钮
-    self.navigationItem.leftBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" highImageName:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendSearch)];
-    self.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_pop" highImageName:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
-    
-    //设置导航栏中间的标题按钮
-    UIButton *titleButton=[[UIButton  alloc] init];
-    //设置文字
-    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
-    [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    titleButton.titleLabel.font=HMNavigationTitleFont;
-    //设置图标
-    [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
-    //高亮的时候不需要调整内部的图片为灰色
-    //    titleButton.adjustsImageWhenHighlighted=NO;
-    //设置背景
-    [titleButton setBackgroundImage:[UIImage resizedImage:@"navigationbar_filter_background_highlighted"]forState:UIControlStateHighlighted];
-    titleButton.width=65;
-    titleButton.height=35;
-    [titleButton addTarget:self action:@selector(titleClicked:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.titleView=titleButton;
-}
 -(void)friendSearch
 {
     HMLog(@"friendSearch---");
@@ -306,6 +363,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
 //    return 12;
+#warning 为什么写在这里：为了监听tableView每次显示数据的过程
+    self.footer.hidden = self.statuses.count == 0;
     return self.statuses.count;
 }
 
@@ -339,4 +398,27 @@
     newVc.title=@"新控制器";
     [self.navigationController pushViewController:newVc animated:YES];
 }
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (self.statuses.count <= 0 || self.footer.isRefreshing) return;
+    
+    // 1.差距
+    CGFloat delta = scrollView.contentSize.height - scrollView.contentOffset.y;
+    // 刚好能完整看到footer的高度
+    CGFloat sawFooterH = self.view.height - self.tabBarController.tabBar.height;
+    
+    // 2.如果能看见整个footer
+    if (delta <= (sawFooterH - 0)) {
+        // 进入上拉刷新状态
+        [self.footer beginRefreshing];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            // 加载更多的微博数据
+            [self loadMoreStatuses];
+        });
+    }
+}
+
 @end
