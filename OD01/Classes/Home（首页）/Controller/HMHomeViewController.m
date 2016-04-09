@@ -23,10 +23,17 @@
 /**
  *  微博数组，存放着所有微博数据
  */
-@property (nonatomic,strong) NSArray *statuses;
+@property (nonatomic,strong) NSMutableArray *statuses;
 @end
 
 @implementation HMHomeViewController
+-(NSMutableArray *)statuses
+{
+    if(_statuses==nil){
+        _statuses=[NSMutableArray array];
+    }
+    return _statuses;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,48 +41,110 @@
     // 设置导航栏的内容
     [self setupNavBar];
     
-    // 加载最新的微博数据
-    [self loadNewStatus];
+//    // 加载最新的微博数据
+//    [self loadNewStatus];
+    
+    //集成刷新数据
+    [self setupRefresh];
+}
+
+/**
+ *  集成刷新数据 实现
+ *
+ *  @return <#return value description#>
+ */
+-(void)setupRefresh
+{
+    // 1.添加下拉刷新控件
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [self.tableView addSubview:refreshControl];
+    
+    // 2.监听状态
+    [refreshControl addTarget:self action:@selector(refreshControlStateChange:) forControlEvents:UIControlEventValueChanged];
 }
 /**
- *  加载最新的微博数据
+ *  当下拉刷新控件进入刷新状态（转圈）的时候会自动调用
+ *
+ *  @return <#return value description#>
  */
-- (void)loadNewStatus
+- (void)refreshControlStateChange:(UIRefreshControl *) refeshContrl
 {
-    // 1.获得请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    //1.获得请求管理者
+    AFHTTPRequestOperationManager *mgr=[AFHTTPRequestOperationManager manager];
     
-    // 2.封装请求参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [HMAccountTool account].access_token;
-//    NSLog(@"参数token---%@",params[@"access_token"]);
+    //2.封装请求参数
+    NSMutableDictionary *params=[NSMutableDictionary dictionary];
+    params[@"access_token"]=[HMAccountTool account].access_token;
+    HMStatus *firstSatus=[self.statuses firstObject];
+    if (firstSatus) {
+        params[@"since_id"]=firstSatus.idstr;
+    }
+    
     // 3.发送GET请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
-        HMLog(@"请求成功--%@", resultDict);
-        
-        
-//        // 赋值数组数据
-//        self.statuses = resultDict[@"statuses"];
-        
-//        self.statuses=[NSMutableArray array];
-        
-        //微博字典数组
-        NSArray *statusDictArray=resultDict[@"statuses"];
-        
-        //微博字典数组--->微博模型数组
-        self.statuses=[HMStatus objectArrayWithKeyValuesArray:statusDictArray];
-        
-//        for (NSDictionary *statusDict in statusDictArray) {
-//            HMStatus *status=[HMStatus statusWithDict:statusDict];
-//            [self.statuses addObject:status];
-//        }
-        
-        // 重新刷新表格,因为异步刷新数据，需要重新刷新表格
-        [self.tableView reloadData];
+    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params
+     success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
+         // 微博字典数组
+         NSArray *statusDictArray = resultDict[@"statuses"];
+         // 微博字典数组 ---> 微博模型数组
+         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+         
+         // 将新数据插入到旧数据的最前面
+         NSRange range = NSMakeRange(0, newStatuses.count);
+         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+         [self.statuses insertObjects:newStatuses atIndexes:indexSet];
+         
+         // 重新刷新表格
+         [self.tableView reloadData];
+         
+         // 让刷新控件停止刷新（恢复默认的状态）
+         [refeshContrl endRefreshing];
+         
+         HMLog(@"新数据的长度-----%d", newStatuses.count);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        HMLog(@"请求失败--%@", error);
+        HMLog(@"请求失败--%@",error);
+        [refeshContrl endRefreshing];
     }];
 }
+//
+///**
+// *  加载最新的微博数据
+// */
+//- (void)loadNewStatus
+//{
+//    // 1.获得请求管理者
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    
+//    // 2.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+////    NSLog(@"参数token---%@",params[@"access_token"]);
+//    // 3.发送GET请求
+//    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
+//        HMLog(@"请求成功--%@", resultDict);
+//        
+//        
+////        // 赋值数组数据
+////        self.statuses = resultDict[@"statuses"];
+//        
+////        self.statuses=[NSMutableArray array];
+//        
+//        //微博字典数组
+//        NSArray *statusDictArray=resultDict[@"statuses"];
+//        
+//        //微博字典数组--->微博模型数组
+//        self.statuses=[HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+//        
+////        for (NSDictionary *statusDict in statusDictArray) {
+////            HMStatus *status=[HMStatus statusWithDict:statusDict];
+////            [self.statuses addObject:status];
+////        }
+//        
+//        // 重新刷新表格,因为异步刷新数据，需要重新刷新表格
+//        [self.tableView reloadData];
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        HMLog(@"请求失败--%@", error);
+//    }];
+//}
 
 -(void)titleClicked:(UIButton *)titleButton
 {
