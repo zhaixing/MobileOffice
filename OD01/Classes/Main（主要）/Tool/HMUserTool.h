@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "HMUserInfoParam.h"
 #import "HMUserInfoResult.h"
+#import "HMUnreadCountParam.h"
+#import "HMUnreadCountResult.h"
 #import "HMBaseTool.h"
 
 @interface HMUserTool : HMBaseTool
@@ -20,4 +22,5 @@
  *  @param failure 请求失败后的回调（请将请求失败后想做的事情写到这个block中）
  */
 + (void)userInfoWithParam:(HMUserInfoParam *)param success:(void (^)(HMUserInfoResult *result))success failure:(void (^)(NSError *error))failure;
++ (void)unreadCountWithParam:(HMUnreadCountParam *)param success:(void (^)(HMUnreadCountResult *result))success failure:(void (^)(NSError *error))failure;
 @end
