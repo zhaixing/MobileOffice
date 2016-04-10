@@ -10,6 +10,7 @@
 
 #import "HMAccountTool.h"
 #import "HMAccount.h"
+#import "HMBaseTool.h"
 
 @implementation HMAccountTool
 
@@ -38,5 +39,10 @@
  NSOrderedSame, 相等，一样
  NSOrderedDescending 降序，越往右边越小
  */
+
+//+ (void)accessTokenWithParam:(HMAccessTokenParam *)param success:(void (^)(HMAccount *))success failure:(void (^)(NSError *))failure
+//{
+//    [self postWithUrl:@"https://api.weibo.com/oauth2/access_token" param:param resultClass:[HMAccount class] success:success failure:failure];
+//}
 @end
 

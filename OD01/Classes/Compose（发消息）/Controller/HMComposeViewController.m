@@ -15,6 +15,7 @@
 #import "HMAccount.h"
 #import "MBProgressHUD+MJ.h"
 #import "AFNetworking.h"
+#import "HMStatusTool.h"
 
 @interface HMComposeViewController () <HMComposeToolbarDelegate,UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, weak) HMTextView *textView;
@@ -217,16 +218,29 @@
 //          [MBProgressHUD showError:@"发布失败"];
 //      }];
     
-    //封装之后
+#pragma mark - 第一次封装，面向字典
+//    //封装之后
+//    // 1.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+//    params[@"status"] = self.textView.text;
+//    //2.发送post请求
+//    [HMHttpTool post:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id responseObj) {
+//        [MBProgressHUD showSuccess:@"发布成功"];
+//    } failure:^(NSError *error) {
+//        [MBProgressHUD showError:@"发布失败"];
+//    }];
+#pragma mark - 第二次封装，面向模型，业务封装
     // 1.封装请求参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [HMAccountTool account].access_token;
-    params[@"status"] = self.textView.text;
-    //2.发送post请求
-    [HMHttpTool post:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id responseObj) {
-        [MBProgressHUD showSuccess:@"发布成功"];
+    HMSendStatusParam *param = [[HMSendStatusParam alloc] init];
+    param.access_token = [HMAccountTool account].access_token;
+    param.status = self.textView.text;
+    
+    // 2.发微博
+    [HMStatusTool sendStatusWithParam:param success:^(HMSendStatusResult *result) {
+        [MBProgressHUD showSuccess:@"发表成功"];
     } failure:^(NSError *error) {
-        [MBProgressHUD showError:@"发布失败"];
+        [MBProgressHUD showError:@"发表失败"];
     }];
 }
 

@@ -27,15 +27,15 @@
 + (void)post:(NSString *)url params:(NSDictionary *)params success:(void (^)(id responseObj))success failure:(void (^)(NSError *error))failure;
 
 @end
-
-void test()
-{
-    
-    void (^success)(id) = ^(id responseObj) {
-        
-    };
-    
-    int (^sum)(int, int) = ^(int a, int b){
-        return a + b;
-    };
-}
+//
+//void test()
+//{
+//    
+//    void (^success)(id) = ^(id responseObj) {
+//        
+//    };
+//    
+//    int (^sum)(int, int) = ^(int a, int b){
+//        return a + b;
+//    };
+//}

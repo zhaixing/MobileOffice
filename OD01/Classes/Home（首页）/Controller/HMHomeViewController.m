@@ -29,6 +29,8 @@
 #import "MJExtension.h"
 #import "HMLoadMoreFooter.h"
 #import "HMTitleButton.h"
+#import "HMStatusTool.h"
+#import "HMUserTool.h"
 
 @interface HMHomeViewController ()
 /**
@@ -97,18 +99,37 @@
 //         
 //     }];
     
-    
-    //封装之后
+#pragma mark - 第一次封装，面向字典
+//    //封装之后
+//    // 1.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+//    params[@"uid"] = [HMAccountTool account].uid;
+//    
+//    // 2.发送请求
+//    [HMHttpTool get:@"https://api.weibo.com/2/users/show.json" params:params success:^(id repsonseObj){
+//        // 字典转模型
+//        HMUser *user = [HMUser objectWithKeyValues:repsonseObj];
+//        
+//        // 设置用户的昵称为标题
+//        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+//        
+//        // 存储帐号信息
+//        HMAccount *account = [HMAccountTool account];
+//        account.name = user.name;
+//        [HMAccountTool save:account];
+//    } failure:^(NSError *error){
+//        HMLog(@"请求失败-------%@", error);
+//    }];
+
+#pragma mark - 第二次封装，面向模型
     // 1.封装请求参数
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"access_token"] = [HMAccountTool account].access_token;
-    params[@"uid"] = [HMAccountTool account].uid;
+    HMUserInfoParam *param = [[HMUserInfoParam alloc] init];
+    param.access_token = [HMAccountTool account].access_token;
+    param.uid = [HMAccountTool account].uid;
     
-    // 2.发送请求
-    [HMHttpTool get:@"https://api.weibo.com/2/users/show.json" params:params success:^(id repsonseObj){
-        // 字典转模型
-        HMUser *user = [HMUser objectWithKeyValues:repsonseObj];
-        
+    // 2.加载用户信息
+    [HMUserTool userInfoWithParam:param success:^(HMUserInfoResult *user) {
         // 设置用户的昵称为标题
         [self.titleButton setTitle:user.name forState:UIControlStateNormal];
         
@@ -116,10 +137,9 @@
         HMAccount *account = [HMAccountTool account];
         account.name = user.name;
         [HMAccountTool save:account];
-    } failure:^(NSError *error){
+    } failure:^(NSError *error) {
         HMLog(@"请求失败-------%@", error);
     }];
-
 }
 /**
  *  设置导航栏的内容
@@ -241,6 +261,7 @@
 //         [refreshControl endRefreshing];
 //     }];
     
+#pragma mark - 第一次封装
     //封装之后
     // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -275,6 +296,44 @@
         // 让刷新控件停止刷新（恢复默认的状态）
         [refreshControl endRefreshing];
     }];
+    
+#pragma mark - 第二次封装 面向模型开发，封装了业务
+//    // 1.封装请求参数
+//    HMHomeStatusesParam *param = [[HMHomeStatusesParam alloc] init];
+//    param.access_token = [HMAccountTool account].access_token;
+////    param.count=4;
+//    HMStatus *firstStatus =  [self.statuses firstObject];
+//    if (firstStatus) {
+//        param.since_id = @([firstStatus.idstr longLongValue]);
+//    }
+//    
+//    // 2.加载微博数据
+//    [HMStatusTool homeStatusesWithParam:param success:^(HMHomeStatusesResult *result) {
+//        // 获得最新的微博数组
+//
+//        NSArray *newStatuses = result.statuses ;
+//
+//        // 将新数据插入到旧数据的最前面
+//        NSRange range = NSMakeRange(0, newStatuses.count);
+//        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+//        [self.statuses insertObjects:newStatuses atIndexes:indexSet];
+//
+//        // 重新刷新表格
+//        [self.tableView reloadData];
+//
+//        // 让刷新控件停止刷新（恢复默认的状态）
+//        [refreshControl endRefreshing];
+//        
+//        // 提示用户最新的微博数量
+//        [self showNewStatusesCount:newStatuses.count];
+//        
+//        
+//        
+//    } failure:^(NSError *error) {
+//        HMLog(@"请求失败--%@", error);
+//        // 让刷新控件停止刷新（恢复默认的状态）
+//        [refreshControl endRefreshing];
+//    }];
 }
 /**
  *  加载更多的数据
@@ -315,6 +374,7 @@
 //         [self.footer endRefreshing];
 //     }];
 
+#pragma mark - 第一次封装，面向字典开发
     //封装之后
     // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
@@ -344,6 +404,34 @@
         // 让刷新控件停止刷新（恢复默认的状态）
         [self.footer endRefreshing];
     }];
+    
+#pragma mark - 第二次封装，面向模型，封装业务
+//    // 1.封装请求参数
+//    HMHomeStatusesParam *param = [[HMHomeStatusesParam alloc] init];
+//    param.access_token = [HMAccountTool account].access_token;
+//    HMStatus *lastStatus =  [self.statuses lastObject];
+//    if (lastStatus) {
+//        param.max_id = @([lastStatus.idstr longLongValue] - 1);
+//    }
+//    
+//    // 2.加载微博数据
+//    [HMStatusTool homeStatusesWithParam:param success:^(HMHomeStatusesResult *result) {
+//        // 微博模型数组
+//        NSArray *newStatuses = result.statuses;
+//        
+//        // 将新数据插入到旧数据的最后面
+//        [self.statuses addObjectsFromArray:newStatuses];
+//        
+//        // 重新刷新表格
+//        [self.tableView reloadData];
+//        
+//        // 让刷新控件停止刷新（恢复默认的状态）
+//        [self.footer endRefreshing];
+//    } failure:^(NSError *error) {
+//        HMLog(@"请求失败--%@", error);
+//        // 让刷新控件停止刷新（恢复默认的状态）
+//        [self.footer endRefreshing];
+//    }];
 }
 
 /**

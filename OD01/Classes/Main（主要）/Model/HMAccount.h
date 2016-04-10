@@ -8,10 +8,6 @@
 /**
  *  账号模型
  *
- *  @param nonatomic <#nonatomic description#>
- *  @param weak      <#weak description#>
- *
- *  @return <#return value description#>
  */
 
 #import <Foundation/Foundation.h>
