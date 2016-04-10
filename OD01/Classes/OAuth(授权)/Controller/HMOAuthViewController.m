@@ -9,7 +9,7 @@
 #import "HMOAuthViewController.h"
 #import "HMTabBarViewController.h"
 #import "HMNewfeatureViewController.h"
-#import "AFNetworking.h"
+//#import "AFNetworking.h"
 #import "MBProgressHUD+MJ.h"
 #import "HMGlobal.h"
 #import "HMAccount.h"
@@ -113,11 +113,70 @@
  */
 - (void)accessTokenWithCode:(NSString *)code
 {
-    // 1.获得请求管理者
+//    // 1.获得请求管理者
+//    
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    
+//    // 2.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"client_id"] = HMAppKey;
+//    params[@"client_secret"] = HMAppSecret;
+//    params[@"redirect_uri"] = HMRedirectURI;
+//    params[@"grant_type"] = @"authorization_code";
+//    params[@"code"] = code;
+//    
+//    HMLog(@"数据---%@",params[@"code"] );
+//    
+//    // 3.发送POST请求
+//    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *accountDict) {
+//        // 隐藏HUD
+//        [MBProgressHUD hideHUD];
+//        
+//        NSLog(@"请求成功--%@", accountDict);
+//        
+//        //字典转换成模型
+//        HMAccount *account=[HMAccount accountWithDict:accountDict];
+//        // 存储授权成功的帐号信息-->存储账号模型
+////        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+////        NSString *filepath = [doc stringByAppendingPathComponent:@"account.plist"];
+////        [responseObject writeToFile:filepath atomically:YES];
+//        NSLog(@"请求成功账号模型---%@", account);
+//        //存储账号模型
+//        [HMAccountTool save:account];
+//        NSLog(@"保存账号模型---%@", account);
+//        
+//        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//        window.rootViewController = [[HMTabBarViewController alloc] init];
+////        // 切换控制器(可能去新特性\tabbar)
+////        // 如何知道第一次使用这个版本？比较上次的使用情况
+////        NSString *versionKey = (__bridge NSString *)kCFBundleVersionKey;
+////        
+////        // 从沙盒中取出上次存储的软件版本号(取出用户上次的使用记录)
+////        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+////        NSString *lastVersion = [defaults objectForKey:versionKey];
+////        
+////        // 获得当前打开软件的版本号
+////        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
+////        
+////        UIWindow *window = [UIApplication sharedApplication].keyWindow;
+////        if ([currentVersion isEqualToString:lastVersion]) { // 当前版本号 == 上次使用的版本：显示HMTabBarViewController
+////            window.rootViewController = [[HMTabBarViewController alloc] init];
+////        } else { // 当前版本号 != 上次使用的版本：显示版本新特性
+////            window.rootViewController = [[HMNewfeatureViewController alloc] init];
+////            
+////            // 存储这次使用的软件版本
+////            [defaults setObject:currentVersion forKey:versionKey];
+////            [defaults synchronize];
+////        }
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        // 隐藏HUD
+//        [MBProgressHUD hideHUD];
+//        
+//        NSLog(@"请求失败--%@", error);
+//    }];
     
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    // 2.封装请求参数
+    //封装之后
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"client_id"] = HMAppKey;
     params[@"client_secret"] = HMAppSecret;
@@ -125,54 +184,21 @@
     params[@"grant_type"] = @"authorization_code";
     params[@"code"] = code;
     
-    HMLog(@"数据---%@",params[@"code"] );
-    
-    // 3.发送POST请求
-    [mgr POST:@"https://api.weibo.com/oauth2/access_token" parameters:params success:^(AFHTTPRequestOperation *operation, NSDictionary *accountDict) {
+    // 2.发送POST请求
+    [HMHttpTool post:@"https://api.weibo.com/oauth2/access_token" params:params success:^(id responseObj) {
         // 隐藏HUD
         [MBProgressHUD hideHUD];
-        
-        NSLog(@"请求成功--%@", accountDict);
-        
         //字典转换成模型
-        HMAccount *account=[HMAccount accountWithDict:accountDict];
-        // 存储授权成功的帐号信息-->存储账号模型
-//        NSString *doc = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-//        NSString *filepath = [doc stringByAppendingPathComponent:@"account.plist"];
-//        [responseObject writeToFile:filepath atomically:YES];
-        NSLog(@"请求成功账号模型---%@", account);
+        HMAccount *account=[HMAccount accountWithDict:responseObj];
         //存储账号模型
         [HMAccountTool save:account];
-        NSLog(@"保存账号模型---%@", account);
-        
         UIWindow *window = [UIApplication sharedApplication].keyWindow;
         window.rootViewController = [[HMTabBarViewController alloc] init];
-//        // 切换控制器(可能去新特性\tabbar)
-//        // 如何知道第一次使用这个版本？比较上次的使用情况
-//        NSString *versionKey = (__bridge NSString *)kCFBundleVersionKey;
-//        
-//        // 从沙盒中取出上次存储的软件版本号(取出用户上次的使用记录)
-//        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//        NSString *lastVersion = [defaults objectForKey:versionKey];
-//        
-//        // 获得当前打开软件的版本号
-//        NSString *currentVersion = [NSBundle mainBundle].infoDictionary[versionKey];
-//        
-//        UIWindow *window = [UIApplication sharedApplication].keyWindow;
-//        if ([currentVersion isEqualToString:lastVersion]) { // 当前版本号 == 上次使用的版本：显示HMTabBarViewController
-//            window.rootViewController = [[HMTabBarViewController alloc] init];
-//        } else { // 当前版本号 != 上次使用的版本：显示版本新特性
-//            window.rootViewController = [[HMNewfeatureViewController alloc] init];
-//            
-//            // 存储这次使用的软件版本
-//            [defaults setObject:currentVersion forKey:versionKey];
-//            [defaults synchronize];
-//        }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+
+    } failure:^(NSError *error) {
         // 隐藏HUD
         [MBProgressHUD hideHUD];
-        
-        NSLog(@"请求失败--%@", error);
+        HMLog(@"请求失败--%@", error);
     }];
 }
 

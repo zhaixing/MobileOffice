@@ -11,11 +11,10 @@
 #import "HMTextView.h"
 #import "HMComposeToolBar.h"
 #import "HMComposePhotosView.h"
-#import "UIView+Extension.h"
-#import "AFNetworking.h"
 #import "HMAccountTool.h"
 #import "HMAccount.h"
 #import "MBProgressHUD+MJ.h"
+#import "AFNetworking.h"
 
 @interface HMComposeViewController () <HMComposeToolbarDelegate,UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, weak) HMTextView *textView;
@@ -202,21 +201,33 @@
  */
 - (void)sendStatusWithoutImage
 {
-    // 1.获得请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    // 1.获得请求管理者
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    
+//    // 2.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+//    params[@"status"] = self.textView.text;
+//    
+//    // 3.发送POST请求
+//    [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params
+//      success:^(AFHTTPRequestOperation *operation, NSDictionary *statusDict) {
+//          [MBProgressHUD showSuccess:@"发布成功"];
+//      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//          [MBProgressHUD showError:@"发布失败"];
+//      }];
     
-    // 2.封装请求参数
+    //封装之后
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [HMAccountTool account].access_token;
     params[@"status"] = self.textView.text;
-    
-    // 3.发送POST请求
-    [mgr POST:@"https://api.weibo.com/2/statuses/update.json" parameters:params
-      success:^(AFHTTPRequestOperation *operation, NSDictionary *statusDict) {
-          [MBProgressHUD showSuccess:@"发布成功"];
-      } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-          [MBProgressHUD showError:@"发布失败"];
-      }];
+    //2.发送post请求
+    [HMHttpTool post:@"https://api.weibo.com/2/statuses/update.json" params:params success:^(id responseObj) {
+        [MBProgressHUD showSuccess:@"发布成功"];
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"发布失败"];
+    }];
 }
 
 #pragma mark - 键盘处理

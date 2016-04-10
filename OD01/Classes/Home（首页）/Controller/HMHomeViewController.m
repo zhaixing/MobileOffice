@@ -16,11 +16,11 @@
  568 : 竖屏情况下的4.0 inch 的屏幕高度
  */
 #import "HMHomeViewController.h"
-#import "UIView+Extension.h"
+//#import "UIView+Extension.h"
 #import "HMGlobal.h"
-#import "UIBarButtonItem+Extension.h"
-#import "UIImage+Extension.h"
-#import "AFNetworking.h"
+//#import "UIBarButtonItem+Extension.h"
+//#import "UIImage+Extension.h"
+//#import "AFNetworking.h"
 #import "HMAccountTool.h"
 #import "HMAccount.h"
 #import "UIImageView+WebCache.h"
@@ -72,30 +72,54 @@
  */
 -(void)setupUserInfo
 {
-    // 1.获得请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    // 1.获得请求管理者
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    
+//    // 2.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+//    params[@"uid"] = [HMAccountTool account].uid;
+//    
+//    // 3.发送GET请求
+//    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params
+//     success:^(AFHTTPRequestOperation *operation, NSDictionary *userDict) {
+//         // 字典转模型
+//         HMUser *user = [HMUser objectWithKeyValues:userDict];
+//         
+//         // 设置用户的昵称为标题
+//         [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+//         
+//         // 存储帐号信息
+//         HMAccount *account = [HMAccountTool account];
+//         account.name = user.name;
+//         [HMAccountTool save:account];
+//     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//         
+//     }];
     
-    // 2.封装请求参数
+    
+    //封装之后
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [HMAccountTool account].access_token;
     params[@"uid"] = [HMAccountTool account].uid;
     
-    // 3.发送GET请求
-    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params
-     success:^(AFHTTPRequestOperation *operation, NSDictionary *userDict) {
-         // 字典转模型
-         HMUser *user = [HMUser objectWithKeyValues:userDict];
-         
-         // 设置用户的昵称为标题
-         [self.titleButton setTitle:user.name forState:UIControlStateNormal];
-         
-         // 存储帐号信息
-         HMAccount *account = [HMAccountTool account];
-         account.name = user.name;
-         [HMAccountTool save:account];
-     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         
-     }];
+    // 2.发送请求
+    [HMHttpTool get:@"https://api.weibo.com/2/users/show.json" params:params success:^(id repsonseObj){
+        // 字典转模型
+        HMUser *user = [HMUser objectWithKeyValues:repsonseObj];
+        
+        // 设置用户的昵称为标题
+        [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+        
+        // 存储帐号信息
+        HMAccount *account = [HMAccountTool account];
+        account.name = user.name;
+        [HMAccountTool save:account];
+    } failure:^(NSError *error){
+        HMLog(@"请求失败-------%@", error);
+    }];
+
 }
 /**
  *  设置导航栏的内容
@@ -178,83 +202,148 @@
  */
 -(void)loadNewStatuses:(UIRefreshControl *)refreshControl
 {
-    // 1.获得请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    // 1.获得请求管理者
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    
+//    // 2.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+//    HMStatus *firstStatus =  [self.statuses firstObject];
+//    if (firstStatus) {
+//        // since_id 	false 	int64 	若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
+//        params[@"since_id"] = firstStatus.idstr;
+//    }
+//    
+//    // 3.发送GET请求
+//    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params
+//     success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
+//         // 微博字典数组
+//         NSArray *statusDictArray = resultDict[@"statuses"];
+//         // 微博字典数组 ---> 微博模型数组
+//         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+//         
+//         // 将新数据插入到旧数据的最前面
+//         NSRange range = NSMakeRange(0, newStatuses.count);
+//         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+//         [self.statuses insertObjects:newStatuses atIndexes:indexSet];
+//         
+//         // 重新刷新表格
+//         [self.tableView reloadData];
+//         
+//         // 让刷新控件停止刷新（恢复默认的状态）
+//         [refreshControl endRefreshing];
+//         
+//         // 提示用户最新的微博数量
+//         [self showNewStatusesCount:newStatuses.count];
+//     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//         HMLog(@"请求失败--%@", error);
+//         // 让刷新控件停止刷新（恢复默认的状态）
+//         [refreshControl endRefreshing];
+//     }];
     
-    // 2.封装请求参数
+    //封装之后
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [HMAccountTool account].access_token;
     HMStatus *firstStatus =  [self.statuses firstObject];
     if (firstStatus) {
-        // since_id 	false 	int64 	若指定此参数，则返回ID比since_id大的微博（即比since_id时间晚的微博），默认为0。
         params[@"since_id"] = firstStatus.idstr;
     }
     
-    // 3.发送GET请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params
-     success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
-         // 微博字典数组
-         NSArray *statusDictArray = resultDict[@"statuses"];
-         // 微博字典数组 ---> 微博模型数组
-         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
-         
-         // 将新数据插入到旧数据的最前面
-         NSRange range = NSMakeRange(0, newStatuses.count);
-         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-         [self.statuses insertObjects:newStatuses atIndexes:indexSet];
-         
-         // 重新刷新表格
-         [self.tableView reloadData];
-         
-         // 让刷新控件停止刷新（恢复默认的状态）
-         [refreshControl endRefreshing];
-         
-         // 提示用户最新的微博数量
-         [self showNewStatusesCount:newStatuses.count];
-     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         HMLog(@"请求失败--%@", error);
-         // 让刷新控件停止刷新（恢复默认的状态）
-         [refreshControl endRefreshing];
-     }];
+    // 2.发送请求
+    [HMHttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObj) {
+        // 微博字典数组
+        NSArray *statusDictArray = responseObj[@"statuses"];
+        // 微博字典数组 ---> 微博模型数组
+        NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+        
+        // 将新数据插入到旧数据的最前面
+        NSRange range = NSMakeRange(0, newStatuses.count);
+        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+        [self.statuses insertObjects:newStatuses atIndexes:indexSet];
+        
+        // 重新刷新表格
+        [self.tableView reloadData];
+        
+        // 让刷新控件停止刷新（恢复默认的状态）
+        [refreshControl endRefreshing];
+        
+        // 提示用户最新的微博数量
+        [self showNewStatusesCount:newStatuses.count];
+    } failure:^(NSError *error) {
+        HMLog(@"请求失败--%@", error);
+        // 让刷新控件停止刷新（恢复默认的状态）
+        [refreshControl endRefreshing];
+    }];
 }
 /**
  *  加载更多的数据
  */
 -(void)loadMoreStatuses
 {
-    // 1.获得请求管理者
-    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-    
-    // 2.封装请求参数
+//    // 1.获得请求管理者
+//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+//    
+//    // 2.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+//    HMStatus *lastStatus =  [self.statuses lastObject];
+//    if (lastStatus) {
+//        // max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
+//        params[@"max_id"] = @([lastStatus.idstr longLongValue] - 1);
+//    }
+//    
+//    // 3.发送GET请求
+//    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params
+//     success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
+//         // 微博字典数组
+//         NSArray *statusDictArray = resultDict[@"statuses"];
+//         // 微博字典数组 ---> 微博模型数组
+//         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+//         
+//         // 将新数据插入到旧数据的最后面
+//         [self.statuses addObjectsFromArray:newStatuses];
+//         
+//         // 重新刷新表格
+//         [self.tableView reloadData];
+//         
+//         // 让刷新控件停止刷新（恢复默认的状态）
+//         [self.footer endRefreshing];
+//     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//         HMLog(@"请求失败--%@", error);
+//         // 让刷新控件停止刷新（恢复默认的状态）
+//         [self.footer endRefreshing];
+//     }];
+
+    //封装之后
+    // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [HMAccountTool account].access_token;
     HMStatus *lastStatus =  [self.statuses lastObject];
     if (lastStatus) {
-        // max_id	false	int64	若指定此参数，则返回ID小于或等于max_id的微博，默认为0。
         params[@"max_id"] = @([lastStatus.idstr longLongValue] - 1);
     }
     
-    // 3.发送GET请求
-    [mgr GET:@"https://api.weibo.com/2/statuses/home_timeline.json" parameters:params
-     success:^(AFHTTPRequestOperation *operation, NSDictionary *resultDict) {
-         // 微博字典数组
-         NSArray *statusDictArray = resultDict[@"statuses"];
-         // 微博字典数组 ---> 微博模型数组
-         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
-         
-         // 将新数据插入到旧数据的最后面
-         [self.statuses addObjectsFromArray:newStatuses];
-         
-         // 重新刷新表格
-         [self.tableView reloadData];
-         
-         // 让刷新控件停止刷新（恢复默认的状态）
-         [self.footer endRefreshing];
-     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         HMLog(@"请求失败--%@", error);
-         // 让刷新控件停止刷新（恢复默认的状态）
-         [self.footer endRefreshing];
-     }];
+    // 2.发送请求
+    [HMHttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObj) {
+        // 微博字典数组
+        NSArray *statusDictArray = responseObj[@"statuses"];
+        // 微博字典数组 ---> 微博模型数组
+        NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+        
+        // 将新数据插入到旧数据的最后面
+        [self.statuses addObjectsFromArray:newStatuses];
+        
+        // 重新刷新表格
+        [self.tableView reloadData];
+        
+        // 让刷新控件停止刷新（恢复默认的状态）
+        [self.footer endRefreshing];
+    } failure:^(NSError *error) {
+        HMLog(@"请求失败--%@", error);
+        // 让刷新控件停止刷新（恢复默认的状态）
+        [self.footer endRefreshing];
+    }];
 }
 
 /**

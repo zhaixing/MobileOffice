@@ -75,6 +75,7 @@
 		22D7B34F1CB8FB8200C5A79D /* HMComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B34E1CB8FB8200C5A79D /* HMComposeToolBar.m */; };
 		22D7B3521CB93BF000C5A79D /* HMComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3511CB93BF000C5A79D /* HMComposePhotosView.m */; };
 		22D7B3551CB9D51D00C5A79D /* HMTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3541CB9D51D00C5A79D /* HMTitleButton.m */; };
+		22D7B3581CB9E23E00C5A79D /* HMHttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3571CB9E23E00C5A79D /* HMHttpTool.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -214,6 +215,8 @@
 		22D7B3511CB93BF000C5A79D /* HMComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMComposePhotosView.m; path = "OD01/Classes/Home（首页）/View/HMComposePhotosView.m"; sourceTree = SOURCE_ROOT; };
 		22D7B3531CB9D51D00C5A79D /* HMTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTitleButton.h; sourceTree = "<group>"; };
 		22D7B3541CB9D51D00C5A79D /* HMTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTitleButton.m; sourceTree = "<group>"; };
+		22D7B3561CB9E23E00C5A79D /* HMHttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHttpTool.h; sourceTree = "<group>"; };
+		22D7B3571CB9E23E00C5A79D /* HMHttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHttpTool.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -651,6 +654,8 @@
 			children = (
 				22D7B28C1CB7298100C5A79D /* HMAccountTool.h */,
 				22D7B28D1CB7298100C5A79D /* HMAccountTool.m */,
+				22D7B3561CB9E23E00C5A79D /* HMHttpTool.h */,
+				22D7B3571CB9E23E00C5A79D /* HMHttpTool.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -845,6 +850,7 @@
 				22D7B33A1CB7A50F00C5A79D /* NSObject+MJKeyValue.m in Sources */,
 				22D7B2B21CB7601D00C5A79D /* NSData+ImageContentType.m in Sources */,
 				22D7B27C1CB67FEC00C5A79D /* AFURLResponseSerialization.m in Sources */,
+				22D7B3581CB9E23E00C5A79D /* HMHttpTool.m in Sources */,
 				22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */,
 				22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */,
 				22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */,
