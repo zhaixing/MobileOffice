@@ -21,7 +21,6 @@
 		22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A801CB4B8D000EFAC7A /* UIView+Extension.m */; };
 		22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */; };
 		22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A881CB51D6E00EFAC7A /* HMSearchBar.m */; };
-		22CF1A8C1CB52D6F00EFAC7A /* HMHomeTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A8B1CB52D6F00EFAC7A /* HMHomeTitleButton.m */; };
 		22CF1A8F1CB5374600EFAC7A /* HMTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */; };
 		22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A951CB5F27300EFAC7A /* HMComposeViewController.m */; };
 		22CF1A9D1CB6005600EFAC7A /* HMNewfeatureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A9C1CB6005600EFAC7A /* HMNewfeatureViewController.m */; };
@@ -75,6 +74,7 @@
 		22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B34B1CB8D7E000C5A79D /* HMTextView.m */; };
 		22D7B34F1CB8FB8200C5A79D /* HMComposeToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B34E1CB8FB8200C5A79D /* HMComposeToolBar.m */; };
 		22D7B3521CB93BF000C5A79D /* HMComposePhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3511CB93BF000C5A79D /* HMComposePhotosView.m */; };
+		22D7B3551CB9D51D00C5A79D /* HMTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3541CB9D51D00C5A79D /* HMTitleButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,8 +107,6 @@
 		22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGlobal.m; sourceTree = "<group>"; };
 		22CF1A871CB51D6E00EFAC7A /* HMSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSearchBar.h; sourceTree = "<group>"; };
 		22CF1A881CB51D6E00EFAC7A /* HMSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSearchBar.m; sourceTree = "<group>"; };
-		22CF1A8A1CB52D6F00EFAC7A /* HMHomeTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHomeTitleButton.h; sourceTree = "<group>"; };
-		22CF1A8B1CB52D6F00EFAC7A /* HMHomeTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHomeTitleButton.m; sourceTree = "<group>"; };
 		22CF1A8D1CB5374600EFAC7A /* HMTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBar.h; sourceTree = "<group>"; };
 		22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBar.m; sourceTree = "<group>"; };
 		22CF1A941CB5F27300EFAC7A /* HMComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMComposeViewController.h; sourceTree = "<group>"; };
@@ -214,6 +212,8 @@
 		22D7B34E1CB8FB8200C5A79D /* HMComposeToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMComposeToolBar.m; path = "OD01/Classes/Home（首页）/View/HMComposeToolBar.m"; sourceTree = SOURCE_ROOT; };
 		22D7B3501CB93BF000C5A79D /* HMComposePhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMComposePhotosView.h; path = "OD01/Classes/Home（首页）/View/HMComposePhotosView.h"; sourceTree = SOURCE_ROOT; };
 		22D7B3511CB93BF000C5A79D /* HMComposePhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMComposePhotosView.m; path = "OD01/Classes/Home（首页）/View/HMComposePhotosView.m"; sourceTree = SOURCE_ROOT; };
+		22D7B3531CB9D51D00C5A79D /* HMTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTitleButton.h; sourceTree = "<group>"; };
+		22D7B3541CB9D51D00C5A79D /* HMTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTitleButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,11 +346,11 @@
 		22B3C9DC1CB4A41000EA00FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				22CF1A8A1CB52D6F00EFAC7A /* HMHomeTitleButton.h */,
-				22CF1A8B1CB52D6F00EFAC7A /* HMHomeTitleButton.m */,
 				22D7B3451CB89F3900C5A79D /* HMLoadMoreFooter.xib */,
 				22D7B3471CB8A44100C5A79D /* HMLoadMoreFooter.h */,
 				22D7B3481CB8A44100C5A79D /* HMLoadMoreFooter.m */,
+				22D7B3531CB9D51D00C5A79D /* HMTitleButton.h */,
+				22D7B3541CB9D51D00C5A79D /* HMTitleButton.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -797,7 +797,6 @@
 				22B3C9F81CB4A41000EA00FA /* HMImageTool.m in Sources */,
 				22D7B3341CB7A50F00C5A79D /* MJFoundation.m in Sources */,
 				22D7B28A1CB6A46000C5A79D /* HMAccount.m in Sources */,
-				22CF1A8C1CB52D6F00EFAC7A /* HMHomeTitleButton.m in Sources */,
 				22D7B2B81CB7601D00C5A79D /* SDWebImageManager.m in Sources */,
 				22D7B2791CB67FEC00C5A79D /* AFSecurityPolicy.m in Sources */,
 				22D7B33B1CB7A50F00C5A79D /* NSObject+MJProperty.m in Sources */,
@@ -808,6 +807,7 @@
 				22D7B27E1CB67FEC00C5A79D /* MBProgressHUD+MJ.m in Sources */,
 				22D7B2B61CB7601D00C5A79D /* SDWebImageDownloader.m in Sources */,
 				22D7B3361CB7A50F00C5A79D /* MJPropertyKey.m in Sources */,
+				22D7B3551CB9D51D00C5A79D /* HMTitleButton.m in Sources */,
 				22D7B2751CB67FEC00C5A79D /* AFHTTPRequestOperation.m in Sources */,
 				22D7B2BD1CB7601D00C5A79D /* UIImage+WebP.m in Sources */,
 				22B3C9F71CB4A41000EA00FA /* HMHomeViewController.m in Sources */,

@@ -122,8 +122,20 @@
     self.view.backgroundColor=[UIColor whiteColor];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     self.navigationItem.leftBarButtonItem.tintColor=[UIColor blackColor];
-    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(send)];
-    self.navigationItem.rightBarButtonItem.enabled=NO;
+    
+    //创建右边的发布按钮
+    UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
+    [button setTitle:@"发布" forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [button setTitleColor:themeColor forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    button.sizeToFit;
+    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:button];//监听按钮点击
+    [button addTarget:self action:@selector(send) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem.enabled=NO;//默认禁用，没有文字不能发布
+    //另一种方法
+    //    self.navigationItem.rightBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(send)];
+//    self.navigationItem.rightBarButtonItem.enabled=NO;
 }
 
 #pragma mark - 私有方法

@@ -28,12 +28,15 @@
 #import "HMUser.h"
 #import "MJExtension.h"
 #import "HMLoadMoreFooter.h"
+#import "HMTitleButton.h"
+
 @interface HMHomeViewController ()
 /**
  *  微博数组，存放着所有微博数据
  */
 @property (nonatomic,strong) NSMutableArray *statuses;
 @property (nonatomic,weak) HMLoadMoreFooter *footer;
+@property (nonatomic, weak) UIButton *titleButton;
 @end
 
 @implementation HMHomeViewController
@@ -56,43 +59,80 @@
     
     //集成刷新数据
     [self setupRefresh];
+    
+    //把“首页”->“用户昵称”
+    // 获得用户信息
+    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    [self setupUserInfo];
+    //    });
 }
 
+/**
+ *  把首页换成用户昵称
+ */
+-(void)setupUserInfo
+{
+    // 1.获得请求管理者
+    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    
+    // 2.封装请求参数
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"access_token"] = [HMAccountTool account].access_token;
+    params[@"uid"] = [HMAccountTool account].uid;
+    
+    // 3.发送GET请求
+    [mgr GET:@"https://api.weibo.com/2/users/show.json" parameters:params
+     success:^(AFHTTPRequestOperation *operation, NSDictionary *userDict) {
+         // 字典转模型
+         HMUser *user = [HMUser objectWithKeyValues:userDict];
+         
+         // 设置用户的昵称为标题
+         [self.titleButton setTitle:user.name forState:UIControlStateNormal];
+         
+         // 存储帐号信息
+         HMAccount *account = [HMAccountTool account];
+         account.name = user.name;
+         [HMAccountTool save:account];
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+         
+     }];
+}
 /**
  *  设置导航栏的内容
  */
 - (void)setupNavBar
 {
     //设置导航栏按钮
-    //    UIButton *leftButton=[[UIButton alloc] init];
-    //    [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRange"] forState:UIControlStateNormal];
-    //    [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRangeSelected"] forState:UIControlStateHighlighted];
-    //    //设置按钮的尺寸为图片的尺寸
-    //    leftButton.size=leftButton.currentBackgroundImage.size;
-    //
-    //    [leftButton addTarget:self action:@selector(friendSearch) forControlEvents:UIControlEventTouchUpInside];
-    //
-    //    self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
+        UIButton *leftButton=[[UIButton alloc] init];
+        [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRange"] forState:UIControlStateNormal];
+        [leftButton setBackgroundImage:[UIImage imageNamed:@"WMFormRangeSelected"] forState:UIControlStateHighlighted];
+        //设置按钮的尺寸为图片的尺寸
+        leftButton.size=leftButton.currentBackgroundImage.size;
+        [leftButton addTarget:self action:@selector(friendSearch) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:leftButton];
     //设置导航栏按钮
-    self.navigationItem.leftBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" highImageName:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendSearch)];
+//    self.navigationItem.leftBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_friendsearch" highImageName:@"navigationbar_friendsearch_highlighted" target:self action:@selector(friendSearch)];
     self.navigationItem.rightBarButtonItem=[UIBarButtonItem itemWithImageName:@"navigationbar_pop" highImageName:@"navigationbar_pop_highlighted" target:self action:@selector(pop)];
     
     //设置导航栏中间的标题按钮
     UIButton *titleButton=[[UIButton  alloc] init];
     //设置文字
-    [titleButton setTitle:@"首页" forState:UIControlStateNormal];
+    NSString *name=[HMAccountTool account].name;//从沙盒里面取
+    [titleButton setTitle:name ? name:@"首页" forState:UIControlStateNormal];
     [titleButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    titleButton.titleLabel.font=HMNavigationTitleFont;
+//    titleButton.titleLabel.font=HMNavigationTitleFont;
     //设置图标
     [titleButton setImage:[UIImage imageNamed:@"navigationbar_arrow_down"] forState:UIControlStateNormal];
     //高亮的时候不需要调整内部的图片为灰色
     //    titleButton.adjustsImageWhenHighlighted=NO;
     //设置背景
     [titleButton setBackgroundImage:[UIImage resizedImage:@"navigationbar_filter_background_highlighted"]forState:UIControlStateHighlighted];
-    titleButton.width=65;
+    titleButton.width=150;
     titleButton.height=35;
     [titleButton addTarget:self action:@selector(titleClicked:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.titleView=titleButton;
+    self.titleButton=titleButton;
+    
 }
 
 
@@ -327,6 +367,7 @@
 
 -(void)titleClicked:(UIButton *)titleButton
 {
+    HMLog(@"ddd");
     if(titleButton.tag==0){
         titleButton.tag=10;
         //换成箭头向上
