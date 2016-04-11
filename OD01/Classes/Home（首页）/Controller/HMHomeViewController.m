@@ -39,6 +39,7 @@
 @property (nonatomic,strong) NSMutableArray *statuses;
 @property (nonatomic,weak) HMLoadMoreFooter *footer;
 @property (nonatomic, weak) UIButton *titleButton;
+@property (nonatomic, weak) UIRefreshControl *refreshControl;
 @end
 
 @implementation HMHomeViewController
@@ -216,6 +217,26 @@
 {
     [self loadNewStatuses:refreshContrl];
 }
+#pragma mar - 刷新
+- (void)refresh:(BOOL)fromSelf
+{
+    if (self.tabBarItem.badgeValue) { // 有数字
+        // 让表格回到最顶部
+        //        NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
+        //        [self.tableView scrollToRowAtIndexPath:firstRow atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        
+        // 转圈圈
+        [self.refreshControl beginRefreshing];
+        
+        // 刷新数据
+        [self loadNewStatuses:self.refreshControl];
+    } else if (fromSelf) { // 没有数字
+        // 让表格回到最顶部
+        NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self.tableView scrollToRowAtIndexPath:firstRow atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
+}
+
 #pragma mark - 加载微博数据
 /**
  *  加载最新的微博数据
@@ -441,6 +462,9 @@
  */
 -(void)showNewStatusesCount:(int)count
 {
+    //0.清零，主页提示数字
+    [UIApplication sharedApplication].applicationIconBadgeNumber -=self.tabBarItem.badgeValue.intValue;
+    self.tabBarItem.badgeValue=nil;
     //1.创建一个label
     UILabel *label=[[UILabel alloc] init];
     //2.显示文字

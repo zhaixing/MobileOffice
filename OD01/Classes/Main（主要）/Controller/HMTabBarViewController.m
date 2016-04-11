@@ -22,13 +22,14 @@
 
 @interface HMTabBarViewController () <HMTabBarDelegate>
 @property (nonatomic, weak) HMHomeViewController *home;//为了让人拿到这个控件
+@property (nonatomic, weak) UIViewController *lastSelectedViewContoller;
 @end
 
 @implementation HMTabBarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.delegate = self;
     //添加所有子控制器
     [self addAllChildVcs];
     
@@ -37,9 +38,29 @@
     
     
     // 利用定时器获得用户的未读数
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(getUnreadCount) userInfo:nil repeats:YES];
-    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(getUnreadCount) userInfo:nil repeats:YES];//时间10s比较合理
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];//处理细节，
   
+}
+//监听home按钮点击事件
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UINavigationController *)viewController
+{
+    UIViewController *vc = [viewController.viewControllers firstObject];
+    if ([vc isKindOfClass:[HMHomeViewController class]]) {
+        if (self.lastSelectedViewContoller == vc) {
+            [self.home refresh:YES];
+        } else {
+            [self.home refresh:NO];
+        }
+    }
+    
+    self.lastSelectedViewContoller = vc;
+
+    //与上面冲突
+    //    UIViewController *vc =[viewController.viewControllers firstObject];
+//    if ([vc isKindOfClass:[HMHomeViewController class]]) {
+//        HMLog(@"点击了首页");
+//    }
 }
 
 
