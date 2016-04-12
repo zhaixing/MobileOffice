@@ -44,7 +44,7 @@
     
     // 自己的frame
     CGFloat x = 0;
-    CGFloat y = 0;
+    CGFloat y = 5;
     CGFloat w = HMScreenW;
     self.frame = CGRectMake(x, y, w, h);
 }

@@ -33,7 +33,7 @@
     
     // 自己
     CGFloat x = 0;
-    CGFloat y = 7; // 高度 = 原创微博最大的Y值
+    CGFloat y = 0; // 高度 = 原创微博最大的Y值
     CGFloat w = HMScreenW;
     CGFloat h = CGRectGetMaxY(self.textFrame) + HMStatusCellInset;
     self.frame = CGRectMake(x, y, w, h);

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B889D1CBCDC210054BD30 /* NSDate+MJ.m */; };
 		22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */; };
 		22B3C9F71CB4A41000EA00FA /* HMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9DA1CB4A41000EA00FA /* HMHomeViewController.m */; };
 		22B3C9F81CB4A41000EA00FA /* HMImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9E01CB4A41000EA00FA /* HMImageTool.m */; };
@@ -101,6 +102,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		223B889C1CBCDC210054BD30 /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
+		223B889D1CBCDC210054BD30 /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
 		22B3C9A11CB3D46000EA00FA /* 猫头鹰助理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "猫头鹰助理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B3C9B51CB3D46000EA00FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B3C9D31CB4A41000EA00FA /* HMDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDiscoverViewController.h; sourceTree = "<group>"; };
@@ -296,6 +299,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		223B889B1CBCCEDF0054BD30 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				22E087141CBB511F00DCC034 /* HMStatusFrame.h */,
+				22E087151CBB511F00DCC034 /* HMStatusFrame.m */,
+				22E087171CBB9E6300DCC034 /* HMStatusOriginalFrame.h */,
+				22E087181CBB9E6300DCC034 /* HMStatusOriginalFrame.m */,
+				22E0871A1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.h */,
+				22E0871B1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m */,
+				22E0871D1CBBA37800DCC034 /* HMStatusDetailFrame.h */,
+				22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		22B3C9981CB3D46000EA00FA = {
 			isa = PBXGroup;
 			children = (
@@ -402,18 +420,11 @@
 		22B3C9DB1CB4A41000EA00FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				223B889B1CBCCEDF0054BD30 /* Cell */,
 				22D7B2C21CB7889000C5A79D /* HMUser.h */,
 				22D7B2C31CB7889000C5A79D /* HMUser.m */,
 				22D7B2C51CB78AB100C5A79D /* HMStatus.h */,
 				22D7B2C61CB78AB100C5A79D /* HMStatus.m */,
-				22E087141CBB511F00DCC034 /* HMStatusFrame.h */,
-				22E087151CBB511F00DCC034 /* HMStatusFrame.m */,
-				22E087171CBB9E6300DCC034 /* HMStatusOriginalFrame.h */,
-				22E087181CBB9E6300DCC034 /* HMStatusOriginalFrame.m */,
-				22E0871A1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.h */,
-				22E0871B1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m */,
-				22E0871D1CBBA37800DCC034 /* HMStatusDetailFrame.h */,
-				22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */,
 				22D7B2C81CB78CBF00C5A79D /* HMPhoto.h */,
 				22D7B2C91CB78CBF00C5A79D /* HMPhoto.m */,
 			);
@@ -450,6 +461,8 @@
 		22B3C9DE1CB4A41000EA00FA /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				223B889C1CBCDC210054BD30 /* NSDate+MJ.h */,
+				223B889D1CBCDC210054BD30 /* NSDate+MJ.m */,
 				22D7B28F1CB7598F00C5A79D /* Foundation+Log.m */,
 				22CF1A7B1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.h */,
 				22CF1A7C1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m */,
@@ -1007,6 +1020,7 @@
 				22D7B3911CBA55F200C5A79D /* HMSendStatusResult.m in Sources */,
 				22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */,
 				22B3C9FB1CB4A41000EA00FA /* main.m in Sources */,
+				223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */,
 				22D7B27A1CB67FEC00C5A79D /* AFURLConnectionOperation.m in Sources */,
 				22D7B36D1CBA3BCC00C5A79D /* HMBaseTool.m in Sources */,
 				22D7B27B1CB67FEC00C5A79D /* AFURLRequestSerialization.m in Sources */,
