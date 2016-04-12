@@ -7,7 +7,10 @@
 //  同事圈cell
 
 #import <UIKit/UIKit.h>
+@class HMStatusFrame;
 
 @interface HMStatusCell : UITableViewCell
++ (instancetype)cellWithTableView:(UITableView *)tableView;
 
+@property (nonatomic, strong) HMStatusFrame *statusFrame;
 @end

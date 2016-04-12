@@ -7,7 +7,9 @@
 //  同事圈的具体内容=原创内容+转发内容
 
 #import <UIKit/UIKit.h>
+@class HMStatusDetailFrame;
 
 @interface HMStatusDetailView : UIView
-
+@property (nonatomic, strong) HMStatusDetailFrame *detailFrame;
 @end
+

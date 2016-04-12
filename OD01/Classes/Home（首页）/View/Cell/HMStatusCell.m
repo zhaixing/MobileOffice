@@ -6,46 +6,54 @@
 //  Copyright © 2016年 sam. All rights reserved.
 //
 
+#import "HMGlobal.h"
 #import "HMStatusCell.h"
 #import "HMStatusDetailView.h"
 #import "HMStatusToolbar.h"
+#import "HMStatusFrame.h"
 
 @interface HMStatusCell()
-@property (nonatomic,weak) HMStatusDetailView *detailView;
-@property (nonatomic,weak) HMStatusToolbar *toolbar;
-
+@property (nonatomic, weak) HMStatusDetailView *detailView;
+@property (nonatomic, weak) HMStatusToolbar *toolbar;
 @end
+
 @implementation HMStatusCell
 
--(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
++ (instancetype)cellWithTableView:(UITableView *)tableView
 {
-    self=[super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {//初始化子控件
-        //1.添加微博具体内容
-        [self setupDetailView];
+    static NSString *ID = @"status";
+    HMStatusCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    if (!cell) {
+        cell = [[HMStatusCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+    }
+    return cell;
+}
+
+- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+{
+    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    if (self) { // 初始化子控件
+        // 1.添加微博具体内容
+        HMStatusDetailView *detailView = [[HMStatusDetailView alloc] init];
+        [self.contentView addSubview:detailView];
+        self.detailView = detailView;
         
-        //2.添加工具条
-        [self setupToolbar];
+        // 2.添加工具条
+        HMStatusToolbar *toolbar = [[HMStatusToolbar alloc] init];
+        [self.contentView addSubview:toolbar];
+        self.toolbar = toolbar;
     }
     return self;
 }
-/**
- *  添加微博具体内容
- */
--(void)setupDetailView
-{
-    HMStatusDetailView *detailView=[[HMStatusDetailView alloc] init];
-    [self.contentView addSubview:detailView];
-    self.detailView=detailView;
-}
 
-/**
- *  添加工具条
- */
--(void)setupToolbar
+- (void)setStatusFrame:(HMStatusFrame *)statusFrame
 {
-    HMStatusToolbar *toolbar=[[HMStatusToolbar alloc] init];
-    [self.contentView addSubview:toolbar];
-    self.toolbar=toolbar;
+    _statusFrame = statusFrame;
+    
+    // 1.微博具体内容的frame数据
+    self.detailView.detailFrame = statusFrame.detailFrame;
+    
+    // 2.底部工具条的frame数据
+    self.toolbar.frame = statusFrame.toolbarFrame;
 }
 @end

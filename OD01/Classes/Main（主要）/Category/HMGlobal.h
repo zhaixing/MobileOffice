@@ -36,6 +36,29 @@
 #define HMAppSecret @"862e3e02417afdf4bdbbb07751551b08"
 #define HMRedirectURI @"http://www.baidu.com"
 
+
+// 屏幕尺寸
+#define HMScreenW [UIScreen mainScreen].bounds.size.width
+
+// cell的计算参数
+// cell的内边距
+#define HMStatusCellInset 10
+
+// 原创微博昵称字体
+#define HMStatusOrginalNameFont [UIFont systemFontOfSize:14]
+// 原创微博时间字体
+#define HMStatusOrginalTimeFont [UIFont systemFontOfSize:12]
+// 原创微博来源字体
+#define HMStatusOrginalSourceFont HMStatusOrginalTimeFont
+// 原创微博正文字体
+#define HMStatusOrginalTextFont [UIFont systemFontOfSize:15]
+
+// 转发微博昵称字体
+#define HMStatusRetweetedNameFont HMStatusOrginalNameFont
+// 转发微博正文字体
+#define HMStatusRetweetedTextFont HMStatusOrginalTextFont
+
+
 @interface HMGlobal : NSObject
 
 @end

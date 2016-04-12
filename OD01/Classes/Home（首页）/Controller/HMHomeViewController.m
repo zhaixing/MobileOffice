@@ -31,24 +31,25 @@
 #import "HMTitleButton.h"
 #import "HMStatusTool.h"
 #import "HMUserTool.h"
-
+#import "HMStatusFrame.h"
+#import "HMStatusCell.h"
 @interface HMHomeViewController ()
 /**
  *  微博数组，存放着所有微博数据
  */
-@property (nonatomic,strong) NSMutableArray *statuses;
+@property (nonatomic,strong) NSMutableArray *statusFrames;
 @property (nonatomic,weak) HMLoadMoreFooter *footer;
 @property (nonatomic, weak) UIButton *titleButton;
 @property (nonatomic, weak) UIRefreshControl *refreshControl;
 @end
 
 @implementation HMHomeViewController
--(NSMutableArray *)statuses
+-(NSMutableArray *)statusFrames
 {
-    if(_statuses==nil){
-        _statuses=[NSMutableArray array];
+    if(_statusFrames==nil){
+        _statusFrames=[NSMutableArray array];
     }
-    return _statuses;
+    return _statusFrames;
 }
 
 - (void)viewDidLoad {
@@ -239,6 +240,24 @@
 
 #pragma mark - 加载微博数据
 /**
+ *  根据微博模型数组 转成 微博frame模型数据
+ *
+ *  @param statuses 微博模型数组
+ *
+ */
+- (NSArray *)statusFramesWithStatuses:(NSArray *)statuses
+{
+    NSMutableArray *frames = [NSMutableArray array];
+    for (HMStatus *status in statuses) {
+        HMStatusFrame *frame = [[HMStatusFrame alloc] init];
+        // 传递微博模型数据，计算所有子控件的frame
+        frame.status = status;
+        [frames addObject:frame];
+    }
+    return frames;
+}
+
+/**
  *  加载最新的微博数据
  */
 -(void)loadNewStatuses:(UIRefreshControl *)refreshControl
@@ -283,11 +302,49 @@
 //     }];
     
 #pragma mark - 第一次封装
+//    //封装之后
+//    // 1.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+//    HMStatusFrame *firstStatusFrame =  [self.statusFrames firstObject];
+//    HMStatus *firstStatus=firstStatusFrame.status;
+//    if (firstStatus) {
+//        params[@"since_id"] = firstStatus.idstr;
+//    }
+//    
+//    // 2.发送请求
+//    [HMHttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObj) {
+//        // 微博字典数组
+//        NSArray *statusDictArray = responseObj[@"statuses"];
+//        // 微博字典数组 ---> 微博模型数组
+//        NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+//        
+//        // 将新数据插入到旧数据的最前面
+//        NSRange range = NSMakeRange(0, newStatuses.count);
+//        NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
+//        [self.statusFrames insertObjects:newStatuses atIndexes:indexSet];
+//        
+//        // 重新刷新表格
+//        [self.tableView reloadData];
+//        
+//        // 让刷新控件停止刷新（恢复默认的状态）
+//        [refreshControl endRefreshing];
+//        
+//        // 提示用户最新的微博数量
+//        [self showNewStatusesCount:newStatuses.count];
+//    } failure:^(NSError *error) {
+//        HMLog(@"请求失败--%@", error);
+//        // 让刷新控件停止刷新（恢复默认的状态）
+//        [refreshControl endRefreshing];
+//    }];
+    
+    
     //封装之后
     // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [HMAccountTool account].access_token;
-    HMStatus *firstStatus =  [self.statuses firstObject];
+    HMStatusFrame *firstStatusFrame =  [self.statusFrames firstObject];
+    HMStatus *firstStatus=firstStatusFrame.status;
     if (firstStatus) {
         params[@"since_id"] = firstStatus.idstr;
     }
@@ -299,10 +356,13 @@
         // 微博字典数组 ---> 微博模型数组
         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
         
+        NSArray *newFrames=[self statusFramesWithStatuses:newStatuses];
+        
+        
         // 将新数据插入到旧数据的最前面
-        NSRange range = NSMakeRange(0, newStatuses.count);
+        NSRange range = NSMakeRange(0, newFrames.count);
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
-        [self.statuses insertObjects:newStatuses atIndexes:indexSet];
+        [self.statusFrames insertObjects:newFrames atIndexes:indexSet];
         
         // 重新刷新表格
         [self.tableView reloadData];
@@ -311,7 +371,7 @@
         [refreshControl endRefreshing];
         
         // 提示用户最新的微博数量
-        [self showNewStatusesCount:newStatuses.count];
+        [self showNewStatusesCount:newFrames.count];
     } failure:^(NSError *error) {
         HMLog(@"请求失败--%@", error);
         // 让刷新控件停止刷新（恢复默认的状态）
@@ -396,11 +456,43 @@
 //     }];
 
 #pragma mark - 第一次封装，面向字典开发
+//    //封装之后
+//    // 1.封装请求参数
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"access_token"] = [HMAccountTool account].access_token;
+//    HMStatus *lastStatus =  [self.statuses lastObject];
+//    if (lastStatus) {
+//        params[@"max_id"] = @([lastStatus.idstr longLongValue] - 1);
+//    }
+//    
+//    // 2.发送请求
+//    [HMHttpTool get:@"https://api.weibo.com/2/statuses/home_timeline.json" params:params success:^(id responseObj) {
+//        // 微博字典数组
+//        NSArray *statusDictArray = responseObj[@"statuses"];
+//        // 微博字典数组 ---> 微博模型数组
+//        NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
+//        
+//        // 将新数据插入到旧数据的最后面
+//        [self.statuses addObjectsFromArray:newStatuses];
+//        
+//        // 重新刷新表格
+//        [self.tableView reloadData];
+//        
+//        // 让刷新控件停止刷新（恢复默认的状态）
+//        [self.footer endRefreshing];
+//    } failure:^(NSError *error) {
+//        HMLog(@"请求失败--%@", error);
+//        // 让刷新控件停止刷新（恢复默认的状态）
+//        [self.footer endRefreshing];
+//    }];
+
+    
     //封装之后
     // 1.封装请求参数
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"access_token"] = [HMAccountTool account].access_token;
-    HMStatus *lastStatus =  [self.statuses lastObject];
+    HMStatusFrame *lastStatusFrame=[self.statusFrames lastObject];
+    HMStatus *lastStatus =  lastStatusFrame.status;
     if (lastStatus) {
         params[@"max_id"] = @([lastStatus.idstr longLongValue] - 1);
     }
@@ -412,8 +504,10 @@
         // 微博字典数组 ---> 微博模型数组
         NSArray *newStatuses = [HMStatus objectArrayWithKeyValuesArray:statusDictArray];
         
+        //获得最新的微博frame数组
+        NSArray *newFrames=[self statusFramesWithStatuses:newStatuses];
         // 将新数据插入到旧数据的最后面
-        [self.statuses addObjectsFromArray:newStatuses];
+        [self.statusFrames addObjectsFromArray:newFrames];
         
         // 重新刷新表格
         [self.tableView reloadData];
@@ -425,6 +519,7 @@
         // 让刷新控件停止刷新（恢复默认的状态）
         [self.footer endRefreshing];
     }];
+    
     
 #pragma mark - 第二次封装，面向模型，封装业务
 //    // 1.封装请求参数
@@ -606,30 +701,38 @@
 #warning Incomplete implementation, return the number of rows
 //    return 12;
 #warning 为什么写在这里：为了监听tableView每次显示数据的过程
-    self.footer.hidden = self.statuses.count == 0;
-    return self.statuses.count;
+//    self.footer.hidden = self.statuses.count == 0;
+//    return self.statuses.count;
+    self.footer.hidden=self.statusFrames.count==0;
+    return self.statusFrames.count;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *ID=@"cell";
-    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:ID];
-    if(!cell){
-        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
-    }
-    //行里面显示什么数据
-//    cell.textLabel.text=[NSString stringWithFormat:@"首页测试数据----%ld",(long)indexPath.row];
-    // 取出这行对应的微博字典数据
-    HMStatus *status = self.statuses[indexPath.row];
-    cell.textLabel.text = status.text;
+//    static NSString *ID=@"cell";
+//    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:ID];
+//    if(!cell){
+//        cell=[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
+//    }
+//    //行里面显示什么数据
+////    cell.textLabel.text=[NSString stringWithFormat:@"首页测试数据----%ld",(long)indexPath.row];
+//    // 取出这行对应的微博字典数据
+//    HMStatus *status = self.statuses[indexPath.row];
+//    cell.textLabel.text = status.text;
+//    
+//    // 取出用户
+//    HMUser *user = status.user;
+//    cell.detailTextLabel.text = user.name;
+//    
+//    // 下载头像
+//    NSString *imageUrlStr = user.profile_image_url;
+//    [cell.imageView setImageWithURL:[NSURL URLWithString:imageUrlStr] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+//    return cell;
     
-    // 取出用户
-    HMUser *user = status.user;
-    cell.detailTextLabel.text = user.name;
+    HMStatusCell *cell = [HMStatusCell cellWithTableView:tableView];
     
-    // 下载头像
-    NSString *imageUrlStr = user.profile_image_url;
-    [cell.imageView setImageWithURL:[NSURL URLWithString:imageUrlStr] placeholderImage:[UIImage imageNamed:@"avatar_default_small"]];
+    cell.statusFrame = self.statusFrames[indexPath.row];
+    
     return cell;
 }
 
@@ -644,7 +747,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (self.statuses.count <= 0 || self.footer.isRefreshing) return;
+    if (self.statusFrames.count <= 0 || self.footer.isRefreshing) return;
     
     // 1.差距
     CGFloat delta = scrollView.contentSize.height - scrollView.contentOffset.y;
@@ -663,4 +766,9 @@
     }
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HMStatusFrame *frame = self.statusFrames[indexPath.row];
+    return frame.cellHeight;
+}
 @end
