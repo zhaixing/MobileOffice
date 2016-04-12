@@ -30,9 +30,17 @@
     CGSize nameSize = [status.user.name sizeWithFont:HMStatusOrginalNameFont];
     self.nameFrame = (CGRect){{nameX, nameY}, nameSize};
     
+    if (status.user.isVip) { // 计算会员图标的位置
+        CGFloat vipX = CGRectGetMaxX(self.nameFrame) + HMStatusCellInset;
+        CGFloat vipY = nameY;
+        CGFloat vipH = nameSize.height;
+        CGFloat vipW = vipH;
+        self.vipFrame = CGRectMake(vipX, vipY, vipW, vipH);
+    }
+    
     // 3.时间
     CGFloat timeX = nameX;
-    CGFloat timeY = CGRectGetMaxY(self.nameFrame) + HMStatusCellInset;
+    CGFloat timeY = CGRectGetMaxY(self.nameFrame) + HMStatusCellInset*0.5;
     CGSize timeSize = [status.created_at sizeWithFont:HMStatusOrginalTimeFont];
     self.timeFrame = (CGRect){{timeX, timeY}, timeSize};
     

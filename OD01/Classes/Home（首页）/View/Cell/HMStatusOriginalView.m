@@ -24,6 +24,9 @@
 
 /** 头像 */
 @property (nonatomic, weak) UIImageView *iconView;
+
+/** 会员图标 */
+@property (nonatomic, weak) UIImageView *vipView;
 @end
 
 @implementation HMStatusOriginalView
@@ -35,6 +38,7 @@
         // 1.昵称
         UILabel *nameLabel = [[UILabel alloc] init];
         nameLabel.font = HMStatusOrginalNameFont;
+//        nameLabel.textColor=themeColor;
         [self addSubview:nameLabel];
         self.nameLabel = nameLabel;
         
@@ -48,11 +52,13 @@
         // 3.时间
         UILabel *timeLabel = [[UILabel alloc] init];
         timeLabel.font = HMStatusOrginalTimeFont;
+        timeLabel.textColor=themeColor;
         [self addSubview:timeLabel];
         self.timeLabel = timeLabel;
         
         // 4.来源
         UILabel *sourceLabel = [[UILabel alloc] init];
+        sourceLabel.textColor=[UIColor lightGrayColor];
         sourceLabel.font = HMStatusOrginalSourceFont;
         [self addSubview:sourceLabel];
         self.sourceLabel = sourceLabel;
@@ -61,6 +67,12 @@
         UIImageView *iconView = [[UIImageView alloc] init];
         [self addSubview:iconView];
         self.iconView = iconView;
+        
+        // 6.会员图标
+        UIImageView *vipView = [[UIImageView alloc] init];
+        vipView.contentMode = UIViewContentModeCenter;
+        [self addSubview:vipView];
+        self.vipView = vipView;
     }
     return self;
 }
@@ -79,6 +91,17 @@
     // 1.昵称
     self.nameLabel.text = user.name;
     self.nameLabel.frame = originalFrame.nameFrame;
+    //昵称颜色判断
+    if (user.isVip) { // 会员
+        self.nameLabel.textColor = themeColor;
+        self.vipView.hidden = NO;
+        self.vipView.frame = originalFrame.vipFrame;
+//        self.vipView.image = [UIImage imageWithName:[NSString stringWithFormat:@"common_icon_membership_level%d", user.mbrank]];
+        self.vipView.image=[UIImage imageWithName:@"common_icon_membership_1"];
+    } else {
+        self.vipView.hidden = YES;
+        self.nameLabel.textColor = [UIColor blackColor];
+    }
     
     // 2.正文（内容）
     self.textLabel.text = status.text;
@@ -86,6 +109,7 @@
     
     // 3.时间
     self.timeLabel.text = status.created_at;
+    
     self.timeLabel.frame = originalFrame.timeFrame;
     
     // 4.来源

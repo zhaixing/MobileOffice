@@ -23,6 +23,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) { // 初始化子控件
+//        [UIImage imageNamed:]
+        self.image=[UIImage resizedImage:@"timeline_card_top_background"];
         // 1.添加原创微博
         HMStatusOriginalView *originalView = [[HMStatusOriginalView alloc] init];
         [self addSubview:originalView];

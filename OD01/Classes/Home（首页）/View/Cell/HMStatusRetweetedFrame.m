@@ -19,12 +19,13 @@
     // 1.昵称
     CGFloat nameX = HMStatusCellInset;
     CGFloat nameY = HMStatusCellInset;
-    CGSize nameSize = [retweetedStatus.user.name sizeWithFont:HMStatusRetweetedNameFont];
+    NSString *name=[NSString stringWithFormat:@"@%@",retweetedStatus.user.name];
+    CGSize nameSize = [name sizeWithFont:HMStatusRetweetedNameFont];
     self.nameFrame = (CGRect){{nameX, nameY}, nameSize};
     
     // 2.正文
     CGFloat textX = nameX;
-    CGFloat textY = CGRectGetMaxY(self.nameFrame) + HMStatusCellInset;
+    CGFloat textY = CGRectGetMaxY(self.nameFrame) + HMStatusCellInset*0.5;
     CGFloat maxW = HMScreenW - 2 * textX;
     CGSize maxSize = CGSizeMake(maxW, MAXFLOAT);
     CGSize textSize = [retweetedStatus.text sizeWithFont:HMStatusRetweetedTextFont constrainedToSize:maxSize];
@@ -32,7 +33,7 @@
     
     // 自己
     CGFloat x = 0;
-    CGFloat y = 0; // 高度 = 原创微博最大的Y值
+    CGFloat y = 7; // 高度 = 原创微博最大的Y值
     CGFloat w = HMScreenW;
     CGFloat h = CGRectGetMaxY(self.textFrame) + HMStatusCellInset;
     self.frame = CGRectMake(x, y, w, h);

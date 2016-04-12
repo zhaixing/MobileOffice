@@ -15,8 +15,21 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor blueColor];
+        
+        UIButton *buttonLeft=[[UIButton alloc] init];
+        
+        
+        [self addSubview:buttonLeft];
+        
+        UIButton *buttonMid=[[UIButton alloc] init];
+        
+        UIButton *buttonRight=[[UIButton alloc] init];
+        
+        
     }
     return self;
 }
+
+
 
 @end

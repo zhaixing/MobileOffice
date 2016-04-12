@@ -26,9 +26,12 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
+
+        self.image = [UIImage resizedImage:@"timeline_card_background_highlighted"];
         // 1.昵称
         UILabel *nameLabel = [[UILabel alloc] init];
         nameLabel.font = HMStatusRetweetedNameFont;
+        nameLabel.textColor= HMColor(74, 102, 105,1.0);
         [self addSubview:nameLabel];
         self.nameLabel = nameLabel;
         
@@ -54,7 +57,7 @@
     HMUser *user = retweetedStatus.user;
     
     // 1.昵称
-    self.nameLabel.text = user.name;
+    self.nameLabel.text = [NSString stringWithFormat:@"@%@",user.name];
     self.nameLabel.frame = retweetedFrame.nameFrame;
     
     // 2.正文（内容）

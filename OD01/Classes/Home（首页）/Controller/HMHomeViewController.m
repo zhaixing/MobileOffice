@@ -54,7 +54,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.backgroundColor=HMColor(211, 211, 211, 1.0);
+    self.tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     // 设置导航栏的内容
     [self setupNavBar];
     

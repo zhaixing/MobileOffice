@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @class HMStatusRetweetedFrame;
 
-@interface HMStatusRetweetedView : UIView
+@interface HMStatusRetweetedView : UIImageView
 @property (nonatomic, strong) HMStatusRetweetedFrame *retweetedFrame;
 @end

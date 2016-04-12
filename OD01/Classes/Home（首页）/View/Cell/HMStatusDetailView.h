@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 @class HMStatusDetailFrame;
 
-@interface HMStatusDetailView : UIView
+@interface HMStatusDetailView : UIImageView
 @property (nonatomic, strong) HMStatusDetailFrame *detailFrame;
 @end
 

@@ -42,6 +42,9 @@
         HMStatusToolbar *toolbar = [[HMStatusToolbar alloc] init];
         [self.contentView addSubview:toolbar];
         self.toolbar = toolbar;
+        
+        //3.cell颜色设置
+        self.backgroundColor=[UIColor clearColor];
     }
     return self;
 }
