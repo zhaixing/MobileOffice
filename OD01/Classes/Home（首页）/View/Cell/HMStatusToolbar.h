@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMStatusToolbar : UIView
+@interface HMStatusToolbar : UIImageView
 
 @end
