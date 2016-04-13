@@ -8,10 +8,14 @@
 
 #import "HMStatusToolbar.h"
 #import "HMGlobal.h"
+#import "HMStatus.h"
 
 @interface HMStatusToolbar()
 @property (nonatomic, strong) NSMutableArray *btns;
 @property (nonatomic, strong) NSMutableArray *dividers;
+@property (nonatomic,weak) UIButton *repostsBtn;
+@property (nonatomic,weak) UIButton *commentsBtn;
+@property (nonatomic,weak) UIButton *attitudesBtn;
 @end
 
 @implementation HMStatusToolbar
@@ -41,9 +45,9 @@
         self.userInteractionEnabled = YES;
         self.image = [UIImage resizedImage:@"timeline_card_bottom_background"];
         
-        [self setupBtnWithIcon:@"timeline_icon_retweet" title:@"转发"];
-        [self setupBtnWithIcon:@"timeline_icon_comment" title:@"评论"];
-        [self setupBtnWithIcon:@"timeline_icon_unlike" title:@"赞"];
+        self.repostsBtn = [self setupBtnWithIcon:@"timeline_icon_retweet" title:@"转发"];
+        self.commentsBtn= [self setupBtnWithIcon:@"timeline_icon_comment" title:@"评论"];
+        self.attitudesBtn= [self setupBtnWithIcon:@"timeline_icon_unlike" title:@"赞"];
         
         [self setupDivider];
         [self setupDivider];
@@ -72,7 +76,7 @@
  *  @param icon  图标
  *  @param title 标题
  */
-- (void)setupBtnWithIcon:(NSString *)icon title:(NSString *)title
+- (UIButton *)setupBtnWithIcon:(NSString *)icon title:(NSString *)title
 {
     UIButton *btn = [[UIButton alloc] init];
     [btn setImage:[UIImage imageWithName:icon] forState:UIControlStateNormal];
@@ -90,6 +94,7 @@
     [self addSubview:btn];
     
     [self.btns addObject:btn];
+    return btn;
 }
 
 - (void)layoutSubviews
@@ -122,4 +127,36 @@
     }
 }
 
+-(void)setStatus:(HMStatus *)status
+{
+    _status=status;
+    
+    [self setupBtnTitle:self.repostsBtn count:status.reposts_count defaultTitle:@"转发"];
+    [self setupBtnTitle:self.commentsBtn count:status.comments_count defaultTitle:@"评论"];
+    [self setupBtnTitle:self.attitudesBtn count:status.attitudes_count defaultTitle:@"赞"];
+}
+
+/**
+ *  设置按钮的文字
+ *
+ *  @param button       需要设置文字的按钮
+ *  @param count        按钮显示的数字
+ *  @param defaultTitle 数字为0时显示的默认文字
+ */
+- (void)setupBtnTitle:(UIButton *)button count:(int)count defaultTitle:(NSString *)defaultTitle
+{
+    if (count >= 10000) { // [10000, 无限大)
+        defaultTitle = [NSString stringWithFormat:@"%.1f万", count / 10000.0];
+        // 用空串替换掉所有的.0
+        defaultTitle = [defaultTitle stringByReplacingOccurrencesOfString:@".0" withString:@""];
+    } else if (count > 0) { // (0, 10000)
+        defaultTitle = [NSString stringWithFormat:@"%d", count];
+    }
+    [button setTitle:defaultTitle forState:UIControlStateNormal];
+}
+/**
+ 1.小于1W ： 具体数字，比如9800，就显示9800
+ 2.大于等于1W：xx.x万，比如78985，就显示7.9万
+ 3.整W：xx万，比如800365，就显示80万
+ */
 @end

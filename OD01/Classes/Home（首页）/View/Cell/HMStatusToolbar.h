@@ -7,7 +7,7 @@
 //  封装底部工具条
 
 #import <UIKit/UIKit.h>
-
+@class HMStatus;
 @interface HMStatusToolbar : UIImageView
-
+@property (nonatomic,assign) HMStatus *status;
 @end
