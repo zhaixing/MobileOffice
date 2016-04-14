@@ -7,7 +7,7 @@
 //  一个HMStatusPhotoView代表一张配图
 
 #import <UIKit/UIKit.h>
-
+@class HMPhoto;
 @interface HMStatusPhotoView : UIImageView
-
+@property (nonatomic, strong) HMPhoto *photo;
 @end

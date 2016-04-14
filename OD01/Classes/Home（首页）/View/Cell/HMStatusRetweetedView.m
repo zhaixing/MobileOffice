@@ -5,9 +5,7 @@
 //  Created by sam on 16/4/11.
 //  Copyright © 2016年 sam. All rights reserved.
 //
-
 #import "HMGlobal.h"
-
 #import "HMStatusRetweetedView.h"
 #import "HMStatusRetweetedFrame.h"
 #import "HMStatus.h"
@@ -50,7 +48,6 @@
         HMStatusPhotosView *photosView = [[HMStatusPhotosView alloc] init];
         [self addSubview:photosView];
         self.photosView = photosView;
-        
     }
     return self;
 }
@@ -77,6 +74,7 @@
     // 3.配图相册
     if (retweetedStatus.pic_urls.count) { // 有配图
         self.photosView.frame = retweetedFrame.photosFrame;
+//        self.photosView.pic_urls = retweetedStatus.pic_urls;//添加数据，改
         self.photosView.hidden = NO;
     } else {
         self.photosView.hidden = YES;

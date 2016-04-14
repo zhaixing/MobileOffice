@@ -7,6 +7,9 @@
 //
 
 #import "HMStatusPhotoView.h"
+#import "HMPhoto.h"
+#import "HMGlobal.h"
+#import "UIImageView+WebCache.h"
 
 @implementation HMStatusPhotoView
 
@@ -14,18 +17,27 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        self.contentMode = UIViewContentModeScaleAspectFill;
+        self.clipsToBounds = YES;
     }
     return self;
 }
 
-/*
- // Only override drawRect: if you perform custom drawing.
- // An empty implementation adversely affects performance during animation.
- - (void)drawRect:(CGRect)rect
- {
- // Drawing code
- }
- */
+- (void)setPhoto:(HMPhoto *)photo
+{
+    _photo = photo;
+    
+    // 1.下载图片
+//    [self setImageWithURL:[NSURL URLWithString:photo.thumbnail_pic] placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+    
+    //http://ww3.sinaimg.cn/thumbnail/7f9147a5gw1f2wc3xrrxdj20j60qugq2.jpg
+//    NSURL *url=[NSURL URLWithString:photo.thumbnail_pic];
+//        [self setImageWithURL:url placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+//    HMLog(@"%@" ,photo[@"thumbnail_pic"]);
+    
+        NSURL *url=[NSURL URLWithString:@"http://ww3.sinaimg.cn/thumbnail/7f9147a5gw1f2wc3xrrxdj20j60qugq2.jpg"];
+            [self setImageWithURL:url placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+//        HMLog(@"%@" ,photo[@"thumbnail_pic"]);
+}
 
 @end
