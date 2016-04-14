@@ -10,6 +10,7 @@
 #import "HMStatusOriginalFrame.h"
 #import "HMStatus.h"
 #import "HMUser.h"
+#import "HMStatusPhotosView.h"
 
 @implementation HMStatusOriginalFrame
 
@@ -50,7 +51,7 @@
 //    CGSize sourceSize = [status.source sizeWithFont:HMStatusOrginalSourceFont];
 //    self.sourceFrame = (CGRect){{sourceX, sourceY}, sourceSize};
     
-    // 5.正文
+    // 3.正文
     CGFloat textX = iconX;
     CGFloat textY = CGRectGetMaxY(self.iconFrame) + HMStatusCellInset;
     CGFloat maxW = HMScreenW - 2 * textX;
@@ -58,11 +59,24 @@
     CGSize textSize = [status.text sizeWithFont:HMStatusOrginalTextFont constrainedToSize:maxSize];
     self.textFrame = (CGRect){{textX, textY}, textSize};
     
+    // 4.配图相册
+    CGFloat h = 0;
+    if (status.pic_urls.count) {
+        CGFloat photosX = textX;
+        CGFloat photosY = CGRectGetMaxY(self.textFrame) + HMStatusCellInset;
+        CGSize photosSize = [HMStatusPhotosView sizeWithPhotosCount:status.pic_urls.count];
+        self.photosFrame = (CGRect){{photosX, photosY}, photosSize};
+        
+        h = CGRectGetMaxY(self.photosFrame) + HMStatusCellInset;
+    } else {
+        h = CGRectGetMaxY(self.textFrame) + HMStatusCellInset;
+    }
+    
     // 自己
     CGFloat x = 0;
     CGFloat y = 0;
     CGFloat w = HMScreenW;
-    CGFloat h = CGRectGetMaxY(self.textFrame) + HMStatusCellInset;
+//    CGFloat h = CGRectGetMaxY(self.textFrame) + HMStatusCellInset;
     self.frame = CGRectMake(x, y, w, h);
 }
 

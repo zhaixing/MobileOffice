@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B889D1CBCDC210054BD30 /* NSDate+MJ.m */; };
+		2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */; };
+		2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */; };
 		22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */; };
 		22B3C9F71CB4A41000EA00FA /* HMHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9DA1CB4A41000EA00FA /* HMHomeViewController.m */; };
 		22B3C9F81CB4A41000EA00FA /* HMImageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9E01CB4A41000EA00FA /* HMImageTool.m */; };
@@ -16,6 +18,7 @@
 		22B3C9FB1CB4A41000EA00FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9E81CB4A41000EA00FA /* main.m */; };
 		22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9ED1CB4A41000EA00FA /* HMMessageViewController.m */; };
 		22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */; };
+		22CED6131CBF19C100A2E324 /* UIDevice+Resolutions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CED6121CBF19C100A2E324 /* UIDevice+Resolutions.m */; };
 		22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */; };
 		22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7C1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m */; };
 		22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7E1CB4B8D000EFAC7A /* UIImage+Extension.m */; };
@@ -104,6 +107,10 @@
 /* Begin PBXFileReference section */
 		223B889C1CBCDC210054BD30 /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
 		223B889D1CBCDC210054BD30 /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
+		2291EB8E1CBE449100193AD4 /* HMStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotosView.h; sourceTree = "<group>"; };
+		2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhotosView.m; sourceTree = "<group>"; };
+		2291EB911CBE44C300193AD4 /* HMStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotoView.h; sourceTree = "<group>"; };
+		2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhotoView.m; sourceTree = "<group>"; };
 		22B3C9A11CB3D46000EA00FA /* 猫头鹰助理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "猫头鹰助理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B3C9B51CB3D46000EA00FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B3C9D31CB4A41000EA00FA /* HMDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDiscoverViewController.h; sourceTree = "<group>"; };
@@ -121,6 +128,8 @@
 		22B3C9ED1CB4A41000EA00FA /* HMMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMessageViewController.m; sourceTree = "<group>"; };
 		22B3C9F21CB4A41000EA00FA /* HMProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProfileTableViewController.h; sourceTree = "<group>"; };
 		22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProfileTableViewController.m; sourceTree = "<group>"; };
+		22CED6111CBF19C100A2E324 /* UIDevice+Resolutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Resolutions.h"; sourceTree = "<group>"; };
+		22CED6121CBF19C100A2E324 /* UIDevice+Resolutions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Resolutions.m"; sourceTree = "<group>"; };
 		22CF1A781CB4AB1900EFAC7A /* HMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigationController.h; sourceTree = "<group>"; };
 		22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigationController.m; sourceTree = "<group>"; };
 		22CF1A7B1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
@@ -474,6 +483,8 @@
 				22B3C9E01CB4A41000EA00FA /* HMImageTool.m */,
 				22CF1A841CB4BD4800EFAC7A /* HMGlobal.h */,
 				22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */,
+				22CED6111CBF19C100A2E324 /* UIDevice+Resolutions.h */,
+				22CED6121CBF19C100A2E324 /* UIDevice+Resolutions.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -893,6 +904,10 @@
 				22E0870F1CBB469500DCC034 /* HMStatusOriginalView.m */,
 				22E087201CBBA8C500DCC034 /* HMStatusRetweetedView.h */,
 				22E087211CBBA8C500DCC034 /* HMStatusRetweetedView.m */,
+				2291EB8E1CBE449100193AD4 /* HMStatusPhotosView.h */,
+				2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */,
+				2291EB911CBE44C300193AD4 /* HMStatusPhotoView.h */,
+				2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -998,12 +1013,14 @@
 				22D7B28E1CB7298100C5A79D /* HMAccountTool.m in Sources */,
 				22D7B2BE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m in Sources */,
 				22D7B2B51CB7601D00C5A79D /* SDWebImageDecoder.m in Sources */,
+				22CED6131CBF19C100A2E324 /* UIDevice+Resolutions.m in Sources */,
 				22D7B2B91CB7601D00C5A79D /* SDWebImagePrefetcher.m in Sources */,
 				22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */,
 				22D7B3391CB7A50F00C5A79D /* NSObject+MJCoding.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
 				22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */,
 				22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */,
+				2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */,
 				22CF1A8F1CB5374600EFAC7A /* HMTabBar.m in Sources */,
 				22E0870B1CBB461000DCC034 /* HMStatusCell.m in Sources */,
 				22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */,
@@ -1039,6 +1056,7 @@
 				22D7B27C1CB67FEC00C5A79D /* AFURLResponseSerialization.m in Sources */,
 				22D7B3581CB9E23E00C5A79D /* HMHttpTool.m in Sources */,
 				22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */,
+				2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */,
 				22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */,
 				22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */,
 				22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */,

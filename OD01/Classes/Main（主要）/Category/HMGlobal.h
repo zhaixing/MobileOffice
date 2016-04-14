@@ -11,7 +11,7 @@
 #import "UIImage+Extension.h"
 #import "UIView+Extension.h"
 #import "UIBarButtonItem+Extension.h"
-
+#import "UIDevice+Resolutions.h"
 // 是否为iOS7
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
 

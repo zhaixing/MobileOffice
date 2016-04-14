@@ -12,12 +12,16 @@
 #import "HMStatusRetweetedFrame.h"
 #import "HMStatus.h"
 #import "HMUser.h"
+#import "HMStatusPhotosView.h"
 
 @interface HMStatusRetweetedView()
 /**  昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
 /** 正文 */
 @property (nonatomic, weak) UILabel *textLabel;
+/** 配图相册 */
+@property (nonatomic, weak) HMStatusPhotosView *photosView;
+
 @end
 
 @implementation HMStatusRetweetedView
@@ -41,6 +45,12 @@
         textLabel.numberOfLines = 0;
         [self addSubview:textLabel];
         self.textLabel = textLabel;
+        
+        // 3.配图相册
+        HMStatusPhotosView *photosView = [[HMStatusPhotosView alloc] init];
+        [self addSubview:photosView];
+        self.photosView = photosView;
+        
     }
     return self;
 }
@@ -63,6 +73,14 @@
     // 2.正文（内容）
     self.textLabel.text = retweetedStatus.text;
     self.textLabel.frame = retweetedFrame.textFrame;
+    
+    // 3.配图相册
+    if (retweetedStatus.pic_urls.count) { // 有配图
+        self.photosView.frame = retweetedFrame.photosFrame;
+        self.photosView.hidden = NO;
+    } else {
+        self.photosView.hidden = YES;
+    }
 }
 
 @end
