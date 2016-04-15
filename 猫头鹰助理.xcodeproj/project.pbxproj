@@ -22,6 +22,7 @@
 		22CED6171CBFA62C00A2E324 /* HMEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CED6161CBFA62C00A2E324 /* HMEmotionKeyboard.m */; };
 		22CED61A1CBFA63C00A2E324 /* HMEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CED6191CBFA63C00A2E324 /* HMEmotionListView.m */; };
 		22CED61D1CC0734600A2E324 /* HMEmotionToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CED61C1CC0734600A2E324 /* HMEmotionToolbar.m */; };
+		22CED6201CC0744B00A2E324 /* HMEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CED61F1CC0744B00A2E324 /* HMEmotion.m */; };
 		22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */; };
 		22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7C1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m */; };
 		22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7E1CB4B8D000EFAC7A /* UIImage+Extension.m */; };
@@ -139,6 +140,8 @@
 		22CED6191CBFA63C00A2E324 /* HMEmotionListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionListView.m; sourceTree = "<group>"; };
 		22CED61B1CC0734600A2E324 /* HMEmotionToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionToolbar.h; sourceTree = "<group>"; };
 		22CED61C1CC0734600A2E324 /* HMEmotionToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionToolbar.m; sourceTree = "<group>"; };
+		22CED61E1CC0744B00A2E324 /* HMEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMEmotion.h; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotion.h"; sourceTree = SOURCE_ROOT; };
+		22CED61F1CC0744B00A2E324 /* HMEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMEmotion.m; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotion.m"; sourceTree = SOURCE_ROOT; };
 		22CF1A781CB4AB1900EFAC7A /* HMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigationController.h; sourceTree = "<group>"; };
 		22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigationController.m; sourceTree = "<group>"; };
 		22CF1A7B1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
@@ -643,6 +646,8 @@
 		22CF1A921CB5F1E200EFAC7A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22CED61E1CC0744B00A2E324 /* HMEmotion.h */,
+				22CED61F1CC0744B00A2E324 /* HMEmotion.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1093,6 +1098,7 @@
 				22D7B3351CB7A50F00C5A79D /* MJProperty.m in Sources */,
 				22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */,
 				22D7B2B11CB7601D00C5A79D /* MKAnnotationView+WebCache.m in Sources */,
+				22CED6201CC0744B00A2E324 /* HMEmotion.m in Sources */,
 				22D7B2781CB67FEC00C5A79D /* AFNetworkReachabilityManager.m in Sources */,
 				22E0870C1CBB461000DCC034 /* HMStatusDetailView.m in Sources */,
 				22E087161CBB511F00DCC034 /* HMStatusFrame.m in Sources */,
