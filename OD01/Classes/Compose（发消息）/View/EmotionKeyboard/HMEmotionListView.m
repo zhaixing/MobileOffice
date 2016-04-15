@@ -18,7 +18,7 @@
 
 #import "HMEmotionListView.h"
 
-@interface HMEmotionListView()
+@interface HMEmotionListView() <UIScrollViewDelegate>
 /** 显示所有表情的UIScrollView */
 @property (nonatomic, weak) UIScrollView *scrollView;
 /** 显示页码的UIPageControl */
@@ -33,7 +33,13 @@
     if (self) {
         // 1.显示所有表情的UIScrollView
         UIScrollView *scrollView = [[UIScrollView alloc] init];
+        // 滚动条是UIScrollView的子控件
+        // 隐藏滚动条，可以屏蔽多余的子控件
+        scrollView.showsHorizontalScrollIndicator = NO;
+        scrollView.showsVerticalScrollIndicator = NO;
         scrollView.backgroundColor = [UIColor redColor];
+        scrollView.pagingEnabled = YES;
+        scrollView.delegate = self;
         [self addSubview:scrollView];
         self.scrollView = scrollView;
         
@@ -50,9 +56,22 @@
 - (void)setEmotions:(NSArray *)emotions
 {
     _emotions = emotions;
-    HMLog(@"----%d", emotions.count);
+    
     // 设置总页数
     self.pageControl.numberOfPages = (emotions.count + HMEmotionMaxCountPerPage - 1) / HMEmotionMaxCountPerPage;
+    
+    // 决定scrollView显示多少页表情
+    // 移除所有的表情
+    [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    for (int i = 0; i<self.pageControl.numberOfPages; i++) {
+        UIView *gridView = [[UIView alloc] init];
+        gridView.backgroundColor = HMRandomColor;
+        [self.scrollView addSubview:gridView];
+    }
+    HMLog(@"setEmotions---%d", self.scrollView.subviews.count);
+    
+    //重新布局
+    [self setNeedsLayout];
 }
 
 - (void)layoutSubviews
@@ -67,6 +86,24 @@
     // 2.UIScrollView的frame
     self.scrollView.width = self.width;
     self.scrollView.height = self.pageControl.y;
+    
+    // 3.设置UIScrollView内部控件的尺寸
+    int count = self.pageControl.numberOfPages;
+    CGFloat gridW = self.scrollView.width;
+    CGFloat gridH = self.scrollView.height;
+    self.scrollView.contentSize = CGSizeMake(count * gridW, 0);
+    for (int i = 0; i<count; i++) {
+        UIView *gridView = self.scrollView.subviews[i];
+        gridView.width = gridW;
+        gridView.height = gridH;
+        gridView.x = i * gridW;
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    self.pageControl.currentPage = (int)(scrollView.contentOffset.x / scrollView.width + 0.5);
 }
 
 @end
