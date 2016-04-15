@@ -7,9 +7,9 @@
 //
 
 #define HMEmotionToolbarButtonMaxCount 4
-#import "HMGlobal.h"
-#import "HMEmotionToolbar.h"
 
+#import "HMEmotionToolbar.h"
+#import "HMGlobal.h"
 @interface HMEmotionToolbar()
 /** 记录当前选中的按钮 */
 @property (nonatomic, weak) UIButton *selectedButton;
@@ -23,12 +23,9 @@
     if (self) {
         // 1.添加4个按钮
         [self setupButton:@"最近" tag:HMEmotionTypeRecent];
-        UIButton *defaultButton = [self setupButton:@"默认" tag:HMEmotionTypeDefault];
+        [self setupButton:@"默认" tag:HMEmotionTypeDefault];
         [self setupButton:@"Emoji" tag:HMEmotionTypeEmoji];
         [self setupButton:@"浪小花" tag:HMEmotionTypeLxh];
-        
-        // 2.默认选中“默认”按钮
-        [self buttonClick:defaultButton];
     }
     return self;
 }
@@ -83,6 +80,16 @@
     if ([self.delegate respondsToSelector:@selector(emotionToolbar:didSelectedButton:)]) {
         [self.delegate emotionToolbar:self didSelectedButton:button.tag];
     }
+}
+
+- (void)setDelegate:(id<HMEmotionToolbarDelegate>)delegate
+{
+    _delegate = delegate;
+    
+    // 获得“默认”按钮
+    UIButton *defaultButton = (UIButton *)[self viewWithTag:HMEmotionTypeDefault];
+    // 默认选中“默认”按钮
+    [self buttonClick:defaultButton];
 }
 
 - (void)layoutSubviews
