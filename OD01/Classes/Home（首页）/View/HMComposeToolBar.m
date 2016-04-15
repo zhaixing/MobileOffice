@@ -8,7 +8,9 @@
 
 #import "HMComposeToolBar.h"
 #import "UIView+Extension.h"
-
+@interface HMComposeToolbar()
+@property (nonatomic, weak) UIButton *emotionButton;
+@end
 @implementation HMComposeToolbar
 
 - (id)initWithFrame:(CGRect)frame
@@ -23,9 +25,22 @@
         [self addButtonWithIcon:@"compose_mentionbutton_background_os7" highIcon:@"compose_mentionbutton_background_highlighted_os7" tag:HMComposeToolBarButtonTypeMention];
         [self addButtonWithIcon:@"anon_chat_bottom_PTT_nor" highIcon:@"anon_chat_bottom_PTT_press" tag:HMComposeToolBarButtonTypeAudio];
         [self addButtonWithIcon:@"chat_bottom_PTV_nor" highIcon:@"chat_bottom_PTV_press" tag:HMComposeToolBarButtonTypeCamaro];
-        [self addButtonWithIcon:@"anon_chat_bottom_emotion_nor" highIcon:@"anon_chat_bottom_emotion_press" tag:HMComposeToolBarButtonTypeEmotion];
+//        [self addButtonWithIcon:@"anon_chat_bottom_emotion_nor" highIcon:@"anon_chat_bottom_emotion_press" tag:HMComposeToolBarButtonTypeEmotion];
+        self.emotionButton = [self addButtonWithIcon:@"anon_chat_bottom_emotion_nor" highIcon:@"anon_chat_bottom_emotion_press" tag:HMComposeToolBarButtonTypeEmotion];
     }
     return self;
+}
+
+- (void)setShowEmotionButton:(BOOL)showEmotionButton
+{
+    _showEmotionButton = showEmotionButton;
+    if (showEmotionButton) { // 显示表情按钮
+        [self.emotionButton setImage:[UIImage imageNamed:@"anon_chat_bottom_emotion_nor"] forState:UIControlStateNormal];
+        [self.emotionButton setImage:[UIImage imageNamed:@"anon_chat_bottom_emotion_press"] forState:UIControlStateHighlighted];
+    } else { // 切换为键盘按钮
+        [self.emotionButton setImage:[UIImage imageNamed:@"anon_group_chat_bottom_keyboard_nor"] forState:UIControlStateNormal];
+        [self.emotionButton setImage:[UIImage imageNamed:@"anon_group_chat_bottom_keyboard_press"] forState:UIControlStateHighlighted];
+    }
 }
 
 /**
@@ -34,7 +49,7 @@
  *  @param icon     默认图标
  *  @param highIcon 高亮图标
  */
-- (void)addButtonWithIcon:(NSString *)icon highIcon:(NSString *)highIcon tag:(HMComposeToolbarButtonType)tag
+- (UIButton *)addButtonWithIcon:(NSString *)icon highIcon:(NSString *)highIcon tag:(HMComposeToolbarButtonType)tag
 {
     UIButton *button = [[UIButton alloc] init];
     button.tag = tag;
@@ -42,6 +57,7 @@
     [button setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
     [button setImage:[UIImage imageNamed:highIcon] forState:UIControlStateHighlighted];
     [self addSubview:button];
+    return button;
 }
 
 /**

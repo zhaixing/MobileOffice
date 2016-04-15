@@ -16,15 +16,33 @@
 #import "MBProgressHUD+MJ.h"
 #import "AFNetworking.h"
 #import "HMStatusTool.h"
+#import "HMEmotionKeyboard.h"
 
 @interface HMComposeViewController () <HMComposeToolbarDelegate,UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 @property (nonatomic, weak) HMTextView *textView;
 @property (nonatomic,weak) HMComposeToolbar *toolbar;
 @property (nonatomic,weak) HMComposePhotosView *photosView;
+@property (nonatomic, strong) HMEmotionKeyboard *kerboard;
+/**
+ *  是否正在切换键盘
+ */
+@property (nonatomic, assign, getter = isChangingKeyboard) BOOL changingKeyboard;
 @end
 
 @implementation HMComposeViewController
 #pragma mark - 初始化方法
+//懒加载键盘，只需要创建一次
+- (HMEmotionKeyboard *)kerboard
+{
+    if (!_kerboard) {
+        self.kerboard = [HMEmotionKeyboard keyboard];
+        self.kerboard.backgroundColor = [UIColor blueColor];
+        self.kerboard.width = HMScreenW;
+        self.kerboard.height = 252;
+    }
+    return _kerboard;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -250,12 +268,19 @@
  */
 -(void)keyboardWillHide:(NSNotification *)note
 {
-    //1.键盘弹出需要的时间
-    CGFloat duration=[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
-    //2.动画
+    if (self.isChangingKeyboard) {
+        self.changingKeyboard = NO;
+        return;
+    }
+    
+    // 1.键盘弹出需要的时间
+    CGFloat duration = [note.userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    
+    // 2.动画
     [UIView animateWithDuration:duration animations:^{
-        self.toolbar.transform=CGAffineTransformIdentity;
+        self.toolbar.transform = CGAffineTransformIdentity;
     }];
+
 }
 /**
  *  键盘即将弹出
@@ -359,7 +384,35 @@
  */
 - (void)openEmotion
 {
-    HMLog(@"添加表情");
+//    HMLog(@"添加表情");
+    // 正在切换键盘
+    self.changingKeyboard = YES;
+    
+    if (self.textView.inputView) { // 当前显示的是自定义键盘，切换为系统自带的键盘
+        self.textView.inputView = nil;
+        
+        // 显示表情图片
+        self.toolbar.showEmotionButton = YES;
+    } else { // 当前显示的是系统自带的键盘，切换为自定义键盘
+        // 如果临时更换了文本框的键盘，一定要重新打开键盘
+        self.textView.inputView = self.kerboard;
+    
+        // 不显示表情图片
+        self.toolbar.showEmotionButton = NO;
+        
+//        UIView *keyboard=[[UIView alloc] init];
+//        keyboard.bounds=CGRectMake(0, 0, 320, 250);
+//        keyboard.backgroundColor=[UIColor redColor];
+//        self.textView.inputView=keyboard;
+//        self.toolbar.showEmotionButton=NO;
+    }
+    
+    // 关闭键盘
+    [self.textView resignFirstResponder];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 打开键盘
+        [self.textView becomeFirstResponder];
+    });
 }
 
 #pragma mark - UIImagePickerControllerDelegate

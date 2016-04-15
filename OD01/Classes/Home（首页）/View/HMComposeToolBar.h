@@ -29,4 +29,16 @@ typedef enum {
 
 @interface HMComposeToolbar : UIView
 @property (nonatomic, weak) id<HMComposeToolbarDelegate> delegate;
+/**
+ *  设置某个按钮的图片
+ *
+ *  @param image      图片名
+ *  @param buttonType 按钮类型
+ */
+//- (void)setButtonImage:(NSString *)image buttonType:(HMComposeToolbarButtonType)buttonType;
+
+/**
+ *  是否要显示表情按钮
+ */
+@property (nonatomic, assign, getter = isShowEmotionButton) BOOL showEmotionButton;
 @end
