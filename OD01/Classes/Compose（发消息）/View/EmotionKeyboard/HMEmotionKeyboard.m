@@ -33,6 +33,7 @@
     if (!_defaultEmotions) {
         NSString *plist = [[NSBundle mainBundle] pathForResource:@"iinfo.plist" ofType:nil];
         self.defaultEmotions = [HMEmotion objectArrayWithFile:plist];
+        [self.defaultEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@""];
     }
     return _defaultEmotions;
 }
@@ -48,6 +49,8 @@
 //        HMLog(@"路径%@",plistPath);
 //        NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
 //        NSLog(@"键盘emoji%@", data);//直接打印数据。
+        
+        [self.emojiEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@"EmotionIcons/emoji"];
     }
     return _emojiEmotions;
 }
@@ -57,6 +60,7 @@
     if (!_lxhEmotions) {
         NSString *plist = [[NSBundle mainBundle] pathForResource:@"lxh_info.plist" ofType:nil];
         self.lxhEmotions = [HMEmotion objectArrayWithFile:plist];
+        [self.lxhEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@""];
     }
     return _lxhEmotions;
 }

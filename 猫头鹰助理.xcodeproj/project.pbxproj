@@ -250,6 +250,8 @@
 		22CEDD381CC090A400A2E324 /* emojiinfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22CEDD371CC090A400A2E324 /* emojiinfo.plist */; };
 		22CEDD3B1CC099A300A2E324 /* iinfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22CEDD391CC099A300A2E324 /* iinfo.plist */; };
 		22CEDD3C1CC099A300A2E324 /* lxh_info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 22CEDD3A1CC099A300A2E324 /* lxh_info.plist */; };
+		22CEDD3F1CC0C49B00A2E324 /* HMEmotionGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CEDD3E1CC0C49B00A2E324 /* HMEmotionGridView.m */; };
+		22CEDD421CC0C5A500A2E324 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CEDD411CC0C5A500A2E324 /* NSString+Emoji.m */; };
 		22CF1A7A1CB4AB1900EFAC7A /* HMNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */; };
 		22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7C1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m */; };
 		22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CF1A7E1CB4B8D000EFAC7A /* UIImage+Extension.m */; };
@@ -596,6 +598,10 @@
 		22CEDD371CC090A400A2E324 /* emojiinfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emojiinfo.plist; sourceTree = "<group>"; };
 		22CEDD391CC099A300A2E324 /* iinfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = iinfo.plist; sourceTree = "<group>"; };
 		22CEDD3A1CC099A300A2E324 /* lxh_info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lxh_info.plist; sourceTree = "<group>"; };
+		22CEDD3D1CC0C49B00A2E324 /* HMEmotionGridView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionGridView.h; sourceTree = "<group>"; };
+		22CEDD3E1CC0C49B00A2E324 /* HMEmotionGridView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionGridView.m; sourceTree = "<group>"; };
+		22CEDD401CC0C5A500A2E324 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
+		22CEDD411CC0C5A500A2E324 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		22CF1A781CB4AB1900EFAC7A /* HMNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigationController.h; sourceTree = "<group>"; };
 		22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigationController.m; sourceTree = "<group>"; };
 		22CF1A7B1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+Extension.h"; sourceTree = "<group>"; };
@@ -942,6 +948,8 @@
 			children = (
 				223B889C1CBCDC210054BD30 /* NSDate+MJ.h */,
 				223B889D1CBCDC210054BD30 /* NSDate+MJ.m */,
+				22CEDD401CC0C5A500A2E324 /* NSString+Emoji.h */,
+				22CEDD411CC0C5A500A2E324 /* NSString+Emoji.m */,
 				22D7B28F1CB7598F00C5A79D /* Foundation+Log.m */,
 				22CF1A7B1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.h */,
 				22CF1A7C1CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m */,
@@ -1078,6 +1086,8 @@
 				22CED6191CBFA63C00A2E324 /* HMEmotionListView.m */,
 				22CED61B1CC0734600A2E324 /* HMEmotionToolbar.h */,
 				22CED61C1CC0734600A2E324 /* HMEmotionToolbar.m */,
+				22CEDD3D1CC0C49B00A2E324 /* HMEmotionGridView.h */,
+				22CEDD3E1CC0C49B00A2E324 /* HMEmotionGridView.m */,
 			);
 			path = EmotionKeyboard;
 			sourceTree = "<group>";
@@ -1954,6 +1964,7 @@
 			files = (
 				22E087101CBB469500DCC034 /* HMStatusOriginalView.m in Sources */,
 				22D7B2C71CB78AB100C5A79D /* HMStatus.m in Sources */,
+				22CEDD421CC0C5A500A2E324 /* NSString+Emoji.m in Sources */,
 				22D7B3921CBA55F200C5A79D /* HMUserInfoParam.m in Sources */,
 				22B3C9F81CB4A41000EA00FA /* HMImageTool.m in Sources */,
 				22D7B3341CB7A50F00C5A79D /* MJFoundation.m in Sources */,
@@ -1985,6 +1996,7 @@
 				22CED6131CBF19C100A2E324 /* UIDevice+Resolutions.m in Sources */,
 				22D7B2B91CB7601D00C5A79D /* SDWebImagePrefetcher.m in Sources */,
 				22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */,
+				22CEDD3F1CC0C49B00A2E324 /* HMEmotionGridView.m in Sources */,
 				22D7B3391CB7A50F00C5A79D /* NSObject+MJCoding.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
 				22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */,

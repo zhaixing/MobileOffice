@@ -58,6 +58,14 @@
 // 转发微博正文字体
 #define HMStatusRetweetedTextFont HMStatusOrginalTextFont
 
+/** 表情相关 */
+// 表情的最大行数
+#define HMEmotionMaxRows 3
+// 表情的最大列数
+#define HMEmotionMaxCols 7
+// 每页最多显示多少个表情
+#define HMEmotionMaxCountPerPage (HMEmotionMaxRows * HMEmotionMaxCols - 1)
+
 
 @interface HMGlobal : NSObject
 
