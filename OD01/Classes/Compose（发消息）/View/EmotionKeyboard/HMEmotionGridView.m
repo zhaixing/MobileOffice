@@ -9,14 +9,36 @@
 #import "HMEmotionGridView.h"
 #import "HMEmotion.h"
 #import "HMGlobal.h"
+#import "HMEmotionView.h"
+
+
+
+@interface HMEmotionGridView()
+@property (nonatomic, weak) UIButton *deleteButton;
+@property (nonatomic, strong) NSMutableArray *emotionViews;
+@end
 
 @implementation HMEmotionGridView
+
+- (NSMutableArray *)emotionViews
+{
+    if (!_emotionViews) {
+        self.emotionViews = [NSMutableArray array];
+    }
+    return _emotionViews;
+}
+
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        // 添加删除按钮
+        UIButton *deleteButton = [[UIButton alloc] init];
+        [deleteButton setImage:[UIImage imageWithName:@"compose_emotion_delete"] forState:UIControlStateNormal];
+        [deleteButton setImage:[UIImage imageWithName:@"compose_emotion_delete_highlighted"] forState:UIControlStateHighlighted];
+        [self addSubview:deleteButton];
+        self.deleteButton = deleteButton;
     }
     return self;
 }
@@ -27,21 +49,27 @@
     
     // 添加新的表情
     int count = emotions.count;
+    int currentEmotionViewCount = self.emotionViews.count;
     for (int i = 0; i<count; i++) {
-        UIButton *emotionView = [[UIButton alloc] init];
-        emotionView.adjustsImageWhenHighlighted = NO;
-        HMEmotion *emotion = emotions[i];
-        if (emotion.code) { // emoji表情
-            // emotion.code == 0x1f603 --> \u54367
-            // emoji的大小取决于字体大小
-            emotionView.titleLabel.font = [UIFont systemFontOfSize:32];
-            [emotionView setTitle:emotion.emoji forState:UIControlStateNormal];
-        } else { // 图片表情
-            NSString *icon = [NSString stringWithFormat:@"%@%@", emotion.directory, emotion.png];
-//            HMLog(@"图片表情%@",icon);
-            [emotionView setImage:[UIImage imageWithName:icon] forState:UIControlStateNormal];
+        HMEmotionView *emotionView = nil;
+        
+        if (i >= currentEmotionViewCount) { // emotionView不够用
+            emotionView = [[HMEmotionView alloc] init];
+            emotionView.backgroundColor = HMRandomColor;
+            [self addSubview:emotionView];
+            [self.emotionViews addObject:emotionView];
+        } else { // emotionView够用
+            emotionView = self.emotionViews[i];
         }
-        [self addSubview:emotionView];
+        // 传递模型数据
+        emotionView.emotion = emotions[i];
+        emotionView.hidden = NO;
+    }
+    
+    // 隐藏多余的emotionView
+    for (int i = count; i<currentEmotionViewCount; i++) {
+        UIButton *emotionView = self.emotionViews[i];
+        emotionView.hidden = YES;
     }
 }
 
@@ -51,17 +79,22 @@
     
     CGFloat leftInset = 15;
     CGFloat topInset = 15;
-    
-    int count = self.emotions.count;
+    //1.排列所有的表情
+    int count = self.emotionViews.count;
     CGFloat emotionViewW = (self.width - 2 * leftInset) / HMEmotionMaxCols;
     CGFloat emotionViewH = (self.height - topInset) / HMEmotionMaxRows;
     for (int i = 0; i<count; i++) {
-        UIButton *emotionView = self.subviews[i];
+        UIButton *emotionView = self.emotionViews[i];
         emotionView.x = leftInset + (i % HMEmotionMaxCols) * emotionViewW;
         emotionView.y = topInset + (i / HMEmotionMaxCols) * emotionViewH;
         emotionView.width = emotionViewW;
         emotionView.height = emotionViewH;
     }
+    //2.删除按钮
+    self.deleteButton.width=emotionViewW;
+    self.deleteButton.height=emotionViewH;
+    self.deleteButton.x=self.width-leftInset -self.deleteButton.width;
+    self.deleteButton.y=self.height-self.deleteButton.height;
 }
 
 @end
