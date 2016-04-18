@@ -54,10 +54,10 @@
 - (BOOL)isEqual:(HMEmotion *)otherEmotion
 {
     if (self.code) { // emoji表情
-        HMLog(@"%@--isEqual--%@", self.code, otherEmotion.code);
+//        HMLog(@"%@--isEqual--%@", self.code, otherEmotion.code);
         return [self.code isEqualToString:otherEmotion.code];
     } else { // 图片表情
-        HMLog(@"%@--isEqual--%@", self.chs, otherEmotion.chs);
+//        HMLog(@"%@--isEqual--%@", self.chs, otherEmotion.chs);
         return [self.png isEqualToString:otherEmotion.png] && [self.chs isEqualToString:otherEmotion.chs];
     }
 }

@@ -95,7 +95,7 @@
     // 表情滚动到最前面
     self.scrollView.contentOffset = CGPointZero;
     
-    HMLog(@"setEmotions---%d", self.scrollView.subviews.count);
+//    HMLog(@"setEmotions---%d", self.scrollView.subviews.count);
 }
 
 - (void)layoutSubviews

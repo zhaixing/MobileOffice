@@ -66,13 +66,26 @@
     //    } else { // 隐藏占位文字
     //        self.placehoderLabel.hidden = YES;
     //    }
-    self.placehoderLabel.hidden = (self.text.length != 0);
+//    self.placehoderLabel.hidden = (self.text.length != 0);
+    
+    // text属性：只包括普通的文本字符串
+    // attributedText：包括了显示在textView里面的所有内容（表情、text）
+    self.placehoderLabel.hidden = (self.attributedText.length != 0);
+    
 }
 
 #pragma mark - 公共方法
 - (void)setText:(NSString *)text
 {
     [super setText:text];
+    
+    [self textDidChange];
+}
+
+
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
     
     [self textDidChange];
 }

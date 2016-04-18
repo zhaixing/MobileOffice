@@ -8,7 +8,7 @@
 
 #import "HMComposeViewController.h"
 #import "HMGlobal.h"
-#import "HMTextView.h"
+//#import "HMTextView.h"
 #import "HMComposeToolBar.h"
 #import "HMComposePhotosView.h"
 #import "HMAccountTool.h"
@@ -18,9 +18,10 @@
 #import "HMStatusTool.h"
 #import "HMEmotion.h"
 #import "HMEmotionKeyboard.h"
+#import "HMEmotionTextView.h"
 
 @interface HMComposeViewController () <HMComposeToolbarDelegate,UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
-@property (nonatomic, weak) HMTextView *textView;
+@property (nonatomic, weak) HMEmotionTextView *textView;
 @property (nonatomic,weak) HMComposeToolbar *toolbar;
 @property (nonatomic,weak) HMComposePhotosView *photosView;
 @property (nonatomic, strong) HMEmotionKeyboard *kerboard;
@@ -101,7 +102,7 @@
 -(void)setupTextView
 {
     //1.创建控件
-    HMTextView *textView=[[HMTextView alloc] init];
+    HMEmotionTextView *textView=[[HMEmotionTextView alloc] init];
     textView.alwaysBounceVertical=YES;//垂直方向上的弹簧效果
     textView.frame=self.view.bounds;
     textView.delegate=self;//遵守代理
@@ -142,7 +143,30 @@
  */
 -(void)setNavBar
 {
-    self.title=@"发动态";
+//    self.title=@"发动态";
+    
+    //图文混排
+    NSString *name = [HMAccountTool account].name;
+    if (name) {
+        // 构建文字
+        NSString *prefix = @"发动态";
+        NSString *text = [NSString stringWithFormat:@"%@\n%@", prefix, name];
+        NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:text];
+        [string addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:15] range:[text rangeOfString:prefix]];
+        [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:12] range:[text rangeOfString:name]];
+        
+        // 创建label
+        UILabel *titleLabel = [[UILabel alloc] init];
+        titleLabel.attributedText = string;
+        titleLabel.numberOfLines = 0;
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        titleLabel.width = 100;
+        titleLabel.height = 44;
+        self.navigationItem.titleView = titleLabel;
+    } else {
+        self.title = @"发动态";
+    }
+    
     self.view.backgroundColor=[UIColor whiteColor];
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(cancel)];
     self.navigationItem.leftBarButtonItem.tintColor=[UIColor blackColor];
@@ -329,7 +353,8 @@
  */
 - (void)textViewDidChange:(UITextView *)textView
 {
-    self.navigationItem.rightBarButtonItem.enabled = textView.text.length != 0;
+//    self.navigationItem.rightBarButtonItem.enabled = textView.text.length != 0;
+    self.navigationItem.rightBarButtonItem.enabled = textView.attributedText.length != 0;
 }
 
 #pragma mark - HMComposeToolbarDelegate
@@ -441,7 +466,13 @@
 - (void)emotionDidSelected:(NSNotification *)note
 {
     HMEmotion *emotion = note.userInfo[HMSelectedEmotion];
-    HMLog(@"%@ %@", emotion.chs, emotion.emoji);
+//    HMLog(@"%@ %@", emotion.chs, emotion.emoji);
+    
+    // 1.拼接表情
+    [self.textView appendEmotion:emotion];
+    
+    // 2.检测文字长度
+    [self textViewDidChange:self.textView];
 }
 
 /**
@@ -450,6 +481,8 @@
 - (void)emotionDidDeleted:(NSNotification *)note
 {
     HMLog(@"删除1个......");
+    // 往回删
+    [self.textView deleteBackward];
 }
 
 

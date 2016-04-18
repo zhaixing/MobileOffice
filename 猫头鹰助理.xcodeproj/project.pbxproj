@@ -12,6 +12,7 @@
 		223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27501CC458C000F9006E /* HMEmotionPopView.m */; };
 		223C27531CC458CE00F9006E /* HMEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223C27521CC458CE00F9006E /* HMEmotionPopView.xib */; };
 		223C27571CC473BE00F9006E /* HMEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27561CC473BE00F9006E /* HMEmotionTool.m */; };
+		223C275A1CC4C2E200F9006E /* HMEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27591CC4C2E200F9006E /* HMEmotionTextView.m */; };
 		2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */; };
 		2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */; };
 		22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */; };
@@ -352,6 +353,8 @@
 		223C27521CC458CE00F9006E /* HMEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMEmotionPopView.xib; sourceTree = "<group>"; };
 		223C27551CC473BE00F9006E /* HMEmotionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionTool.h; sourceTree = "<group>"; };
 		223C27561CC473BE00F9006E /* HMEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionTool.m; sourceTree = "<group>"; };
+		223C27581CC4C2E200F9006E /* HMEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionTextView.h; sourceTree = "<group>"; };
+		223C27591CC4C2E200F9006E /* HMEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionTextView.m; sourceTree = "<group>"; };
 		2291EB8E1CBE449100193AD4 /* HMStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotosView.h; sourceTree = "<group>"; };
 		2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhotosView.m; sourceTree = "<group>"; };
 		2291EB911CBE44C300193AD4 /* HMStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotoView.h; sourceTree = "<group>"; };
@@ -1118,6 +1121,8 @@
 				223C274F1CC458C000F9006E /* HMEmotionPopView.h */,
 				223C27501CC458C000F9006E /* HMEmotionPopView.m */,
 				223C27521CC458CE00F9006E /* HMEmotionPopView.xib */,
+				223C27581CC4C2E200F9006E /* HMEmotionTextView.h */,
+				223C27591CC4C2E200F9006E /* HMEmotionTextView.m */,
 			);
 			path = EmotionKeyboard;
 			sourceTree = "<group>";
@@ -2085,6 +2090,7 @@
 				22D7B36A1CBA3B0800C5A79D /* HMUserTool.m in Sources */,
 				22D7B3351CB7A50F00C5A79D /* MJProperty.m in Sources */,
 				22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */,
+				223C275A1CC4C2E200F9006E /* HMEmotionTextView.m in Sources */,
 				22D7B2B11CB7601D00C5A79D /* MKAnnotationView+WebCache.m in Sources */,
 				22CED6201CC0744B00A2E324 /* HMEmotion.m in Sources */,
 				22D7B2781CB67FEC00C5A79D /* AFNetworkReachabilityManager.m in Sources */,
