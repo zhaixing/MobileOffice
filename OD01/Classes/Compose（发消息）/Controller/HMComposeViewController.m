@@ -16,6 +16,7 @@
 #import "MBProgressHUD+MJ.h"
 #import "AFNetworking.h"
 #import "HMStatusTool.h"
+#import "HMEmotion.h"
 #import "HMEmotionKeyboard.h"
 
 @interface HMComposeViewController () <HMComposeToolbarDelegate,UITextViewDelegate,UINavigationControllerDelegate,UIImagePickerControllerDelegate>
@@ -57,6 +58,11 @@
     
     //添加显示图片的相册控件
     [self setupPhotosView];
+    
+    // 监听表情选中的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidSelected:) name:HMEmotionDidSelectedNotification object:nil];
+    // 监听删除按钮点击的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidDeleted:) name:HMEmotionDidDeletedNotification object:nil];
 }
 
 /**
@@ -423,6 +429,27 @@
         [self.textView becomeFirstResponder];
     });
 }
+
+
+/**
+ *  当表情选中的时候调用
+ *
+ *  @param note 里面包含了选中的表情
+ */
+- (void)emotionDidSelected:(NSNotification *)note
+{
+    HMEmotion *emotion = note.userInfo[HMSelectedEmotion];
+    HMLog(@"%@ %@", emotion.chs, emotion.emoji);
+}
+
+/**
+ *  当点击表情键盘上的删除按钮时调用
+ */
+- (void)emotionDidDeleted:(NSNotification *)note
+{
+    HMLog(@"删除1个......");
+}
+
 
 #pragma mark - UIImagePickerControllerDelegate
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info

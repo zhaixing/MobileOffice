@@ -45,11 +45,59 @@
         UIButton *deleteButton = [[UIButton alloc] init];
         [deleteButton setImage:[UIImage imageWithName:@"compose_emotion_delete"] forState:UIControlStateNormal];
         [deleteButton setImage:[UIImage imageWithName:@"compose_emotion_delete_highlighted"] forState:UIControlStateHighlighted];
+        [deleteButton addTarget:self action:@selector(deleteClick) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:deleteButton];
         self.deleteButton = deleteButton;
+        
+        // 给自己添加一个长按手势识别器
+        UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] init];
+        [recognizer addTarget:self action:@selector(longPress:)];
+        [self addGestureRecognizer:recognizer];
     }
     return self;
 }
+
+
+/**
+ *  根据触摸点返回对应的表情控件
+ */
+- (HMEmotionView *)emotionViewWithPoint:(CGPoint)point
+{
+    __block HMEmotionView *foundEmotionView = nil;
+    [self.emotionViews enumerateObjectsUsingBlock:^(HMEmotionView *emotionView, NSUInteger idx, BOOL *stop) {
+        if (CGRectContainsPoint(emotionView.frame, point)) {
+            foundEmotionView = emotionView;
+            // 停止遍历
+            *stop = YES;
+        }
+    }];
+    return foundEmotionView;
+}
+
+
+/**
+ *  触发了长按手势
+ */
+- (void)longPress:(UILongPressGestureRecognizer *)recognizer
+{
+    // 1.捕获触摸点
+    CGPoint point = [recognizer locationInView:recognizer.view];
+    
+    // 2.检测触摸点落在哪个表情上
+    HMEmotionView *emotionView = [self emotionViewWithPoint:point];
+    
+    if (recognizer.state == UIGestureRecognizerStateEnded) { // 手松开了
+        // 移除表情弹出控件
+        [self.popView dismiss];
+        
+        // 选中表情
+        [self selecteEmotion:emotionView.emotion];
+    } else { // 手没有松开
+        // 显示表情弹出控件
+        [self.popView showFromEmotionView:emotionView];
+    }
+}
+
 
 - (void)setEmotions:(NSArray *)emotions
 {
@@ -91,6 +139,28 @@
         [self.popView dismiss];
     });
     
+    // 选中表情
+    [self selecteEmotion:emotionView.emotion];
+}
+
+/**
+ *  选中表情
+ */
+- (void)selecteEmotion:(HMEmotion *)emotion
+{
+    if (emotion == nil) return;
+    
+    // 发出一个选中表情的通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:HMEmotionDidSelectedNotification object:nil userInfo:@{HMSelectedEmotion : emotion}];
+}
+
+/**
+ *  点击了删除按钮
+ */
+- (void)deleteClick
+{
+    // 发出一个选中表情的通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:HMEmotionDidDeletedNotification object:nil userInfo:nil];
 }
 
 - (void)layoutSubviews
