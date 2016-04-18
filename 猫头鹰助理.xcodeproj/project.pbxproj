@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B889D1CBCDC210054BD30 /* NSDate+MJ.m */; };
+		223C274E1CC454F500F9006E /* Window_Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C274D1CC454F500F9006E /* Window_Log.m */; };
+		223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27501CC458C000F9006E /* HMEmotionPopView.m */; };
+		223C27531CC458CE00F9006E /* HMEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223C27521CC458CE00F9006E /* HMEmotionPopView.xib */; };
 		2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */; };
 		2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */; };
 		22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */; };
@@ -341,6 +344,11 @@
 /* Begin PBXFileReference section */
 		223B889C1CBCDC210054BD30 /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
 		223B889D1CBCDC210054BD30 /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
+		223C274C1CC454F500F9006E /* Window_Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window_Log.h; sourceTree = "<group>"; };
+		223C274D1CC454F500F9006E /* Window_Log.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Window_Log.m; sourceTree = "<group>"; };
+		223C274F1CC458C000F9006E /* HMEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionPopView.h; sourceTree = "<group>"; };
+		223C27501CC458C000F9006E /* HMEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionPopView.m; sourceTree = "<group>"; };
+		223C27521CC458CE00F9006E /* HMEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMEmotionPopView.xib; sourceTree = "<group>"; };
 		2291EB8E1CBE449100193AD4 /* HMStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotosView.h; sourceTree = "<group>"; };
 		2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhotosView.m; sourceTree = "<group>"; };
 		2291EB911CBE44C300193AD4 /* HMStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotoView.h; sourceTree = "<group>"; };
@@ -966,6 +974,8 @@
 				22CF1A851CB4BD4800EFAC7A /* HMGlobal.m */,
 				22CED6111CBF19C100A2E324 /* UIDevice+Resolutions.h */,
 				22CED6121CBF19C100A2E324 /* UIDevice+Resolutions.m */,
+				223C274C1CC454F500F9006E /* Window_Log.h */,
+				223C274D1CC454F500F9006E /* Window_Log.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1093,6 +1103,9 @@
 				22CEDD3E1CC0C49B00A2E324 /* HMEmotionGridView.m */,
 				22CEDD461CC0D5F100A2E324 /* HMEmotionView.h */,
 				22CEDD471CC0D5F100A2E324 /* HMEmotionView.m */,
+				223C274F1CC458C000F9006E /* HMEmotionPopView.h */,
+				223C27501CC458C000F9006E /* HMEmotionPopView.m */,
+				223C27521CC458CE00F9006E /* HMEmotionPopView.xib */,
 			);
 			path = EmotionKeyboard;
 			sourceTree = "<group>";
@@ -1949,6 +1962,7 @@
 				22CEDC561CC0884800A2E324 /* d_aoteman@2x.png in Resources */,
 				22CEDCB81CC0884800A2E324 /* w_yueliang@2x.png in Resources */,
 				22CEDC6C1CC0884800A2E324 /* d_keai@2x.png in Resources */,
+				223C27531CC458CE00F9006E /* HMEmotionPopView.xib in Resources */,
 				22CEDC7D1CC0884800A2E324 /* d_shuijiao@2x.png in Resources */,
 				22CEDD0E1CC0884800A2E324 /* lxh_shuaishuaishou.gif in Resources */,
 				22CEDC811CC0884800A2E324 /* d_travel@2x.png in Resources */,
@@ -2008,6 +2022,7 @@
 				22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */,
 				2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */,
 				22CF1A8F1CB5374600EFAC7A /* HMTabBar.m in Sources */,
+				223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */,
 				22E0870B1CBB461000DCC034 /* HMStatusCell.m in Sources */,
 				22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */,
 				22E0871F1CBBA37800DCC034 /* HMStatusDetailFrame.m in Sources */,
@@ -2031,6 +2046,7 @@
 				22D7B27B1CB67FEC00C5A79D /* AFURLRequestSerialization.m in Sources */,
 				22D7B2B71CB7601D00C5A79D /* SDWebImageDownloaderOperation.m in Sources */,
 				22D7B27D1CB67FEC00C5A79D /* AFURLSessionManager.m in Sources */,
+				223C274E1CC454F500F9006E /* Window_Log.m in Sources */,
 				22D7B2871CB6803D00C5A79D /* HMOAuthViewController.m in Sources */,
 				22D7B3A21CBA5AC500C5A79D /* HMUnreadCountResult.m in Sources */,
 				22D7B2B41CB7601D00C5A79D /* SDWebImageCompat.m in Sources */,

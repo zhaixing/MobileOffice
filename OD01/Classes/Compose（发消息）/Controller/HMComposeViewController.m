@@ -163,6 +163,15 @@
 -(void)cancel
 {
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+#warning - 打印窗口里面空间层级关系的代码，注意导入头文件window_Log.h
+//    NSArray *windows = [UIApplication sharedApplication].windows;
+//    int count = 0;
+//    for (UIWindow *window in windows) {
+//        count++;
+//        NSString *file = [NSString stringWithFormat:@"window_%d.xml", count];
+//        HMLog(@"%@", window);
+//    }
 }
 
 /**

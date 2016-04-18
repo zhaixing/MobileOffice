@@ -10,15 +10,23 @@
 #import "HMEmotion.h"
 #import "HMGlobal.h"
 #import "HMEmotionView.h"
-
+#import "HMEmotionPopView.h"
 
 
 @interface HMEmotionGridView()
 @property (nonatomic, weak) UIButton *deleteButton;
 @property (nonatomic, strong) NSMutableArray *emotionViews;
+@property (nonatomic, strong) HMEmotionPopView *popView;
 @end
 
 @implementation HMEmotionGridView
+- (HMEmotionPopView *)popView
+{
+    if (!_popView) {
+        self.popView = [HMEmotionPopView popView];
+    }
+    return _popView;
+}
 
 - (NSMutableArray *)emotionViews
 {
@@ -55,7 +63,8 @@
         
         if (i >= currentEmotionViewCount) { // emotionView不够用
             emotionView = [[HMEmotionView alloc] init];
-            emotionView.backgroundColor = HMRandomColor;
+//            emotionView.backgroundColor = HMRandomColor;
+            [emotionView addTarget:self action:@selector(emotionClick:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:emotionView];
             [self.emotionViews addObject:emotionView];
         } else { // emotionView够用
@@ -71,6 +80,17 @@
         UIButton *emotionView = self.emotionViews[i];
         emotionView.hidden = YES;
     }
+}
+/**
+ *  监听表情的单击
+ */
+-(void)emotionClick:(HMEmotionView *)emotionView
+{
+    [self.popView showFromEmotionView:emotionView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.popView dismiss];
+    });
+    
 }
 
 - (void)layoutSubviews
