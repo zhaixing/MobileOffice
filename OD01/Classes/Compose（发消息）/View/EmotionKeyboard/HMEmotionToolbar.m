@@ -10,6 +10,7 @@
 
 #import "HMEmotionToolbar.h"
 #import "HMGlobal.h"
+
 @interface HMEmotionToolbar()
 /** 记录当前选中的按钮 */
 @property (nonatomic, weak) UIButton *selectedButton;
@@ -26,8 +27,26 @@
         [self setupButton:@"默认" tag:HMEmotionTypeDefault];
         [self setupButton:@"Emoji" tag:HMEmotionTypeEmoji];
         [self setupButton:@"浪小花" tag:HMEmotionTypeLxh];
+        
+        // 2.监听表情选中的通知
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidSelected:) name:HMEmotionDidSelectedNotification object:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+/**
+ *  表情选中
+ */
+- (void)emotionDidSelected:(NSNotification *)note
+{
+    if (self.selectedButton.tag == HMEmotionTypeRecent) {
+        [self buttonClick:self.selectedButton];
+    }
 }
 
 /**
@@ -106,5 +125,4 @@
         button.x = i * buttonW;
     }
 }
-
 @end

@@ -10,7 +10,6 @@
 #import "HMGlobal.h"
 #import "HMEmotionGridView.h"
 
-
 @interface HMEmotionListView() <UIScrollViewDelegate>
 /** 显示所有表情的UIScrollView */
 @property (nonatomic, weak) UIScrollView *scrollView;
@@ -30,7 +29,8 @@
         // 隐藏滚动条，可以屏蔽多余的子控件
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.showsVerticalScrollIndicator = NO;
-        scrollView.backgroundColor = [UIColor whiteColor];
+        //        scrollView.backgroundColor = [UIColor redColor];
+        scrollView.backgroundColor=[UIColor whiteColor];
         scrollView.pagingEnabled = YES;
         scrollView.delegate = self;
         [self addSubview:scrollView];
@@ -38,9 +38,10 @@
         
         // 2.显示页码的UIPageControl
         UIPageControl *pageControl = [[UIPageControl alloc] init];
+        //        pageControl.backgroundColor = [UIColor blueColor];
+        pageControl.backgroundColor=[UIColor whiteColor];
         [pageControl setValue:[UIImage imageWithName:@"compose_keyboard_dot_selected"] forKeyPath:@"_currentPageImage"];
         [pageControl setValue:[UIImage imageWithName:@"compose_keyboard_dot_normal"] forKeyPath:@"_pageImage"];
-        pageControl.backgroundColor=[UIColor whiteColor];
         [self addSubview:pageControl];
         self.pageControl = pageControl;
     }
@@ -52,14 +53,25 @@
     _emotions = emotions;
     
     // 设置总页数
-    self.pageControl.numberOfPages = (emotions.count + HMEmotionMaxCountPerPage - 1) / HMEmotionMaxCountPerPage;
+    int totalPages = (emotions.count + HMEmotionMaxCountPerPage - 1) / HMEmotionMaxCountPerPage;
+    int currentGridViewCount = self.scrollView.subviews.count;
+    self.pageControl.numberOfPages = totalPages;
     self.pageControl.currentPage = 0;
+    self.pageControl.hidden = totalPages <= 1;
     
     // 决定scrollView显示多少页表情
-    // 移除所有的表情
-    [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    for (int i = 0; i<self.pageControl.numberOfPages; i++) {
-        HMEmotionGridView *gridView = [[HMEmotionGridView alloc] init];
+    for (int i = 0; i<totalPages; i++) {
+        // 获得i位置对应的HMEmotionGridView
+        HMEmotionGridView *gridView = nil;
+        if (i >= currentGridViewCount) { // 说明HMEmotionGridView的个数不够
+            gridView = [[HMEmotionGridView alloc] init];
+            //            gridView.backgroundColor = HMRandomColor;
+            [self.scrollView addSubview:gridView];
+        } else { // 说明HMEmotionGridView的个数足够，从self.scrollView.subviews中取出HMEmotionGridView
+            gridView = self.scrollView.subviews[i];
+        }
+        
+        // 给HMEmotionGridView设置表情数据
         int loc = i * HMEmotionMaxCountPerPage;
         int len = HMEmotionMaxCountPerPage;
         if (loc + len > emotions.count) { // 对越界进行判断处理
@@ -68,7 +80,13 @@
         NSRange gridViewEmotionsRange = NSMakeRange(loc, len);
         NSArray *gridViewEmotions = [emotions subarrayWithRange:gridViewEmotionsRange];
         gridView.emotions = gridViewEmotions;
-        [self.scrollView addSubview:gridView];
+        gridView.hidden = NO;
+    }
+    
+    // 隐藏后面的不需要用到的gridView
+    for (int i = totalPages; i<currentGridViewCount; i++) {
+        HMEmotionGridView *gridView = self.scrollView.subviews[i];
+        gridView.hidden = YES;
     }
     
     // 重新布局子控件
@@ -76,6 +94,8 @@
     
     // 表情滚动到最前面
     self.scrollView.contentOffset = CGPointZero;
+    
+    HMLog(@"setEmotions---%d", self.scrollView.subviews.count);
 }
 
 - (void)layoutSubviews

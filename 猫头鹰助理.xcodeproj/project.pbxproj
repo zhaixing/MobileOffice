@@ -11,6 +11,7 @@
 		223C274E1CC454F500F9006E /* Window_Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C274D1CC454F500F9006E /* Window_Log.m */; };
 		223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27501CC458C000F9006E /* HMEmotionPopView.m */; };
 		223C27531CC458CE00F9006E /* HMEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223C27521CC458CE00F9006E /* HMEmotionPopView.xib */; };
+		223C27571CC473BE00F9006E /* HMEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27561CC473BE00F9006E /* HMEmotionTool.m */; };
 		2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */; };
 		2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */; };
 		22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */; };
@@ -349,6 +350,8 @@
 		223C274F1CC458C000F9006E /* HMEmotionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionPopView.h; sourceTree = "<group>"; };
 		223C27501CC458C000F9006E /* HMEmotionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionPopView.m; sourceTree = "<group>"; };
 		223C27521CC458CE00F9006E /* HMEmotionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMEmotionPopView.xib; sourceTree = "<group>"; };
+		223C27551CC473BE00F9006E /* HMEmotionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionTool.h; sourceTree = "<group>"; };
+		223C27561CC473BE00F9006E /* HMEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionTool.m; sourceTree = "<group>"; };
 		2291EB8E1CBE449100193AD4 /* HMStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotosView.h; sourceTree = "<group>"; };
 		2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhotosView.m; sourceTree = "<group>"; };
 		2291EB911CBE44C300193AD4 /* HMStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotoView.h; sourceTree = "<group>"; };
@@ -804,6 +807,15 @@
 				22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		223C27541CC4739700F9006E /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				223C27551CC473BE00F9006E /* HMEmotionTool.h */,
+				223C27561CC473BE00F9006E /* HMEmotionTool.m */,
+			);
+			path = Tool;
 			sourceTree = "<group>";
 		};
 		22B3C9981CB3D46000EA00FA = {
@@ -1368,6 +1380,7 @@
 		22CF1A901CB5F1E200EFAC7A /* Compose（发消息） */ = {
 			isa = PBXGroup;
 			children = (
+				223C27541CC4739700F9006E /* Tool */,
 				22CF1A911CB5F1E200EFAC7A /* Controller */,
 				22CF1A921CB5F1E200EFAC7A /* Model */,
 				22CF1A931CB5F1E200EFAC7A /* View */,
@@ -2051,6 +2064,7 @@
 				22D7B3A21CBA5AC500C5A79D /* HMUnreadCountResult.m in Sources */,
 				22D7B2B41CB7601D00C5A79D /* SDWebImageCompat.m in Sources */,
 				22D7B38F1CBA55F200C5A79D /* HMHomeStatusesResult.m in Sources */,
+				223C27571CC473BE00F9006E /* HMEmotionTool.m in Sources */,
 				22D7B2CA1CB78CBF00C5A79D /* HMPhoto.m in Sources */,
 				22D7B3331CB7A50F00C5A79D /* MJExtensionConst.m in Sources */,
 				22E0870D1CBB461000DCC034 /* HMStatusToolbar.m in Sources */,

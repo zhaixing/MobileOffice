@@ -284,7 +284,7 @@
 -(void)keyboardWillHide:(NSNotification *)note
 {
     if (self.isChangingKeyboard) {
-        self.changingKeyboard = NO;
+//        self.changingKeyboard = NO;
         return;
     }
     
@@ -424,6 +424,8 @@
     
     // 关闭键盘
     [self.textView resignFirstResponder];
+    //更好键盘完毕
+    self.changingKeyboard=NO;
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         // 打开键盘
         [self.textView becomeFirstResponder];

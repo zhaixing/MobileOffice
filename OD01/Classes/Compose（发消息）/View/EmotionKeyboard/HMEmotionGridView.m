@@ -11,6 +11,7 @@
 #import "HMGlobal.h"
 #import "HMEmotionView.h"
 #import "HMEmotionPopView.h"
+#import "HMEmotionTool.h"
 
 
 @interface HMEmotionGridView()
@@ -20,6 +21,7 @@
 @end
 
 @implementation HMEmotionGridView
+
 - (HMEmotionPopView *)popView
 {
     if (!_popView) {
@@ -35,7 +37,6 @@
     }
     return _emotionViews;
 }
-
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -57,7 +58,6 @@
     return self;
 }
 
-
 /**
  *  根据触摸点返回对应的表情控件
  */
@@ -73,7 +73,6 @@
     }];
     return foundEmotionView;
 }
-
 
 /**
  *  触发了长按手势
@@ -98,7 +97,6 @@
     }
 }
 
-
 - (void)setEmotions:(NSArray *)emotions
 {
     _emotions = emotions;
@@ -111,7 +109,7 @@
         
         if (i >= currentEmotionViewCount) { // emotionView不够用
             emotionView = [[HMEmotionView alloc] init];
-//            emotionView.backgroundColor = HMRandomColor;
+            //            emotionView.backgroundColor = HMRandomColor;
             [emotionView addTarget:self action:@selector(emotionClick:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:emotionView];
             [self.emotionViews addObject:emotionView];
@@ -129,13 +127,14 @@
         emotionView.hidden = YES;
     }
 }
+
 /**
  *  监听表情的单击
  */
--(void)emotionClick:(HMEmotionView *)emotionView
+- (void)emotionClick:(HMEmotionView *)emotionView
 {
     [self.popView showFromEmotionView:emotionView];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.popView dismiss];
     });
     
@@ -149,6 +148,9 @@
 - (void)selecteEmotion:(HMEmotion *)emotion
 {
     if (emotion == nil) return;
+#warning 注意：先添加使用的表情，再发通知
+    // 保存使用记录
+    [HMEmotionTool addRecentEmotion:emotion];
     
     // 发出一个选中表情的通知
     [[NSNotificationCenter defaultCenter] postNotificationName:HMEmotionDidSelectedNotification object:nil userInfo:@{HMSelectedEmotion : emotion}];
@@ -169,7 +171,8 @@
     
     CGFloat leftInset = 15;
     CGFloat topInset = 15;
-    //1.排列所有的表情
+    
+    // 1.排列所有的表情
     int count = self.emotionViews.count;
     CGFloat emotionViewW = (self.width - 2 * leftInset) / HMEmotionMaxCols;
     CGFloat emotionViewH = (self.height - topInset) / HMEmotionMaxRows;
@@ -180,11 +183,12 @@
         emotionView.width = emotionViewW;
         emotionView.height = emotionViewH;
     }
-    //2.删除按钮
-    self.deleteButton.width=emotionViewW;
-    self.deleteButton.height=emotionViewH;
-    self.deleteButton.x=self.width-leftInset -self.deleteButton.width;
-    self.deleteButton.y=self.height-self.deleteButton.height;
+    
+    // 2.删除按钮
+    self.deleteButton.width = emotionViewW;
+    self.deleteButton.height = emotionViewH;
+    self.deleteButton.x = self.width - leftInset - self.deleteButton.width;
+    self.deleteButton.y = self.height - self.deleteButton.height;
 }
 
 @end
