@@ -14,4 +14,8 @@
  *  拼接表情到最后面
  */
 - (void)appendEmotion:(HMEmotion *)emotion;
+/**
+ *  具体的文字内容
+ */
+- (NSString *)realText;
 @end

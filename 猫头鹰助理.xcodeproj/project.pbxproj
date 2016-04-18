@@ -13,6 +13,8 @@
 		223C27531CC458CE00F9006E /* HMEmotionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 223C27521CC458CE00F9006E /* HMEmotionPopView.xib */; };
 		223C27571CC473BE00F9006E /* HMEmotionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27561CC473BE00F9006E /* HMEmotionTool.m */; };
 		223C275A1CC4C2E200F9006E /* HMEmotionTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27591CC4C2E200F9006E /* HMEmotionTextView.m */; };
+		223C275E1CC4D9BB00F9006E /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C275D1CC4D9BB00F9006E /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		223C27601CC4DAB600F9006E /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 223C275F1CC4DAB600F9006E /* libicucore.tbd */; };
 		2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */; };
 		2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */; };
 		22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */; };
@@ -355,6 +357,9 @@
 		223C27561CC473BE00F9006E /* HMEmotionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionTool.m; sourceTree = "<group>"; };
 		223C27581CC4C2E200F9006E /* HMEmotionTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionTextView.h; sourceTree = "<group>"; };
 		223C27591CC4C2E200F9006E /* HMEmotionTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEmotionTextView.m; sourceTree = "<group>"; };
+		223C275C1CC4D9BB00F9006E /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		223C275D1CC4D9BB00F9006E /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		223C275F1CC4DAB600F9006E /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		2291EB8E1CBE449100193AD4 /* HMStatusPhotosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotosView.h; sourceTree = "<group>"; };
 		2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhotosView.m; sourceTree = "<group>"; };
 		2291EB911CBE44C300193AD4 /* HMStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotoView.h; sourceTree = "<group>"; };
@@ -791,6 +796,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				223C27601CC4DAB600F9006E /* libicucore.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,9 +827,19 @@
 			path = Tool;
 			sourceTree = "<group>";
 		};
+		223C275B1CC4D9BB00F9006E /* RegexKitLite */ = {
+			isa = PBXGroup;
+			children = (
+				223C275C1CC4D9BB00F9006E /* RegexKitLite.h */,
+				223C275D1CC4D9BB00F9006E /* RegexKitLite.m */,
+			);
+			path = RegexKitLite;
+			sourceTree = "<group>";
+		};
 		22B3C9981CB3D46000EA00FA = {
 			isa = PBXGroup;
 			children = (
+				223C275F1CC4DAB600F9006E /* libicucore.tbd */,
 				22B3C9A31CB3D46000EA00FA /* OD01 */,
 				22B3C9A21CB3D46000EA00FA /* Products */,
 			);
@@ -1461,6 +1477,7 @@
 		22D7B25A1CB67FEC00C5A79D /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				223C275B1CC4D9BB00F9006E /* RegexKitLite */,
 				22D7B31D1CB7A50F00C5A79D /* MJExtension */,
 				22D7B2911CB7601D00C5A79D /* SDWebImage */,
 				22D7B25B1CB67FEC00C5A79D /* AFNetworking */,
@@ -2017,6 +2034,7 @@
 				22D7B34F1CB8FB8200C5A79D /* HMComposeToolBar.m in Sources */,
 				22D7B27E1CB67FEC00C5A79D /* MBProgressHUD+MJ.m in Sources */,
 				22D7B2B61CB7601D00C5A79D /* SDWebImageDownloader.m in Sources */,
+				223C275E1CC4D9BB00F9006E /* RegexKitLite.m in Sources */,
 				22D7B3361CB7A50F00C5A79D /* MJPropertyKey.m in Sources */,
 				22D7B3551CB9D51D00C5A79D /* HMTitleButton.m in Sources */,
 				22D7B2751CB67FEC00C5A79D /* AFHTTPRequestOperation.m in Sources */,
