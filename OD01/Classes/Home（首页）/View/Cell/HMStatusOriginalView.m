@@ -115,7 +115,8 @@
     }
     
     // 2.正文（内容）
-    self.textLabel.text = status.text;
+//    self.textLabel.text = status.text;
+    self.textLabel.attributedText=status.attributedText;
     self.textLabel.frame = originalFrame.textFrame;
     
 //    // 3.时间

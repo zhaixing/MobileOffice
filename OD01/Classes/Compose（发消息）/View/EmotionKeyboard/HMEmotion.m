@@ -32,6 +32,7 @@
 {
     if (self = [super init]) {
         self.chs = [decoder decodeObjectForKey:@"chs"];
+        self.cht = [decoder decodeObjectForKey:@"cht"];
         self.png = [decoder decodeObjectForKey:@"png"];
         self.code = [decoder decodeObjectForKey:@"code"];
         self.directory = [decoder decodeObjectForKey:@"directory"];
@@ -46,6 +47,7 @@
 - (void)encodeWithCoder:(NSCoder *)encoder
 {
     [encoder encodeObject:self.chs forKey:@"chs"];
+    [encoder encodeObject:self.cht forKey:@"cht"];
     [encoder encodeObject:self.png forKey:@"png"];
     [encoder encodeObject:self.code forKey:@"code"];
     [encoder encodeObject:self.directory forKey:@"directory"];

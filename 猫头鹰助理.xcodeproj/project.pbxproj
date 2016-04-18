@@ -344,6 +344,7 @@
 		22E0871F1CBBA37800DCC034 /* HMStatusDetailFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */; };
 		22E087221CBBA8C500DCC034 /* HMStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087211CBBA8C500DCC034 /* HMStatusRetweetedView.m */; };
 		22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382A1CC527D900660675 /* HMEmotionAttachment.m */; };
+		22F3382E1CC5A1F200660675 /* HMRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382D1CC5A1F200660675 /* HMRegexResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -792,6 +793,8 @@
 		22E087211CBBA8C500DCC034 /* HMStatusRetweetedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusRetweetedView.m; sourceTree = "<group>"; };
 		22F338291CC527D900660675 /* HMEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMEmotionAttachment.h; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.h"; sourceTree = SOURCE_ROOT; };
 		22F3382A1CC527D900660675 /* HMEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMEmotionAttachment.m; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.m"; sourceTree = SOURCE_ROOT; };
+		22F3382C1CC5A1F200660675 /* HMRegexResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRegexResult.h; sourceTree = "<group>"; };
+		22F3382D1CC5A1F200660675 /* HMRegexResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMRegexResult.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -957,6 +960,8 @@
 				22D7B2C61CB78AB100C5A79D /* HMStatus.m */,
 				22D7B2C81CB78CBF00C5A79D /* HMPhoto.h */,
 				22D7B2C91CB78CBF00C5A79D /* HMPhoto.m */,
+				22F3382C1CC5A1F200660675 /* HMRegexResult.h */,
+				22F3382D1CC5A1F200660675 /* HMRegexResult.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2104,6 +2109,7 @@
 				22D7B3581CB9E23E00C5A79D /* HMHttpTool.m in Sources */,
 				22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */,
 				2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */,
+				22F3382E1CC5A1F200660675 /* HMRegexResult.m in Sources */,
 				22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */,
 				22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */,
 				22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */,
