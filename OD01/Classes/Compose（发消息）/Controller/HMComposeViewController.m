@@ -288,17 +288,18 @@
 //        [MBProgressHUD showError:@"发布失败"];
 //    }];
 #pragma mark - 第二次封装，面向模型，业务封装
-//    // 1.封装请求参数
-//    HMSendStatusParam *param = [[HMSendStatusParam alloc] init];
-//    param.access_token = [HMAccountTool account].access_token;
+    // 1.封装请求参数
+    HMSendStatusParam *param = [[HMSendStatusParam alloc] init];
+    param.access_token = [HMAccountTool account].access_token;
 //    param.status = self.textView.text;
-//    
-//    // 2.发微博
-//    [HMStatusTool sendStatusWithParam:param success:^(HMSendStatusResult *result) {
-//        [MBProgressHUD showSuccess:@"发表成功"];
-//    } failure:^(NSError *error) {
-//        [MBProgressHUD showError:@"发表失败"];
-//    }];
+    param.status = self.textView.realText;
+    
+    // 2.发微博
+    [HMStatusTool sendStatusWithParam:param success:^(HMSendStatusResult *result) {
+        [MBProgressHUD showSuccess:@"发表成功"];
+    } failure:^(NSError *error) {
+        [MBProgressHUD showError:@"发表失败"];
+    }];
     
     //带有表情的动态
     HMLog(@"%@", self.textView.realText);

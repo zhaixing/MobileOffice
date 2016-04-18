@@ -343,6 +343,7 @@
 		22E0871C1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0871B1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m */; };
 		22E0871F1CBBA37800DCC034 /* HMStatusDetailFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */; };
 		22E087221CBBA8C500DCC034 /* HMStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087211CBBA8C500DCC034 /* HMStatusRetweetedView.m */; };
+		22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382A1CC527D900660675 /* HMEmotionAttachment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -789,6 +790,8 @@
 		22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMStatusDetailFrame.m; path = "OD01/Classes/Home（首页）/View/Cell/HMStatusDetailFrame.m"; sourceTree = SOURCE_ROOT; };
 		22E087201CBBA8C500DCC034 /* HMStatusRetweetedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusRetweetedView.h; sourceTree = "<group>"; };
 		22E087211CBBA8C500DCC034 /* HMStatusRetweetedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusRetweetedView.m; sourceTree = "<group>"; };
+		22F338291CC527D900660675 /* HMEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMEmotionAttachment.h; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.h"; sourceTree = SOURCE_ROOT; };
+		22F3382A1CC527D900660675 /* HMEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMEmotionAttachment.m; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1423,6 +1426,8 @@
 			children = (
 				22CED61E1CC0744B00A2E324 /* HMEmotion.h */,
 				22CED61F1CC0744B00A2E324 /* HMEmotion.m */,
+				22F338291CC527D900660675 /* HMEmotionAttachment.h */,
+				22F3382A1CC527D900660675 /* HMEmotionAttachment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2070,6 +2075,7 @@
 				22D7B2771CB67FEC00C5A79D /* AFHTTPSessionManager.m in Sources */,
 				22D7B2B31CB7601D00C5A79D /* SDImageCache.m in Sources */,
 				22D7B3381CB7A50F00C5A79D /* NSObject+MJClass.m in Sources */,
+				22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */,
 				22CEDD481CC0D5F100A2E324 /* HMEmotionView.m in Sources */,
 				22D7B3371CB7A50F00C5A79D /* MJPropertyType.m in Sources */,
 				22D7B3911CBA55F200C5A79D /* HMSendStatusResult.m in Sources */,

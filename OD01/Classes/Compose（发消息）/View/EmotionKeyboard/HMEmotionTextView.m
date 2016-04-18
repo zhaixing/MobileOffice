@@ -9,6 +9,7 @@
 #import "HMEmotionTextView.h"
 #import "HMEmotion.h"
 #import "RegexKitLite.h"
+#import "HMEmotionAttachment.h"
 
 @implementation HMEmotionTextView
 
@@ -20,8 +21,9 @@
         NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
         
         // 创建一个带有图片表情的富文本
-        NSTextAttachment *attach = [[NSTextAttachment alloc] init];
-        attach.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@", emotion.directory, emotion.png]];
+        HMEmotionAttachment *attach = [[HMEmotionAttachment alloc] init];
+        attach.emotion=emotion;
+//        attach.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@%@", emotion.directory, emotion.png]];//可以一起抽取到类方法里面
         attach.bounds = CGRectMake(0, -3, self.font.lineHeight, self.font.lineHeight);
         NSAttributedString *attachString = [NSAttributedString attributedStringWithAttachment:attach];
         
@@ -49,9 +51,10 @@
     
     // 2.遍历富文本里面的所有内容
     [self.attributedText enumerateAttributesInRange:NSMakeRange(0, self.attributedText.length) options:0 usingBlock:^(NSDictionary *attrs, NSRange range, BOOL *stop) {
-        NSTextAttachment *attach = attrs[@"NSAttachment"];
+        HMEmotionAttachment *attach = attrs[@"NSAttachment"];
         if (attach) { // 如果是带有附件的富文本
-            [string appendString:@"[哈哈]"];
+//            [string appendString:@"[哈哈]"];
+            [string appendString:attach.emotion.chs];
         } else { // 普通的文本
             // 截取range范围的普通文本
             NSString *substr = [self.attributedText attributedSubstringFromRange:range].string;
