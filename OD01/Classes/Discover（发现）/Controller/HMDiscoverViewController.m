@@ -11,7 +11,9 @@
 #import "HMCommonCell.h"
 #import "HMCommonItem.h"
 #import "HMCommonGroup.h"
-
+#import "HMCommonArrowItem.h"
+#import "HMCommonSwitchItem.h"
+#import "HMCommonLabelItem.h"
 
 @interface HMDiscoverViewController ()
 @property (nonatomic,strong) NSMutableArray *groups;
@@ -88,22 +90,23 @@
     group.footer = @"第0组尾部的详细信息";
     
     // 3.设置组的所有行数据
-    HMCommonItem *notice = [HMCommonItem itemWithTitle:@"通知" icon:@"AppNotice"];
+    HMCommonArrowItem *notice = [HMCommonArrowItem itemWithTitle:@"通知" icon:@"AppNotice"];
+    notice.badgeValue=@"17777";
     notice.subtitle = @"一呼百应，支持投票功能";
     
-    HMCommonItem *attendance = [HMCommonItem itemWithTitle:@"考勤" icon:@"AppAttendance"];
+    HMCommonArrowItem *attendance = [HMCommonArrowItem itemWithTitle:@"考勤" icon:@"AppAttendance"];
     attendance.subtitle = @"上下班打卡";
     
-    HMCommonItem *process=[HMCommonItem itemWithTitle:@"流程" icon:@"AppProcess"];
+    HMCommonArrowItem *process=[HMCommonArrowItem itemWithTitle:@"流程" icon:@"AppProcess"];
     process.subtitle=@"请假、加班等，各种申请";
     
-    HMCommonItem *task=[HMCommonItem itemWithTitle:@"任务" icon:@"AppTask"];
+    HMCommonArrowItem *task=[HMCommonArrowItem itemWithTitle:@"任务" icon:@"AppTask"];
     task.subtitle=@"分配任务，逐一跟踪";
     
-    HMCommonItem *legwork=[HMCommonItem itemWithTitle:@"客户拜访" icon:@"AppLegwork"];
+    HMCommonArrowItem *legwork=[HMCommonArrowItem itemWithTitle:@"客户拜访" icon:@"AppLegwork"];
     legwork.subtitle=@"外出拜访需现场定位，并提交总结";
     
-    HMCommonItem *workReport=[HMCommonItem itemWithTitle:@"工作汇报" icon:@"AppWorkReport"];
+    HMCommonArrowItem *workReport=[HMCommonArrowItem itemWithTitle:@"工作汇报" icon:@"AppWorkReport"];
     workReport.subtitle=@"日报、周报、月报";
     
     group.items = @[notice, attendance, process, task, legwork, workReport];
@@ -116,10 +119,10 @@
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据
-    HMCommonItem *customer = [HMCommonItem itemWithTitle:@"客户" icon:@"AppCustomer"];
+    HMCommonArrowItem *customer = [HMCommonArrowItem itemWithTitle:@"客户" icon:@"AppCustomer"];
     customer.subtitle=@"管理客户信息，记录沟通细节";
     
-    HMCommonItem *salesChance = [HMCommonItem itemWithTitle:@"销售机会" icon:@"AppSalesChance"];
+    HMCommonArrowItem *salesChance = [HMCommonArrowItem itemWithTitle:@"销售机会" icon:@"AppSalesChance"];
     salesChance.subtitle=@"管理商机，跟踪销售过程";
     
     group.items = @[customer, salesChance];
@@ -132,7 +135,7 @@
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据
-    HMCommonItem *cloudDisk = [HMCommonItem itemWithTitle:@"应用" icon:@"AppCloudDisk"];
+    HMCommonArrowItem *cloudDisk = [HMCommonArrowItem itemWithTitle:@"应用" icon:@"AppCloudDisk"];
     cloudDisk.subtitle=@"公司文件共享，个人文件存储";
     group.items = @[cloudDisk];
 }

@@ -350,6 +350,10 @@
 		22F338381CC608E000660675 /* HMCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338371CC608E000660675 /* HMCommonItem.m */; };
 		22F3383B1CC608EE00660675 /* HMCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3383A1CC608EE00660675 /* HMCommonGroup.m */; };
 		22F338411CC60CC600660675 /* HMCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338401CC60CC600660675 /* HMCommonCell.m */; };
+		22F338441CC61FA300660675 /* HMCommonArrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338431CC61FA300660675 /* HMCommonArrowItem.m */; };
+		22F338471CC61FCE00660675 /* HMCommonLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338461CC61FCE00660675 /* HMCommonLabelItem.m */; };
+		22F3384A1CC61FD900660675 /* HMCommonSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338491CC61FD900660675 /* HMCommonSwitchItem.m */; };
+		22F3384D1CC6224000660675 /* HMBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3384C1CC6224000660675 /* HMBadgeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -810,6 +814,14 @@
 		22F3383A1CC608EE00660675 /* HMCommonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonGroup.m; sourceTree = "<group>"; };
 		22F3383F1CC60CC600660675 /* HMCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonCell.h; sourceTree = "<group>"; };
 		22F338401CC60CC600660675 /* HMCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonCell.m; sourceTree = "<group>"; };
+		22F338421CC61FA300660675 /* HMCommonArrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonArrowItem.h; sourceTree = "<group>"; };
+		22F338431CC61FA300660675 /* HMCommonArrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonArrowItem.m; sourceTree = "<group>"; };
+		22F338451CC61FCE00660675 /* HMCommonLabelItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonLabelItem.h; sourceTree = "<group>"; };
+		22F338461CC61FCE00660675 /* HMCommonLabelItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonLabelItem.m; sourceTree = "<group>"; };
+		22F338481CC61FD900660675 /* HMCommonSwitchItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonSwitchItem.h; sourceTree = "<group>"; };
+		22F338491CC61FD900660675 /* HMCommonSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonSwitchItem.m; sourceTree = "<group>"; };
+		22F3384B1CC6224000660675 /* HMBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBadgeView.h; sourceTree = "<group>"; };
+		22F3384C1CC6224000660675 /* HMBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBadgeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1075,6 +1087,8 @@
 		22B3C9E91CB4A41000EA00FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				22F3384B1CC6224000660675 /* HMBadgeView.h */,
+				22F3384C1CC6224000660675 /* HMBadgeView.m */,
 				22CF1A8D1CB5374600EFAC7A /* HMTabBar.h */,
 				22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */,
 				22F3383F1CC60CC600660675 /* HMCommonCell.h */,
@@ -1755,6 +1769,12 @@
 				22F338371CC608E000660675 /* HMCommonItem.m */,
 				22F338391CC608EE00660675 /* HMCommonGroup.h */,
 				22F3383A1CC608EE00660675 /* HMCommonGroup.m */,
+				22F338421CC61FA300660675 /* HMCommonArrowItem.h */,
+				22F338431CC61FA300660675 /* HMCommonArrowItem.m */,
+				22F338451CC61FCE00660675 /* HMCommonLabelItem.h */,
+				22F338461CC61FCE00660675 /* HMCommonLabelItem.m */,
+				22F338481CC61FD900660675 /* HMCommonSwitchItem.h */,
+				22F338491CC61FD900660675 /* HMCommonSwitchItem.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -2097,6 +2117,7 @@
 				22F3383B1CC608EE00660675 /* HMCommonGroup.m in Sources */,
 				22D7B2B91CB7601D00C5A79D /* SDWebImagePrefetcher.m in Sources */,
 				22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */,
+				22F3384D1CC6224000660675 /* HMBadgeView.m in Sources */,
 				22CEDD3F1CC0C49B00A2E324 /* HMEmotionGridView.m in Sources */,
 				22D7B3391CB7A50F00C5A79D /* NSObject+MJCoding.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
@@ -2129,6 +2150,7 @@
 				22D7B27B1CB67FEC00C5A79D /* AFURLRequestSerialization.m in Sources */,
 				22D7B2B71CB7601D00C5A79D /* SDWebImageDownloaderOperation.m in Sources */,
 				22D7B27D1CB67FEC00C5A79D /* AFURLSessionManager.m in Sources */,
+				22F338471CC61FCE00660675 /* HMCommonLabelItem.m in Sources */,
 				223C274E1CC454F500F9006E /* Window_Log.m in Sources */,
 				22D7B2871CB6803D00C5A79D /* HMOAuthViewController.m in Sources */,
 				22F338411CC60CC600660675 /* HMCommonCell.m in Sources */,
@@ -2145,6 +2167,7 @@
 				22D7B27C1CB67FEC00C5A79D /* AFURLResponseSerialization.m in Sources */,
 				22D7B3581CB9E23E00C5A79D /* HMHttpTool.m in Sources */,
 				22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */,
+				22F338441CC61FA300660675 /* HMCommonArrowItem.m in Sources */,
 				2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */,
 				22F3382E1CC5A1F200660675 /* HMRegexResult.m in Sources */,
 				22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */,
@@ -2161,6 +2184,7 @@
 				223C275A1CC4C2E200F9006E /* HMEmotionTextView.m in Sources */,
 				22D7B2B11CB7601D00C5A79D /* MKAnnotationView+WebCache.m in Sources */,
 				22CED6201CC0744B00A2E324 /* HMEmotion.m in Sources */,
+				22F3384A1CC61FD900660675 /* HMCommonSwitchItem.m in Sources */,
 				22D7B2781CB67FEC00C5A79D /* AFNetworkReachabilityManager.m in Sources */,
 				22E0870C1CBB461000DCC034 /* HMStatusDetailView.m in Sources */,
 				22E087161CBB511F00DCC034 /* HMStatusFrame.m in Sources */,

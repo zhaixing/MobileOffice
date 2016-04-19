@@ -11,6 +11,7 @@
 
 @interface HMCommonCell : UITableViewCell
 + (instancetype)cellWithTableView:(UITableView *)tableView;
+- (void)setIndexPath:(NSIndexPath *)indexPath rowsInSection:(int)rows;
 
 /** cell对应的item数据 */
 @property (nonatomic, strong) HMCommonItem *item;
