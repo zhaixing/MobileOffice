@@ -15,6 +15,7 @@
 #import "HMRegexResult.h"
 #import "HMEmotionAttachment.h"
 #import "HMEmotionTool.h"
+#import "HMUser.h"
 
 @implementation HMStatus
 
@@ -100,13 +101,6 @@
         int loc1 = rr1.range.location;
         int loc2 = rr2.range.location;
         return [@(loc1) compare:@(loc2)];
-        //        if (loc1 < loc2) {
-        //            return NSOrderedAscending; // 升序（右边越来越大）
-        //        } else if (loc1 > loc2) {
-        //            return NSOrderedDescending; // 降序（右边越来越小）
-        //        } else {
-        //            return NSOrderedSame;
-        //        }
     }];
     return regexResults;
 }
@@ -115,26 +109,69 @@
 {
     _text = [text copy];
     
-    // 链接、@提到、#话题#
+    [self createAttributedText];
+}
+
+- (void)setUser:(HMUser *)user
+{
+    _user = user;
     
+    [self createAttributedText];
+}
+
+- (void)setRetweeted_status:(HMStatus *)retweeted_status
+{
+    _retweeted_status = retweeted_status;
+    
+    self.retweeted = NO;
+    retweeted_status.retweeted = YES;
+}
+
+- (void)setRetweeted:(BOOL)retweeted
+{
+    _retweeted = retweeted;
+    
+    [self createAttributedText];
+}
+
+- (void)createAttributedText
+{
+    if (self.text == nil || self.user == nil) return;
+    
+    if (self.retweeted) {
+        NSString *totalText = [NSString stringWithFormat:@"@%@ : %@", self.user.name, self.text];
+        NSAttributedString *attributedString = [self attributedStringWithText:totalText];
+        self.attributedText = attributedString;
+    } else {
+        self.attributedText = [self attributedStringWithText:self.text];
+    }
+}
+
+- (NSAttributedString *)attributedStringWithText:(NSString *)text
+{
     // 1.匹配字符串
     NSArray *regexResults = [self regexResultsWithText:text];
     
     // 2.根据匹配结果，拼接对应的图片表情和普通文本
-    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] init];
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] init];
     // 遍历
     [regexResults enumerateObjectsUsingBlock:^(HMRegexResult *result, NSUInteger idx, BOOL *stop) {
+        HMEmotion *emotion = nil;
         if (result.isEmotion) { // 表情
+            emotion = [HMEmotionTool emotionWithDesc:result.string];
+        }
+        
+        if (emotion) { // 如果有表情
             // 创建附件对象
             HMEmotionAttachment *attach = [[HMEmotionAttachment alloc] init];
             
             // 传递表情
-            attach.emotion = [HMEmotionTool emotionWithDesc:result.string];
+            attach.emotion = emotion;
             attach.bounds = CGRectMake(0, -3, HMStatusOrginalTextFont.lineHeight, HMStatusOrginalTextFont.lineHeight);
             
             // 将附件包装成富文本
             NSAttributedString *attachString = [NSAttributedString attributedStringWithAttachment:attach];
-            [attributedText appendAttributedString:attachString];
+            [attributedString appendAttributedString:attachString];
         } else { // 非表情（直接拼接普通文本）
             NSMutableAttributedString *substr = [[NSMutableAttributedString alloc] initWithString:result.string];
             
@@ -156,13 +193,13 @@
                 [substr addAttribute:NSForegroundColorAttributeName value:HMStatusHighTextColor range:*capturedRanges];
             }];
             
-            [attributedText appendAttributedString:substr];
+            [attributedString appendAttributedString:substr];
         }
     }];
     
     // 设置字体
-    [attributedText addAttribute:NSFontAttributeName value:HMStatusRichTextFont range:NSMakeRange(0, attributedText.length)];
+    [attributedString addAttribute:NSFontAttributeName value:HMStatusRichTextFont range:NSMakeRange(0, attributedString.length)];
     
-    self.attributedText = attributedText;
+    return attributedString;
 }
 @end

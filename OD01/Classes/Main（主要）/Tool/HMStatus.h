@@ -11,6 +11,7 @@
 @class HMUser;
 
 @interface HMStatus : NSObject
+// {"name" : "jack", "age":10}
 /** 	string 	微博创建时间*/
 @property (nonatomic, copy) NSString *created_at;
 
@@ -42,5 +43,5 @@
 /** 	 object 	微博配图地址。多图时返回多图链接。无配图返回“[]”  数组里面都是HMPhoto模型*/
 @property (nonatomic, strong) NSArray *pic_urls;
 
-+ (instancetype)statusWithDict:(NSDictionary *)dict;
+@property (nonatomic, assign, getter = isRetweeted) BOOL retweeted;
 @end

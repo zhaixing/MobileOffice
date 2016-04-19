@@ -57,6 +57,7 @@
         // 3.时间
         UILabel *timeLabel = [[UILabel alloc] init];
         timeLabel.font = HMStatusOrginalTimeFont;
+//        timeLabel.font=[UIFont systemFontOfSize:10];
         timeLabel.textColor=themeColor;
         [self addSubview:timeLabel];
         self.timeLabel = timeLabel;

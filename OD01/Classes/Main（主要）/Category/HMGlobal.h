@@ -53,13 +53,13 @@
 // 原创微博昵称字体
 #define HMStatusOrginalNameFont [UIFont systemFontOfSize:14]
 // 原创微博时间字体
-#define HMStatusOrginalTimeFont [UIFont systemFontOfSize:12]
+#define HMStatusOrginalTimeFont [UIFont systemFontOfSize:10]
 // 原创微博来源字体
 #define HMStatusOrginalSourceFont HMStatusOrginalTimeFont
 // 原创微博正文字体
 #define HMStatusOrginalTextFont [UIFont systemFontOfSize:15]
 // 富文本字体
-#define HMStatusRichTextFont [UIFont systemFontOfSize:13]
+#define HMStatusRichTextFont HMStatusOrginalTextFont
 
 // 转发微博昵称字体
 #define HMStatusRetweetedNameFont HMStatusOrginalNameFont
