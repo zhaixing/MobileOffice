@@ -5,93 +5,160 @@
 //  Created by sam on 16/4/6.
 //  Copyright © 2016年 sam. All rights reserved.
 //
-
+#import "HMGlobal.h"
 #import "HMDiscoverViewController.h"
 #import "UIImage+Extension.h"
-@interface HMDiscoverViewController ()
+#import "HMCommonCell.h"
+#import "HMCommonItem.h"
+#import "HMCommonGroup.h"
 
+
+@interface HMDiscoverViewController ()
+@property (nonatomic,strong) NSMutableArray *groups;
 @end
 
 @implementation HMDiscoverViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    UISearchBar *bar=[[UISearchBar alloc] init];
-    bar.frame=CGRectMake(0, 0, 300, 35);
-    bar.backgroundImage=[UIImage resizedImage:@"navigationbar_button_background"];
-    self.navigationItem.titleView=bar;
+/**
+ 用一个模型来描述每组的信息：组头、组尾、这组的所有行模型
+ 用一个模型来描述每行的信息：图标、标题、子标题、右边的样式（箭头、文字、数字、开关、打钩）
+ */
+
+-(NSMutableArray *)groups
+{
+    if (_groups==nil) {
+        self.groups=[NSMutableArray array];
+    }
+    return  _groups;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+/** 屏蔽tableView的样式 */
+- (id)init
+{
+    return [self initWithStyle:UITableViewStyleGrouped];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    //搜索框
+//    UISearchBar *bar=[[UISearchBar alloc] init];
+//    bar.frame=CGRectMake(0, 0, 300, 35);
+//    bar.backgroundImage=[UIImage resizedImage:@"navigationbar_button_background"];
+//    self.navigationItem.titleView=bar;
+    
+    // 设置tableView属性
+    self.tableView.backgroundColor = HMGlobalBg;
+    self.tableView.sectionFooterHeight = 0;
+    self.tableView.sectionHeaderHeight = HMStatusCellMargin;
+    self.tableView.contentInset = UIEdgeInsetsMake(HMStatusCellMargin - 35, 0, 0, 0);
+    
+    // 初始化模型数据
+    [self setupGroups];
+    
+    //    HMLog(@"viewDidLoad--%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
+}
+
+//- (void)viewDidAppear:(BOOL)animated
+//{
+//    [super viewDidAppear:animated];
+//
+//    HMLog(@"viewDidAppear--%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
+//}
+
+/**
+ *  初始化模型数据
+ */
+- (void)setupGroups
+{
+    [self setupGroup0];
+    [self setupGroup1];
+    [self setupGroup2];
+}
+
+- (void)setupGroup0
+{
+    // 1.创建组
+    HMCommonGroup *group = [HMCommonGroup group];
+    [self.groups addObject:group];
+    
+    // 2.设置组的基本数据
+    group.header = @"第0组头部";
+    group.footer = @"第0组尾部的详细信息";
+    
+    // 3.设置组的所有行数据
+    HMCommonItem *notice = [HMCommonItem itemWithTitle:@"通知" icon:@"AppNotice"];
+    notice.subtitle = @"一呼百应，支持投票功能";
+    
+    HMCommonItem *attendance = [HMCommonItem itemWithTitle:@"考勤" icon:@"AppAttendance"];
+    attendance.subtitle = @"上下班打卡";
+    
+    HMCommonItem *process=[HMCommonItem itemWithTitle:@"流程" icon:@"AppProcess"];
+    process.subtitle=@"请假、加班等，各种申请";
+    
+    HMCommonItem *task=[HMCommonItem itemWithTitle:@"任务" icon:@"AppTask"];
+    task.subtitle=@"分配任务，逐一跟踪";
+    
+    HMCommonItem *legwork=[HMCommonItem itemWithTitle:@"客户拜访" icon:@"AppLegwork"];
+    legwork.subtitle=@"外出拜访需现场定位，并提交总结";
+    
+    HMCommonItem *workReport=[HMCommonItem itemWithTitle:@"工作汇报" icon:@"AppWorkReport"];
+    workReport.subtitle=@"日报、周报、月报";
+    
+    group.items = @[notice, attendance, process, task, legwork, workReport];
+}
+
+- (void)setupGroup1
+{
+    // 1.创建组
+    HMCommonGroup *group = [HMCommonGroup group];
+    [self.groups addObject:group];
+    
+    // 2.设置组的所有行数据
+    HMCommonItem *customer = [HMCommonItem itemWithTitle:@"客户" icon:@"AppCustomer"];
+    customer.subtitle=@"管理客户信息，记录沟通细节";
+    
+    HMCommonItem *salesChance = [HMCommonItem itemWithTitle:@"销售机会" icon:@"AppSalesChance"];
+    salesChance.subtitle=@"管理商机，跟踪销售过程";
+    
+    group.items = @[customer, salesChance];
+}
+
+- (void)setupGroup2
+{
+    // 1.创建组
+    HMCommonGroup *group = [HMCommonGroup group];
+    [self.groups addObject:group];
+    
+    // 2.设置组的所有行数据
+    HMCommonItem *cloudDisk = [HMCommonItem itemWithTitle:@"应用" icon:@"AppCloudDisk"];
+    cloudDisk.subtitle=@"公司文件共享，个人文件存储";
+    group.items = @[cloudDisk];
 }
 
 #pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return self.groups.count;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    HMCommonGroup *group=self.groups[section];
+    return group.items.count;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    HMCommonCell *cell = [HMCommonCell cellWithTableView:tableView];
+    HMCommonGroup *group = self.groups[indexPath.section];
+    cell.item = group.items[indexPath.row];
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

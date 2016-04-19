@@ -347,6 +347,9 @@
 		22F3382E1CC5A1F200660675 /* HMRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382D1CC5A1F200660675 /* HMRegexResult.m */; };
 		22F338311CC5D02800660675 /* HMStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338301CC5D02800660675 /* HMStatusLabel.m */; };
 		22F338341CC5D0B700660675 /* HMLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338331CC5D0B700660675 /* HMLink.m */; };
+		22F338381CC608E000660675 /* HMCommonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338371CC608E000660675 /* HMCommonItem.m */; };
+		22F3383B1CC608EE00660675 /* HMCommonGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3383A1CC608EE00660675 /* HMCommonGroup.m */; };
+		22F338411CC60CC600660675 /* HMCommonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338401CC60CC600660675 /* HMCommonCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -801,6 +804,12 @@
 		22F338301CC5D02800660675 /* HMStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusLabel.m; sourceTree = "<group>"; };
 		22F338321CC5D0B700660675 /* HMLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLink.h; sourceTree = "<group>"; };
 		22F338331CC5D0B700660675 /* HMLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLink.m; sourceTree = "<group>"; };
+		22F338361CC608E000660675 /* HMCommonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonItem.h; sourceTree = "<group>"; };
+		22F338371CC608E000660675 /* HMCommonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonItem.m; sourceTree = "<group>"; };
+		22F338391CC608EE00660675 /* HMCommonGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonGroup.h; sourceTree = "<group>"; };
+		22F3383A1CC608EE00660675 /* HMCommonGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonGroup.m; sourceTree = "<group>"; };
+		22F3383F1CC60CC600660675 /* HMCommonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonCell.h; sourceTree = "<group>"; };
+		22F338401CC60CC600660675 /* HMCommonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1041,6 +1050,7 @@
 		22B3C9E41CB4A41000EA00FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				22F338351CC608CC00660675 /* Common */,
 				22D7B3771CBA55F200C5A79D /* AccessToken */,
 				22D7B37C1CBA55F200C5A79D /* HomeStatuses */,
 				22D7B3811CBA55F200C5A79D /* SendStatus */,
@@ -1067,6 +1077,8 @@
 			children = (
 				22CF1A8D1CB5374600EFAC7A /* HMTabBar.h */,
 				22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */,
+				22F3383F1CC60CC600660675 /* HMCommonCell.h */,
+				22F338401CC60CC600660675 /* HMCommonCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1736,6 +1748,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		22F338351CC608CC00660675 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				22F338361CC608E000660675 /* HMCommonItem.h */,
+				22F338371CC608E000660675 /* HMCommonItem.m */,
+				22F338391CC608EE00660675 /* HMCommonGroup.h */,
+				22F3383A1CC608EE00660675 /* HMCommonGroup.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2065,11 +2088,13 @@
 				22D7B35B1CB9F3D000C5A79D /* HMStatusTool.m in Sources */,
 				22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */,
 				22D7B2801CB67FEC00C5A79D /* MBProgressHUD.m in Sources */,
+				22F338381CC608E000660675 /* HMCommonItem.m in Sources */,
 				22D7B39F1CBA5A2E00C5A79D /* HMUnreadCountParam.m in Sources */,
 				22D7B28E1CB7298100C5A79D /* HMAccountTool.m in Sources */,
 				22D7B2BE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m in Sources */,
 				22D7B2B51CB7601D00C5A79D /* SDWebImageDecoder.m in Sources */,
 				22CED6131CBF19C100A2E324 /* UIDevice+Resolutions.m in Sources */,
+				22F3383B1CC608EE00660675 /* HMCommonGroup.m in Sources */,
 				22D7B2B91CB7601D00C5A79D /* SDWebImagePrefetcher.m in Sources */,
 				22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */,
 				22CEDD3F1CC0C49B00A2E324 /* HMEmotionGridView.m in Sources */,
@@ -2106,6 +2131,7 @@
 				22D7B27D1CB67FEC00C5A79D /* AFURLSessionManager.m in Sources */,
 				223C274E1CC454F500F9006E /* Window_Log.m in Sources */,
 				22D7B2871CB6803D00C5A79D /* HMOAuthViewController.m in Sources */,
+				22F338411CC60CC600660675 /* HMCommonCell.m in Sources */,
 				22D7B3A21CBA5AC500C5A79D /* HMUnreadCountResult.m in Sources */,
 				22D7B2B41CB7601D00C5A79D /* SDWebImageCompat.m in Sources */,
 				22D7B38F1CBA55F200C5A79D /* HMHomeStatusesResult.m in Sources */,

@@ -166,7 +166,7 @@
     [self addOneChildVc:message title:@"消息" imageName:@"icon_message_nor" selectedImageName:@"icon_message_pre"];
     
     HMDiscoverViewController *discover =[[HMDiscoverViewController alloc] init];
-    [self addOneChildVc:discover title:@"发现" imageName:@"icon_find_nor" selectedImageName:@"icon_find_pre"];
+    [self addOneChildVc:discover title:@"应用" imageName:@"icon_find_nor" selectedImageName:@"icon_find_pre"];
     
     HMProfileTableViewController *me=[[HMProfileTableViewController alloc] init];
     [self addOneChildVc:me title:@"我" imageName:@"icon_setting_nor" selectedImageName:@"icon_setting_pre"];
