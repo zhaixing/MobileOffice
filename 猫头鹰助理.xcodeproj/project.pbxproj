@@ -345,6 +345,8 @@
 		22E087221CBBA8C500DCC034 /* HMStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087211CBBA8C500DCC034 /* HMStatusRetweetedView.m */; };
 		22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382A1CC527D900660675 /* HMEmotionAttachment.m */; };
 		22F3382E1CC5A1F200660675 /* HMRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382D1CC5A1F200660675 /* HMRegexResult.m */; };
+		22F338311CC5D02800660675 /* HMStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338301CC5D02800660675 /* HMStatusLabel.m */; };
+		22F338341CC5D0B700660675 /* HMLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338331CC5D0B700660675 /* HMLink.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -795,6 +797,10 @@
 		22F3382A1CC527D900660675 /* HMEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMEmotionAttachment.m; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.m"; sourceTree = SOURCE_ROOT; };
 		22F3382C1CC5A1F200660675 /* HMRegexResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRegexResult.h; sourceTree = "<group>"; };
 		22F3382D1CC5A1F200660675 /* HMRegexResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMRegexResult.m; sourceTree = "<group>"; };
+		22F3382F1CC5D02800660675 /* HMStatusLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusLabel.h; sourceTree = "<group>"; };
+		22F338301CC5D02800660675 /* HMStatusLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusLabel.m; sourceTree = "<group>"; };
+		22F338321CC5D0B700660675 /* HMLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLink.h; sourceTree = "<group>"; };
+		22F338331CC5D0B700660675 /* HMLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLink.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -820,6 +826,8 @@
 				22E0871B1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m */,
 				22E0871D1CBBA37800DCC034 /* HMStatusDetailFrame.h */,
 				22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */,
+				22F338321CC5D0B700660675 /* HMLink.h */,
+				22F338331CC5D0B700660675 /* HMLink.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -1722,6 +1730,8 @@
 				2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */,
 				2291EB911CBE44C300193AD4 /* HMStatusPhotoView.h */,
 				2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */,
+				22F3382F1CC5D02800660675 /* HMStatusLabel.h */,
+				22F338301CC5D02800660675 /* HMStatusLabel.m */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2040,6 +2050,7 @@
 				22D7B38D1CBA55F200C5A79D /* HMAccount.m in Sources */,
 				22E087191CBB9E6300DCC034 /* HMStatusOriginalFrame.m in Sources */,
 				22D7B2901CB7598F00C5A79D /* Foundation+Log.m in Sources */,
+				22F338341CC5D0B700660675 /* HMLink.m in Sources */,
 				22D7B2BC1CB7601D00C5A79D /* UIImage+MultiFormat.m in Sources */,
 				22D7B34F1CB8FB8200C5A79D /* HMComposeToolBar.m in Sources */,
 				22D7B27E1CB67FEC00C5A79D /* MBProgressHUD+MJ.m in Sources */,
@@ -2118,6 +2129,7 @@
 				22D7B39C1CBA565900C5A79D /* HMBaseParam.m in Sources */,
 				22CF1A9D1CB6005600EFAC7A /* HMNewfeatureViewController.m in Sources */,
 				22D7B36A1CBA3B0800C5A79D /* HMUserTool.m in Sources */,
+				22F338311CC5D02800660675 /* HMStatusLabel.m in Sources */,
 				22D7B3351CB7A50F00C5A79D /* MJProperty.m in Sources */,
 				22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */,
 				223C275A1CC4C2E200F9006E /* HMEmotionTextView.m in Sources */,

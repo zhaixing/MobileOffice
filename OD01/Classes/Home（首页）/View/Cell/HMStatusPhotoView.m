@@ -35,9 +35,10 @@
 //        [self setImageWithURL:url placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
 //    HMLog(@"%@" ,photo[@"thumbnail_pic"]);
     
-        NSURL *url=[NSURL URLWithString:@"http://ww3.sinaimg.cn/thumbnail/7f9147a5gw1f2wc3xrrxdj20j60qugq2.jpg"];
-            [self setImageWithURL:url placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
-//        HMLog(@"%@" ,photo[@"thumbnail_pic"]);
+#pragma mark - 能演示的
+//        NSURL *url=[NSURL URLWithString:@"http://ww3.sinaimg.cn/thumbnail/7f9147a5gw1f2wc3xrrxdj20j60qugq2.jpg"];
+//            [self setImageWithURL:url placeholderImage:[UIImage imageWithName:@"timeline_image_placeholder"]];
+
 }
 
 @end

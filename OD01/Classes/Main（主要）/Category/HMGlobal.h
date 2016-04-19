@@ -88,6 +88,11 @@
 // 通知里面取出表情用的key
 #define HMSelectedEmotion @"HMSelectedEmotion"
 
+// 链接选中的通知
+#define HMLinkDidSelectedNotification @"HMLinkDidSelectedNotification"
+
+// 富文本里面出现的链接
+#define HMLinkText @"HMLinkText"
 
 
 //#10a984

@@ -5,7 +5,6 @@
 //  Created by sam on 16/4/14.
 //  Copyright © 2016年 sam. All rights reserved.
 //
-
 #import "HMEmotionListView.h"
 #import "HMGlobal.h"
 #import "HMEmotionGridView.h"
@@ -30,7 +29,6 @@
         scrollView.showsHorizontalScrollIndicator = NO;
         scrollView.showsVerticalScrollIndicator = NO;
         //        scrollView.backgroundColor = [UIColor redColor];
-        scrollView.backgroundColor=[UIColor whiteColor];
         scrollView.pagingEnabled = YES;
         scrollView.delegate = self;
         [self addSubview:scrollView];
@@ -38,8 +36,9 @@
         
         // 2.显示页码的UIPageControl
         UIPageControl *pageControl = [[UIPageControl alloc] init];
+#warning 当单页的时候，自动隐藏UIPageControl
+        pageControl.hidesForSinglePage = YES;
         //        pageControl.backgroundColor = [UIColor blueColor];
-        pageControl.backgroundColor=[UIColor whiteColor];
         [pageControl setValue:[UIImage imageWithName:@"compose_keyboard_dot_selected"] forKeyPath:@"_currentPageImage"];
         [pageControl setValue:[UIImage imageWithName:@"compose_keyboard_dot_normal"] forKeyPath:@"_pageImage"];
         [self addSubview:pageControl];
@@ -57,7 +56,6 @@
     int currentGridViewCount = self.scrollView.subviews.count;
     self.pageControl.numberOfPages = totalPages;
     self.pageControl.currentPage = 0;
-    self.pageControl.hidden = totalPages <= 1;
     
     // 决定scrollView显示多少页表情
     for (int i = 0; i<totalPages; i++) {
@@ -95,7 +93,7 @@
     // 表情滚动到最前面
     self.scrollView.contentOffset = CGPointZero;
     
-//    HMLog(@"setEmotions---%d", self.scrollView.subviews.count);
+    //    HMLog(@"setEmotions---%d", self.scrollView.subviews.count);
 }
 
 - (void)layoutSubviews

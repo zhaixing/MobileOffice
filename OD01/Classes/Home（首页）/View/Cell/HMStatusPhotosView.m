@@ -178,7 +178,7 @@
         if (i < pic_urls.count) { // 显示图片
             photoView.photo = pic_urls[i];
             HMPhoto *photo= _pic_urls[i];
-            HMLog(@"photo>>>%@",photo);
+//            HMLog(@"photo>>>%@",photo);
 //            NSMutableDictionary *photoDictArray = [HMStatus keyValuesArrayWithObjectArray:photo];
 //            HMLog(@">>>%@",photoDictArray);http://ww4.sinaimg.cn/thumbnail/006lL3Vbgw1f2rgjapk7aj30zk0no0w7.jpg
             

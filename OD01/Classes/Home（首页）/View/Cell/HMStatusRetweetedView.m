@@ -11,12 +11,13 @@
 #import "HMStatus.h"
 #import "HMUser.h"
 #import "HMStatusPhotosView.h"
+#import "HMStatusLabel.h"
 
 @interface HMStatusRetweetedView()
 /**  昵称 */
 //@property (nonatomic, weak) UILabel *nameLabel;
 /** 正文 */
-@property (nonatomic, weak) UILabel *textLabel;
+@property (nonatomic, weak) HMStatusLabel *textLabel;
 /** 配图相册 */
 @property (nonatomic, weak) HMStatusPhotosView *photosView;
 @end
@@ -38,9 +39,9 @@
         //        self.nameLabel = nameLabel;
         
         // 2.正文（内容）
-        UILabel *textLabel = [[UILabel alloc] init];
-        textLabel.font = HMStatusRetweetedTextFont;
-        textLabel.numberOfLines = 0;
+        HMStatusLabel *textLabel = [[HMStatusLabel alloc] init];
+//        textLabel.font = HMStatusRetweetedTextFont;
+//        textLabel.numberOfLines = 0;
         [self addSubview:textLabel];
         self.textLabel = textLabel;
         

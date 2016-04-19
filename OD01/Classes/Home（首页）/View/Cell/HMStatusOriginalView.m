@@ -12,12 +12,13 @@
 #import "HMUser.h"
 #import "UIImageView+WebCache.h"
 #import "HMStatusPhotosView.h"
+#import "HMStatusLabel.h"
 
 @interface HMStatusOriginalView()
 /** 昵称 */
 @property (nonatomic, weak) UILabel *nameLabel;
 /** 正文 */
-@property (nonatomic, weak) UILabel *textLabel;
+@property (nonatomic, weak) HMStatusLabel *textLabel;
 /** 来源 */
 @property (nonatomic, weak) UILabel *sourceLabel;
 /** 时间 */
@@ -48,9 +49,9 @@
         self.nameLabel = nameLabel;
         
         // 2.正文（内容）
-        UILabel *textLabel = [[UILabel alloc] init];
-        textLabel.font = HMStatusOrginalTextFont;
-        textLabel.numberOfLines = 0;
+        HMStatusLabel *textLabel = [[HMStatusLabel alloc] init];
+//        textLabel.font = HMStatusOrginalTextFont;
+//        textLabel.numberOfLines = 0;
         [self addSubview:textLabel];
         self.textLabel = textLabel;
         
