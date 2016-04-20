@@ -14,7 +14,11 @@
 #import "HMCommonSwitchItem.h"
 #import "HMCommonLabelItem.h"
 #import "HMSettingViewController.h"
+#import "HMCustomerServeViewController.h"
 
+#import "HMPersonalInfoViewController.h"
+#import "HMGeneralSettingViewController.h"
+#import "HMHelpViewController.h"
 @interface HMProfileViewController ()
 @end
 
@@ -26,7 +30,31 @@
     // 初始化模型数据
     [self setupGroups];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"客服" style:UIBarButtonItemStyleDone target:self action:@selector(setting)];
+    [self setupNavBar];
+}
+
+-(void)setupNavBar
+{
+    //右上角的客服
+    UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonRight setTitle:@"客服" forState:UIControlStateNormal];
+    [buttonRight setTitleColor:themeColor forState:UIControlStateNormal];
+    [buttonRight setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [buttonRight setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    buttonRight.sizeToFit;
+    
+    // 监听按钮点击
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonRight];
+    [buttonRight addTarget:self action:@selector(CustomerServe) forControlEvents:UIControlEventTouchUpInside];
+}
+
+/**
+ *  客服
+ */
+-(void)CustomerServe
+{
+    HMCustomerServeViewController *cs=[[HMCustomerServeViewController alloc] init];
+    [self.navigationController pushViewController:cs animated:YES];
 }
 
 - (void)setting
@@ -54,7 +82,7 @@
     
     // 2.设置组的所有行数据
     HMCommonArrowItem *manager = [HMCommonArrowItem itemWithTitle:@"程鹏远（管理员）" icon:@"PRModelOutGoing"];
-//    manager.badgeValue = @"5";
+    manager.destVcClass=[HMPersonalInfoViewController class];
     
     group.items = @[manager];
 }
@@ -88,11 +116,12 @@
     // 2.设置组的所有行数据
     HMCommonArrowItem *setting = [HMCommonArrowItem itemWithTitle:@"设置" icon:@"me_setting"];
 //    newFriend.badgeValue = @"5";
+    setting.destVcClass=[HMSettingViewController class];
     
     HMCommonArrowItem *collection=[HMCommonArrowItem itemWithTitle:@"收藏" icon:@"me_collection"];
     
     HMCommonArrowItem *help=[HMCommonArrowItem itemWithTitle:@"帮助和反馈" icon:@"me_help"];
-    
+    help.destVcClass=[HMHelpViewController class];
     group.items = @[setting, collection, help];
 }
 

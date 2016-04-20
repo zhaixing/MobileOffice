@@ -17,7 +17,7 @@
 //NSString *urlStr=@"http://www.itcast.cn";
 - (void)viewDidLoad {
     [super viewDidLoad];
-     NSLog(@"2222%@",self.userEntity.urlStr);
+//     NSLog(@"2222%@",self.userEntity.urlStr);
     //1.创建webView
     UIWebView *webView=[[UIWebView alloc] init];
     webView.frame=self.view.bounds;

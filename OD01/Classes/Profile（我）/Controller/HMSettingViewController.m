@@ -62,7 +62,7 @@
 {
     // 1.创建组
     HMCommonGroup *group = [HMCommonGroup group];
-    group.footer = @"tail部";
+//    group.footer = @"tail部";
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据
@@ -92,7 +92,7 @@
 {
     // 1.创建组
     HMCommonGroup *group = [HMCommonGroup group];
-    group.header = @"头部";
+//    group.header = @"头部";
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据

@@ -347,10 +347,10 @@
 		22F0B6B31CC6852D004AD37F /* HMSettingCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6B21CC6852D004AD37F /* HMSettingCommonViewController.m */; };
 		22F0B6B61CC6FFDD004AD37F /* HMHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6B51CC6FFDD004AD37F /* HMHelpViewController.m */; };
 		22F0B6B91CC70658004AD37F /* HMEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6B81CC70658004AD37F /* HMEditViewController.m */; };
-		22F0B6BD1CC708CA004AD37F /* HM01addMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6BC1CC708CA004AD37F /* HM01addMember.m */; };
-		22F0B6BF1CC708DA004AD37F /* HM01addMember.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F0B6BE1CC708DA004AD37F /* HM01addMember.xib */; };
 		22F0B6C21CC70A2D004AD37F /* HMGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6C11CC70A2D004AD37F /* HMGeneralViewController.m */; };
 		22F0B6F01CC72166004AD37F /* HMurlStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6EF1CC72166004AD37F /* HMurlStr.m */; };
+		22F0B6F41CC757F7004AD37F /* HMCustomerServeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6F31CC757F7004AD37F /* HMCustomerServeViewController.m */; };
+		22F0B6FA1CC7722D004AD37F /* HMPersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6F91CC7722D004AD37F /* HMPersonalInfoViewController.m */; };
 		22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382A1CC527D900660675 /* HMEmotionAttachment.m */; };
 		22F3382E1CC5A1F200660675 /* HMRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382D1CC5A1F200660675 /* HMRegexResult.m */; };
 		22F338311CC5D02800660675 /* HMStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338301CC5D02800660675 /* HMStatusLabel.m */; };
@@ -386,7 +386,7 @@
 		2291EB8F1CBE449100193AD4 /* HMStatusPhotosView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhotosView.m; sourceTree = "<group>"; };
 		2291EB911CBE44C300193AD4 /* HMStatusPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusPhotoView.h; sourceTree = "<group>"; };
 		2291EB921CBE44C300193AD4 /* HMStatusPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusPhotoView.m; sourceTree = "<group>"; };
-		22B3C9A11CB3D46000EA00FA /* 猫头鹰助理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "猫头鹰助理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B3C9A11CB3D46000EA00FA /* 口袋助理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "口袋助理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B3C9B51CB3D46000EA00FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B3C9D31CB4A41000EA00FA /* HMDiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDiscoverViewController.h; sourceTree = "<group>"; };
 		22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDiscoverViewController.m; sourceTree = "<group>"; };
@@ -819,13 +819,14 @@
 		22F0B6B51CC6FFDD004AD37F /* HMHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHelpViewController.m; sourceTree = "<group>"; };
 		22F0B6B71CC70658004AD37F /* HMEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEditViewController.h; sourceTree = "<group>"; };
 		22F0B6B81CC70658004AD37F /* HMEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEditViewController.m; sourceTree = "<group>"; };
-		22F0B6BB1CC708CA004AD37F /* HM01addMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HM01addMember.h; sourceTree = "<group>"; };
-		22F0B6BC1CC708CA004AD37F /* HM01addMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HM01addMember.m; sourceTree = "<group>"; };
-		22F0B6BE1CC708DA004AD37F /* HM01addMember.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HM01addMember.xib; sourceTree = "<group>"; };
 		22F0B6C01CC70A2D004AD37F /* HMGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGeneralViewController.h; sourceTree = "<group>"; };
 		22F0B6C11CC70A2D004AD37F /* HMGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGeneralViewController.m; sourceTree = "<group>"; };
 		22F0B6EE1CC72166004AD37F /* HMurlStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMurlStr.h; sourceTree = "<group>"; };
 		22F0B6EF1CC72166004AD37F /* HMurlStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMurlStr.m; sourceTree = "<group>"; };
+		22F0B6F21CC757F7004AD37F /* HMCustomerServeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCustomerServeViewController.h; sourceTree = "<group>"; };
+		22F0B6F31CC757F7004AD37F /* HMCustomerServeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCustomerServeViewController.m; sourceTree = "<group>"; };
+		22F0B6F81CC7722D004AD37F /* HMPersonalInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPersonalInfoViewController.h; sourceTree = "<group>"; };
+		22F0B6F91CC7722D004AD37F /* HMPersonalInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPersonalInfoViewController.m; sourceTree = "<group>"; };
 		22F338291CC527D900660675 /* HMEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMEmotionAttachment.h; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.h"; sourceTree = SOURCE_ROOT; };
 		22F3382A1CC527D900660675 /* HMEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMEmotionAttachment.m; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.m"; sourceTree = SOURCE_ROOT; };
 		22F3382C1CC5A1F200660675 /* HMRegexResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRegexResult.h; sourceTree = "<group>"; };
@@ -915,7 +916,7 @@
 		22B3C9A21CB3D46000EA00FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				22B3C9A11CB3D46000EA00FA /* 猫头鹰助理.app */,
+				22B3C9A11CB3D46000EA00FA /* 口袋助理.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1184,6 +1185,8 @@
 		22B3C9F11CB4A41000EA00FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				22F0B6F11CC757C0004AD37F /* CustomerServe(客服) */,
+				22F0B6F71CC771EF004AD37F /* PersonalInfo(个人信息) */,
 				22F0B6B11CC6852D004AD37F /* HMSettingCommonViewController.h */,
 				22F0B6B21CC6852D004AD37F /* HMSettingCommonViewController.m */,
 				22B3C9F21CB4A41000EA00FA /* HMProfileViewController.h */,
@@ -1812,15 +1815,31 @@
 		22F0B6BA1CC7087A004AD37F /* helpView */ = {
 			isa = PBXGroup;
 			children = (
-				22F0B6BB1CC708CA004AD37F /* HM01addMember.h */,
-				22F0B6BC1CC708CA004AD37F /* HM01addMember.m */,
-				22F0B6BE1CC708DA004AD37F /* HM01addMember.xib */,
 				22F0B6C01CC70A2D004AD37F /* HMGeneralViewController.h */,
 				22F0B6C11CC70A2D004AD37F /* HMGeneralViewController.m */,
 				22F0B6EE1CC72166004AD37F /* HMurlStr.h */,
 				22F0B6EF1CC72166004AD37F /* HMurlStr.m */,
 			);
 			path = helpView;
+			sourceTree = "<group>";
+		};
+		22F0B6F11CC757C0004AD37F /* CustomerServe(客服) */ = {
+			isa = PBXGroup;
+			children = (
+				22F0B6F21CC757F7004AD37F /* HMCustomerServeViewController.h */,
+				22F0B6F31CC757F7004AD37F /* HMCustomerServeViewController.m */,
+			);
+			path = "CustomerServe(客服)";
+			sourceTree = "<group>";
+		};
+		22F0B6F71CC771EF004AD37F /* PersonalInfo(个人信息) */ = {
+			isa = PBXGroup;
+			children = (
+				22F0B6F81CC7722D004AD37F /* HMPersonalInfoViewController.h */,
+				22F0B6F91CC7722D004AD37F /* HMPersonalInfoViewController.m */,
+			);
+			name = "PersonalInfo(个人信息)";
+			path = PersonalInfo;
 			sourceTree = "<group>";
 		};
 		22F338351CC608CC00660675 /* Common */ = {
@@ -1843,9 +1862,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		22B3C9A01CB3D46000EA00FA /* 猫头鹰助理 */ = {
+		22B3C9A01CB3D46000EA00FA /* 口袋助理 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 22B3C9B81CB3D46000EA00FA /* Build configuration list for PBXNativeTarget "猫头鹰助理" */;
+			buildConfigurationList = 22B3C9B81CB3D46000EA00FA /* Build configuration list for PBXNativeTarget "口袋助理" */;
 			buildPhases = (
 				22B3C99D1CB3D46000EA00FA /* Sources */,
 				22B3C99E1CB3D46000EA00FA /* Frameworks */,
@@ -1855,9 +1874,9 @@
 			);
 			dependencies = (
 			);
-			name = "猫头鹰助理";
+			name = "口袋助理";
 			productName = OD01;
-			productReference = 22B3C9A11CB3D46000EA00FA /* 猫头鹰助理.app */;
+			productReference = 22B3C9A11CB3D46000EA00FA /* 口袋助理.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1876,7 +1895,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 22B3C99C1CB3D46000EA00FA /* Build configuration list for PBXProject "猫头鹰助理" */;
+			buildConfigurationList = 22B3C99C1CB3D46000EA00FA /* Build configuration list for PBXProject "口袋助理" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1889,7 +1908,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				22B3C9A01CB3D46000EA00FA /* 猫头鹰助理 */,
+				22B3C9A01CB3D46000EA00FA /* 口袋助理 */,
 			);
 		};
 /* End PBXProject section */
@@ -1908,7 +1927,6 @@
 				22CEDCD91CC0884800A2E324 /* lxh_haojiong.png in Resources */,
 				22CEDCD01CC0884800A2E324 /* lxh_geijin.png in Resources */,
 				22CEDCC21CC0884800A2E324 /* lxh_bengkui@2x.png in Resources */,
-				22F0B6BF1CC708DA004AD37F /* HM01addMember.xib in Resources */,
 				22CEDC941CC0884800A2E324 /* f_jiong@2x.png in Resources */,
 				22CEDD1C1CC0884800A2E324 /* lxh_xiangyixiang@2x.png in Resources */,
 				22CEDC5E1CC0884800A2E324 /* d_dahaqi@2x.png in Resources */,
@@ -2189,6 +2207,7 @@
 				22F338561CC634FC00660675 /* HMGeneralSettingViewController.m in Sources */,
 				22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */,
 				22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */,
+				22F0B6FA1CC7722D004AD37F /* HMPersonalInfoViewController.m in Sources */,
 				22F0B6B01CC67F6B004AD37F /* HMSettingCell.m in Sources */,
 				2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */,
 				22CF1A8F1CB5374600EFAC7A /* HMTabBar.m in Sources */,
@@ -2198,6 +2217,7 @@
 				22E0871F1CBBA37800DCC034 /* HMStatusDetailFrame.m in Sources */,
 				22F338531CC634E500660675 /* HMSettingViewController.m in Sources */,
 				22E0871C1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m in Sources */,
+				22F0B6F41CC757F7004AD37F /* HMCustomerServeViewController.m in Sources */,
 				22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */,
 				22D7B2BB1CB7601D00C5A79D /* UIImage+GIF.m in Sources */,
 				22D7B2C41CB7889000C5A79D /* HMUser.m in Sources */,
@@ -2245,7 +2265,6 @@
 				22D7B2BA1CB7601D00C5A79D /* UIButton+WebCache.m in Sources */,
 				22F0B6F01CC72166004AD37F /* HMurlStr.m in Sources */,
 				22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */,
-				22F0B6BD1CC708CA004AD37F /* HM01addMember.m in Sources */,
 				22D7B39C1CBA565900C5A79D /* HMBaseParam.m in Sources */,
 				22CF1A9D1CB6005600EFAC7A /* HMNewfeatureViewController.m in Sources */,
 				22D7B36A1CBA3B0800C5A79D /* HMUserTool.m in Sources */,
@@ -2363,7 +2382,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aikan.OD01;
-				PRODUCT_NAME = "猫头鹰助理";
+				PRODUCT_NAME = "口袋助理";
 			};
 			name = Debug;
 		};
@@ -2376,14 +2395,14 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aikan.OD01;
-				PRODUCT_NAME = "猫头鹰助理";
+				PRODUCT_NAME = "口袋助理";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		22B3C99C1CB3D46000EA00FA /* Build configuration list for PBXProject "猫头鹰助理" */ = {
+		22B3C99C1CB3D46000EA00FA /* Build configuration list for PBXProject "口袋助理" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22B3C9B61CB3D46000EA00FA /* Debug */,
@@ -2392,7 +2411,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		22B3C9B81CB3D46000EA00FA /* Build configuration list for PBXNativeTarget "猫头鹰助理" */ = {
+		22B3C9B81CB3D46000EA00FA /* Build configuration list for PBXNativeTarget "口袋助理" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				22B3C9B91CB3D46000EA00FA /* Debug */,
