@@ -27,7 +27,7 @@
 #define HMRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0]
 
 // 全局背景色
-#define HMGlobalBg HMColor(211, 211, 211,1.0)
+#define HMGlobalBg HMColor(241, 241, 241,1.0)
 
 // 是否为iOS7
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)

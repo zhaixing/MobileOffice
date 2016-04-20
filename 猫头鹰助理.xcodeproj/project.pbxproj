@@ -24,7 +24,7 @@
 		22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9E71CB4A41000EA00FA /* AppDelegate.m */; };
 		22B3C9FB1CB4A41000EA00FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9E81CB4A41000EA00FA /* main.m */; };
 		22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9ED1CB4A41000EA00FA /* HMMessageViewController.m */; };
-		22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */; };
+		22B3C9FD1CB4A41000EA00FA /* HMProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22B3C9F31CB4A41000EA00FA /* HMProfileViewController.m */; };
 		22CED6131CBF19C100A2E324 /* UIDevice+Resolutions.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CED6121CBF19C100A2E324 /* UIDevice+Resolutions.m */; };
 		22CED6171CBFA62C00A2E324 /* HMEmotionKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CED6161CBFA62C00A2E324 /* HMEmotionKeyboard.m */; };
 		22CED61A1CBFA63C00A2E324 /* HMEmotionListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CED6191CBFA63C00A2E324 /* HMEmotionListView.m */; };
@@ -343,6 +343,14 @@
 		22E0871C1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0871B1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m */; };
 		22E0871F1CBBA37800DCC034 /* HMStatusDetailFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */; };
 		22E087221CBBA8C500DCC034 /* HMStatusRetweetedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087211CBBA8C500DCC034 /* HMStatusRetweetedView.m */; };
+		22F0B6B01CC67F6B004AD37F /* HMSettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6AF1CC67F6B004AD37F /* HMSettingCell.m */; };
+		22F0B6B31CC6852D004AD37F /* HMSettingCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6B21CC6852D004AD37F /* HMSettingCommonViewController.m */; };
+		22F0B6B61CC6FFDD004AD37F /* HMHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6B51CC6FFDD004AD37F /* HMHelpViewController.m */; };
+		22F0B6B91CC70658004AD37F /* HMEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6B81CC70658004AD37F /* HMEditViewController.m */; };
+		22F0B6BD1CC708CA004AD37F /* HM01addMember.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6BC1CC708CA004AD37F /* HM01addMember.m */; };
+		22F0B6BF1CC708DA004AD37F /* HM01addMember.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22F0B6BE1CC708DA004AD37F /* HM01addMember.xib */; };
+		22F0B6C21CC70A2D004AD37F /* HMGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6C11CC70A2D004AD37F /* HMGeneralViewController.m */; };
+		22F0B6F01CC72166004AD37F /* HMurlStr.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F0B6EF1CC72166004AD37F /* HMurlStr.m */; };
 		22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382A1CC527D900660675 /* HMEmotionAttachment.m */; };
 		22F3382E1CC5A1F200660675 /* HMRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3382D1CC5A1F200660675 /* HMRegexResult.m */; };
 		22F338311CC5D02800660675 /* HMStatusLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338301CC5D02800660675 /* HMStatusLabel.m */; };
@@ -354,6 +362,9 @@
 		22F338471CC61FCE00660675 /* HMCommonLabelItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338461CC61FCE00660675 /* HMCommonLabelItem.m */; };
 		22F3384A1CC61FD900660675 /* HMCommonSwitchItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338491CC61FD900660675 /* HMCommonSwitchItem.m */; };
 		22F3384D1CC6224000660675 /* HMBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3384C1CC6224000660675 /* HMBadgeView.m */; };
+		22F338501CC62D7800660675 /* HMCommonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F3384F1CC62D7800660675 /* HMCommonViewController.m */; };
+		22F338531CC634E500660675 /* HMSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338521CC634E500660675 /* HMSettingViewController.m */; };
+		22F338561CC634FC00660675 /* HMGeneralSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22F338551CC634FC00660675 /* HMGeneralSettingViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -390,8 +401,8 @@
 		22B3C9E81CB4A41000EA00FA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		22B3C9EC1CB4A41000EA00FA /* HMMessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMessageViewController.h; sourceTree = "<group>"; };
 		22B3C9ED1CB4A41000EA00FA /* HMMessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMessageViewController.m; sourceTree = "<group>"; };
-		22B3C9F21CB4A41000EA00FA /* HMProfileTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProfileTableViewController.h; sourceTree = "<group>"; };
-		22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProfileTableViewController.m; sourceTree = "<group>"; };
+		22B3C9F21CB4A41000EA00FA /* HMProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProfileViewController.h; sourceTree = "<group>"; };
+		22B3C9F31CB4A41000EA00FA /* HMProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProfileViewController.m; sourceTree = "<group>"; };
 		22CED6111CBF19C100A2E324 /* UIDevice+Resolutions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+Resolutions.h"; sourceTree = "<group>"; };
 		22CED6121CBF19C100A2E324 /* UIDevice+Resolutions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+Resolutions.m"; sourceTree = "<group>"; };
 		22CED6151CBFA62C00A2E324 /* HMEmotionKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEmotionKeyboard.h; sourceTree = "<group>"; };
@@ -800,6 +811,21 @@
 		22E0871E1CBBA37800DCC034 /* HMStatusDetailFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMStatusDetailFrame.m; path = "OD01/Classes/Home（首页）/View/Cell/HMStatusDetailFrame.m"; sourceTree = SOURCE_ROOT; };
 		22E087201CBBA8C500DCC034 /* HMStatusRetweetedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusRetweetedView.h; sourceTree = "<group>"; };
 		22E087211CBBA8C500DCC034 /* HMStatusRetweetedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusRetweetedView.m; sourceTree = "<group>"; };
+		22F0B6AE1CC67F6B004AD37F /* HMSettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSettingCell.h; sourceTree = "<group>"; };
+		22F0B6AF1CC67F6B004AD37F /* HMSettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSettingCell.m; sourceTree = "<group>"; };
+		22F0B6B11CC6852D004AD37F /* HMSettingCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSettingCommonViewController.h; sourceTree = "<group>"; };
+		22F0B6B21CC6852D004AD37F /* HMSettingCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSettingCommonViewController.m; sourceTree = "<group>"; };
+		22F0B6B41CC6FFDD004AD37F /* HMHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMHelpViewController.h; sourceTree = "<group>"; };
+		22F0B6B51CC6FFDD004AD37F /* HMHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMHelpViewController.m; sourceTree = "<group>"; };
+		22F0B6B71CC70658004AD37F /* HMEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMEditViewController.h; sourceTree = "<group>"; };
+		22F0B6B81CC70658004AD37F /* HMEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMEditViewController.m; sourceTree = "<group>"; };
+		22F0B6BB1CC708CA004AD37F /* HM01addMember.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HM01addMember.h; sourceTree = "<group>"; };
+		22F0B6BC1CC708CA004AD37F /* HM01addMember.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HM01addMember.m; sourceTree = "<group>"; };
+		22F0B6BE1CC708DA004AD37F /* HM01addMember.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HM01addMember.xib; sourceTree = "<group>"; };
+		22F0B6C01CC70A2D004AD37F /* HMGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGeneralViewController.h; sourceTree = "<group>"; };
+		22F0B6C11CC70A2D004AD37F /* HMGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGeneralViewController.m; sourceTree = "<group>"; };
+		22F0B6EE1CC72166004AD37F /* HMurlStr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMurlStr.h; sourceTree = "<group>"; };
+		22F0B6EF1CC72166004AD37F /* HMurlStr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMurlStr.m; sourceTree = "<group>"; };
 		22F338291CC527D900660675 /* HMEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMEmotionAttachment.h; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.h"; sourceTree = SOURCE_ROOT; };
 		22F3382A1CC527D900660675 /* HMEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMEmotionAttachment.m; path = "OD01/Classes/Compose（发消息）/View/EmotionKeyboard/HMEmotionAttachment.m"; sourceTree = SOURCE_ROOT; };
 		22F3382C1CC5A1F200660675 /* HMRegexResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRegexResult.h; sourceTree = "<group>"; };
@@ -822,6 +848,12 @@
 		22F338491CC61FD900660675 /* HMCommonSwitchItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonSwitchItem.m; sourceTree = "<group>"; };
 		22F3384B1CC6224000660675 /* HMBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBadgeView.h; sourceTree = "<group>"; };
 		22F3384C1CC6224000660675 /* HMBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBadgeView.m; sourceTree = "<group>"; };
+		22F3384E1CC62D7800660675 /* HMCommonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCommonViewController.h; sourceTree = "<group>"; };
+		22F3384F1CC62D7800660675 /* HMCommonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCommonViewController.m; sourceTree = "<group>"; };
+		22F338511CC634E500660675 /* HMSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSettingViewController.h; sourceTree = "<group>"; };
+		22F338521CC634E500660675 /* HMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSettingViewController.m; sourceTree = "<group>"; };
+		22F338541CC634FC00660675 /* HMGeneralSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGeneralSettingViewController.h; sourceTree = "<group>"; };
+		22F338551CC634FC00660675 /* HMGeneralSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGeneralSettingViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -938,8 +970,13 @@
 		22B3C9D21CB4A41000EA00FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				22F0B6BA1CC7087A004AD37F /* helpView */,
 				22B3C9D31CB4A41000EA00FA /* HMDiscoverViewController.h */,
 				22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */,
+				22F0B6B41CC6FFDD004AD37F /* HMHelpViewController.h */,
+				22F0B6B51CC6FFDD004AD37F /* HMHelpViewController.m */,
+				22F0B6B71CC70658004AD37F /* HMEditViewController.h */,
+				22F0B6B81CC70658004AD37F /* HMEditViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1055,6 +1092,8 @@
 				22B3C9E31CB4A41000EA00FA /* HMTabBarViewController.m */,
 				22CF1A781CB4AB1900EFAC7A /* HMNavigationController.h */,
 				22CF1A791CB4AB1900EFAC7A /* HMNavigationController.m */,
+				22F3384E1CC62D7800660675 /* HMCommonViewController.h */,
+				22F3384F1CC62D7800660675 /* HMCommonViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1093,6 +1132,8 @@
 				22CF1A8E1CB5374600EFAC7A /* HMTabBar.m */,
 				22F3383F1CC60CC600660675 /* HMCommonCell.h */,
 				22F338401CC60CC600660675 /* HMCommonCell.m */,
+				22F0B6AE1CC67F6B004AD37F /* HMSettingCell.h */,
+				22F0B6AF1CC67F6B004AD37F /* HMSettingCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1143,8 +1184,14 @@
 		22B3C9F11CB4A41000EA00FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				22B3C9F21CB4A41000EA00FA /* HMProfileTableViewController.h */,
-				22B3C9F31CB4A41000EA00FA /* HMProfileTableViewController.m */,
+				22F0B6B11CC6852D004AD37F /* HMSettingCommonViewController.h */,
+				22F0B6B21CC6852D004AD37F /* HMSettingCommonViewController.m */,
+				22B3C9F21CB4A41000EA00FA /* HMProfileViewController.h */,
+				22B3C9F31CB4A41000EA00FA /* HMProfileViewController.m */,
+				22F338511CC634E500660675 /* HMSettingViewController.h */,
+				22F338521CC634E500660675 /* HMSettingViewController.m */,
+				22F338541CC634FC00660675 /* HMGeneralSettingViewController.h */,
+				22F338551CC634FC00660675 /* HMGeneralSettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1762,6 +1809,20 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		22F0B6BA1CC7087A004AD37F /* helpView */ = {
+			isa = PBXGroup;
+			children = (
+				22F0B6BB1CC708CA004AD37F /* HM01addMember.h */,
+				22F0B6BC1CC708CA004AD37F /* HM01addMember.m */,
+				22F0B6BE1CC708DA004AD37F /* HM01addMember.xib */,
+				22F0B6C01CC70A2D004AD37F /* HMGeneralViewController.h */,
+				22F0B6C11CC70A2D004AD37F /* HMGeneralViewController.m */,
+				22F0B6EE1CC72166004AD37F /* HMurlStr.h */,
+				22F0B6EF1CC72166004AD37F /* HMurlStr.m */,
+			);
+			path = helpView;
+			sourceTree = "<group>";
+		};
 		22F338351CC608CC00660675 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1847,6 +1908,7 @@
 				22CEDCD91CC0884800A2E324 /* lxh_haojiong.png in Resources */,
 				22CEDCD01CC0884800A2E324 /* lxh_geijin.png in Resources */,
 				22CEDCC21CC0884800A2E324 /* lxh_bengkui@2x.png in Resources */,
+				22F0B6BF1CC708DA004AD37F /* HM01addMember.xib in Resources */,
 				22CEDC941CC0884800A2E324 /* f_jiong@2x.png in Resources */,
 				22CEDD1C1CC0884800A2E324 /* lxh_xiangyixiang@2x.png in Resources */,
 				22CEDC5E1CC0884800A2E324 /* d_dahaqi@2x.png in Resources */,
@@ -2100,6 +2162,8 @@
 				22D7B2B61CB7601D00C5A79D /* SDWebImageDownloader.m in Sources */,
 				223C275E1CC4D9BB00F9006E /* RegexKitLite.m in Sources */,
 				22D7B3361CB7A50F00C5A79D /* MJPropertyKey.m in Sources */,
+				22F0B6B91CC70658004AD37F /* HMEditViewController.m in Sources */,
+				22F0B6B31CC6852D004AD37F /* HMSettingCommonViewController.m in Sources */,
 				22D7B3551CB9D51D00C5A79D /* HMTitleButton.m in Sources */,
 				22D7B2751CB67FEC00C5A79D /* AFHTTPRequestOperation.m in Sources */,
 				22D7B2BD1CB7601D00C5A79D /* UIImage+WebP.m in Sources */,
@@ -2111,6 +2175,7 @@
 				22F338381CC608E000660675 /* HMCommonItem.m in Sources */,
 				22D7B39F1CBA5A2E00C5A79D /* HMUnreadCountParam.m in Sources */,
 				22D7B28E1CB7298100C5A79D /* HMAccountTool.m in Sources */,
+				22F0B6C21CC70A2D004AD37F /* HMGeneralViewController.m in Sources */,
 				22D7B2BE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m in Sources */,
 				22D7B2B51CB7601D00C5A79D /* SDWebImageDecoder.m in Sources */,
 				22CED6131CBF19C100A2E324 /* UIDevice+Resolutions.m in Sources */,
@@ -2121,14 +2186,17 @@
 				22CEDD3F1CC0C49B00A2E324 /* HMEmotionGridView.m in Sources */,
 				22D7B3391CB7A50F00C5A79D /* NSObject+MJCoding.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
+				22F338561CC634FC00660675 /* HMGeneralSettingViewController.m in Sources */,
 				22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */,
 				22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */,
+				22F0B6B01CC67F6B004AD37F /* HMSettingCell.m in Sources */,
 				2291EB931CBE44C300193AD4 /* HMStatusPhotoView.m in Sources */,
 				22CF1A8F1CB5374600EFAC7A /* HMTabBar.m in Sources */,
 				223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */,
 				22E0870B1CBB461000DCC034 /* HMStatusCell.m in Sources */,
 				22CF1A811CB4B8D000EFAC7A /* UIBarButtonItem+Extension.m in Sources */,
 				22E0871F1CBBA37800DCC034 /* HMStatusDetailFrame.m in Sources */,
+				22F338531CC634E500660675 /* HMSettingViewController.m in Sources */,
 				22E0871C1CBB9E7D00DCC034 /* HMStatusRetweetedFrame.m in Sources */,
 				22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */,
 				22D7B2BB1CB7601D00C5A79D /* UIImage+GIF.m in Sources */,
@@ -2171,15 +2239,19 @@
 				2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */,
 				22F3382E1CC5A1F200660675 /* HMRegexResult.m in Sources */,
 				22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */,
-				22B3C9FD1CB4A41000EA00FA /* HMProfileTableViewController.m in Sources */,
+				22F338501CC62D7800660675 /* HMCommonViewController.m in Sources */,
+				22B3C9FD1CB4A41000EA00FA /* HMProfileViewController.m in Sources */,
 				22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */,
 				22D7B2BA1CB7601D00C5A79D /* UIButton+WebCache.m in Sources */,
+				22F0B6F01CC72166004AD37F /* HMurlStr.m in Sources */,
 				22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */,
+				22F0B6BD1CC708CA004AD37F /* HM01addMember.m in Sources */,
 				22D7B39C1CBA565900C5A79D /* HMBaseParam.m in Sources */,
 				22CF1A9D1CB6005600EFAC7A /* HMNewfeatureViewController.m in Sources */,
 				22D7B36A1CBA3B0800C5A79D /* HMUserTool.m in Sources */,
 				22F338311CC5D02800660675 /* HMStatusLabel.m in Sources */,
 				22D7B3351CB7A50F00C5A79D /* MJProperty.m in Sources */,
+				22F0B6B61CC6FFDD004AD37F /* HMHelpViewController.m in Sources */,
 				22CF1A861CB4BD4800EFAC7A /* HMGlobal.m in Sources */,
 				223C275A1CC4C2E200F9006E /* HMEmotionTextView.m in Sources */,
 				22D7B2B11CB7601D00C5A79D /* MKAnnotationView+WebCache.m in Sources */,

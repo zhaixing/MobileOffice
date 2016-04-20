@@ -10,7 +10,7 @@
 #import "HMHomeViewController.h"
 #import "HMMessageViewController.h"
 #import "HMDiscoverViewController.h"
-#import "HMProfileTableViewController.h"
+#import "HMProfileViewController.h"
 #import "HMNavigationController.h"
 #import "HMTabBar.h"
 #import "UIImage+Extension.h"
@@ -168,7 +168,7 @@
     HMDiscoverViewController *discover =[[HMDiscoverViewController alloc] init];
     [self addOneChildVc:discover title:@"应用" imageName:@"icon_find_nor" selectedImageName:@"icon_find_pre"];
     
-    HMProfileTableViewController *me=[[HMProfileTableViewController alloc] init];
+    HMProfileViewController *me=[[HMProfileViewController alloc] init];
     [self addOneChildVc:me title:@"我" imageName:@"icon_setting_nor" selectedImageName:@"icon_setting_pre"];
 }
 /**

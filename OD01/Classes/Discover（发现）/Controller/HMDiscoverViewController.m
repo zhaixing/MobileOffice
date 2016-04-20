@@ -8,37 +8,19 @@
 #import "HMGlobal.h"
 #import "HMDiscoverViewController.h"
 #import "UIImage+Extension.h"
-#import "HMCommonCell.h"
+#import "HMSettingCell.h"
 #import "HMCommonItem.h"
 #import "HMCommonGroup.h"
 #import "HMCommonArrowItem.h"
 #import "HMCommonSwitchItem.h"
 #import "HMCommonLabelItem.h"
 
+#import "HMHelpViewController.h"
+#import "HMEditViewController.h"
 @interface HMDiscoverViewController ()
-@property (nonatomic,strong) NSMutableArray *groups;
 @end
 
 @implementation HMDiscoverViewController
-
-/**
- 用一个模型来描述每组的信息：组头、组尾、这组的所有行模型
- 用一个模型来描述每行的信息：图标、标题、子标题、右边的样式（箭头、文字、数字、开关、打钩）
- */
-
--(NSMutableArray *)groups
-{
-    if (_groups==nil) {
-        self.groups=[NSMutableArray array];
-    }
-    return  _groups;
-}
-
-/** 屏蔽tableView的样式 */
-- (id)init
-{
-    return [self initWithStyle:UITableViewStyleGrouped];
-}
 
 - (void)viewDidLoad
 {
@@ -50,18 +32,59 @@
 //    bar.backgroundImage=[UIImage resizedImage:@"navigationbar_button_background"];
 //    self.navigationItem.titleView=bar;
     
-    // 设置tableView属性
-    self.tableView.backgroundColor = HMGlobalBg;
-    self.tableView.sectionFooterHeight = 0;
-    self.tableView.sectionHeaderHeight = HMStatusCellMargin;
-    self.tableView.contentInset = UIEdgeInsetsMake(HMStatusCellMargin - 35, 0, 0, 0);
-    
     // 初始化模型数据
     [self setupGroups];
     
     //    HMLog(@"viewDidLoad--%@", NSStringFromUIEdgeInsets(self.tableView.contentInset));
+    
+    [self setNavBar];
 }
 
+-(void)setNavBar
+{
+    //左上角的帮助
+    UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonLeft setTitle:@"帮助" forState:UIControlStateNormal];
+    [buttonLeft setTitleColor:themeColor forState:UIControlStateNormal];
+    [buttonLeft setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [buttonLeft setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    buttonLeft.sizeToFit;
+    
+    // 监听按钮点击
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonLeft];
+    [buttonLeft addTarget:self action:@selector(help) forControlEvents:UIControlEventTouchUpInside];
+    
+    //右上角的写私信
+    UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeCustom];
+    [buttonRight setTitle:@"编辑" forState:UIControlStateNormal];
+    [buttonRight setTitleColor:themeColor forState:UIControlStateNormal];
+    [buttonRight setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
+    [buttonRight setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
+    buttonRight.sizeToFit;
+    
+    // 监听按钮点击
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:buttonRight];
+    [buttonRight addTarget:self action:@selector(edit) forControlEvents:UIControlEventTouchUpInside];
+}
+/**
+ *  帮助控制器跳转事件
+ */
+-(void)help
+{
+//    HMLog(@"点击了---帮助");
+    HMHelpViewController *help=[[HMHelpViewController alloc] init];
+    [self.navigationController pushViewController:help animated:YES];
+}
+/**
+ *  编辑控制器
+ */
+-(void)edit
+{
+//    HMLog(@"点击了---编辑");
+    HMEditViewController *edit=[[HMEditViewController alloc] init];
+    [self.navigationController pushViewController:edit animated:YES];
+
+}
 //- (void)viewDidAppear:(BOOL)animated
 //{
 //    [super viewDidAppear:animated];
@@ -86,12 +109,13 @@
     [self.groups addObject:group];
     
     // 2.设置组的基本数据
-    group.header = @"第0组头部";
-    group.footer = @"第0组尾部的详细信息";
+    group.header = @"工作";
+    group.footer=@"CRM";
+//    group.footer = @"第0组尾部的详细信息";
     
     // 3.设置组的所有行数据
     HMCommonArrowItem *notice = [HMCommonArrowItem itemWithTitle:@"通知" icon:@"AppNotice"];
-    notice.badgeValue=@"17777";
+//    notice.badgeValue=@"17777";
     notice.subtitle = @"一呼百应，支持投票功能";
     
     HMCommonArrowItem *attendance = [HMCommonArrowItem itemWithTitle:@"考勤" icon:@"AppAttendance"];
@@ -117,7 +141,7 @@
     // 1.创建组
     HMCommonGroup *group = [HMCommonGroup group];
     [self.groups addObject:group];
-    
+    group.footer=@"工具";
     // 2.设置组的所有行数据
     HMCommonArrowItem *customer = [HMCommonArrowItem itemWithTitle:@"客户" icon:@"AppCustomer"];
     customer.subtitle=@"管理客户信息，记录沟通细节";
@@ -140,28 +164,4 @@
     group.items = @[cloudDisk];
 }
 
-#pragma mark - Table view data source
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return self.groups.count;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    HMCommonGroup *group=self.groups[section];
-    return group.items.count;
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    HMCommonCell *cell = [HMCommonCell cellWithTableView:tableView];
-    HMCommonGroup *group = self.groups[indexPath.section];
-    cell.item = group.items[indexPath.row];
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-}
 @end

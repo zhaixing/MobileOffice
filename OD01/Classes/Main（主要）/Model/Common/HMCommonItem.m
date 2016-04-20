@@ -23,4 +23,13 @@
     return [self itemWithTitle:title icon:nil];
 }
 
++ (instancetype)itemWithTitle:(NSString *)title icon:(NSString *)icon urlStr:(NSString *)urlStr
+{
+//    HMCommonItem *item = [[self alloc] init];
+//    item.title = title;
+//    item.icon = icon;
+//    item.urlStr = urlStr;
+//    return item;
+    return [self itemWithTitle:nil icon:nil urlStr:urlStr];
+}
 @end

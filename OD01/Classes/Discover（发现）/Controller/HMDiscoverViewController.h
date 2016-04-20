@@ -6,8 +6,8 @@
 //  Copyright © 2016年 sam. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HMCommonViewController.h"
 
-@interface HMDiscoverViewController : UITableViewController
+@interface HMDiscoverViewController : HMCommonViewController
 
 @end

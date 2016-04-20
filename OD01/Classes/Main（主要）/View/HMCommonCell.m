@@ -97,11 +97,12 @@
     [super layoutSubviews];
     
     //调整标题的位置
-    self.textLabel.y=2;
+//    self.textLabel.y=2;
     // 调整子标题的x
-//    self.detailTextLabel.x = CGRectGetMaxX(self.textLabel.frame) + 10;
-    self.detailTextLabel.x=CGRectGetMaxX(self.imageView.frame)*1.3;
-    self.detailTextLabel.y=CGRectGetMaxY(self.textLabel.frame);
+//    self.detailTextLabel.x=CGRectGetMaxX(self.imageView.frame)*1.3;
+//    self.detailTextLabel.y=CGRectGetMaxY(self.textLabel.frame);
+    
+    self.detailTextLabel.x = CGRectGetMaxX(self.textLabel.frame) + 10;
 }
 
 //- (void)setFrame:(CGRect)frame

@@ -4,7 +4,7 @@
 //
 //  Created by sam on 16/4/19.
 //  Copyright © 2016年 sam. All rights reserved.
-//
+//  “设置”中的cell样式，标题垂直居中
 
 #import <UIKit/UIKit.h>
 @class HMCommonItem;
