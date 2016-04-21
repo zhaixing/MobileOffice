@@ -17,6 +17,7 @@
 
 #import "HMHelpViewController.h"
 #import "HMEditViewController.h"
+#import "HMJiaBanViewController.h"
 @interface HMDiscoverViewController ()
 @end
 
@@ -119,6 +120,7 @@
     notice.subtitle = @"一呼百应，支持投票功能";
     
     HMCommonArrowItem *attendance = [HMCommonArrowItem itemWithTitle:@"考勤" icon:@"AppAttendance"];
+    attendance.destVcClass=[HMJiaBanViewController class];
     attendance.subtitle = @"上下班打卡";
     
     HMCommonArrowItem *process=[HMCommonArrowItem itemWithTitle:@"流程" icon:@"AppProcess"];

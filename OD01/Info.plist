@@ -29,6 +29,10 @@
 	<array>
 		<string>audio</string>
 	</array>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>NSLocationAlwaysUsageDescription</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>NSLocationWhenInUseUsageDescription</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

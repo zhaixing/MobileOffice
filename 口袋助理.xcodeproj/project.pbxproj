@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220957831CC8E25A00339907 /* HMAttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957821CC8E25A00339907 /* HMAttendanceViewController.m */; };
+		220957861CC8E2B100339907 /* HMJiaBanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957851CC8E2B100339907 /* HMJiaBanViewController.m */; };
+		220957891CC8E2EC00339907 /* HMNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957881CC8E2EC00339907 /* HMNoticeViewController.m */; };
+		2209578C1CC8E34000339907 /* HMProcessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209578B1CC8E34000339907 /* HMProcessViewController.m */; };
+		2209578F1CC8E36100339907 /* HMTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209578E1CC8E36100339907 /* HMTaskViewController.m */; };
+		220957921CC8E38C00339907 /* HMLegworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957911CC8E38C00339907 /* HMLegworkViewController.m */; };
+		220957951CC8E3C500339907 /* HMWorkReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957941CC8E3C500339907 /* HMWorkReportTableViewController.m */; };
+		220957981CC8E3FE00339907 /* HMCloudDiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957971CC8E3FE00339907 /* HMCloudDiskViewController.m */; };
+		220957A21CC908CA00339907 /* DSLTransitionFromFirstToSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209579C1CC908CA00339907 /* DSLTransitionFromFirstToSecond.m */; };
+		220957A31CC908CA00339907 /* DSLTransitionFromSecondToFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209579E1CC908CA00339907 /* DSLTransitionFromSecondToFirst.m */; };
+		220957A41CC908CA00339907 /* foldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957A01CC908CA00339907 /* foldTableViewCell.m */; };
+		220957A51CC908CA00339907 /* foldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220957A11CC908CA00339907 /* foldTableViewCell.xib */; };
+		220957A91CC908DE00339907 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957A71CC908DE00339907 /* secondViewController.m */; };
+		220957AA1CC908DE00339907 /* secondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220957A81CC908DE00339907 /* secondViewController.xib */; };
+		220957AD1CC908F800339907 /* RotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957AC1CC908F800339907 /* RotatedView.m */; };
+		220957B31CC918F400339907 /* HMJiaBanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220957B21CC918F400339907 /* HMJiaBanViewController.storyboard */; };
 		223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B889D1CBCDC210054BD30 /* NSDate+MJ.m */; };
 		223C274E1CC454F500F9006E /* Window_Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C274D1CC454F500F9006E /* Window_Log.m */; };
 		223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27501CC458C000F9006E /* HMEmotionPopView.m */; };
@@ -368,6 +384,35 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		220957811CC8E25A00339907 /* HMAttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAttendanceViewController.h; sourceTree = "<group>"; };
+		220957821CC8E25A00339907 /* HMAttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAttendanceViewController.m; sourceTree = "<group>"; };
+		220957841CC8E2B100339907 /* HMJiaBanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMJiaBanViewController.h; sourceTree = "<group>"; };
+		220957851CC8E2B100339907 /* HMJiaBanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMJiaBanViewController.m; sourceTree = "<group>"; };
+		220957871CC8E2EC00339907 /* HMNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNoticeViewController.h; sourceTree = "<group>"; };
+		220957881CC8E2EC00339907 /* HMNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNoticeViewController.m; sourceTree = "<group>"; };
+		2209578A1CC8E34000339907 /* HMProcessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProcessViewController.h; sourceTree = "<group>"; };
+		2209578B1CC8E34000339907 /* HMProcessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProcessViewController.m; sourceTree = "<group>"; };
+		2209578D1CC8E36100339907 /* HMTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTaskViewController.h; sourceTree = "<group>"; };
+		2209578E1CC8E36100339907 /* HMTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTaskViewController.m; sourceTree = "<group>"; };
+		220957901CC8E38C00339907 /* HMLegworkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLegworkViewController.h; sourceTree = "<group>"; };
+		220957911CC8E38C00339907 /* HMLegworkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLegworkViewController.m; sourceTree = "<group>"; };
+		220957931CC8E3C500339907 /* HMWorkReportTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWorkReportTableViewController.h; sourceTree = "<group>"; };
+		220957941CC8E3C500339907 /* HMWorkReportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWorkReportTableViewController.m; sourceTree = "<group>"; };
+		220957961CC8E3FE00339907 /* HMCloudDiskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCloudDiskViewController.h; sourceTree = "<group>"; };
+		220957971CC8E3FE00339907 /* HMCloudDiskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCloudDiskViewController.m; sourceTree = "<group>"; };
+		2209579B1CC908CA00339907 /* DSLTransitionFromFirstToSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLTransitionFromFirstToSecond.h; sourceTree = "<group>"; };
+		2209579C1CC908CA00339907 /* DSLTransitionFromFirstToSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLTransitionFromFirstToSecond.m; sourceTree = "<group>"; };
+		2209579D1CC908CA00339907 /* DSLTransitionFromSecondToFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLTransitionFromSecondToFirst.h; sourceTree = "<group>"; };
+		2209579E1CC908CA00339907 /* DSLTransitionFromSecondToFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLTransitionFromSecondToFirst.m; sourceTree = "<group>"; };
+		2209579F1CC908CA00339907 /* foldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foldTableViewCell.h; sourceTree = "<group>"; };
+		220957A01CC908CA00339907 /* foldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foldTableViewCell.m; sourceTree = "<group>"; };
+		220957A11CC908CA00339907 /* foldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = foldTableViewCell.xib; sourceTree = "<group>"; };
+		220957A61CC908DE00339907 /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
+		220957A71CC908DE00339907 /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
+		220957A81CC908DE00339907 /* secondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = secondViewController.xib; sourceTree = "<group>"; };
+		220957AB1CC908F800339907 /* RotatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatedView.h; sourceTree = "<group>"; };
+		220957AC1CC908F800339907 /* RotatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatedView.m; sourceTree = "<group>"; };
+		220957B21CC918F400339907 /* HMJiaBanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HMJiaBanViewController.storyboard; sourceTree = "<group>"; };
 		223B889C1CBCDC210054BD30 /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
 		223B889D1CBCDC210054BD30 /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
 		223C274C1CC454F500F9006E /* Window_Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window_Log.h; sourceTree = "<group>"; };
@@ -869,6 +914,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2209579A1CC9026B00339907 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				220957AB1CC908F800339907 /* RotatedView.h */,
+				220957AC1CC908F800339907 /* RotatedView.m */,
+				220957A61CC908DE00339907 /* secondViewController.h */,
+				220957A71CC908DE00339907 /* secondViewController.m */,
+				220957A81CC908DE00339907 /* secondViewController.xib */,
+				2209579B1CC908CA00339907 /* DSLTransitionFromFirstToSecond.h */,
+				2209579C1CC908CA00339907 /* DSLTransitionFromFirstToSecond.m */,
+				2209579D1CC908CA00339907 /* DSLTransitionFromSecondToFirst.h */,
+				2209579E1CC908CA00339907 /* DSLTransitionFromSecondToFirst.m */,
+				2209579F1CC908CA00339907 /* foldTableViewCell.h */,
+				220957A01CC908CA00339907 /* foldTableViewCell.m */,
+				220957A11CC908CA00339907 /* foldTableViewCell.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
 		223B889B1CBCCEDF0054BD30 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -971,6 +1035,15 @@
 		22B3C9D21CB4A41000EA00FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				22F0B6FB1CC77E33004AD37F /* 01AppNotice(通知) */,
+				22F0B6FC1CC77E33004AD37F /* 02AppAttendance(考勤) */,
+				22F0B6FD1CC77E33004AD37F /* 03AppProcess(流程) */,
+				22F0B6FE1CC77E33004AD37F /* 04AppTask(任务) */,
+				22F0B6FF1CC77E33004AD37F /* 05AppLegwork(客户拜访) */,
+				22F0B7001CC77E33004AD37F /* 06AppWorkReport(工作汇报) */,
+				22F0B7011CC77E33004AD37F /* 07APPCustomer(客户) */,
+				22F0B7021CC77E33004AD37F /* 08AppSalesChance(销售机会) */,
+				22F0B7031CC77E33004AD37F /* 09AppCloudDisk(云盘) */,
 				22F0B6BA1CC7087A004AD37F /* helpView */,
 				22B3C9D31CB4A41000EA00FA /* HMDiscoverViewController.h */,
 				22B3C9D41CB4A41000EA00FA /* HMDiscoverViewController.m */,
@@ -1842,6 +1915,87 @@
 			path = PersonalInfo;
 			sourceTree = "<group>";
 		};
+		22F0B6FB1CC77E33004AD37F /* 01AppNotice(通知) */ = {
+			isa = PBXGroup;
+			children = (
+				220957871CC8E2EC00339907 /* HMNoticeViewController.h */,
+				220957881CC8E2EC00339907 /* HMNoticeViewController.m */,
+			);
+			path = "01AppNotice(通知)";
+			sourceTree = "<group>";
+		};
+		22F0B6FC1CC77E33004AD37F /* 02AppAttendance(考勤) */ = {
+			isa = PBXGroup;
+			children = (
+				2209579A1CC9026B00339907 /* xib */,
+				220957811CC8E25A00339907 /* HMAttendanceViewController.h */,
+				220957821CC8E25A00339907 /* HMAttendanceViewController.m */,
+				220957841CC8E2B100339907 /* HMJiaBanViewController.h */,
+				220957851CC8E2B100339907 /* HMJiaBanViewController.m */,
+				220957B21CC918F400339907 /* HMJiaBanViewController.storyboard */,
+			);
+			path = "02AppAttendance(考勤)";
+			sourceTree = "<group>";
+		};
+		22F0B6FD1CC77E33004AD37F /* 03AppProcess(流程) */ = {
+			isa = PBXGroup;
+			children = (
+				2209578A1CC8E34000339907 /* HMProcessViewController.h */,
+				2209578B1CC8E34000339907 /* HMProcessViewController.m */,
+			);
+			path = "03AppProcess(流程)";
+			sourceTree = "<group>";
+		};
+		22F0B6FE1CC77E33004AD37F /* 04AppTask(任务) */ = {
+			isa = PBXGroup;
+			children = (
+				2209578D1CC8E36100339907 /* HMTaskViewController.h */,
+				2209578E1CC8E36100339907 /* HMTaskViewController.m */,
+			);
+			path = "04AppTask(任务)";
+			sourceTree = "<group>";
+		};
+		22F0B6FF1CC77E33004AD37F /* 05AppLegwork(客户拜访) */ = {
+			isa = PBXGroup;
+			children = (
+				220957901CC8E38C00339907 /* HMLegworkViewController.h */,
+				220957911CC8E38C00339907 /* HMLegworkViewController.m */,
+			);
+			path = "05AppLegwork(客户拜访)";
+			sourceTree = "<group>";
+		};
+		22F0B7001CC77E33004AD37F /* 06AppWorkReport(工作汇报) */ = {
+			isa = PBXGroup;
+			children = (
+				220957931CC8E3C500339907 /* HMWorkReportTableViewController.h */,
+				220957941CC8E3C500339907 /* HMWorkReportTableViewController.m */,
+			);
+			path = "06AppWorkReport(工作汇报)";
+			sourceTree = "<group>";
+		};
+		22F0B7011CC77E33004AD37F /* 07APPCustomer(客户) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "07APPCustomer(客户)";
+			sourceTree = "<group>";
+		};
+		22F0B7021CC77E33004AD37F /* 08AppSalesChance(销售机会) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "08AppSalesChance(销售机会)";
+			sourceTree = "<group>";
+		};
+		22F0B7031CC77E33004AD37F /* 09AppCloudDisk(云盘) */ = {
+			isa = PBXGroup;
+			children = (
+				220957961CC8E3FE00339907 /* HMCloudDiskViewController.h */,
+				220957971CC8E3FE00339907 /* HMCloudDiskViewController.m */,
+			);
+			path = "09AppCloudDisk(云盘)";
+			sourceTree = "<group>";
+		};
 		22F338351CC608CC00660675 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -1938,6 +2092,7 @@
 				22CEDC831CC0884800A2E324 /* d_tuzi@2x.png in Resources */,
 				22CEDCCB1CC0884800A2E324 /* lxh_buxiangshangban@2x.png in Resources */,
 				22CEDCA01CC0884800A2E324 /* h_woshou@2x.png in Resources */,
+				220957AA1CC908DE00339907 /* secondViewController.xib in Resources */,
 				22CEDCCD1CC0884800A2E324 /* lxh_deyidexiao.png in Resources */,
 				22CEDCD11CC0884800A2E324 /* lxh_geijin@2x.png in Resources */,
 				22CEDCCC1CC0884800A2E324 /* lxh_deyidexiao.gif in Resources */,
@@ -1968,6 +2123,7 @@
 				22CEDD171CC0884800A2E324 /* lxh_xianghumobai.gif in Resources */,
 				22CEDCA31CC0884800A2E324 /* l_shangxin@2x.png in Resources */,
 				22CEDCDE1CC0884800A2E324 /* lxh_holdzhu.gif in Resources */,
+				220957B31CC918F400339907 /* HMJiaBanViewController.storyboard in Resources */,
 				22CEDCDB1CC0884800A2E324 /* lxh_haoxihuan.gif in Resources */,
 				22CEDCFA1CC0884800A2E324 /* lxh_mobaile.gif in Resources */,
 				22CEDCDF1CC0884800A2E324 /* lxh_holdzhu.png in Resources */,
@@ -2028,6 +2184,7 @@
 				22CEDC971CC0884800A2E324 /* f_v5@2x.png in Resources */,
 				22CEDCAC1CC0884800A2E324 /* o_lvsidai@2x.png in Resources */,
 				22CEDCDC1CC0884800A2E324 /* lxh_haoxihuan.png in Resources */,
+				220957A51CC908CA00339907 /* foldTableViewCell.xib in Resources */,
 				22D7B2C11CB7614200C5A79D /* Assets.xcassets in Resources */,
 				22CEDD0A1CC0884800A2E324 /* lxh_qiuguanzhu@2x.png in Resources */,
 				22CEDCD51CC0884800A2E324 /* lxh_haobang.gif in Resources */,
@@ -2168,6 +2325,7 @@
 				22D7B2B81CB7601D00C5A79D /* SDWebImageManager.m in Sources */,
 				22D7B38C1CBA55F200C5A79D /* HMAccessTokenParam.m in Sources */,
 				22D7B2791CB67FEC00C5A79D /* AFSecurityPolicy.m in Sources */,
+				220957A41CC908CA00339907 /* foldTableViewCell.m in Sources */,
 				22D7B33B1CB7A50F00C5A79D /* NSObject+MJProperty.m in Sources */,
 				22D7B2761CB67FEC00C5A79D /* AFHTTPRequestOperationManager.m in Sources */,
 				22D7B38D1CBA55F200C5A79D /* HMAccount.m in Sources */,
@@ -2177,6 +2335,7 @@
 				22D7B2BC1CB7601D00C5A79D /* UIImage+MultiFormat.m in Sources */,
 				22D7B34F1CB8FB8200C5A79D /* HMComposeToolBar.m in Sources */,
 				22D7B27E1CB67FEC00C5A79D /* MBProgressHUD+MJ.m in Sources */,
+				220957981CC8E3FE00339907 /* HMCloudDiskViewController.m in Sources */,
 				22D7B2B61CB7601D00C5A79D /* SDWebImageDownloader.m in Sources */,
 				223C275E1CC4D9BB00F9006E /* RegexKitLite.m in Sources */,
 				22D7B3361CB7A50F00C5A79D /* MJPropertyKey.m in Sources */,
@@ -2190,9 +2349,12 @@
 				22D7B35B1CB9F3D000C5A79D /* HMStatusTool.m in Sources */,
 				22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */,
 				22D7B2801CB67FEC00C5A79D /* MBProgressHUD.m in Sources */,
+				220957A31CC908CA00339907 /* DSLTransitionFromSecondToFirst.m in Sources */,
+				220957A91CC908DE00339907 /* secondViewController.m in Sources */,
 				22F338381CC608E000660675 /* HMCommonItem.m in Sources */,
 				22D7B39F1CBA5A2E00C5A79D /* HMUnreadCountParam.m in Sources */,
 				22D7B28E1CB7298100C5A79D /* HMAccountTool.m in Sources */,
+				220957831CC8E25A00339907 /* HMAttendanceViewController.m in Sources */,
 				22F0B6C21CC70A2D004AD37F /* HMGeneralViewController.m in Sources */,
 				22D7B2BE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m in Sources */,
 				22D7B2B51CB7601D00C5A79D /* SDWebImageDecoder.m in Sources */,
@@ -2202,7 +2364,9 @@
 				22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */,
 				22F3384D1CC6224000660675 /* HMBadgeView.m in Sources */,
 				22CEDD3F1CC0C49B00A2E324 /* HMEmotionGridView.m in Sources */,
+				220957861CC8E2B100339907 /* HMJiaBanViewController.m in Sources */,
 				22D7B3391CB7A50F00C5A79D /* NSObject+MJCoding.m in Sources */,
+				2209578F1CC8E36100339907 /* HMTaskViewController.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
 				22F338561CC634FC00660675 /* HMGeneralSettingViewController.m in Sources */,
 				22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */,
@@ -2220,15 +2384,19 @@
 				22F0B6F41CC757F7004AD37F /* HMCustomerServeViewController.m in Sources */,
 				22B3C9FC1CB4A41000EA00FA /* HMMessageViewController.m in Sources */,
 				22D7B2BB1CB7601D00C5A79D /* UIImage+GIF.m in Sources */,
+				2209578C1CC8E34000339907 /* HMProcessViewController.m in Sources */,
 				22D7B2C41CB7889000C5A79D /* HMUser.m in Sources */,
 				22D7B2BF1CB7601D00C5A79D /* UIImageView+WebCache.m in Sources */,
 				22D7B2771CB67FEC00C5A79D /* AFHTTPSessionManager.m in Sources */,
 				22D7B2B31CB7601D00C5A79D /* SDImageCache.m in Sources */,
+				220957AD1CC908F800339907 /* RotatedView.m in Sources */,
 				22D7B3381CB7A50F00C5A79D /* NSObject+MJClass.m in Sources */,
+				220957891CC8E2EC00339907 /* HMNoticeViewController.m in Sources */,
 				22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */,
 				22CEDD481CC0D5F100A2E324 /* HMEmotionView.m in Sources */,
 				22D7B3371CB7A50F00C5A79D /* MJPropertyType.m in Sources */,
 				22D7B3911CBA55F200C5A79D /* HMSendStatusResult.m in Sources */,
+				220957A21CC908CA00339907 /* DSLTransitionFromFirstToSecond.m in Sources */,
 				22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */,
 				22B3C9FB1CB4A41000EA00FA /* main.m in Sources */,
 				223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */,
@@ -2261,7 +2429,9 @@
 				22D7B33C1CB7A50F00C5A79D /* NSString+MJExtension.m in Sources */,
 				22F338501CC62D7800660675 /* HMCommonViewController.m in Sources */,
 				22B3C9FD1CB4A41000EA00FA /* HMProfileViewController.m in Sources */,
+				220957921CC8E38C00339907 /* HMLegworkViewController.m in Sources */,
 				22B3C9FA1CB4A41000EA00FA /* AppDelegate.m in Sources */,
+				220957951CC8E3C500339907 /* HMWorkReportTableViewController.m in Sources */,
 				22D7B2BA1CB7601D00C5A79D /* UIButton+WebCache.m in Sources */,
 				22F0B6F01CC72166004AD37F /* HMurlStr.m in Sources */,
 				22CF1A821CB4B8D000EFAC7A /* UIImage+Extension.m in Sources */,
