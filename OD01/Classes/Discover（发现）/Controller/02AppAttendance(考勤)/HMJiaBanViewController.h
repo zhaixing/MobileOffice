@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "foldTableViewCell.h"
 
-@interface HMJiaBanViewController : UITableViewController
+@interface HMJiaBanViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *testTableView;
 - (foldTableViewCell *)tableViewCellForThing:(NSIndexPath *)indexPath;
 

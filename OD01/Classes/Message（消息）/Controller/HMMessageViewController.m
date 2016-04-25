@@ -8,7 +8,12 @@
 
 #import "HMMessageViewController.h"
 #import "HMGlobal.h"
-@interface HMMessageViewController ()
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+
+@interface HMMessageViewController ()<ABPeoplePickerNavigationControllerDelegate>{
+    ABPeoplePickerNavigationController *_abPeoplePickerVc;
+}
 
 @end
 
@@ -16,6 +21,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 //    //通过appearance对象能修改整个项目中所有UIBarButtonItem的样式
 //    UIBarButtonItem *appearance=[UIBarButtonItem appearance];
 //    //设置普通状态的文字属性
@@ -51,6 +68,26 @@
 -(void)xieSiXin
 {
     HMLog(@"xieSiXin---");
+    
+    //下面是调用系统通讯录
+    _abPeoplePickerVc = [[ABPeoplePickerNavigationController alloc] init];
+    _abPeoplePickerVc.peoplePickerDelegate = self;
+    //下面的判断是ios8之后才需要加的，不然会自动返回app内部
+    if(iOS8){
+        /**
+         *  predicateForSelectionOfPerson默认是true
+         （当你点击某个联系人查看详情的时候会返回app），如果你默认为true 但是实现-peoplePickerNavigationController:didSelectPerson:property:identifier:
+         　　　　　　   代理方法也是可以的，与此同时不能实现peoplePickerNavigationController: didSelectPerson:不然还是会返回app。
+         */
+        //总之在ios8之后加上此句比较稳妥
+        _abPeoplePickerVc.predicateForSelectionOfPerson = [NSPredicate predicateWithValue:false];
+        //predicateForSelectionOfProperty默认是true （当你点击某个联系人的某个属性的时候会返回app），此方法只要是默认值，无论你代理方法实现与否都会返回app。
+        //_abPeoplePickerVc.predicateForSelectionOfProperty = [NSPredicate predicateWithValue:false];
+        
+        //predicateForEnablingPerson默认是true，当设置为false时，所有的联系人都不能被点击。
+        //        _abPeoplePickerVc.predicateForEnablingPerson = [NSPredicate predicateWithValue:true];
+    }
+    [self presentViewController:_abPeoplePickerVc animated:YES completion:nil];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -87,4 +124,50 @@
     [self.navigationController pushViewController:newVc animated:YES];
 }
 
+
+
+#pragma mark - ABPeoplePickerNavigationController的代理方法
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker didSelectPerson:(ABRecordRef)person property:(ABPropertyID)property identifier:(ABMultiValueIdentifier)identifier {
+        ABMultiValueRef phone = ABRecordCopyValue(person, kABPersonPhoneProperty);
+        long index = ABMultiValueGetIndexForIdentifier(phone,identifier);
+
+        NSString *phoneNO = (__bridge NSString *)ABMultiValueCopyValueAtIndex(phone, index);
+        [phoneNO stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        if (phone && phoneNO.length == 11) {
+                //TODO：获取电话号码要做的事情
+                [peoplePicker dismissViewControllerAnimated:YES completion:nil];
+                return;
+        }else{
+            if (iOS8){
+                UIAlertController *tipVc = [UIAlertController alertControllerWithTitle:nil message:@"请选择正确手机号" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                [self dismissViewControllerAnimated:YES completion:nil];
+                }];
+                [tipVc addAction:cancleAction];
+                [self presentViewController:tipVc animated:YES completion:nil];
+                
+            }else{
+                UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"请选择正确手机号" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+                [alertView show];
+            }
+            //非ARC模式需要释放对象
+            //        [alertView release];
+        }
+}
+
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person NS_AVAILABLE_IOS(8_0)
+{
+    ABPersonViewController *personViewController = [[ABPersonViewController alloc] init];
+    personViewController.displayedPerson = person;
+    [peoplePicker pushViewController:personViewController animated:YES];
+    //非ARC模式需要释放对象
+    //    [personViewController release];
+}
+/**
+peoplePickerNavigationController点击取消按钮时调用
+*/
+- (void)peoplePickerNavigationControllerDidCancel:(ABPeoplePickerNavigationController *)peoplePicker
+{
+    [peoplePicker dismissViewControllerAnimated:YES completion:nil];
+}
 @end

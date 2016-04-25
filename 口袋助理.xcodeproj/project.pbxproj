@@ -22,7 +22,7 @@
 		220957A91CC908DE00339907 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957A71CC908DE00339907 /* secondViewController.m */; };
 		220957AA1CC908DE00339907 /* secondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220957A81CC908DE00339907 /* secondViewController.xib */; };
 		220957AD1CC908F800339907 /* RotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957AC1CC908F800339907 /* RotatedView.m */; };
-		220957B31CC918F400339907 /* HMJiaBanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220957B21CC918F400339907 /* HMJiaBanViewController.storyboard */; };
+		220957B51CC9203100339907 /* HMJiaBanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220957B41CC9203100339907 /* HMJiaBanViewController.xib */; };
 		223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B889D1CBCDC210054BD30 /* NSDate+MJ.m */; };
 		223C274E1CC454F500F9006E /* Window_Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C274D1CC454F500F9006E /* Window_Log.m */; };
 		223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27501CC458C000F9006E /* HMEmotionPopView.m */; };
@@ -315,7 +315,6 @@
 		22D7B2BD1CB7601D00C5A79D /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2AC1CB7601D00C5A79D /* UIImage+WebP.m */; };
 		22D7B2BE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2AE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m */; };
 		22D7B2BF1CB7601D00C5A79D /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2B01CB7601D00C5A79D /* UIImageView+WebCache.m */; };
-		22D7B2C11CB7614200C5A79D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D7B2C01CB7614200C5A79D /* Assets.xcassets */; };
 		22D7B2C41CB7889000C5A79D /* HMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2C31CB7889000C5A79D /* HMUser.m */; };
 		22D7B2C71CB78AB100C5A79D /* HMStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2C61CB78AB100C5A79D /* HMStatus.m */; };
 		22D7B2CA1CB78CBF00C5A79D /* HMPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B2C91CB78CBF00C5A79D /* HMPhoto.m */; };
@@ -350,6 +349,7 @@
 		22D7B39C1CBA565900C5A79D /* HMBaseParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B39B1CBA565900C5A79D /* HMBaseParam.m */; };
 		22D7B39F1CBA5A2E00C5A79D /* HMUnreadCountParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B39E1CBA5A2E00C5A79D /* HMUnreadCountParam.m */; };
 		22D7B3A21CBA5AC500C5A79D /* HMUnreadCountResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3A11CBA5AC500C5A79D /* HMUnreadCountResult.m */; };
+		22D9FCBE1CCDADD6008A8AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCBD1CCDADD6008A8AB1 /* Assets.xcassets */; };
 		22E0870B1CBB461000DCC034 /* HMStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087061CBB461000DCC034 /* HMStatusCell.m */; };
 		22E0870C1CBB461000DCC034 /* HMStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087081CBB461000DCC034 /* HMStatusDetailView.m */; };
 		22E0870D1CBB461000DCC034 /* HMStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0870A1CBB461000DCC034 /* HMStatusToolbar.m */; };
@@ -412,7 +412,7 @@
 		220957A81CC908DE00339907 /* secondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = secondViewController.xib; sourceTree = "<group>"; };
 		220957AB1CC908F800339907 /* RotatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatedView.h; sourceTree = "<group>"; };
 		220957AC1CC908F800339907 /* RotatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatedView.m; sourceTree = "<group>"; };
-		220957B21CC918F400339907 /* HMJiaBanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HMJiaBanViewController.storyboard; sourceTree = "<group>"; };
+		220957B41CC9203100339907 /* HMJiaBanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMJiaBanViewController.xib; sourceTree = "<group>"; };
 		223B889C1CBCDC210054BD30 /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
 		223B889D1CBCDC210054BD30 /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
 		223C274C1CC454F500F9006E /* Window_Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window_Log.h; sourceTree = "<group>"; };
@@ -769,7 +769,6 @@
 		22D7B2AE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+HighlightedWebCache.m"; sourceTree = "<group>"; };
 		22D7B2AF1CB7601D00C5A79D /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		22D7B2B01CB7601D00C5A79D /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
-		22D7B2C01CB7614200C5A79D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22D7B2C21CB7889000C5A79D /* HMUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMUser.h; path = "OD01/Classes/Main（主要）/Tool/HMUser.h"; sourceTree = SOURCE_ROOT; };
 		22D7B2C31CB7889000C5A79D /* HMUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMUser.m; path = "OD01/Classes/Main（主要）/Tool/HMUser.m"; sourceTree = SOURCE_ROOT; };
 		22D7B2C51CB78AB100C5A79D /* HMStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMStatus.h; path = "OD01/Classes/Main（主要）/Tool/HMStatus.h"; sourceTree = SOURCE_ROOT; };
@@ -838,6 +837,7 @@
 		22D7B39E1CBA5A2E00C5A79D /* HMUnreadCountParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMUnreadCountParam.m; sourceTree = "<group>"; };
 		22D7B3A01CBA5AC500C5A79D /* HMUnreadCountResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMUnreadCountResult.h; sourceTree = "<group>"; };
 		22D7B3A11CBA5AC500C5A79D /* HMUnreadCountResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMUnreadCountResult.m; sourceTree = "<group>"; };
+		22D9FCBD1CCDADD6008A8AB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22E087051CBB461000DCC034 /* HMStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusCell.h; sourceTree = "<group>"; };
 		22E087061CBB461000DCC034 /* HMStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusCell.m; sourceTree = "<group>"; };
 		22E087071CBB461000DCC034 /* HMStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusDetailView.h; sourceTree = "<group>"; };
@@ -990,7 +990,7 @@
 			children = (
 				22B3C9D01CB4A41000EA00FA /* Classes */,
 				22B3C9B51CB3D46000EA00FA /* Info.plist */,
-				22D7B2C01CB7614200C5A79D /* Assets.xcassets */,
+				22D9FCBD1CCDADD6008A8AB1 /* Assets.xcassets */,
 				22B3C9A41CB3D46000EA00FA /* Supporting Files */,
 			);
 			path = OD01;
@@ -1932,7 +1932,7 @@
 				220957821CC8E25A00339907 /* HMAttendanceViewController.m */,
 				220957841CC8E2B100339907 /* HMJiaBanViewController.h */,
 				220957851CC8E2B100339907 /* HMJiaBanViewController.m */,
-				220957B21CC918F400339907 /* HMJiaBanViewController.storyboard */,
+				220957B41CC9203100339907 /* HMJiaBanViewController.xib */,
 			);
 			path = "02AppAttendance(考勤)";
 			sourceTree = "<group>";
@@ -2123,7 +2123,6 @@
 				22CEDD171CC0884800A2E324 /* lxh_xianghumobai.gif in Resources */,
 				22CEDCA31CC0884800A2E324 /* l_shangxin@2x.png in Resources */,
 				22CEDCDE1CC0884800A2E324 /* lxh_holdzhu.gif in Resources */,
-				220957B31CC918F400339907 /* HMJiaBanViewController.storyboard in Resources */,
 				22CEDCDB1CC0884800A2E324 /* lxh_haoxihuan.gif in Resources */,
 				22CEDCFA1CC0884800A2E324 /* lxh_mobaile.gif in Resources */,
 				22CEDCDF1CC0884800A2E324 /* lxh_holdzhu.png in Resources */,
@@ -2161,6 +2160,7 @@
 				22CEDD3B1CC099A300A2E324 /* iinfo.plist in Resources */,
 				22CEDCEB1CC0884800A2E324 /* lxh_koubishi.gif in Resources */,
 				22CEDC8E1CC0884800A2E324 /* d_zhuakuang@2x.png in Resources */,
+				220957B51CC9203100339907 /* HMJiaBanViewController.xib in Resources */,
 				22CEDCE21CC0884800A2E324 /* lxh_jiekexun.gif in Resources */,
 				22CEDC7F1CC0884800A2E324 /* d_taikaixin@2x.png in Resources */,
 				22CEDD011CC0884800A2E324 /* lxh_pili@2x.png in Resources */,
@@ -2185,7 +2185,6 @@
 				22CEDCAC1CC0884800A2E324 /* o_lvsidai@2x.png in Resources */,
 				22CEDCDC1CC0884800A2E324 /* lxh_haoxihuan.png in Resources */,
 				220957A51CC908CA00339907 /* foldTableViewCell.xib in Resources */,
-				22D7B2C11CB7614200C5A79D /* Assets.xcassets in Resources */,
 				22CEDD0A1CC0884800A2E324 /* lxh_qiuguanzhu@2x.png in Resources */,
 				22CEDCD51CC0884800A2E324 /* lxh_haobang.gif in Resources */,
 				22CEDD181CC0884800A2E324 /* lxh_xianghumobai.png in Resources */,
@@ -2287,6 +2286,7 @@
 				22CEDCE51CC0884800A2E324 /* lxh_jiujie.gif in Resources */,
 				22CEDC611CC0884800A2E324 /* d_feizao@2x.png in Resources */,
 				22CEDD101CC0884800A2E324 /* lxh_shuaishuaishou@2x.png in Resources */,
+				22D9FCBE1CCDADD6008A8AB1 /* Assets.xcassets in Resources */,
 				22CEDC6B1CC0884800A2E324 /* d_jiyan@2x.png in Resources */,
 				22CEDCEF1CC0884800A2E324 /* lxh_kunsile.png in Resources */,
 				22CEDCF91CC0884800A2E324 /* lxh_meigui@2x.png in Resources */,

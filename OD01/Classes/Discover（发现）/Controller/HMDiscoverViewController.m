@@ -18,6 +18,13 @@
 #import "HMHelpViewController.h"
 #import "HMEditViewController.h"
 #import "HMJiaBanViewController.h"
+#import "HMNoticeViewController.h"
+#import "HMAttendanceViewController.h"
+#import "HMProcessViewController.h"
+#import "HMTaskViewController.h"
+#import "HMLegworkViewController.h"
+#import "HMWorkReportTableViewController.h"
+#import "HMCloudDiskViewController.h"
 @interface HMDiscoverViewController ()
 @end
 
@@ -116,23 +123,28 @@
     
     // 3.设置组的所有行数据
     HMCommonArrowItem *notice = [HMCommonArrowItem itemWithTitle:@"通知" icon:@"AppNotice"];
+    notice.destVcClass=[HMNoticeViewController class];
 //    notice.badgeValue=@"17777";
     notice.subtitle = @"一呼百应，支持投票功能";
     
     HMCommonArrowItem *attendance = [HMCommonArrowItem itemWithTitle:@"考勤" icon:@"AppAttendance"];
-    attendance.destVcClass=[HMJiaBanViewController class];
+    attendance.destVcClass=[HMAttendanceViewController class];
     attendance.subtitle = @"上下班打卡";
     
     HMCommonArrowItem *process=[HMCommonArrowItem itemWithTitle:@"流程" icon:@"AppProcess"];
+    process.destVcClass=[HMProcessViewController class];
     process.subtitle=@"请假、加班等，各种申请";
     
     HMCommonArrowItem *task=[HMCommonArrowItem itemWithTitle:@"任务" icon:@"AppTask"];
+    task.destVcClass=[HMTaskViewController class];
     task.subtitle=@"分配任务，逐一跟踪";
     
     HMCommonArrowItem *legwork=[HMCommonArrowItem itemWithTitle:@"客户拜访" icon:@"AppLegwork"];
+    legwork.destVcClass=[HMLegworkViewController class];
     legwork.subtitle=@"外出拜访需现场定位，并提交总结";
     
     HMCommonArrowItem *workReport=[HMCommonArrowItem itemWithTitle:@"工作汇报" icon:@"AppWorkReport"];
+    workReport.destVcClass=[HMWorkReportTableViewController class];
     workReport.subtitle=@"日报、周报、月报";
     
     group.items = @[notice, attendance, process, task, legwork, workReport];
@@ -161,8 +173,9 @@
     [self.groups addObject:group];
     
     // 2.设置组的所有行数据
-    HMCommonArrowItem *cloudDisk = [HMCommonArrowItem itemWithTitle:@"应用" icon:@"AppCloudDisk"];
+    HMCommonArrowItem *cloudDisk = [HMCommonArrowItem itemWithTitle:@"云盘" icon:@"AppCloudDisk"];
     cloudDisk.subtitle=@"公司文件共享，个人文件存储";
+    cloudDisk.destVcClass=[HMCloudDiskViewController class];
     group.items = @[cloudDisk];
 }
 

@@ -34,4 +34,14 @@
 }
 */
 
+#pragma mark - 自学 提醒框
+//-(void) someButtonClicked{
+//    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+//                                                     message:@"您点击了动态按钮！"
+//                                                    delegate:self
+//                                           cancelButtonTitle:@"确定"
+//                                           otherButtonTitles:@"第二项", @"第三项", nil] ;
+//    [alert show];
+//}
 @end

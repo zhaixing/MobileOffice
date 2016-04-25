@@ -31,7 +31,8 @@
 
 // 是否为iOS7
 #define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
-
+#define iOS8 [[UIDevice currentDevice].systemVersion floatValue] >= 8.0f
+#define iOS6 [[UIDevice currentDevice].systemVersion floatValue] >= 6.0f
 // 是否为4inch
 #define FourInch ([UIScreen mainScreen].bounds.size.height == 568.0)
 
