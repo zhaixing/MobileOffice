@@ -7,23 +7,105 @@
 //
 
 #import "HMWorkReportTableViewController.h"
-
+#import "SwipableViewController.h"
+#import "HMDayReportViewController.h"
+#import "HMWeekReportViewController.h"
+#import "HMMounthReportViewController.h"
+#import "HMDiscoverViewController.h"
 @interface HMWorkReportTableViewController ()
-
+{
+    HMDayReportViewController *dayR;
+    HMWeekReportViewController *weekR;
+    HMMounthReportViewController *mounthR;
+}
+@property (nonatomic,strong) UINavigationController *naviController;
 @end
 
 @implementation HMWorkReportTableViewController
-
+//
+//-(BOOL)application:(UIApplication *)application
+//didFinishLaunchingWithOptions:(nullable NSDictionary *)launchOptions{
+//    self.window=[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    
+//    dayR=[[HMDayReportViewController alloc]init];
+//    weekR=[[HMWeekReportViewController alloc] init];
+//    mounthR=[[HMMounthReportViewController alloc] init];
+//    
+//    SwipableViewController *viewController=[[SwipableViewController alloc] initWithTitle:@"工作汇报"
+//andSubTitles:@[@"日报",@"周报",@"月报"] andControllers:@[dayR,weekR,mounthR]];
+//    _naviController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    
+//    self.window.rootViewController=_naviController;
+//    
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor purpleColor]];
+//    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+//    [self.window makeKeyAndVisible];
+//    return YES;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+//    //初始化
+//    self.window=[[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    dayR=[[HMDayReportViewController alloc]init];
+    weekR=[[HMWeekReportViewController alloc] init];
+    mounthR=[[HMMounthReportViewController alloc] init];
+    
+    //使用框架Swipable
+    SwipableViewController *viewController=[[SwipableViewController alloc] initWithTitle:@"工作汇报" andSubTitles:@[@"日报",@"周报",@"月报"] andControllers:@[dayR,weekR,mounthR]];
+    [self.navigationController pushViewController:viewController animated:NO];
+//    _naviController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    viewController.navigationItem.leftBarButtonItem= [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar_back"]
+//                                                                                       style:UIBarButtonItemStylePlain
+//                                                                                      target:self
+//                                                                                      action:@selector(onClickMenuButton)];
+//    
+//    self.window.rootViewController=_naviController;
+//    [self.window makeKeyAndVisible];
+//
+    
+//    dayR=[[HMDayReportViewController alloc]init];
+//    weekR=[[HMWeekReportViewController alloc] init];
+//    mounthR=[[HMMounthReportViewController alloc] init];
+//    
+//    SwipableViewController *viewController=[[SwipableViewController alloc] initWithTitle:@"工作汇报" andSubTitles:@[@"日报",@"周报",@"月报"] andControllers:@[dayR,weekR,mounthR]];
+//    
+//    [self addNavigationItemForViewController:viewController];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
+//    [self.window makeKeyAndVisible];
 }
 
+
+//
+//- (UINavigationController *)addNavigationItemForViewController:(UIViewController *)viewController
+//{
+//    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+//    
+//    
+//     viewController.navigationItem.leftBarButtonItem  = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"navigationbar-sidebar"]
+//     style:UIBarButtonItemStylePlain
+//     target:self
+//     action:@selector(onClickMenuButton)];
+//     
+//     viewController.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch
+//     target:self
+//     action:@selector(pushSearchViewController)];
+//    
+//    
+//    
+//    return navigationController;
+//}
+
+
+-(void)onClickMenuButton
+{
+    NSLog(@"onClickMenuButton");
+    HMDiscoverViewController *discover = [[HMDiscoverViewController alloc] init];
+    [self.navigationController pushViewController:discover animated:YES];
+//    self.window.rootViewController=discover;
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

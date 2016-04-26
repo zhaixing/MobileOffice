@@ -26,7 +26,18 @@
 #import "HMWorkReportTableViewController.h"
 #import "HMCloudDiskViewController.h"
 
+#import "SwipableViewController.h"
+#import "HMDayReportViewController.h"
+#import "HMWeekReportViewController.h"
+#import "HMMounthReportViewController.h"
+#import "HMDiscoverViewController.h"
+
 @interface HMDiscoverViewController ()
+{
+    HMDayReportViewController *dayR;
+    HMWeekReportViewController *weekR;
+    HMMounthReportViewController *mounthR;
+}
 @end
 
 @implementation HMDiscoverViewController
@@ -146,7 +157,26 @@
     
     HMCommonArrowItem *workReport=[HMCommonArrowItem itemWithTitle:@"工作汇报" icon:@"AppWorkReport"];
 //    workReport.destVcClass=[HMWorkReportTableViewController class];
-    workReport.destVcClass=[HMJiaBanViewController class];
+    workReport.operation= ^{
+        dayR=[[HMDayReportViewController alloc]init];
+        weekR=[[HMWeekReportViewController alloc] init];
+        mounthR=[[HMMounthReportViewController alloc] init];
+        
+        //使用框架Swipable
+        SwipableViewController *viewController=[[SwipableViewController alloc] initWithTitle:@"工作汇报" andSubTitles:@[@"日报",@"周报",@"月报"] andControllers:@[dayR,weekR,mounthR]];
+//        viewController.view.backgroundColor=[UIColor whiteColor];
+//        viewController.tabBarController.tabBar.translucent=NO;    // tabbar 是否半透明
+//        self.tabBar.translucent = NO;
+//        navigationController.navigationBar.alpha=0.5; 
+//        viewController.tabBarController.tabBar.backgroundColor=[UIColor whiteColor];
+//        viewController.navigationController.navigationBar.alpha=1.0;
+        
+        viewController.navigationController.navigationBar.alpha=0.5;
+        viewController.navigationController.navigationBar.backgroundColor=[UIColor yellowColor];
+        viewController.view.backgroundColor=[UIColor greenColor];
+//        viewController.ta
+        [self.navigationController pushViewController:viewController animated:YES];
+    };
     workReport.subtitle=@"日报、周报、月报";
     
     group.items = @[notice, attendance, process, task, legwork, workReport];

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface HMWorkReportTableViewController : UITableViewController
-
+@property (strong,nonatomic) UIWindow *window;
 @end

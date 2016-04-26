@@ -14,6 +14,7 @@
 		220957921CC8E38C00339907 /* HMLegworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957911CC8E38C00339907 /* HMLegworkViewController.m */; };
 		220957951CC8E3C500339907 /* HMWorkReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957941CC8E3C500339907 /* HMWorkReportTableViewController.m */; };
 		220957981CC8E3FE00339907 /* HMCloudDiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957971CC8E3FE00339907 /* HMCloudDiskViewController.m */; };
+		223A35A21144364177EFED21 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC93FA078A1C60182DBDFA0 /* Pods.framework */; };
 		223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B889D1CBCDC210054BD30 /* NSDate+MJ.m */; };
 		223C274E1CC454F500F9006E /* Window_Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C274D1CC454F500F9006E /* Window_Log.m */; };
 		223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27501CC458C000F9006E /* HMEmotionPopView.m */; };
@@ -343,18 +344,9 @@
 		22D9FCBE1CCDADD6008A8AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCBD1CCDADD6008A8AB1 /* Assets.xcassets */; };
 		22D9FCC11CCE1FD8008A8AB1 /* HMNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCC01CCE1FD8008A8AB1 /* HMNoticeViewController.m */; };
 		22D9FCC41CCE4988008A8AB1 /* HMCloudDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCC31CCE4988008A8AB1 /* HMCloudDetailViewController.m */; };
-		22D9FCC81CCE6129008A8AB1 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCC71CCE6129008A8AB1 /* FoldingCell.swift */; };
-		22D9FCCA1CCE61B6008A8AB1 /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCC91CCE61B6008A8AB1 /* DemoCell.swift */; };
-		22D9FCD01CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCCF1CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard */; };
-		22D9FCD21CCEEA1C008A8AB1 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCD11CCEEA1C008A8AB1 /* MainTableViewController.swift */; };
-		22D9FCD41CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCD31CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard */; };
-		22D9FCE11CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCD61CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m */; };
-		22D9FCE21CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCD81CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m */; };
-		22D9FCE31CCEEFCE008A8AB1 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCDA1CCEEFCE008A8AB1 /* secondViewController.m */; };
-		22D9FCE41CCEEFCE008A8AB1 /* secondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCDB1CCEEFCE008A8AB1 /* secondViewController.xib */; };
-		22D9FCE51CCEEFCE008A8AB1 /* RotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCDD1CCEEFCE008A8AB1 /* RotatedView.m */; };
-		22D9FCE61CCEEFCE008A8AB1 /* foldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCDF1CCEEFCE008A8AB1 /* foldTableViewCell.m */; };
-		22D9FCE71CCEEFCE008A8AB1 /* foldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCE01CCEEFCE008A8AB1 /* foldTableViewCell.xib */; };
+		22DAE7F61CCEFF5800FB1A44 /* HMWeekReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DAE7F51CCEFF5800FB1A44 /* HMWeekReportViewController.m */; };
+		22DAE7F91CCEFF6500FB1A44 /* HMMounthReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DAE7F81CCEFF6500FB1A44 /* HMMounthReportViewController.m */; };
+		22DAE7FC1CCEFF7400FB1A44 /* HMDayReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22DAE7FB1CCEFF7400FB1A44 /* HMDayReportViewController.m */; };
 		22E0870B1CBB461000DCC034 /* HMStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087061CBB461000DCC034 /* HMStatusCell.m */; };
 		22E0870C1CBB461000DCC034 /* HMStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087081CBB461000DCC034 /* HMStatusDetailView.m */; };
 		22E0870D1CBB461000DCC034 /* HMStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0870A1CBB461000DCC034 /* HMStatusToolbar.m */; };
@@ -389,6 +381,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D60F99CCB225D9FFA5BFBFA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		220957811CC8E25A00339907 /* HMAttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAttendanceViewController.h; sourceTree = "<group>"; };
 		220957821CC8E25A00339907 /* HMAttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAttendanceViewController.m; sourceTree = "<group>"; };
 		220957841CC8E2B100339907 /* HMJiaBanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMJiaBanViewController.h; sourceTree = "<group>"; };
@@ -832,24 +825,12 @@
 		22D9FCC01CCE1FD8008A8AB1 /* HMNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNoticeViewController.m; sourceTree = "<group>"; };
 		22D9FCC21CCE4988008A8AB1 /* HMCloudDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCloudDetailViewController.h; sourceTree = "<group>"; };
 		22D9FCC31CCE4988008A8AB1 /* HMCloudDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCloudDetailViewController.m; sourceTree = "<group>"; };
-		22D9FCC61CCE6128008A8AB1 /* 口袋助理-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "口袋助理-Bridging-Header.h"; sourceTree = "<group>"; };
-		22D9FCC71CCE6129008A8AB1 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
-		22D9FCC91CCE61B6008A8AB1 /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
-		22D9FCCF1CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HMFoldingCellTableViewController.storyboard; sourceTree = "<group>"; };
-		22D9FCD11CCEEA1C008A8AB1 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
-		22D9FCD31CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HMJiaBanViewController.storyboard; sourceTree = "<group>"; };
-		22D9FCD51CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLTransitionFromFirstToSecond.h; sourceTree = "<group>"; };
-		22D9FCD61CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLTransitionFromFirstToSecond.m; sourceTree = "<group>"; };
-		22D9FCD71CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLTransitionFromSecondToFirst.h; sourceTree = "<group>"; };
-		22D9FCD81CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLTransitionFromSecondToFirst.m; sourceTree = "<group>"; };
-		22D9FCD91CCEEFCE008A8AB1 /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
-		22D9FCDA1CCEEFCE008A8AB1 /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
-		22D9FCDB1CCEEFCE008A8AB1 /* secondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = secondViewController.xib; sourceTree = "<group>"; };
-		22D9FCDC1CCEEFCE008A8AB1 /* RotatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatedView.h; sourceTree = "<group>"; };
-		22D9FCDD1CCEEFCE008A8AB1 /* RotatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatedView.m; sourceTree = "<group>"; };
-		22D9FCDE1CCEEFCE008A8AB1 /* foldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foldTableViewCell.h; sourceTree = "<group>"; };
-		22D9FCDF1CCEEFCE008A8AB1 /* foldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foldTableViewCell.m; sourceTree = "<group>"; };
-		22D9FCE01CCEEFCE008A8AB1 /* foldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = foldTableViewCell.xib; sourceTree = "<group>"; };
+		22DAE7F41CCEFF5800FB1A44 /* HMWeekReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWeekReportViewController.h; sourceTree = "<group>"; };
+		22DAE7F51CCEFF5800FB1A44 /* HMWeekReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWeekReportViewController.m; sourceTree = "<group>"; };
+		22DAE7F71CCEFF6500FB1A44 /* HMMounthReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMounthReportViewController.h; sourceTree = "<group>"; };
+		22DAE7F81CCEFF6500FB1A44 /* HMMounthReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMounthReportViewController.m; sourceTree = "<group>"; };
+		22DAE7FA1CCEFF7400FB1A44 /* HMDayReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDayReportViewController.h; sourceTree = "<group>"; };
+		22DAE7FB1CCEFF7400FB1A44 /* HMDayReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDayReportViewController.m; sourceTree = "<group>"; };
 		22E087051CBB461000DCC034 /* HMStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusCell.h; sourceTree = "<group>"; };
 		22E087061CBB461000DCC034 /* HMStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusCell.m; sourceTree = "<group>"; };
 		22E087071CBB461000DCC034 /* HMStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusDetailView.h; sourceTree = "<group>"; };
@@ -912,6 +893,8 @@
 		22F338521CC634E500660675 /* HMSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSettingViewController.m; sourceTree = "<group>"; };
 		22F338541CC634FC00660675 /* HMGeneralSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMGeneralSettingViewController.h; sourceTree = "<group>"; };
 		22F338551CC634FC00660675 /* HMGeneralSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMGeneralSettingViewController.m; sourceTree = "<group>"; };
+		26009951FA03688DBF2E780A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		FAC93FA078A1C60182DBDFA0 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -920,31 +903,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				223C27601CC4DAB600F9006E /* libicucore.tbd in Frameworks */,
+				223A35A21144364177EFED21 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2209579A1CC9026B00339907 /* xib */ = {
-			isa = PBXGroup;
-			children = (
-				22D9FCD51CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.h */,
-				22D9FCD61CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m */,
-				22D9FCD71CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.h */,
-				22D9FCD81CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m */,
-				22D9FCD91CCEEFCE008A8AB1 /* secondViewController.h */,
-				22D9FCDA1CCEEFCE008A8AB1 /* secondViewController.m */,
-				22D9FCDB1CCEEFCE008A8AB1 /* secondViewController.xib */,
-				22D9FCDC1CCEEFCE008A8AB1 /* RotatedView.h */,
-				22D9FCDD1CCEEFCE008A8AB1 /* RotatedView.m */,
-				22D9FCDE1CCEEFCE008A8AB1 /* foldTableViewCell.h */,
-				22D9FCDF1CCEEFCE008A8AB1 /* foldTableViewCell.m */,
-				22D9FCE01CCEEFCE008A8AB1 /* foldTableViewCell.xib */,
-			);
-			name = xib;
-			sourceTree = "<group>";
-		};
 		223B889B1CBCCEDF0054BD30 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -986,6 +951,8 @@
 				223C275F1CC4DAB600F9006E /* libicucore.tbd */,
 				22B3C9A31CB3D46000EA00FA /* OD01 */,
 				22B3C9A21CB3D46000EA00FA /* Products */,
+				5CD0206453E619A4E03DAFB4 /* Pods */,
+				62D4FD581C3D9765CE120807 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1874,16 +1841,17 @@
 			path = UserInfo;
 			sourceTree = "<group>";
 		};
-		22D9FCC51CCE60CF008A8AB1 /* FoldingCell */ = {
+		22DAE7F01CCEFE7200FB1A44 /* Swipable */ = {
 			isa = PBXGroup;
 			children = (
-				22D9FCC71CCE6129008A8AB1 /* FoldingCell.swift */,
-				22D9FCC91CCE61B6008A8AB1 /* DemoCell.swift */,
-				22D9FCC61CCE6128008A8AB1 /* 口袋助理-Bridging-Header.h */,
-				22D9FCD11CCEEA1C008A8AB1 /* MainTableViewController.swift */,
-				22D9FCCF1CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard */,
+				22DAE7FA1CCEFF7400FB1A44 /* HMDayReportViewController.h */,
+				22DAE7FB1CCEFF7400FB1A44 /* HMDayReportViewController.m */,
+				22DAE7F41CCEFF5800FB1A44 /* HMWeekReportViewController.h */,
+				22DAE7F51CCEFF5800FB1A44 /* HMWeekReportViewController.m */,
+				22DAE7F71CCEFF6500FB1A44 /* HMMounthReportViewController.h */,
+				22DAE7F81CCEFF6500FB1A44 /* HMMounthReportViewController.m */,
 			);
-			name = FoldingCell;
+			name = Swipable;
 			sourceTree = "<group>";
 		};
 		22E087041CBB461000DCC034 /* Cell */ = {
@@ -1951,12 +1919,10 @@
 		22F0B6FC1CC77E33004AD37F /* 02AppAttendance(考勤) */ = {
 			isa = PBXGroup;
 			children = (
-				2209579A1CC9026B00339907 /* xib */,
 				220957811CC8E25A00339907 /* HMAttendanceViewController.h */,
 				220957821CC8E25A00339907 /* HMAttendanceViewController.m */,
 				220957841CC8E2B100339907 /* HMJiaBanViewController.h */,
 				220957851CC8E2B100339907 /* HMJiaBanViewController.m */,
-				22D9FCD31CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard */,
 			);
 			path = "02AppAttendance(考勤)";
 			sourceTree = "<group>";
@@ -1991,7 +1957,7 @@
 		22F0B7001CC77E33004AD37F /* 06AppWorkReport(工作汇报) */ = {
 			isa = PBXGroup;
 			children = (
-				22D9FCC51CCE60CF008A8AB1 /* FoldingCell */,
+				22DAE7F01CCEFE7200FB1A44 /* Swipable */,
 				220957931CC8E3C500339907 /* HMWorkReportTableViewController.h */,
 				220957941CC8E3C500339907 /* HMWorkReportTableViewController.m */,
 			);
@@ -2040,6 +2006,23 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		5CD0206453E619A4E03DAFB4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26009951FA03688DBF2E780A /* Pods.debug.xcconfig */,
+				0D60F99CCB225D9FFA5BFBFA /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		62D4FD581C3D9765CE120807 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAC93FA078A1C60182DBDFA0 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2047,9 +2030,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22B3C9B81CB3D46000EA00FA /* Build configuration list for PBXNativeTarget "口袋助理" */;
 			buildPhases = (
+				08C3E6A5DF232E8CCFF593D4 /* Check Pods Manifest.lock */,
 				22B3C99D1CB3D46000EA00FA /* Sources */,
 				22B3C99E1CB3D46000EA00FA /* Frameworks */,
 				22B3C99F1CB3D46000EA00FA /* Resources */,
+				8D2DEABBF4F30ACFF88CEAF4 /* Embed Pods Frameworks */,
+				6EC6BD563D2AB6E5FA0633BC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -2193,7 +2179,6 @@
 				22CEDC741CC0884800A2E324 /* d_nu@2x.png in Resources */,
 				22CEDCFE1CC0884800A2E324 /* lxh_paishou.gif in Resources */,
 				22CEDCA81CC0884800A2E324 /* o_ganbei@2x.png in Resources */,
-				22D9FCE71CCEEFCE008A8AB1 /* foldTableViewCell.xib in Resources */,
 				22CEDCF71CC0884800A2E324 /* lxh_meigui.gif in Resources */,
 				22CEDCFB1CC0884800A2E324 /* lxh_oye.gif in Resources */,
 				22CEDC911CC0884800A2E324 /* d_zuohengheng@2x.png in Resources */,
@@ -2210,7 +2195,6 @@
 				22CEDC971CC0884800A2E324 /* f_v5@2x.png in Resources */,
 				22CEDCAC1CC0884800A2E324 /* o_lvsidai@2x.png in Resources */,
 				22CEDCDC1CC0884800A2E324 /* lxh_haoxihuan.png in Resources */,
-				22D9FCD01CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard in Resources */,
 				22CEDD0A1CC0884800A2E324 /* lxh_qiuguanzhu@2x.png in Resources */,
 				22CEDCD51CC0884800A2E324 /* lxh_haobang.gif in Resources */,
 				22CEDD181CC0884800A2E324 /* lxh_xianghumobai.png in Resources */,
@@ -2259,7 +2243,6 @@
 				22CEDC8D1CC0884800A2E324 /* d_zhajipijiu@2x.png in Resources */,
 				22CEDD321CC0884800A2E324 /* lxh_zhuanfa.gif in Resources */,
 				22CEDC901CC0884800A2E324 /* d_zuiyou@2x.png in Resources */,
-				22D9FCD41CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard in Resources */,
 				22CEDD2C1CC0884800A2E324 /* lxh_zaokuangzheng.gif in Resources */,
 				22CEDD281CC0884800A2E324 /* lxh_youyali@2x.png in Resources */,
 				22CEDD271CC0884800A2E324 /* lxh_youyali.png in Resources */,
@@ -2272,7 +2255,6 @@
 				22CEDCDD1CC0884800A2E324 /* lxh_haoxihuan@2x.png in Resources */,
 				22CEDC681CC0884800A2E324 /* d_heixian@2x.png in Resources */,
 				22CEDD141CC0884800A2E324 /* lxh_tuijian.gif in Resources */,
-				22D9FCE41CCEEFCE008A8AB1 /* secondViewController.xib in Resources */,
 				22CEDD261CC0884800A2E324 /* lxh_youyali.gif in Resources */,
 				22CEDC9B1CC0884800A2E324 /* h_good@2x.png in Resources */,
 				22CEDCBC1CC0884800A2E324 /* lxh_beicui@2x.png in Resources */,
@@ -2339,25 +2321,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08C3E6A5DF232E8CCFF593D4 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6EC6BD563D2AB6E5FA0633BC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8D2DEABBF4F30ACFF88CEAF4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22B3C99D1CB3D46000EA00FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22DAE7FC1CCEFF7400FB1A44 /* HMDayReportViewController.m in Sources */,
 				22E087101CBB469500DCC034 /* HMStatusOriginalView.m in Sources */,
 				22D7B2C71CB78AB100C5A79D /* HMStatus.m in Sources */,
 				22CEDD421CC0C5A500A2E324 /* NSString+Emoji.m in Sources */,
 				22D7B3921CBA55F200C5A79D /* HMUserInfoParam.m in Sources */,
-				22D9FCD21CCEEA1C008A8AB1 /* MainTableViewController.swift in Sources */,
 				22B3C9F81CB4A41000EA00FA /* HMImageTool.m in Sources */,
 				22D7B3341CB7A50F00C5A79D /* MJFoundation.m in Sources */,
-				22D9FCE31CCEEFCE008A8AB1 /* secondViewController.m in Sources */,
 				22D7B2B81CB7601D00C5A79D /* SDWebImageManager.m in Sources */,
 				22D7B38C1CBA55F200C5A79D /* HMAccessTokenParam.m in Sources */,
 				22D7B2791CB67FEC00C5A79D /* AFSecurityPolicy.m in Sources */,
 				22D7B33B1CB7A50F00C5A79D /* NSObject+MJProperty.m in Sources */,
 				22D7B2761CB67FEC00C5A79D /* AFHTTPRequestOperationManager.m in Sources */,
-				22D9FCE21CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m in Sources */,
 				22D7B38D1CBA55F200C5A79D /* HMAccount.m in Sources */,
 				22E087191CBB9E6300DCC034 /* HMStatusOriginalFrame.m in Sources */,
 				22D7B2901CB7598F00C5A79D /* Foundation+Log.m in Sources */,
@@ -2384,8 +2412,8 @@
 				22D7B28E1CB7298100C5A79D /* HMAccountTool.m in Sources */,
 				220957831CC8E25A00339907 /* HMAttendanceViewController.m in Sources */,
 				22F0B6C21CC70A2D004AD37F /* HMGeneralViewController.m in Sources */,
+				22DAE7F61CCEFF5800FB1A44 /* HMWeekReportViewController.m in Sources */,
 				22D7B2BE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m in Sources */,
-				22D9FCC81CCE6129008A8AB1 /* FoldingCell.swift in Sources */,
 				22D7B2B51CB7601D00C5A79D /* SDWebImageDecoder.m in Sources */,
 				22CED6131CBF19C100A2E324 /* UIDevice+Resolutions.m in Sources */,
 				22F3383B1CC608EE00660675 /* HMCommonGroup.m in Sources */,
@@ -2398,7 +2426,6 @@
 				22D7B3391CB7A50F00C5A79D /* NSObject+MJCoding.m in Sources */,
 				2209578F1CC8E36100339907 /* HMTaskViewController.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
-				22D9FCCA1CCE61B6008A8AB1 /* DemoCell.swift in Sources */,
 				22F338561CC634FC00660675 /* HMGeneralSettingViewController.m in Sources */,
 				22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */,
 				22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */,
@@ -2422,16 +2449,15 @@
 				22D7B2B31CB7601D00C5A79D /* SDImageCache.m in Sources */,
 				22D7B3381CB7A50F00C5A79D /* NSObject+MJClass.m in Sources */,
 				22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */,
-				22D9FCE51CCEEFCE008A8AB1 /* RotatedView.m in Sources */,
 				22CEDD481CC0D5F100A2E324 /* HMEmotionView.m in Sources */,
 				22D7B3371CB7A50F00C5A79D /* MJPropertyType.m in Sources */,
 				22D7B3911CBA55F200C5A79D /* HMSendStatusResult.m in Sources */,
 				22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */,
-				22D9FCE11CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m in Sources */,
 				22B3C9FB1CB4A41000EA00FA /* main.m in Sources */,
 				223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */,
 				22CED6171CBFA62C00A2E324 /* HMEmotionKeyboard.m in Sources */,
 				22D7B27A1CB67FEC00C5A79D /* AFURLConnectionOperation.m in Sources */,
+				22DAE7F91CCEFF6500FB1A44 /* HMMounthReportViewController.m in Sources */,
 				22D7B36D1CBA3BCC00C5A79D /* HMBaseTool.m in Sources */,
 				22D7B27B1CB67FEC00C5A79D /* AFURLRequestSerialization.m in Sources */,
 				22D7B2B71CB7601D00C5A79D /* SDWebImageDownloaderOperation.m in Sources */,
@@ -2452,7 +2478,6 @@
 				22D7B2B21CB7601D00C5A79D /* NSData+ImageContentType.m in Sources */,
 				22D7B27C1CB67FEC00C5A79D /* AFURLResponseSerialization.m in Sources */,
 				22D7B3581CB9E23E00C5A79D /* HMHttpTool.m in Sources */,
-				22D9FCE61CCEEFCE008A8AB1 /* foldTableViewCell.m in Sources */,
 				22D9FCC41CCE4988008A8AB1 /* HMCloudDetailViewController.m in Sources */,
 				22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */,
 				22F338441CC61FA300660675 /* HMCommonArrowItem.m in Sources */,
@@ -2577,6 +2602,7 @@
 		};
 		22B3C9B91CB3D46000EA00FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26009951FA03688DBF2E780A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -2593,6 +2619,7 @@
 		};
 		22B3C9BA1CB3D46000EA00FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D60F99CCB225D9FFA5BFBFA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
