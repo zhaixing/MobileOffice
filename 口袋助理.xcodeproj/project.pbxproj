@@ -9,20 +9,11 @@
 /* Begin PBXBuildFile section */
 		220957831CC8E25A00339907 /* HMAttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957821CC8E25A00339907 /* HMAttendanceViewController.m */; };
 		220957861CC8E2B100339907 /* HMJiaBanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957851CC8E2B100339907 /* HMJiaBanViewController.m */; };
-		220957891CC8E2EC00339907 /* HMNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957881CC8E2EC00339907 /* HMNoticeViewController.m */; };
 		2209578C1CC8E34000339907 /* HMProcessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209578B1CC8E34000339907 /* HMProcessViewController.m */; };
 		2209578F1CC8E36100339907 /* HMTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209578E1CC8E36100339907 /* HMTaskViewController.m */; };
 		220957921CC8E38C00339907 /* HMLegworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957911CC8E38C00339907 /* HMLegworkViewController.m */; };
 		220957951CC8E3C500339907 /* HMWorkReportTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957941CC8E3C500339907 /* HMWorkReportTableViewController.m */; };
 		220957981CC8E3FE00339907 /* HMCloudDiskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957971CC8E3FE00339907 /* HMCloudDiskViewController.m */; };
-		220957A21CC908CA00339907 /* DSLTransitionFromFirstToSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209579C1CC908CA00339907 /* DSLTransitionFromFirstToSecond.m */; };
-		220957A31CC908CA00339907 /* DSLTransitionFromSecondToFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 2209579E1CC908CA00339907 /* DSLTransitionFromSecondToFirst.m */; };
-		220957A41CC908CA00339907 /* foldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957A01CC908CA00339907 /* foldTableViewCell.m */; };
-		220957A51CC908CA00339907 /* foldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220957A11CC908CA00339907 /* foldTableViewCell.xib */; };
-		220957A91CC908DE00339907 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957A71CC908DE00339907 /* secondViewController.m */; };
-		220957AA1CC908DE00339907 /* secondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220957A81CC908DE00339907 /* secondViewController.xib */; };
-		220957AD1CC908F800339907 /* RotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 220957AC1CC908F800339907 /* RotatedView.m */; };
-		220957B51CC9203100339907 /* HMJiaBanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 220957B41CC9203100339907 /* HMJiaBanViewController.xib */; };
 		223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 223B889D1CBCDC210054BD30 /* NSDate+MJ.m */; };
 		223C274E1CC454F500F9006E /* Window_Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C274D1CC454F500F9006E /* Window_Log.m */; };
 		223C27511CC458C000F9006E /* HMEmotionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 223C27501CC458C000F9006E /* HMEmotionPopView.m */; };
@@ -350,6 +341,20 @@
 		22D7B39F1CBA5A2E00C5A79D /* HMUnreadCountParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B39E1CBA5A2E00C5A79D /* HMUnreadCountParam.m */; };
 		22D7B3A21CBA5AC500C5A79D /* HMUnreadCountResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D7B3A11CBA5AC500C5A79D /* HMUnreadCountResult.m */; };
 		22D9FCBE1CCDADD6008A8AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCBD1CCDADD6008A8AB1 /* Assets.xcassets */; };
+		22D9FCC11CCE1FD8008A8AB1 /* HMNoticeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCC01CCE1FD8008A8AB1 /* HMNoticeViewController.m */; };
+		22D9FCC41CCE4988008A8AB1 /* HMCloudDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCC31CCE4988008A8AB1 /* HMCloudDetailViewController.m */; };
+		22D9FCC81CCE6129008A8AB1 /* FoldingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCC71CCE6129008A8AB1 /* FoldingCell.swift */; };
+		22D9FCCA1CCE61B6008A8AB1 /* DemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCC91CCE61B6008A8AB1 /* DemoCell.swift */; };
+		22D9FCD01CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCCF1CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard */; };
+		22D9FCD21CCEEA1C008A8AB1 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCD11CCEEA1C008A8AB1 /* MainTableViewController.swift */; };
+		22D9FCD41CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCD31CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard */; };
+		22D9FCE11CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCD61CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m */; };
+		22D9FCE21CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCD81CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m */; };
+		22D9FCE31CCEEFCE008A8AB1 /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCDA1CCEEFCE008A8AB1 /* secondViewController.m */; };
+		22D9FCE41CCEEFCE008A8AB1 /* secondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCDB1CCEEFCE008A8AB1 /* secondViewController.xib */; };
+		22D9FCE51CCEEFCE008A8AB1 /* RotatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCDD1CCEEFCE008A8AB1 /* RotatedView.m */; };
+		22D9FCE61CCEEFCE008A8AB1 /* foldTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FCDF1CCEEFCE008A8AB1 /* foldTableViewCell.m */; };
+		22D9FCE71CCEEFCE008A8AB1 /* foldTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22D9FCE01CCEEFCE008A8AB1 /* foldTableViewCell.xib */; };
 		22E0870B1CBB461000DCC034 /* HMStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087061CBB461000DCC034 /* HMStatusCell.m */; };
 		22E0870C1CBB461000DCC034 /* HMStatusDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E087081CBB461000DCC034 /* HMStatusDetailView.m */; };
 		22E0870D1CBB461000DCC034 /* HMStatusToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 22E0870A1CBB461000DCC034 /* HMStatusToolbar.m */; };
@@ -388,8 +393,6 @@
 		220957821CC8E25A00339907 /* HMAttendanceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAttendanceViewController.m; sourceTree = "<group>"; };
 		220957841CC8E2B100339907 /* HMJiaBanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMJiaBanViewController.h; sourceTree = "<group>"; };
 		220957851CC8E2B100339907 /* HMJiaBanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMJiaBanViewController.m; sourceTree = "<group>"; };
-		220957871CC8E2EC00339907 /* HMNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNoticeViewController.h; sourceTree = "<group>"; };
-		220957881CC8E2EC00339907 /* HMNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNoticeViewController.m; sourceTree = "<group>"; };
 		2209578A1CC8E34000339907 /* HMProcessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMProcessViewController.h; sourceTree = "<group>"; };
 		2209578B1CC8E34000339907 /* HMProcessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMProcessViewController.m; sourceTree = "<group>"; };
 		2209578D1CC8E36100339907 /* HMTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTaskViewController.h; sourceTree = "<group>"; };
@@ -400,19 +403,6 @@
 		220957941CC8E3C500339907 /* HMWorkReportTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWorkReportTableViewController.m; sourceTree = "<group>"; };
 		220957961CC8E3FE00339907 /* HMCloudDiskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCloudDiskViewController.h; sourceTree = "<group>"; };
 		220957971CC8E3FE00339907 /* HMCloudDiskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCloudDiskViewController.m; sourceTree = "<group>"; };
-		2209579B1CC908CA00339907 /* DSLTransitionFromFirstToSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLTransitionFromFirstToSecond.h; sourceTree = "<group>"; };
-		2209579C1CC908CA00339907 /* DSLTransitionFromFirstToSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLTransitionFromFirstToSecond.m; sourceTree = "<group>"; };
-		2209579D1CC908CA00339907 /* DSLTransitionFromSecondToFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLTransitionFromSecondToFirst.h; sourceTree = "<group>"; };
-		2209579E1CC908CA00339907 /* DSLTransitionFromSecondToFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLTransitionFromSecondToFirst.m; sourceTree = "<group>"; };
-		2209579F1CC908CA00339907 /* foldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foldTableViewCell.h; sourceTree = "<group>"; };
-		220957A01CC908CA00339907 /* foldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foldTableViewCell.m; sourceTree = "<group>"; };
-		220957A11CC908CA00339907 /* foldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = foldTableViewCell.xib; sourceTree = "<group>"; };
-		220957A61CC908DE00339907 /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
-		220957A71CC908DE00339907 /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
-		220957A81CC908DE00339907 /* secondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = secondViewController.xib; sourceTree = "<group>"; };
-		220957AB1CC908F800339907 /* RotatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatedView.h; sourceTree = "<group>"; };
-		220957AC1CC908F800339907 /* RotatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatedView.m; sourceTree = "<group>"; };
-		220957B41CC9203100339907 /* HMJiaBanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMJiaBanViewController.xib; sourceTree = "<group>"; };
 		223B889C1CBCDC210054BD30 /* NSDate+MJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+MJ.h"; sourceTree = "<group>"; };
 		223B889D1CBCDC210054BD30 /* NSDate+MJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+MJ.m"; sourceTree = "<group>"; };
 		223C274C1CC454F500F9006E /* Window_Log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window_Log.h; sourceTree = "<group>"; };
@@ -838,6 +828,28 @@
 		22D7B3A01CBA5AC500C5A79D /* HMUnreadCountResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMUnreadCountResult.h; sourceTree = "<group>"; };
 		22D7B3A11CBA5AC500C5A79D /* HMUnreadCountResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMUnreadCountResult.m; sourceTree = "<group>"; };
 		22D9FCBD1CCDADD6008A8AB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		22D9FCBF1CCE1FD8008A8AB1 /* HMNoticeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNoticeViewController.h; sourceTree = "<group>"; };
+		22D9FCC01CCE1FD8008A8AB1 /* HMNoticeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNoticeViewController.m; sourceTree = "<group>"; };
+		22D9FCC21CCE4988008A8AB1 /* HMCloudDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCloudDetailViewController.h; sourceTree = "<group>"; };
+		22D9FCC31CCE4988008A8AB1 /* HMCloudDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCloudDetailViewController.m; sourceTree = "<group>"; };
+		22D9FCC61CCE6128008A8AB1 /* 口袋助理-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "口袋助理-Bridging-Header.h"; sourceTree = "<group>"; };
+		22D9FCC71CCE6129008A8AB1 /* FoldingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoldingCell.swift; sourceTree = "<group>"; };
+		22D9FCC91CCE61B6008A8AB1 /* DemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCell.swift; sourceTree = "<group>"; };
+		22D9FCCF1CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HMFoldingCellTableViewController.storyboard; sourceTree = "<group>"; };
+		22D9FCD11CCEEA1C008A8AB1 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		22D9FCD31CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HMJiaBanViewController.storyboard; sourceTree = "<group>"; };
+		22D9FCD51CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLTransitionFromFirstToSecond.h; sourceTree = "<group>"; };
+		22D9FCD61CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLTransitionFromFirstToSecond.m; sourceTree = "<group>"; };
+		22D9FCD71CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLTransitionFromSecondToFirst.h; sourceTree = "<group>"; };
+		22D9FCD81CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLTransitionFromSecondToFirst.m; sourceTree = "<group>"; };
+		22D9FCD91CCEEFCE008A8AB1 /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
+		22D9FCDA1CCEEFCE008A8AB1 /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
+		22D9FCDB1CCEEFCE008A8AB1 /* secondViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = secondViewController.xib; sourceTree = "<group>"; };
+		22D9FCDC1CCEEFCE008A8AB1 /* RotatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotatedView.h; sourceTree = "<group>"; };
+		22D9FCDD1CCEEFCE008A8AB1 /* RotatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotatedView.m; sourceTree = "<group>"; };
+		22D9FCDE1CCEEFCE008A8AB1 /* foldTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = foldTableViewCell.h; sourceTree = "<group>"; };
+		22D9FCDF1CCEEFCE008A8AB1 /* foldTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = foldTableViewCell.m; sourceTree = "<group>"; };
+		22D9FCE01CCEEFCE008A8AB1 /* foldTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = foldTableViewCell.xib; sourceTree = "<group>"; };
 		22E087051CBB461000DCC034 /* HMStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusCell.h; sourceTree = "<group>"; };
 		22E087061CBB461000DCC034 /* HMStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMStatusCell.m; sourceTree = "<group>"; };
 		22E087071CBB461000DCC034 /* HMStatusDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMStatusDetailView.h; sourceTree = "<group>"; };
@@ -917,18 +929,18 @@
 		2209579A1CC9026B00339907 /* xib */ = {
 			isa = PBXGroup;
 			children = (
-				220957AB1CC908F800339907 /* RotatedView.h */,
-				220957AC1CC908F800339907 /* RotatedView.m */,
-				220957A61CC908DE00339907 /* secondViewController.h */,
-				220957A71CC908DE00339907 /* secondViewController.m */,
-				220957A81CC908DE00339907 /* secondViewController.xib */,
-				2209579B1CC908CA00339907 /* DSLTransitionFromFirstToSecond.h */,
-				2209579C1CC908CA00339907 /* DSLTransitionFromFirstToSecond.m */,
-				2209579D1CC908CA00339907 /* DSLTransitionFromSecondToFirst.h */,
-				2209579E1CC908CA00339907 /* DSLTransitionFromSecondToFirst.m */,
-				2209579F1CC908CA00339907 /* foldTableViewCell.h */,
-				220957A01CC908CA00339907 /* foldTableViewCell.m */,
-				220957A11CC908CA00339907 /* foldTableViewCell.xib */,
+				22D9FCD51CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.h */,
+				22D9FCD61CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m */,
+				22D9FCD71CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.h */,
+				22D9FCD81CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m */,
+				22D9FCD91CCEEFCE008A8AB1 /* secondViewController.h */,
+				22D9FCDA1CCEEFCE008A8AB1 /* secondViewController.m */,
+				22D9FCDB1CCEEFCE008A8AB1 /* secondViewController.xib */,
+				22D9FCDC1CCEEFCE008A8AB1 /* RotatedView.h */,
+				22D9FCDD1CCEEFCE008A8AB1 /* RotatedView.m */,
+				22D9FCDE1CCEEFCE008A8AB1 /* foldTableViewCell.h */,
+				22D9FCDF1CCEEFCE008A8AB1 /* foldTableViewCell.m */,
+				22D9FCE01CCEEFCE008A8AB1 /* foldTableViewCell.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -1862,6 +1874,18 @@
 			path = UserInfo;
 			sourceTree = "<group>";
 		};
+		22D9FCC51CCE60CF008A8AB1 /* FoldingCell */ = {
+			isa = PBXGroup;
+			children = (
+				22D9FCC71CCE6129008A8AB1 /* FoldingCell.swift */,
+				22D9FCC91CCE61B6008A8AB1 /* DemoCell.swift */,
+				22D9FCC61CCE6128008A8AB1 /* 口袋助理-Bridging-Header.h */,
+				22D9FCD11CCEEA1C008A8AB1 /* MainTableViewController.swift */,
+				22D9FCCF1CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard */,
+			);
+			name = FoldingCell;
+			sourceTree = "<group>";
+		};
 		22E087041CBB461000DCC034 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1918,8 +1942,8 @@
 		22F0B6FB1CC77E33004AD37F /* 01AppNotice(通知) */ = {
 			isa = PBXGroup;
 			children = (
-				220957871CC8E2EC00339907 /* HMNoticeViewController.h */,
-				220957881CC8E2EC00339907 /* HMNoticeViewController.m */,
+				22D9FCBF1CCE1FD8008A8AB1 /* HMNoticeViewController.h */,
+				22D9FCC01CCE1FD8008A8AB1 /* HMNoticeViewController.m */,
 			);
 			path = "01AppNotice(通知)";
 			sourceTree = "<group>";
@@ -1932,7 +1956,7 @@
 				220957821CC8E25A00339907 /* HMAttendanceViewController.m */,
 				220957841CC8E2B100339907 /* HMJiaBanViewController.h */,
 				220957851CC8E2B100339907 /* HMJiaBanViewController.m */,
-				220957B41CC9203100339907 /* HMJiaBanViewController.xib */,
+				22D9FCD31CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard */,
 			);
 			path = "02AppAttendance(考勤)";
 			sourceTree = "<group>";
@@ -1967,6 +1991,7 @@
 		22F0B7001CC77E33004AD37F /* 06AppWorkReport(工作汇报) */ = {
 			isa = PBXGroup;
 			children = (
+				22D9FCC51CCE60CF008A8AB1 /* FoldingCell */,
 				220957931CC8E3C500339907 /* HMWorkReportTableViewController.h */,
 				220957941CC8E3C500339907 /* HMWorkReportTableViewController.m */,
 			);
@@ -1992,6 +2017,8 @@
 			children = (
 				220957961CC8E3FE00339907 /* HMCloudDiskViewController.h */,
 				220957971CC8E3FE00339907 /* HMCloudDiskViewController.m */,
+				22D9FCC21CCE4988008A8AB1 /* HMCloudDetailViewController.h */,
+				22D9FCC31CCE4988008A8AB1 /* HMCloudDetailViewController.m */,
 			);
 			path = "09AppCloudDisk(云盘)";
 			sourceTree = "<group>";
@@ -2092,7 +2119,6 @@
 				22CEDC831CC0884800A2E324 /* d_tuzi@2x.png in Resources */,
 				22CEDCCB1CC0884800A2E324 /* lxh_buxiangshangban@2x.png in Resources */,
 				22CEDCA01CC0884800A2E324 /* h_woshou@2x.png in Resources */,
-				220957AA1CC908DE00339907 /* secondViewController.xib in Resources */,
 				22CEDCCD1CC0884800A2E324 /* lxh_deyidexiao.png in Resources */,
 				22CEDCD11CC0884800A2E324 /* lxh_geijin@2x.png in Resources */,
 				22CEDCCC1CC0884800A2E324 /* lxh_deyidexiao.gif in Resources */,
@@ -2160,7 +2186,6 @@
 				22CEDD3B1CC099A300A2E324 /* iinfo.plist in Resources */,
 				22CEDCEB1CC0884800A2E324 /* lxh_koubishi.gif in Resources */,
 				22CEDC8E1CC0884800A2E324 /* d_zhuakuang@2x.png in Resources */,
-				220957B51CC9203100339907 /* HMJiaBanViewController.xib in Resources */,
 				22CEDCE21CC0884800A2E324 /* lxh_jiekexun.gif in Resources */,
 				22CEDC7F1CC0884800A2E324 /* d_taikaixin@2x.png in Resources */,
 				22CEDD011CC0884800A2E324 /* lxh_pili@2x.png in Resources */,
@@ -2168,6 +2193,7 @@
 				22CEDC741CC0884800A2E324 /* d_nu@2x.png in Resources */,
 				22CEDCFE1CC0884800A2E324 /* lxh_paishou.gif in Resources */,
 				22CEDCA81CC0884800A2E324 /* o_ganbei@2x.png in Resources */,
+				22D9FCE71CCEEFCE008A8AB1 /* foldTableViewCell.xib in Resources */,
 				22CEDCF71CC0884800A2E324 /* lxh_meigui.gif in Resources */,
 				22CEDCFB1CC0884800A2E324 /* lxh_oye.gif in Resources */,
 				22CEDC911CC0884800A2E324 /* d_zuohengheng@2x.png in Resources */,
@@ -2184,7 +2210,7 @@
 				22CEDC971CC0884800A2E324 /* f_v5@2x.png in Resources */,
 				22CEDCAC1CC0884800A2E324 /* o_lvsidai@2x.png in Resources */,
 				22CEDCDC1CC0884800A2E324 /* lxh_haoxihuan.png in Resources */,
-				220957A51CC908CA00339907 /* foldTableViewCell.xib in Resources */,
+				22D9FCD01CCEE40E008A8AB1 /* HMFoldingCellTableViewController.storyboard in Resources */,
 				22CEDD0A1CC0884800A2E324 /* lxh_qiuguanzhu@2x.png in Resources */,
 				22CEDCD51CC0884800A2E324 /* lxh_haobang.gif in Resources */,
 				22CEDD181CC0884800A2E324 /* lxh_xianghumobai.png in Resources */,
@@ -2233,6 +2259,7 @@
 				22CEDC8D1CC0884800A2E324 /* d_zhajipijiu@2x.png in Resources */,
 				22CEDD321CC0884800A2E324 /* lxh_zhuanfa.gif in Resources */,
 				22CEDC901CC0884800A2E324 /* d_zuiyou@2x.png in Resources */,
+				22D9FCD41CCEEBCC008A8AB1 /* HMJiaBanViewController.storyboard in Resources */,
 				22CEDD2C1CC0884800A2E324 /* lxh_zaokuangzheng.gif in Resources */,
 				22CEDD281CC0884800A2E324 /* lxh_youyali@2x.png in Resources */,
 				22CEDD271CC0884800A2E324 /* lxh_youyali.png in Resources */,
@@ -2245,6 +2272,7 @@
 				22CEDCDD1CC0884800A2E324 /* lxh_haoxihuan@2x.png in Resources */,
 				22CEDC681CC0884800A2E324 /* d_heixian@2x.png in Resources */,
 				22CEDD141CC0884800A2E324 /* lxh_tuijian.gif in Resources */,
+				22D9FCE41CCEEFCE008A8AB1 /* secondViewController.xib in Resources */,
 				22CEDD261CC0884800A2E324 /* lxh_youyali.gif in Resources */,
 				22CEDC9B1CC0884800A2E324 /* h_good@2x.png in Resources */,
 				22CEDCBC1CC0884800A2E324 /* lxh_beicui@2x.png in Resources */,
@@ -2320,14 +2348,16 @@
 				22D7B2C71CB78AB100C5A79D /* HMStatus.m in Sources */,
 				22CEDD421CC0C5A500A2E324 /* NSString+Emoji.m in Sources */,
 				22D7B3921CBA55F200C5A79D /* HMUserInfoParam.m in Sources */,
+				22D9FCD21CCEEA1C008A8AB1 /* MainTableViewController.swift in Sources */,
 				22B3C9F81CB4A41000EA00FA /* HMImageTool.m in Sources */,
 				22D7B3341CB7A50F00C5A79D /* MJFoundation.m in Sources */,
+				22D9FCE31CCEEFCE008A8AB1 /* secondViewController.m in Sources */,
 				22D7B2B81CB7601D00C5A79D /* SDWebImageManager.m in Sources */,
 				22D7B38C1CBA55F200C5A79D /* HMAccessTokenParam.m in Sources */,
 				22D7B2791CB67FEC00C5A79D /* AFSecurityPolicy.m in Sources */,
-				220957A41CC908CA00339907 /* foldTableViewCell.m in Sources */,
 				22D7B33B1CB7A50F00C5A79D /* NSObject+MJProperty.m in Sources */,
 				22D7B2761CB67FEC00C5A79D /* AFHTTPRequestOperationManager.m in Sources */,
+				22D9FCE21CCEEFCE008A8AB1 /* DSLTransitionFromSecondToFirst.m in Sources */,
 				22D7B38D1CBA55F200C5A79D /* HMAccount.m in Sources */,
 				22E087191CBB9E6300DCC034 /* HMStatusOriginalFrame.m in Sources */,
 				22D7B2901CB7598F00C5A79D /* Foundation+Log.m in Sources */,
@@ -2349,17 +2379,17 @@
 				22D7B35B1CB9F3D000C5A79D /* HMStatusTool.m in Sources */,
 				22B3C9F61CB4A41000EA00FA /* HMDiscoverViewController.m in Sources */,
 				22D7B2801CB67FEC00C5A79D /* MBProgressHUD.m in Sources */,
-				220957A31CC908CA00339907 /* DSLTransitionFromSecondToFirst.m in Sources */,
-				220957A91CC908DE00339907 /* secondViewController.m in Sources */,
 				22F338381CC608E000660675 /* HMCommonItem.m in Sources */,
 				22D7B39F1CBA5A2E00C5A79D /* HMUnreadCountParam.m in Sources */,
 				22D7B28E1CB7298100C5A79D /* HMAccountTool.m in Sources */,
 				220957831CC8E25A00339907 /* HMAttendanceViewController.m in Sources */,
 				22F0B6C21CC70A2D004AD37F /* HMGeneralViewController.m in Sources */,
 				22D7B2BE1CB7601D00C5A79D /* UIImageView+HighlightedWebCache.m in Sources */,
+				22D9FCC81CCE6129008A8AB1 /* FoldingCell.swift in Sources */,
 				22D7B2B51CB7601D00C5A79D /* SDWebImageDecoder.m in Sources */,
 				22CED6131CBF19C100A2E324 /* UIDevice+Resolutions.m in Sources */,
 				22F3383B1CC608EE00660675 /* HMCommonGroup.m in Sources */,
+				22D9FCC11CCE1FD8008A8AB1 /* HMNoticeViewController.m in Sources */,
 				22D7B2B91CB7601D00C5A79D /* SDWebImagePrefetcher.m in Sources */,
 				22D7B34C1CB8D7E000C5A79D /* HMTextView.m in Sources */,
 				22F3384D1CC6224000660675 /* HMBadgeView.m in Sources */,
@@ -2368,6 +2398,7 @@
 				22D7B3391CB7A50F00C5A79D /* NSObject+MJCoding.m in Sources */,
 				2209578F1CC8E36100339907 /* HMTaskViewController.m in Sources */,
 				22B3C9F91CB4A41000EA00FA /* HMTabBarViewController.m in Sources */,
+				22D9FCCA1CCE61B6008A8AB1 /* DemoCell.swift in Sources */,
 				22F338561CC634FC00660675 /* HMGeneralSettingViewController.m in Sources */,
 				22CF1A961CB5F27300EFAC7A /* HMComposeViewController.m in Sources */,
 				22CF1A891CB51D6E00EFAC7A /* HMSearchBar.m in Sources */,
@@ -2389,15 +2420,14 @@
 				22D7B2BF1CB7601D00C5A79D /* UIImageView+WebCache.m in Sources */,
 				22D7B2771CB67FEC00C5A79D /* AFHTTPSessionManager.m in Sources */,
 				22D7B2B31CB7601D00C5A79D /* SDImageCache.m in Sources */,
-				220957AD1CC908F800339907 /* RotatedView.m in Sources */,
 				22D7B3381CB7A50F00C5A79D /* NSObject+MJClass.m in Sources */,
-				220957891CC8E2EC00339907 /* HMNoticeViewController.m in Sources */,
 				22F3382B1CC527D900660675 /* HMEmotionAttachment.m in Sources */,
+				22D9FCE51CCEEFCE008A8AB1 /* RotatedView.m in Sources */,
 				22CEDD481CC0D5F100A2E324 /* HMEmotionView.m in Sources */,
 				22D7B3371CB7A50F00C5A79D /* MJPropertyType.m in Sources */,
 				22D7B3911CBA55F200C5A79D /* HMSendStatusResult.m in Sources */,
-				220957A21CC908CA00339907 /* DSLTransitionFromFirstToSecond.m in Sources */,
 				22CF1A831CB4B8D000EFAC7A /* UIView+Extension.m in Sources */,
+				22D9FCE11CCEEFCE008A8AB1 /* DSLTransitionFromFirstToSecond.m in Sources */,
 				22B3C9FB1CB4A41000EA00FA /* main.m in Sources */,
 				223B889E1CBCDC210054BD30 /* NSDate+MJ.m in Sources */,
 				22CED6171CBFA62C00A2E324 /* HMEmotionKeyboard.m in Sources */,
@@ -2422,6 +2452,8 @@
 				22D7B2B21CB7601D00C5A79D /* NSData+ImageContentType.m in Sources */,
 				22D7B27C1CB67FEC00C5A79D /* AFURLResponseSerialization.m in Sources */,
 				22D7B3581CB9E23E00C5A79D /* HMHttpTool.m in Sources */,
+				22D9FCE61CCEEFCE008A8AB1 /* foldTableViewCell.m in Sources */,
+				22D9FCC41CCE4988008A8AB1 /* HMCloudDetailViewController.m in Sources */,
 				22D7B3491CB8A44100C5A79D /* HMLoadMoreFooter.m in Sources */,
 				22F338441CC61FA300660675 /* HMCommonArrowItem.m in Sources */,
 				2291EB901CBE449100193AD4 /* HMStatusPhotosView.m in Sources */,
@@ -2548,11 +2580,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OD01/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aikan.OD01;
 				PRODUCT_NAME = "口袋助理";
+				SWIFT_OBJC_BRIDGING_HEADER = "OD01/Classes/Discover（发现）/Controller/06AppWorkReport(工作汇报)/口袋助理-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -2561,11 +2596,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = OD01/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aikan.OD01;
 				PRODUCT_NAME = "口袋助理";
+				SWIFT_OBJC_BRIDGING_HEADER = "OD01/Classes/Discover（发现）/Controller/06AppWorkReport(工作汇报)/口袋助理-Bridging-Header.h";
 			};
 			name = Release;
 		};

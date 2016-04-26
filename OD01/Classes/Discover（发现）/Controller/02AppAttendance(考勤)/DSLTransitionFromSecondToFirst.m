@@ -8,7 +8,7 @@
 
 #import "DSLTransitionFromSecondToFirst.h"
 
-#import "HMJiaBanViewController.h"
+#import "ViewController.h"
 #import "secondViewController.h"
 #import "foldTableViewCell.h"
 
@@ -17,7 +17,7 @@
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
     secondViewController *fromViewController = (secondViewController*)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
-    HMJiaBanViewController *toViewController = (HMJiaBanViewController*)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    ViewController *toViewController = (ViewController*)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
 
     UIView *containerView = [transitionContext containerView];
     NSTimeInterval duration = [self transitionDuration:transitionContext];

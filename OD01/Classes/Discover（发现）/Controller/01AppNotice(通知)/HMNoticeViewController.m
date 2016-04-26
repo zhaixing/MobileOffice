@@ -2,12 +2,13 @@
 //  HMNoticeViewController.m
 //  口袋助理
 //
-//  Created by sam on 16/4/21.
+//  Created by sam on 16/4/25.
 //  Copyright © 2016年 sam. All rights reserved.
 //
-
+#import "HMGlobal.h"
 #import "HMNoticeViewController.h"
-
+#import "HMCommonArrowItem.h"
+#import "HMCommonGroup.h"
 @interface HMNoticeViewController ()
 
 @end
@@ -17,22 +18,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title=@"通知";
+    [self setupGroupSend];
+    
+    [self setupGroupReceive];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)setupGroupSend
+{
+    HMCommonGroup *group=[HMCommonGroup group];
+    [self.groups addObject:group];
+    group.header=@"发送的通知";
+    group.footer=@"收到的通知";
+    HMCommonArrowItem *sendNotice=[HMCommonArrowItem itemWithTitle:@"发送的通知"];
+    group.items=@[sendNotice];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)setupGroupReceive
+{
+    HMCommonGroup *group=[HMCommonGroup group];
+    [self.groups addObject:group];
+    
+    HMCommonArrowItem *receiveNotice=[HMCommonArrowItem itemWithTitle:@"收到的通知"];
+    group.items=@[receiveNotice];
 }
-*/
-
 @end

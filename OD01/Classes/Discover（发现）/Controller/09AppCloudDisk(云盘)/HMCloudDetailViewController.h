@@ -1,5 +1,5 @@
 //
-//  HMNoticeViewController.h
+//  HMCloudDetailViewController.h
 //  口袋助理
 //
 //  Created by sam on 16/4/25.
@@ -8,6 +8,6 @@
 
 #import "HMSettingCommonViewController.h"
 
-@interface HMNoticeViewController : HMSettingCommonViewController
+@interface HMCloudDetailViewController : HMSettingCommonViewController
 
 @end

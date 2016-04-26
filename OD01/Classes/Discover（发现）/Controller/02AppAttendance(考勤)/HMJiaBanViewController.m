@@ -17,18 +17,18 @@ static const CGFloat kOpenCellHeight = 488;
 {
     NSMutableArray *heightArray;
 }
-
 @end
 
 @implementation HMJiaBanViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSLog(@"viewDidLoad");
+    self.view.backgroundColor=[UIColor whiteColor];
     
-    self.title=@"加班考勤";
     self.testTableView.delegate=self;
     self.testTableView.dataSource=self;
-    self.view.backgroundColor=[UIColor whiteColor];
+    
     [self.testTableView registerNib:[UINib nibWithNibName:NSStringFromClass([foldTableViewCell class]) bundle:nil] forCellReuseIdentifier:@"cell"];
     
     heightArray=[NSMutableArray array];
@@ -133,4 +133,7 @@ static const CGFloat kOpenCellHeight = 488;
     
     return [[DSLTransitionFromFirstToSecond alloc]init];
 }
+
+
 @end
+

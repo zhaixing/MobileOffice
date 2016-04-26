@@ -7,7 +7,10 @@
 //
 
 #import "HMCloudDiskViewController.h"
-
+#import "HMGlobal.h"
+#import "HMCommonGroup.h"
+#import "HMCommonArrowItem.h"
+#import "HMCloudDetailViewController.h"
 @interface HMCloudDiskViewController ()
 
 @end
@@ -17,23 +20,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self setupGroup0];
+    [self setupGroup1];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)setupGroup0
+{
+    HMCommonGroup *group=[HMCommonGroup group];
+    [self.groups addObject:group];
+    group.header=@"公司共享";
+    group.footer=@"我的文件";
+    HMCommonArrowItem *cloud=[HMCommonArrowItem itemWithTitle:@"共享文件夹" icon:@"CDCompanyDir"];
+    cloud.destVcClass=[HMCloudDetailViewController class];
+    
+    group.items=@[cloud];
 }
 
-/*
-#pragma mark - Navigation
+-(void)setupGroup1
+{
+    HMCommonGroup *group=[HMCommonGroup group];
+    [self.groups addObject:group];
+    HMCommonArrowItem *myComment=[HMCommonArrowItem itemWithTitle:@"我的文档" icon:@"CDDir"];
+    myComment.destVcClass=[HMCloudDetailViewController class];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    HMCommonArrowItem *myPic=[HMCommonArrowItem itemWithTitle:@"我的图片" icon:@"CDDir"];
+    myPic.destVcClass=[HMCloudDetailViewController class];
+    
+    HMCommonArrowItem *myMusic=[HMCommonArrowItem itemWithTitle:@"我的音乐" icon:@"CDDir"];
+    myMusic.destVcClass=[HMCloudDetailViewController class];
+    
+    group.items=@[myComment,myPic,myMusic];
 }
-*/
-
 #pragma mark - 自学 提醒框
 //-(void) someButtonClicked{
 //    

@@ -25,6 +25,7 @@
 #import "HMLegworkViewController.h"
 #import "HMWorkReportTableViewController.h"
 #import "HMCloudDiskViewController.h"
+
 @interface HMDiscoverViewController ()
 @end
 
@@ -144,7 +145,8 @@
     legwork.subtitle=@"外出拜访需现场定位，并提交总结";
     
     HMCommonArrowItem *workReport=[HMCommonArrowItem itemWithTitle:@"工作汇报" icon:@"AppWorkReport"];
-    workReport.destVcClass=[HMWorkReportTableViewController class];
+//    workReport.destVcClass=[HMWorkReportTableViewController class];
+    workReport.destVcClass=[HMJiaBanViewController class];
     workReport.subtitle=@"日报、周报、月报";
     
     group.items = @[notice, attendance, process, task, legwork, workReport];

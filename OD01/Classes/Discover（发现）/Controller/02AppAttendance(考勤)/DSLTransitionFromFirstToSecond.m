@@ -7,7 +7,7 @@
 //
 
 #import "DSLTransitionFromFirstToSecond.h"
-#import "HMJiaBanViewController.h"
+#import "ViewController.h"
 #import "secondViewController.h"
 #import "foldTableViewCell.h"
 
@@ -16,7 +16,7 @@
 @implementation DSLTransitionFromFirstToSecond
 
 - (void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
-    HMJiaBanViewController *fromViewController = (HMJiaBanViewController*)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    ViewController *fromViewController = (ViewController*)[transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
     secondViewController *toViewController = (secondViewController*)[transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     
     UIView *containerView = [transitionContext containerView];
