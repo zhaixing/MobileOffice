@@ -1,0 +1,6 @@
+framework module TabSwipable {
+  umbrella header "TabSwipable-umbrella.h"
+
+  export *
+  module * { export * }
+}

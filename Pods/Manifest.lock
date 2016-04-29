@@ -1,0 +1,10 @@
+PODS:
+  - TabSwipable (0.0.3)
+
+DEPENDENCIES:
+  - TabSwipable (= 0.0.3)
+
+SPEC CHECKSUMS:
+  TabSwipable: c0aaee166f596b9bbdcc1c28cf4c5517e1452d20
+
+COCOAPODS: 0.39.0
