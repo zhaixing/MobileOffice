@@ -117,20 +117,6 @@
       "scale" : "2x",
       "role" : "quickLook",
       "subtype" : "42mm"
-    },
-    {
-      "size" : "57x57",
-      "idiom" : "iphone",
-      "filename" : "icon_beta@2x.png",
-      "unassigned" : true,
-      "scale" : "2x"
-    },
-    {
-      "size" : "60x60",
-      "idiom" : "iphone",
-      "filename" : "icon-568h_beta@2x.png",
-      "unassigned" : true,
-      "scale" : "2x"
     }
   ],
   "info" : {
