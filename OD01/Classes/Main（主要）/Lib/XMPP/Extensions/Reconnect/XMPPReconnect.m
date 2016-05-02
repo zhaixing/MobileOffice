@@ -34,7 +34,7 @@ enum XMPPReconnectConfig
 typedef  SCNetworkReachabilityFlags;
 #endif
 
-@interface XMPPReconnect (PrivateAPI)
+@interface XMPPReconnect (PrivateAPI)//测试远程
 
 - (void)setupReconnectTimer;
 - (void)teardownReconnectTimer;
